@@ -16,6 +16,7 @@ const article = ({ article }) => {
 };
 
 // fetch the data we need based on the url
+// when to use "context", actually?
 export const getStaticProps = async context => {
   const res = await fetch(
     `https://jsonplaceholder.typicode.com/posts/${context.params.id}`
