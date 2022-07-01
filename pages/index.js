@@ -1,5 +1,6 @@
 import Image from "next/image";
 import cat1 from "../public/img/cat3.gif";
+import cat1placeholder from "../public/img/cat3-placeholder.gif";
 
 export default function Home() {
   return (
@@ -11,7 +12,9 @@ export default function Home() {
           src={cat1}
           alt="Picture of Cat1"
           layout="fill"
-          priority
+          placeholder="blur"
+          blurDataURL={cat1placeholder}
+          //   priority
         />
       </div>
     </div>
