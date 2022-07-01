@@ -14,7 +14,7 @@ export default function Home() {
           layout="fill"
           placeholder="blur"
           blurDataURL={cat1placeholder}
-          //   priority
+          priority // should only be used on content above the fold.
         />
       </div>
     </div>
