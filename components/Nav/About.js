@@ -1,6 +1,6 @@
 const About = () => {
   return (
-    <div className="flex items-center justify-center w-full h-screen bg-primary-light">
+    <div className="flex items-center justify-center w-full h-screen bg-primary-light dark:bg-primary-dark">
       <div className="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-md">
         <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900">
           Noteworthy technology acquisitions 2021
