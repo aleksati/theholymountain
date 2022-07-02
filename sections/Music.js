@@ -1,6 +1,6 @@
 const Music = () => {
   return (
-    <div className="flex flex-col items-center justify-center w-full h-screen dark:bg-secondary-dark bg-secondary-light">
+    <div className="flex flex-col items-center justify-center w-full h-screen dark:bg-primary-dark bg-primary-light">
       <h1 className="text-size-header text-primary-light dark:text-primary-dark">
         Header
       </h1>

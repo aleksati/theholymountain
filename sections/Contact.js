@@ -1,6 +1,6 @@
 const Contact = () => {
   return (
-    <div className="w-full h-screen bg-ternary-light dark:bg-ternary-dark"></div>
+    <div className="w-full h-screen bg-secondary-light dark:bg-secondary-dark"></div>
   );
 };
 
