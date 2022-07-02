@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
 import NavButton from "./NavButton";
 
-const ThemeChanger = ({ className }) => {
+const ThemeToggle = ({ className }) => {
   const { systemTheme, theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
@@ -20,7 +20,7 @@ const ThemeChanger = ({ className }) => {
         <NavButton className={`${className}`} onClick={() => setTheme("light")}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="w-6 h-6"
+            className="w-8 h-8"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -40,7 +40,7 @@ const ThemeChanger = ({ className }) => {
       <NavButton className={`${className}`} onClick={() => setTheme("dark")}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="w-6 h-6"
+          className="w-8 h-8"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -59,4 +59,4 @@ const ThemeChanger = ({ className }) => {
   return <div>{renderThemeChanger()}</div>;
 };
 
-export default ThemeChanger;
+export default ThemeToggle;

@@ -1,10 +1,16 @@
-const NavButton = ({ children, className, onClick }) => {
+import React from "react";
+
+const NavButton = React.forwardRef(({ onClick, className, children }, ref) => {
   return (
-    <button onClick={onClick} className={`p-2 hover:scale-105 ${className}`}>
+    <button
+      onClick={onClick}
+      className={`p-2 bg-opacity-0 hover:scale-105 ${className}`}
+      ref={ref}
+    >
       {children}
     </button>
   );
-};
+});
 
 export default NavButton;
 
