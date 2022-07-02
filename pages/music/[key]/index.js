@@ -7,7 +7,7 @@ const music = ({ musicData }) => {
       <h1 className="text-size-header text-primary-light dark:text-primary-dark">
         {musicData.title}
       </h1>
-      <h1 className="text-size-title text-primary-light dark:text-primary-dark">
+      <h1 className="text-size-regular text-primary-light dark:text-primary-dark">
         {musicData.text}
       </h1>
       <br />

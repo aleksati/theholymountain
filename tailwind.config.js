@@ -12,11 +12,12 @@ module.exports = {
         jost: ["Jost", "sans-serif"],
       },
       fontSize: {
+        "size-header-big": ["6rem"], // text-8xl
         "size-header": ["3.75rem"], // text-6xl
         "size-title": ["2.25rem"], // text-4xl
         "size-regular": ["1.25rem"], //text-xl
         "size-small": ["0.875rem"], // text-sm
-      },
+      }, // https://tailwindcss.com/docs/font-size
       backgroundColor: {
         "primary-light": "#fff",
         "secondary-light": "#F6F8FA",

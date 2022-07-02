@@ -2,18 +2,20 @@ const musicData = [
   {
     key: "theholymountain",
     title: "The Holy Mountain",
-    type: "EP",
+    category: "EP",
+    format: ["CD", "Digital"],
     year: "2015",
     text: "bla bla bla",
-    pictures: [],
+    pics: [],
   },
   {
     key: "toadoflight",
     title: "Toad of Light",
-    type: "Album",
+    category: "Album",
+    format: ["LP", "Digital"],
     year: "2018",
     text: "bla bla bla blaaaa",
-    pictures: [],
+    pics: [],
   },
 ];
 
