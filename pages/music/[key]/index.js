@@ -1,9 +1,10 @@
+import LayoutPage from "../../../components/LayoutPage";
 import { server } from "../../../config";
 import Link from "next/link";
 
 const music = ({ musicData }) => {
   return (
-    <div className="flex flex-col items-center justify-center w-full h-screen dark:bg-primary-dark bg-primary-light">
+    <LayoutPage>
       <h1 className="text-size-header text-primary-light dark:text-primary-dark">
         {musicData.title}
       </h1>
@@ -14,7 +15,7 @@ const music = ({ musicData }) => {
       <Link href="/" className="text-size-small">
         Go back!
       </Link>
-    </div>
+    </LayoutPage>
   );
 };
 

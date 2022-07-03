@@ -5,11 +5,11 @@ import { server } from "../config";
 
 export default function Home({ musicData }) {
   return (
-    <>
+    <div className="divide-y divide-gray-300 dark:divide-gray-600">
       <Cover />
       <Music musicData={musicData} />
       <Contact />
-    </>
+    </div>
   );
 }
 

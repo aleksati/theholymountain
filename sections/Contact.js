@@ -1,6 +1,11 @@
+import Button from "../components/Button";
+import LayoutPage from "../components/LayoutPage";
+
 const Contact = () => {
   return (
-    <div className="w-full h-screen bg-secondary-light dark:bg-secondary-dark"></div>
+    <LayoutPage>
+      <Button>Loong button</Button>
+    </LayoutPage>
   );
 };
 

@@ -1,9 +1,10 @@
 import Image from "next/image";
 import cover from "../public/img/cover.jpg";
+import LayoutPage from "../components/LayoutPage";
 
 const Coverpage = () => {
   return (
-    <div className="relative w-full h-screen">
+    <LayoutPage>
       <Image
         objectFit="cover"
         src={cover}
@@ -13,7 +14,7 @@ const Coverpage = () => {
         placeholder="blur"
         priority // should only be used on content above the fold
       />
-    </div>
+    </LayoutPage>
   );
 };
 

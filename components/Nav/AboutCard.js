@@ -6,7 +6,8 @@ import Image from "next/image";
 import { useTheme } from "next-themes";
 
 const AboutCard = React.forwardRef(({ handleClickOutside, navRef }, ref) => {
-  const { theme } = useTheme();
+  const { theme, systemTheme } = useTheme();
+  const currTheme = theme === "system" ? systemTheme : theme;
 
   // handle click outside of the card
   useEffect(() => {
@@ -24,26 +25,21 @@ const AboutCard = React.forwardRef(({ handleClickOutside, navRef }, ref) => {
   }, [navRef, ref]);
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center w-full h-screen backdrop-blur-md">
+    <div className="fixed inset-0 flex items-center justify-center backdrop-brightness-50">
       <div
         ref={ref}
-        className="max-w-sm p-6 rounded-md shadow-md bg-ternary-light dark:bg-ternary-dark"
+        className="max-w-sm p-6 rounded-md shadow-md bg-primary-light dark:bg-primary-dark"
       >
-        {/* <h1 className="mb-2 text-primary-light dark:text-primary-dark text-size-title">
-          The Holy Mountain
-        </h1> */}
         <Image
-          src={theme === "dark" ? logoWhite : logoBlack}
+          src={currTheme === "dark" ? logoWhite : logoBlack}
           alt="logo"
           placeholder="blur"
         />
-        <div className="space-y-6 divide-y divide-gray-400">
-          <p className="text-secondary-light dark:text-secondary-dark text-size-regular">
-            An avant-garde pop group from Norway with Accordion, Synthesizer,
-            Drums, and Vocals. Check out our new album..
-          </p>
-          <SoMeBar iconSize="text-2xl" excludes={["nothing"]} className="p-4" />
-        </div>
+        <p className="text-secondary-light dark:text-secondary-dark text-size-regular">
+          An avant-garde pop group from Norway with Accordion, Synthesizer,
+          Drums, and Vocals. Check out our new album..
+        </p>
+        <SoMeBar iconSize="text-xl" excludes={["nothing"]} className="p-4" />
       </div>
     </div>
   );

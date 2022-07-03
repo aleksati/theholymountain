@@ -20,8 +20,13 @@ const Nav = () => {
         />
       ) : null}
       <div className="fixed flex space-x-2 right-4 bottom-4">
-        <AboutToggle handleClick={handleClick} isAbout={isAbout} ref={navRef} />
-        <ThemeToggle />
+        <AboutToggle
+          iconSize={"text-md"}
+          handleClick={handleClick}
+          isAbout={isAbout}
+          ref={navRef}
+        />
+        <ThemeToggle iconSize={"text-md"} />
       </div>
     </>
   );

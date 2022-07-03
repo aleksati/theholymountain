@@ -1,17 +1,21 @@
 import { FiFacebook, FiInstagram, FiYoutube } from "react-icons/fi";
 import { FaBandcamp } from "react-icons/fa";
 
+import { BsFacebook } from "react-icons/bs";
+import { AiFillYoutube } from "react-icons/ai";
+import { RiInstagramFill } from "react-icons/ri";
+
 const SoMeBar = ({ iconSize, excludes = [], className }) => {
   const some = [
     {
       key: "facebook",
       url: "https://www.facebook.com/theholymountaintrio",
-      html: <FiFacebook className={`${iconSize}`} />,
+      html: <BsFacebook className={`${iconSize}`} />,
     },
     {
       key: "instagram",
       url: "https://www.instagram.com/theholymountaintrio/",
-      html: <FiInstagram className={`${iconSize}`} />,
+      html: <RiInstagramFill className={`${iconSize}`} />,
     },
     {
       key: "bandcamp",
@@ -21,7 +25,7 @@ const SoMeBar = ({ iconSize, excludes = [], className }) => {
     {
       key: "youtube",
       url: "https://www.youtube.com/channel/UCdjPuoIdC6-EDb_tR5h9ayg",
-      html: <FiYoutube className={`${iconSize}`} />,
+      html: <AiFillYoutube className={`${iconSize}`} />,
     },
   ];
 

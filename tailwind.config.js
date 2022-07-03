@@ -22,7 +22,7 @@ module.exports = {
         "primary-light": "#fff",
         "secondary-light": "#F6F8FA",
         "ternary-light": "#e2e8f0", // ternary is used for buttons and card backgrounds. everything else than page backgriounds.
-        "primary-dark": "#111827", // #0d2438 - old one
+        "primary-dark": "#211F24", // #111827 - old one // Ny jævlig fin #211F24 fra snapshot.org
         "secondary-dark": "#0A192F", // #102c44c - old one
         "ternary-dark": "#2d3748", // ternary is used for buttons and card backgrounds. everything else than page backgriounds.
         "button-light": "#37BDF8",
@@ -33,6 +33,10 @@ module.exports = {
         "secondary-light": "#2d3748", // for text and small text
         "primary-dark": "#fff",
         "secondary-dark": "#fff",
+      },
+      border: {
+        custom:
+          "border-gray-300 dark:border-gray-600 hover:border-black hover:dark:border-white rounded-full transistion ease-in-out duration-200",
       },
     },
   },

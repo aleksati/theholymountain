@@ -1,13 +1,13 @@
-import Layout from "../components/Layout";
+import LayoutApp from "../components/LayoutApp";
 import "../styles/globals.css";
 import { ThemeProvider } from "next-themes";
 
 const MyApp = ({ Component, pageProps }) => {
   return (
     <ThemeProvider attribute="class">
-      <Layout>
+      <LayoutApp>
         <Component {...pageProps} />
-      </Layout>
+      </LayoutApp>
     </ThemeProvider>
   );
 };
