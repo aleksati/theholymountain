@@ -1,6 +1,8 @@
 import React from "react";
 import Image from "next/image";
-import ToggleRelease from "./ToggleRelease";
+import LayoutReleaseCardToggles from "./LayoutReleaseCardToggles";
+import ToggleReleaseAudio from "./ToggleReleaseAudio";
+import ToggleReleaseDetails from "./ToggleReleaseDetails";
 
 const CardReleasePhoto = React.forwardRef(({ release, onClick }, ref) => (
   <div className="relative justify-center mt-4 mb-4 group">
@@ -15,7 +17,10 @@ const CardReleasePhoto = React.forwardRef(({ release, onClick }, ref) => (
       objectFit="contain"
       blurDataURL={`/img/placeholders/${release.key}.png`}
     />
-    <ToggleRelease release={release} onClick={onClick} ref={ref} />
+    <LayoutReleaseCardToggles>
+      <ToggleReleaseDetails release={release} />
+      <ToggleReleaseAudio onClick={onClick} ref={ref} />
+    </LayoutReleaseCardToggles>
   </div>
 ));
 

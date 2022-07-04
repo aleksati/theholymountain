@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import CardReleasePhoto from "./CardReleasePhoto";
 import CardReleaseInfo from "./CardReleaseInfo";
-import ListenRelease from "./ListenRelease";
+import AudioPlayer from "./AudioPlayer";
 import CardPopup from "./CardPopup";
 import Card from "./Card";
 
@@ -13,14 +13,14 @@ const releaseCard = ({ release }) => {
   const handleClick = () => setIsListen(prevstate => !prevstate);
 
   return (
-    <>
+    <div>
       <CardPopup
         handleClickOutside={handleClick}
         condition={isListen}
         toggleRef={toggleRef}
         ref={popupRef}
       >
-        <ListenRelease />
+        <AudioPlayer className={"p-4"} />
       </CardPopup>
       <Card showCloseButton={false} showShadow={false}>
         <CardReleasePhoto
@@ -30,7 +30,7 @@ const releaseCard = ({ release }) => {
         />
         <CardReleaseInfo release={release} />
       </Card>
-    </>
+    </div>
   );
 };
 
