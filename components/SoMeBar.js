@@ -1,11 +1,10 @@
-import { FiFacebook, FiInstagram, FiYoutube } from "react-icons/fi";
 import { FaBandcamp } from "react-icons/fa";
-
 import { BsFacebook } from "react-icons/bs";
 import { AiFillYoutube } from "react-icons/ai";
 import { RiInstagramFill } from "react-icons/ri";
+import { BsSpotify } from "react-icons/bs";
 
-const SoMeBar = ({ iconSize, excludes = [], className }) => {
+const SoMeBar = ({ iconSize, exclude = [], className }) => {
   const some = [
     {
       key: "facebook",
@@ -27,12 +26,17 @@ const SoMeBar = ({ iconSize, excludes = [], className }) => {
       url: "https://www.youtube.com/channel/UCdjPuoIdC6-EDb_tR5h9ayg",
       html: <AiFillYoutube className={`${iconSize}`} />,
     },
+    {
+      key: "spotify",
+      url: "https://open.spotify.com/artist/04GXo6z6x1KLMG9weDPayK?si=rzFLNrlkTvml0zaKqo_tuQ",
+      html: <BsSpotify className={`${iconSize}`} />,
+    },
   ];
 
   return (
-    <div className={`flex flex-row justify-around ${className}`}>
+    <div className={`flex flex-row ${className}`}>
       {some.map(some => {
-        if (excludes.includes(some.key)) return;
+        if (exclude.includes(some.key)) return;
         return (
           <a key={some.key} href={some.url}>
             {some.html}

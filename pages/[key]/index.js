@@ -1,19 +1,19 @@
-import LayoutPage from "../../../components/LayoutPage";
-import { server } from "../../../config";
+import LayoutPage from "../../components/LayoutPage";
+import { server } from "../../config";
 import Link from "next/link";
 
-const music = ({ musicData }) => {
+const release = ({ releaseData }) => {
   return (
     <LayoutPage>
       <h1 className="text-size-header text-primary-light dark:text-primary-dark">
-        {musicData.title}
+        {releaseData.title}
       </h1>
       <h1 className="text-size-regular text-primary-light dark:text-primary-dark">
-        {musicData.text}
+        {releaseData.text}
       </h1>
       <br />
-      <Link href="/" className="text-size-small">
-        Go back!
+      <Link href="/#music" className="text-size-small">
+        <a>Go back!</a>
       </Link>
     </LayoutPage>
   );
@@ -21,12 +21,12 @@ const music = ({ musicData }) => {
 
 // fetch individual banddata we need based on the url
 export const getStaticProps = async context => {
-  const res = await fetch(`${server}/api/music/${context.params.key}`);
-  const musicData = await res.json();
+  const res = await fetch(`${server}/api/release/${context.params.key}`);
+  const releaseData = await res.json();
 
   return {
     props: {
-      musicData,
+      releaseData,
     },
   };
 };
@@ -34,9 +34,9 @@ export const getStaticProps = async context => {
 // in this context, must return an object with format:
 // {paths : {params: {id: "1", id: "2", id: "3" "etc"}}}
 export const getStaticPaths = async () => {
-  const res = await fetch(`${server}/api/music`);
-  const musicData = await res.json();
-  const keys = musicData.map(article => article.key);
+  const res = await fetch(`${server}/api/release`);
+  const releaseData = await res.json();
+  const keys = releaseData.map(article => article.key);
   const paths = keys.map(key => ({ params: { key: key.toString() } }));
 
   return {
@@ -45,4 +45,4 @@ export const getStaticPaths = async () => {
   };
 };
 
-export default music;
+export default release;

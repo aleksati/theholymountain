@@ -1,9 +1,9 @@
-import musicData from "../../../text/musicData";
+import releaseData from "../../../data/releaseData";
 
 export default function handler(req, res) {
   // sort the data in decending order according to year
-  const sortedMusicData = musicData.sort(
+  const sortedReleaseData = releaseData.sort(
     (a, b) => Number(b.year) - Number(a.year)
   );
-  res.status(200).json(musicData);
+  res.status(200).json(sortedReleaseData);
 }

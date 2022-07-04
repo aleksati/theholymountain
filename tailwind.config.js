@@ -30,9 +30,9 @@ module.exports = {
       },
       colors: {
         "primary-light": "#000", // for header and titles
-        "secondary-light": "#2d3748", // for text and small text
+        secondary: "#6b7280", // for text and small text
         "primary-dark": "#fff",
-        "secondary-dark": "#fff",
+        // "secondary-dark": "#6b7280",
       },
       border: {
         custom:

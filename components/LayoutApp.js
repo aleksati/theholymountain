@@ -1,12 +1,12 @@
 import Meta from "./Meta";
-import Nav from "./Nav";
+import Nav from "../sections/Nav";
 import Footer from "../sections/Footer";
 
-const LayoutApp = ({ children }) => {
+const LayoutApp = ({ children, appMeta }) => {
   return (
     <>
-      <Meta />
-      <main className="flex-grow ">
+      <Meta {...appMeta} />
+      <main className="flex-grow">
         {children}
         <Nav />
       </main>

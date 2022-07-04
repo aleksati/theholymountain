@@ -1,13 +1,11 @@
-import { BsFillSunFill, BsFillMoonFill } from "react-icons/bs";
 import { useState, useEffect } from "react";
-import { useTheme } from "next-themes";
-import Button from "../Button";
+import Button from "./Button";
+import getCurrTheme from "../utils/getCurrTheme";
+import { BsFillSunFill, BsFillMoonFill } from "react-icons/bs";
 
-const ThemeToggle = ({ iconSize }) => {
-  const { systemTheme, theme, setTheme } = useTheme();
+const ToggleTheme = ({ iconSize }) => {
   const [mounted, setMounted] = useState(false);
-
-  const currTheme = theme === "system" ? systemTheme : theme;
+  const { currTheme, setTheme } = getCurrTheme();
 
   useEffect(() => {
     setMounted(true);
@@ -29,4 +27,4 @@ const ThemeToggle = ({ iconSize }) => {
   );
 };
 
-export default ThemeToggle;
+export default ToggleTheme;

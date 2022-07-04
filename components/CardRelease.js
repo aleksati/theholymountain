@@ -1,55 +1,36 @@
-import Button from "../Button";
-import Link from "next/link";
-import Image from "next/image";
-import { AiFillPlayCircle } from "react-icons/ai";
+import { useRef, useState } from "react";
+import CardReleasePhoto from "./CardReleasePhoto";
+import CardReleaseInfo from "./CardReleaseInfo";
+import ListenRelease from "./ListenRelease";
+import CardPopup from "./CardPopup";
+import Card from "./Card";
 
 const releaseCard = ({ release }) => {
+  const [isListen, setIsListen] = useState(false);
+  const toggleRef = useRef(null);
+  const popupRef = useRef(null);
+
+  const handleClick = () => setIsListen(prevstate => !prevstate);
+
   return (
-    <div className="p-4 duration-200 bg-primary-light dark:bg-primary-dark grow">
-      <div className="relative justify-center mt-4 mb-4 group">
-        <Image
-          className="rounded-md shadow-md"
-          src={`/img/${release.key}.png`}
-          alt={`${release.title} card image`}
-          placeholder="blur"
-          width="100%"
-          height="100%"
-          layout="responsive"
-          objectFit="contain"
-          blurDataURL={`/img/placeholders/${release.key}.png`}
+    <>
+      <CardPopup
+        handleClickOutside={handleClick}
+        condition={isListen}
+        toggleRef={toggleRef}
+        ref={popupRef}
+      >
+        <ListenRelease />
+      </CardPopup>
+      <Card showCloseButton={false} showShadow={false}>
+        <CardReleasePhoto
+          ref={toggleRef}
+          release={release}
+          onClick={handleClick}
         />
-        <div className="absolute inset-0 items-center justify-center hidden rounded-md shadow-md group-hover:flex backdrop-brightness-50">
-          <div className="z-50 flex space-x-2 text-size-regular">
-            <Link href={`/music/${release.key}`}>
-              <Button
-                colorStyle={
-                  "border-gray-600 hover:border-white text-primary-dark"
-                }
-              >
-                Details
-              </Button>
-            </Link>
-            <Link href={`/music/${release.key}`}>
-              <Button
-                colorStyle={
-                  "border-gray-600 hover:border-white text-primary-dark"
-                }
-              >
-                Listen
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </div>
-      <div className="">
-        <h2 className="tracking-tight text-center text-size-regular text-primary-light dark:text-primary-dark">
-          {release.title}
-        </h2>
-        <p className="text-center opacity-60 text-size-small text-secondary-light dark:text-secondary-dark">
-          {release.category}
-        </p>
-      </div>
-    </div>
+        <CardReleaseInfo release={release} />
+      </Card>
+    </>
   );
 };
 

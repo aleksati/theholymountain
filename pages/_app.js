@@ -1,6 +1,6 @@
 import LayoutApp from "../components/LayoutApp";
-import "../styles/globals.css";
 import { ThemeProvider } from "next-themes";
+import "../styles/globals.css";
 
 const MyApp = ({ Component, pageProps }) => {
   return (

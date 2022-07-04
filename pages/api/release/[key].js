@@ -1,7 +1,7 @@
-import musicData from "../../../text/musicData";
+import releaseData from "../../../data/releaseData";
 
 export default function handler({ query: { key } }, res) {
-  const filtered = musicData.filter(article => article.key === key);
+  const filtered = releaseData.filter(release => release.key === key);
   if (filtered.length > 0) return res.status(200).json(filtered[0]);
   return res
     .status(404)
