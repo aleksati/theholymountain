@@ -1,7 +1,7 @@
 const musicData = [
   {
     key: "toadoflight",
-    title: "Toad Of Light",
+    title: "Toad of Light",
     category: "Album",
     format: ["LP", "Digital"],
     year: "2018",
@@ -19,10 +19,19 @@ const musicData = [
   },
   {
     key: "endingitalltonight",
-    title: "Ending It All Tonight",
+    title: "Ending it All Tonight",
     category: "Album",
     format: ["Cassette", "Digital"],
     year: "2022",
+    text: "bla bla blalll blabla",
+    pics: [],
+  },
+  {
+    key: "finite",
+    title: "FINITE",
+    category: "Album",
+    format: ["Cassette", "Digital"],
+    year: "2016",
     text: "bla bla blalll blabla",
     pics: [],
   },

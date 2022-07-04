@@ -35,9 +35,9 @@ const AboutCard = React.forwardRef(({ handleClickOutside, navRef }, ref) => {
           alt="logo"
           placeholder="blur"
         />
-        <p className="text-secondary-light dark:text-secondary-dark text-size-regular">
+        <p className="mb-4 text-secondary-light dark:text-secondary-dark text-size-regular">
           An avant-garde pop group from Norway with Accordion, Synthesizer,
-          Drums, and Vocals. Check out our new album..
+          Drums, and Vocals.
         </p>
         <SoMeBar iconSize="text-xl" excludes={["nothing"]} className="p-4" />
       </div>
