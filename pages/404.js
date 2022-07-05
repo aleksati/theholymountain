@@ -4,7 +4,7 @@ import CoverPhoto from "../components/CoverPhoto";
 import Button from "../components/Button";
 import Link from "next/link";
 
-const img = "/img/404.png";
+const src = "/img/404.png";
 const placeholder = "/img/placeholders/cover.jpg";
 
 const FourOhFour = () => {
@@ -15,7 +15,7 @@ const FourOhFour = () => {
   };
   return (
     <LayoutPage id="404" pageMeta={meta}>
-      <CoverPhoto img={img} placeholder={placeholder} />
+      <CoverPhoto imgSrc={src} placeholder={placeholder} />
       <CoverTextPoster>
         <h1 className="text-size-header-big">Page Not Found</h1>
         <Link href="/" passHref>

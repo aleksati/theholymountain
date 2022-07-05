@@ -34,10 +34,23 @@ module.exports = {
         "primary-dark": "#fff",
         // "secondary-dark": "#6b7280",
       },
-      border: {
-        custom:
-          "border-gray-300 dark:border-gray-600 hover:border-black hover:dark:border-white rounded-full transistion ease-in-out duration-200",
+      keyframes: {
+        // for the tooltip to appear after a given duration
+        tooltip_show: {
+          "0%": { visibility: "hidden", opacity: "0" },
+          "15%": { visibility: "hidden", opacity: "0" },
+          "100%": { visibility: "visible", opacity: "100" },
+        },
       },
+      animation: {
+        tooltip_show: "tooltip_show 6s ease forwards", // specify the duration here.
+      },
+    },
+  },
+  variants: {
+    extend: {
+      width: ["hover"],
+      animation: ["group-hover"],
     },
   },
   plugins: [],

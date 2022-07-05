@@ -1,11 +1,11 @@
 import Meta from "./Meta";
 
-const LayoutPage = ({ children, id, className, pageMeta }) => {
+const LayoutPage = ({ children, id, className = "", pageMeta }) => {
   return (
     <>
       <Meta {...pageMeta} />
       <div
-        className={`relative container-xl w-full min-h-screen dark:bg-primary-dark bg-primary-light ${className}`}
+        className={`relative w-full min-h-screen dark:bg-primary-dark bg-primary-light ${className}`}
         id={id}
       >
         {children}

@@ -3,45 +3,42 @@ import logoBlack from "../public/img/logo-black.png";
 import getCurrTheme from "../utils/getCurrTheme";
 import { useState, useRef } from "react";
 import ToggleTheme from "../components/ToggleTheme";
-import ToggleAbout from "../components/ToggleAbout";
 import CardPopup from "../components/CardPopup";
-import SoMeBar from "../components/SoMeBar";
-import Image from "next/image";
+import CardAboutContent from "../components/CardAboutContent";
+import { RiQuestionMark } from "react-icons/ri";
+import Button from "../components/Button";
 
 const Nav = () => {
   const [isAbout, setIsAbout] = useState(false);
   const { currTheme } = getCurrTheme();
   const popupRef = useRef(null);
 
+  const handleClick = () => setIsAbout(prevstate => !prevstate);
+
   return (
     <>
       <CardPopup
-        handleClickOutside={() => setIsAbout(prevstate => !prevstate)}
+        handleClickOutside={handleClick}
         condition={isAbout}
         closeButton={false}
         ref={popupRef}
+        className="p-4"
       >
-        <Image
-          src={currTheme === "dark" ? logoWhite : logoBlack}
-          alt="logo"
-          placeholder="blur"
-        />
-        <p className="mb-4 text-primary-light dark:text-primary-dark text-size-regular">
-          An avant-garde pop group from Norway with Accordion, Synthesizer,
-          Drums, and Vocals.
-        </p>
-        <SoMeBar
-          iconSize="text-xl"
-          exclude={["nothing"]}
-          className="justify-around p-4"
+        <CardAboutContent
+          imgSrc={currTheme === "dark" ? logoWhite : logoBlack}
         />
       </CardPopup>
       <div className="fixed flex space-x-2 right-4 bottom-4">
-        <ToggleAbout
-          iconSize={"text-md"}
-          handleClick={() => setIsAbout(prevstate => !prevstate)}
-          isAbout={isAbout}
-        />
+        {!isAbout ? (
+          <Button
+            onClick={handleClick}
+            showTooltip={true}
+            tooltipMessage="About"
+          >
+            <RiQuestionMark className={"text-md"} />
+          </Button>
+        ) : null}
+
         <ToggleTheme iconSize={"text-md"} />
       </div>
     </>

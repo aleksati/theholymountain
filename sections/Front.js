@@ -2,12 +2,12 @@ import LayoutPage from "../components/LayoutPage";
 import CoverPhoto from "../components/CoverPhoto";
 import CoverTextPoster from "../components/CoverTextPoster";
 
-const img = "/img/cover.jpg";
+const src = "/img/cover.jpg";
 const placeholder = "/img/placeholders/cover.jpg";
 
 const Front = () => (
   <LayoutPage id="front">
-    <CoverPhoto img={img} placeholder={placeholder} />
+    <CoverPhoto imgSrc={src} placeholder={placeholder} />
   </LayoutPage>
 );
 

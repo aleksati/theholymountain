@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import Card from "./Card";
 
 const CardPopup = React.forwardRef(
-  ({ handleClickOutside, condition, children }, ref) => {
+  ({ handleClickOutside, condition, children, className }, ref) => {
     // handle click outside of the card
     useEffect(() => {
       const onClickOutside = event => {
@@ -20,7 +20,7 @@ const CardPopup = React.forwardRef(
       <>
         {condition ? (
           <div className="fixed inset-0 z-50 flex items-center justify-center backdrop-brightness-50">
-            <Card showCloseButton={false} ref={ref} className="p-4">
+            <Card showCloseButton={false} ref={ref} className={className}>
               {children}
             </Card>
           </div>

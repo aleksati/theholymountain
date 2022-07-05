@@ -1,11 +1,11 @@
 export const Tooltip = ({ message, children }) => (
-  <div className="relative flex flex-col items-center group">
+  <div className="relative inline-block group">
     {children}
-    <div className="absolute bottom-0 flex-col items-center hidden mb-6 transition duration-300 ease-in-out group-hover:flex">
-      <span className="relative z-10 p-2 text-xs leading-none text-white whitespace-no-wrap bg-gray-600 rounded-md shadow-lg">
+    <div className="absolute bottom-0 flex flex-col items-center invisible mb-12 -ml-1 opacity-0 group-hover:animate-tooltip_show">
+      <span className="relative z-10 p-2 leading-none rounded-md shadow-md opacity-100 dark:bg-primary-dark bg-primary-light text-primary-light dark:text-primary-dark text-size-small brightness-95 dark:brightness-110">
         {message}
       </span>
-      <div className="w-3 h-3 -mt-2 rotate-45 bg-gray-600"></div>
+      <div className="w-3 h-3 -mt-2 rotate-45 shadow-md z-9 dark:bg-primary-dark bg-primary-light dark:text-primary-dark"></div>
     </div>
   </div>
 );

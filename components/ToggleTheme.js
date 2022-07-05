@@ -17,7 +17,7 @@ const ToggleTheme = ({ iconSize }) => {
   if (!mounted) return null;
 
   return (
-    <Button onClick={handleClick}>
+    <Button onClick={handleClick} showTooltip={true} tooltipMessage="Theme">
       {currTheme === "dark" ? (
         <BsFillSunFill className={iconSize} />
       ) : (

@@ -1,35 +1,41 @@
 import { useRef, useState } from "react";
-import CardReleasePhoto from "./CardReleasePhoto";
 import CardReleaseInfo from "./CardReleaseInfo";
 import AudioPlayer from "./AudioPlayer";
 import CardPopup from "./CardPopup";
+import CardReleaseContent from "./CardReleaseContent";
 import Card from "./Card";
 
 const releaseCard = ({ release }) => {
   const [isListen, setIsListen] = useState(false);
-  const toggleRef = useRef(null);
+  const audioToggleRef = useRef(null);
   const popupRef = useRef(null);
 
   const handleClick = () => setIsListen(prevstate => !prevstate);
 
   return (
-    <div>
+    <div className="place-items-center">
       <CardPopup
         handleClickOutside={handleClick}
         condition={isListen}
-        toggleRef={toggleRef}
+        toggleRef={audioToggleRef}
         ref={popupRef}
+        className="p-4"
       >
-        <AudioPlayer className={"p-4"} />
+        <AudioPlayer />
       </CardPopup>
-      <Card showCloseButton={false} showShadow={false}>
-        <CardReleasePhoto
-          ref={toggleRef}
+      <Card
+        showCloseButton={false}
+        showShadow={false}
+        className="mt-4 mb-4"
+        maxWidth="override"
+      >
+        <CardReleaseContent
           release={release}
+          ref={audioToggleRef}
           onClick={handleClick}
         />
-        <CardReleaseInfo release={release} />
       </Card>
+      <CardReleaseInfo release={release} />
     </div>
   );
 };
