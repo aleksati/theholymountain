@@ -19,14 +19,14 @@ const Button = React.forwardRef(
       : "border-gray-300 dark:border-gray-600 hover:border-black hover:dark:border-white";
 
     const renderLink = () => (
-      <a
+      <button
         onClick={onClick}
         className={`p-3 flex bg-primary-light dark:bg-primary-dark border ${color} rounded-full transistion ease-in-out duration-200 ${className}`}
         ref={ref}
         {...props}
       >
         {children}
-      </a>
+      </button>
     );
 
     if (showTooltip) {

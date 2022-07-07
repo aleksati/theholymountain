@@ -5,7 +5,7 @@ import Button from "../components/Button";
 import Link from "next/link";
 
 const src = "/img/404.png";
-const placeholder = "/img/placeholders/cover.jpg";
+const placeholder = "/img/placeholders/404.png";
 
 const FourOhFour = () => {
   const meta = {
@@ -13,6 +13,7 @@ const FourOhFour = () => {
     description: "Oops! It looks like this page is lost in space somewhere!",
     // url: `${SITE_DOMAIN}/404`,
   };
+
   return (
     <LayoutPage id="404" pageMeta={meta}>
       <CoverPhoto imgSrc={src} placeholder={placeholder} />

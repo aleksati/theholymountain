@@ -1,46 +1,91 @@
 import { useRef, useState } from "react";
-import CardReleaseInfo from "./CardReleaseInfo";
-import AudioPlayer from "./AudioPlayer";
+import CardReleaseDetails from "./CardReleaseDetails";
+import CardReleaseAudio from "./CardReleaseAudio";
 import CardPopup from "./CardPopup";
-import CardReleaseContent from "./CardReleaseContent";
+import Button from "./Button";
+import Image from "next/image";
 import Card from "./Card";
+import Icon from "./Icon";
 
-const releaseCard = ({ release }) => {
+const CardRelease = ({ release }) => {
   const [isListen, setIsListen] = useState(false);
-  const audioToggleRef = useRef(null);
+  const [isDetails, setIsDetails] = useState(false);
   const popupRef = useRef(null);
 
-  const handleClick = () => setIsListen(prevstate => !prevstate);
+  const handleClickListen = () => setIsListen(prevstate => !prevstate);
+  const handleClickDetails = () => setIsDetails(prevstate => !prevstate);
+  const closePopup = () => {
+    setIsDetails(false);
+    setIsListen(false);
+  };
 
   return (
     <div className="place-items-center">
-      <CardPopup
-        handleClickOutside={handleClick}
-        condition={isListen}
-        toggleRef={audioToggleRef}
-        ref={popupRef}
-        className="p-4"
-      >
-        <AudioPlayer />
-      </CardPopup>
+      {isListen || isDetails ? (
+        <CardPopup
+          className="max-w-4xl max-h-screen p-4 overflow-auto"
+          handleClickOutside={closePopup}
+          showCloseButton={true}
+          ref={popupRef}
+        >
+          {isListen ? (
+            <CardReleaseAudio url={release.spotifyurl} />
+          ) : (
+            <CardReleaseDetails release={release} />
+          )}
+        </CardPopup>
+      ) : null}
       <Card
         showCloseButton={false}
         showShadow={false}
         className="mt-4 mb-4"
         maxWidth="override"
       >
-        <CardReleaseContent
-          release={release}
-          ref={audioToggleRef}
-          onClick={handleClick}
-        />
+        <div className="relative">
+          <Image
+            className="rounded-md shadow-md"
+            src={`/img/${release.key}.png`}
+            alt={`${release.title} cover`}
+            placeholder="blur"
+            width="100%"
+            height="100%"
+            layout="responsive"
+            objectFit="contain"
+            blurDataURL={`/img/placeholders/${release.key}.png`}
+          />
+          <div className="absolute inset-0 flex items-center justify-center transition duration-200 ease-in-out rounded-md shadow-md opacity-0 hover:opacity-100 backdrop-brightness-50">
+            <div className="flex space-x-2 text-size-regular">
+              <Button
+                onClick={handleClickDetails}
+                showTooltip={true}
+                tooltipMessage="Details"
+              >
+                <Icon id="details" />
+              </Button>
+              <Button
+                onClick={handleClickListen}
+                showTooltip={true}
+                tooltipMessage="Listen"
+              >
+                <Icon id="audio" />
+              </Button>
+            </div>
+          </div>
+        </div>
       </Card>
-      <CardReleaseInfo release={release} />
+      <div>
+        <h2 className="tracking-tight text-center text-size-title text-primary-light dark:text-primary-dark">
+          {release.title}
+        </h2>
+        <p className="text-center text-secondary text-size-regular">
+          {release.category} / {release.year}
+        </p>
+      </div>
     </div>
   );
 };
 
-export default releaseCard;
+export default CardRelease;
 
 // Mer streit som Simon siden:
 /* <div className="p-4 duration-200 basis-1/2 md:basis-1/3 lg:basis-1/4 bg-primary-light dark:bg-primary-dark transistion grow">

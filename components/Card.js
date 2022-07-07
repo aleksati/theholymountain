@@ -1,6 +1,6 @@
 import React from "react";
+import Icon from "./Icon";
 import Button from "./Button";
-import { RiCloseLine } from "react-icons/ri";
 
 const Card = React.forwardRef(
   (
@@ -10,6 +10,7 @@ const Card = React.forwardRef(
       maxWidth,
       children,
       showShadow = true,
+      handleClickOutside,
     },
     ref
   ) => {
@@ -22,8 +23,8 @@ const Card = React.forwardRef(
       >
         {showCloseButton ? (
           <div className="flex place-content-end">
-            <Button onClick={() => handleClickOutside()}>
-              <RiCloseLine className={"text-md"} />
+            <Button onClick={handleClickOutside}>
+              <Icon id="closeButton" />
             </Button>
           </div>
         ) : null}

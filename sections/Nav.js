@@ -1,12 +1,13 @@
+import { useState, useRef } from "react";
 import logoWhite from "../public/img/logo-white.png";
 import logoBlack from "../public/img/logo-black.png";
 import getCurrTheme from "../utils/getCurrTheme";
-import { useState, useRef } from "react";
 import ToggleTheme from "../components/ToggleTheme";
 import CardPopup from "../components/CardPopup";
-import CardAboutContent from "../components/CardAboutContent";
-import { RiQuestionMark } from "react-icons/ri";
+import CardAbout from "../components/CardAbout";
 import Button from "../components/Button";
+
+import Icon from "../components/Icon";
 
 const Nav = () => {
   const [isAbout, setIsAbout] = useState(false);
@@ -17,17 +18,16 @@ const Nav = () => {
 
   return (
     <>
-      <CardPopup
-        handleClickOutside={handleClick}
-        condition={isAbout}
-        closeButton={false}
-        ref={popupRef}
-        className="p-4"
-      >
-        <CardAboutContent
-          imgSrc={currTheme === "dark" ? logoWhite : logoBlack}
-        />
-      </CardPopup>
+      {isAbout ? (
+        <CardPopup
+          handleClickOutside={handleClick}
+          closeButton={false}
+          ref={popupRef}
+          className="p-6"
+        >
+          <CardAbout imgSrc={currTheme === "dark" ? logoWhite : logoBlack} />
+        </CardPopup>
+      ) : null}
       <div className="fixed flex space-x-2 right-4 bottom-4">
         {!isAbout ? (
           <Button
@@ -35,11 +35,11 @@ const Nav = () => {
             showTooltip={true}
             tooltipMessage="About"
           >
-            <RiQuestionMark className={"text-md"} />
+            <Icon id="about" />
           </Button>
         ) : null}
 
-        <ToggleTheme iconSize={"text-md"} />
+        <ToggleTheme />
       </div>
     </>
   );

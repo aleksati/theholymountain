@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
-import Button from "./Button";
 import getCurrTheme from "../utils/getCurrTheme";
-import { BsFillSunFill, BsFillMoonFill } from "react-icons/bs";
+import Icon from "./Icon";
+import Button from "./Button";
 
-const ToggleTheme = ({ iconSize }) => {
+const ToggleTheme = () => {
   const [mounted, setMounted] = useState(false);
   const { currTheme, setTheme } = getCurrTheme();
 
@@ -18,11 +18,7 @@ const ToggleTheme = ({ iconSize }) => {
 
   return (
     <Button onClick={handleClick} showTooltip={true} tooltipMessage="Theme">
-      {currTheme === "dark" ? (
-        <BsFillSunFill className={iconSize} />
-      ) : (
-        <BsFillMoonFill className={iconSize} />
-      )}
+      {currTheme === "dark" ? <Icon id="sun" /> : <Icon id="moon" />}
     </Button>
   );
 };
