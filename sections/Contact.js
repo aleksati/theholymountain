@@ -2,6 +2,8 @@ import { useState } from "react";
 import LayoutPage from "../components/LayoutPage";
 import Button from "../components/Button";
 
+// CONTACT IS NOW A NAV ITEM..
+
 const Contact = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -60,7 +62,7 @@ const Contact = () => {
 
   return (
     <LayoutPage id="contact" className="pb-4 ">
-      <h1 className="mt-4 overflow-hidden text-center text-clip text-size-header-big">
+      <h1 className="mt-4 overflow-hidden text-center text-clip text-size-header sm:text-size-header-big">
         CONTACT
       </h1>
       <div className="flex flex-col items-center justify-center p-4">

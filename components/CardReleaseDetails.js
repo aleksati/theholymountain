@@ -5,16 +5,16 @@ const CardReleaseDetails = ({ release }) => {
   return (
     <div
       id={release.key}
-      className="flex flex-col items-center space-y-2 md:space-y-0 md:items-start md:flex-row"
+      className="flex flex-col items-center space-y-2 text-size-small md:text-size-regular md:space-y-0 sm:flex-row"
     >
       <Slideshow imgSlugs={release.slideshow} />
       <div className="px-4 space-y-2 text-primary-light dark:text-primary-dark">
         <h1 className="text-size-title">{release.title}</h1>
-        <p className="text-size-regular text-secondary">
+        <p className="text-secondary">
           {release.format} - {release.price} kr
         </p>
         <Button className="w-40 place-content-center">Buy</Button>
-        <p className="text-size-regular">{release.text}</p>
+        <p>{release.text}</p>
         <div>
           {release.credits.map((credit, index) => (
             <p key={index} className="text-size-small text-secondary">

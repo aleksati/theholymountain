@@ -6,11 +6,10 @@ const releaseData = [
     format: "Vinyl",
     price: "150",
     year: "2018",
-    text: "Toad og Light is our four-part debut album inspired by dystopian sci-fi visions and cult-aesthetics. The release features cover art by the legendary comic book artist Phillippe Druillet and was complemented by a short film directed by Marius Rolfsvåg.",
+    text: "Toad og Light is a four-part psychedelic album inspired by dystopian sci-fi visions and cult-aesthetics. The release features cover art by the legendary comic book artist Phillippe Druillet and was complemented by a film directed by Marius Rolfsvåg.",
     credits: [
       "Recorded and Mixed by Dag Erik Johansen",
       "Mastered by Alex Wharton",
-      "Produced by The Holy Mountain",
     ],
     slideshow: ["toadoflight", "toadoflight2", "toadoflight3"],
     spotifyurl:
@@ -23,12 +22,11 @@ const releaseData = [
     format: "Limited Edition CD",
     price: "100",
     year: "2015",
-    text: "Through 30 minutes of accordion, sawtooth synthesizers and drums, The Holy Mountain takes the listener on a journey through the underworld towards the light. Visually, the release was complemented by original artwork by Martin Marki & Bjørn Erik Nyhus.",
+    text: "The Holy Mountain EP takes you on a journey through the underworld towards the light. The release was complemented by original artwork by Martin Marki & Bjørn Erik Nyhus.",
     credits: [
       "Recorded by Emil Kraugerud",
       "Mixed by Eivind Wahlberg",
       "Mastered by Audun Strype",
-      "Produced by The Holy Mountain",
     ],
     slideshow: ["theholymountain", "theholymountain2", "theholymountain3"],
     spotifyurl:
@@ -45,7 +43,6 @@ const releaseData = [
     credits: [
       "Recorded and mixed by Aleksander Tidemann",
       "Mastered by Frode Berg",
-      "Produced by The Holy Mountain",
     ],
     slideshow: [
       "endingitalltonight",
@@ -63,10 +60,7 @@ const releaseData = [
     price: "100",
     year: "2016",
     text: "FINITE is a short film about loneliness in a post-apocalyptic dystopian future. The movie won best sound at Amandus 2017, and was nominated for best new nordic voice at Nordisk Panorama Film Festival 2016.",
-    credits: [
-      "Recorded, mixed and mastered by Aleksander Tidemann",
-      "Produced by The Holy Mountain",
-    ],
+    credits: ["Recorded, mixed and mastered by Aleksander Tidemann"],
     slideshow: ["finite", "finite2", "finite3"],
     spotifyurl: "",
   },

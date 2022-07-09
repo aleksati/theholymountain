@@ -12,6 +12,7 @@ import { BsFacebook } from "react-icons/bs";
 import { AiFillYoutube } from "react-icons/ai";
 import { RiInstagramFill } from "react-icons/ri";
 import { BsSpotify } from "react-icons/bs";
+import { FiMail } from "react-icons/fi";
 
 const defaultSize = "text-md";
 
@@ -29,6 +30,7 @@ const icons = {
   bandcamp: s => <FaBandcamp className={s} />,
   youtube: s => <AiFillYoutube className={s} />,
   spotify: s => <BsSpotify className={s} />,
+  contact: s => <FiMail className={s} />,
 };
 
 const Icon = ({ iconSize, id }) => {

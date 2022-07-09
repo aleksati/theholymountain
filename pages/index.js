@@ -1,8 +1,12 @@
 import Front from "../sections/Front";
 import Discography from "../sections/Discography";
-import Contact from "../sections/Contact";
 import Nav from "../sections/Nav";
 import { server } from "../config";
+
+// TODO
+// * Add tiny x on popupCards
+// * Fix navbar stopping at footer. Also, make the issues button on right side
+// * Add videos page
 
 export default function Home({ releaseData }) {
   return (
@@ -10,7 +14,6 @@ export default function Home({ releaseData }) {
       <div className="divide-y divide-gray-300 dark:divide-gray-600">
         <Front />
         <Discography releaseData={releaseData} />
-        <Contact />
       </div>
       <Nav />
       {/* For the like counter: Use SWR data fetching for client-side data fetching. Should call an API endpoint that: 

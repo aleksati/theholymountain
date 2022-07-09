@@ -23,7 +23,7 @@ export default async function handler(req, res) {
       to: process.env.bandmail,
       subject: data.subject,
       text: data.message,
-      html: `<div>${data.message} <br/> <br/> From website contact page <br/> Sender, <br/> ${data.name} <br/> ${data.email} </div>`,
+      html: `<div>${data.message} <br/> <br/> From, <br/> ${data.name} <br/> ${data.email} <br/> Sent from website contact page </div>`,
     });
     return res.status(200).send("Message sent: " + result.messageId);
   } catch (error) {
