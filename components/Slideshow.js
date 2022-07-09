@@ -1,6 +1,5 @@
 import { Slide } from "react-slideshow-image";
 import Image from "next/image";
-import Button from "./Button";
 import Icon from "./Icon";
 
 const properties = {
@@ -9,20 +8,20 @@ const properties = {
   indicators: true,
   transitionDuration: 200,
   defaultIndex: 2,
-  prevArrow: (
-    <Button>
-      <Icon id="prevArrow" />
-    </Button>
-  ),
   nextArrow: (
-    <Button>
-      <Icon id="nextArrow" />
-    </Button>
+    <button className="text-primary-dark">
+      <Icon id="nextArrow" iconSize={"text-xl"} />
+    </button>
+  ),
+  prevArrow: (
+    <button className="text-primary-dark">
+      <Icon id="prevArrow" iconSize={"text-xl"} />
+    </button>
   ),
 };
 
 const Slideshow = ({ imgSlugs = [], className }) => (
-  <div className={`w-96 ${className}`}>
+  <div className={`w-96 p-2 ${className}`}>
     <Slide {...properties}>
       {imgSlugs.map(slug => (
         <Image
@@ -30,8 +29,8 @@ const Slideshow = ({ imgSlugs = [], className }) => (
           src={`/img/${slug}.png`}
           className="rounded-md shadow-md"
           alt={`${slug} slide`}
-          width="500px"
-          height="500px"
+          width="600px"
+          height="600px"
           layout="responsive"
           objectFit="contain"
           blurDataURL={`/img/placeholders/${slug}.png`}

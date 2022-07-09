@@ -22,7 +22,7 @@ const CardPopup = React.forwardRef(
     }, [ref]);
 
     return (
-      <div className="fixed inset-0 z-50 flex items-center justify-center backdrop-brightness-50">
+      <div className="fixed inset-0 z-50 flex items-center justify-center p-4 backdrop-brightness-50">
         <Card
           showCloseButton={showCloseButton}
           handleClickOutside={handleClickOutside}

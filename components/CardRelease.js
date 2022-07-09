@@ -25,7 +25,7 @@ const CardRelease = ({ release }) => {
         <CardPopup
           className="max-w-4xl max-h-screen p-4 overflow-auto"
           handleClickOutside={closePopup}
-          showCloseButton={true}
+          showCloseButton={isListen ? false : true}
           ref={popupRef}
         >
           {isListen ? (

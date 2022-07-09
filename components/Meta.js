@@ -16,8 +16,8 @@ const Meta = ({ title, keywords, description }) => {
 Meta.defaultProps = {
   title: "The Holy Mountain",
   keywords:
-    "band, music, norway, artist, avant-garde music, minimalism, dream pop, akkordeon, synthesizer, drums, vocals, The Holy Mountain discography, The Holy Mountain shows, The Holy Mountain albums, The Holy Mountain merch, The Holy Mountain video, The Holy Mountain music",
-  description: "Music trio from Norway",
+    "band, music, norway, artist, avant-garde, minimalism, dream pop, akkordeon, accordion, synthesizer, synthwave, drums, vocals, The Holy Mountain discography, The Holy Mountain shows, The Holy Mountain albums, The Holy Mountain merch, The Holy Mountain video, The Holy Mountain music, The Holy Mountain band, The Holy Mountain, Accordion band, Accordion trio, trekkspillmusikk",
+  description: "Accordion, synthesizer, drums and vocal trio from Oslo Norway.",
 };
 
 export default Meta;

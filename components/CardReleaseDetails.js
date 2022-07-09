@@ -8,7 +8,7 @@ const CardReleaseDetails = ({ release }) => {
       className="flex flex-col items-center space-y-2 md:space-y-0 md:items-start md:flex-row"
     >
       <Slideshow imgSlugs={release.slideshow} />
-      <div className="px-4 space-y-4 text-primary-light dark:text-primary-dark">
+      <div className="px-4 space-y-2 text-primary-light dark:text-primary-dark">
         <h1 className="text-size-title">{release.title}</h1>
         <p className="text-size-regular text-secondary">
           {release.format} - {release.price} kr
