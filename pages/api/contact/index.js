@@ -3,7 +3,7 @@ export default async function handler(req, res) {
 
   let data = req.body;
 
-  return res.setTimeout(2000, () => res.status(500).send("hey"));
+  //   return res.setTimeout(2000, () => res.status(500).send("hey"));
 
   let nodemailer = require("nodemailer");
   const transporter = nodemailer.createTransport({
@@ -23,7 +23,7 @@ export default async function handler(req, res) {
       to: process.env.bandmail,
       subject: data.subject,
       text: data.message,
-      html: `<div>${data.message} <br/> <br/> from <br/> ${data.name} <br/> ${data.email}</div>`,
+      html: `<div>${data.message} <br/> <br/> From website contact page <br/> Sender, <br/> ${data.name} <br/> ${data.email} </div>`,
     });
     return res.status(200).send("Message sent: " + result.messageId);
   } catch (error) {

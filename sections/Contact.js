@@ -1,21 +1,12 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import LayoutPage from "../components/LayoutPage";
 import Button from "../components/Button";
-// import CoverPhoto from "../components/CoverPhoto";
-// import CoverTextPoster from "../components/CoverTextPoster";
-
-{
-  /* <CoverPhoto
-imgSrc={"/img/cover.png"}
-placeholder={"/img/placeholder/cover.png"}
-/> */
-}
 
 const Contact = () => {
-  const [name, setName] = useState("Dummy dummy");
-  const [email, setEmail] = useState("dummy@dum.com");
-  const [subject, setSubject] = useState("dumm test");
-  const [message, setMessage] = useState("dum dum dum dum");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [subject, setSubject] = useState("");
+  const [message, setMessage] = useState("");
   const [isSubmit, setIsSubmit] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
@@ -84,12 +75,13 @@ const Contact = () => {
               be in touch. If you want to report any page issues, please use the
               "Report issues" button at the bottom of the page.
             </p>
-            <label className="block text-size-regular">
+            <label className="block">
               <span className="text-primary-light dark:text-primary-dark">
                 Your full name
               </span>
               <input
                 type="text"
+                minLength="3"
                 name="full name"
                 onChange={e => {
                   setName(e.target.value);
@@ -107,6 +99,7 @@ const Contact = () => {
               <input
                 type="email"
                 name="email"
+                minLength="5"
                 onChange={e => {
                   setEmail(e.target.value);
                 }}
@@ -123,6 +116,7 @@ const Contact = () => {
               <input
                 type="text"
                 name="subject"
+                minLength="3"
                 onChange={e => {
                   setSubject(e.target.value);
                 }}
@@ -138,6 +132,7 @@ const Contact = () => {
               </span>
               <textarea
                 name="message"
+                minLength="3"
                 onChange={e => {
                   setMessage(e.target.value);
                 }}
@@ -151,9 +146,7 @@ const Contact = () => {
             {!isSubmit ? (
               isError ? (
                 <div className="flex place-content-center">
-                  <p>
-                    Sorry, something's not right with the messaging service..
-                  </p>
+                  <p>Sorry, something's not right..</p>
                 </div>
               ) : !isLoading ? (
                 <Button className="place-content-center">
