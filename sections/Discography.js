@@ -2,7 +2,7 @@ import LayoutPage from "../components/LayoutPage";
 import CardRelease from "../components/CardRelease";
 
 const Discography = ({ releaseData }) => (
-  <LayoutPage id="discography">
+  <LayoutPage id="discography" className="pb-4">
     <h1 className="mt-4 overflow-hidden text-center text-clip text-size-header-big">
       DISCOGRAPHY
     </h1>

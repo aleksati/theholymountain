@@ -53,5 +53,5 @@ module.exports = {
       animation: ["group-hover"],
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/forms")],
 };
