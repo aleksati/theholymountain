@@ -7,9 +7,9 @@ const CardReleaseAudio = ({ className, url }) => {
         <iframe
           className={"p-4"}
           src={url}
+          loading="lazy"
           width="100%"
           height="440"
-          frameBorder="0"
         ></iframe>
       ) : (
         <p className="p-4 text-center text-size-regular">

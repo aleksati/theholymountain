@@ -18,9 +18,9 @@ const FourOhFour = () => {
     <LayoutPage id="404" pageMeta={meta}>
       <CoverPhoto imgSrc={src} placeholder={placeholder} />
       <CoverTextPoster>
-        <h1 className="text-size-header-big">Page Not Found</h1>
+        <h1 className="text-size-header-big">Lost?</h1>
         <Link href="/" passHref>
-          <Button>Homepage</Button>
+          <Button>Go to homepage</Button>
         </Link>
       </CoverTextPoster>
     </LayoutPage>

@@ -37,25 +37,20 @@ const Nav = ({ className }) => {
         </CardPopup>
       ) : null}
       <div className={className}>
-        {!isAbout ? (
-          <Button
-            onClick={handleAboutClick}
-            showTooltip={true}
-            tooltipMessage="About"
-          >
-            <Icon id="about" />
-          </Button>
-        ) : null}
-
-        {!isContact ? (
-          <Button
-            onClick={handleContactClick}
-            showTooltip={true}
-            tooltipMessage="Contact"
-          >
-            <Icon id="contact" />
-          </Button>
-        ) : null}
+        <Button
+          onClick={handleAboutClick}
+          showTooltip={true}
+          tooltipMessage="About"
+        >
+          <Icon id="about" />
+        </Button>
+        <Button
+          onClick={handleContactClick}
+          showTooltip={true}
+          tooltipMessage="Contact"
+        >
+          <Icon id="contact" />
+        </Button>
         <ToggleTheme />
       </div>
     </nav>

@@ -6,7 +6,7 @@ import Meta from "./Meta";
 const LayoutApp = ({ children, appMeta }) => {
   const mainRef = useRef(null);
   const [isMounted, setIsMounted] = useState(false);
-  const [navPosition, setNavPosition] = useState(true);
+  const [navPosition, setNavPosition] = useState("fixed");
 
   const listenToScroll = () => {
     const mainHeight = mainRef.current.offsetHeight;
