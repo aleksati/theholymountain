@@ -23,9 +23,9 @@ const Card = React.forwardRef(
       >
         {showCloseButton ? (
           <div className="flex place-content-end">
-            <Button onClick={handleClickOutside}>
+            <button onClick={handleClickOutside}>
               <Icon id="closeButton" />
-            </Button>
+            </button>
           </div>
         ) : null}
         {children}

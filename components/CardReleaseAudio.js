@@ -5,7 +5,7 @@ const CardReleaseAudio = ({ className, url }) => {
     <>
       {url ? (
         <iframe
-          className={className}
+          className={"p-4"}
           src={url}
           width="100%"
           height="440"

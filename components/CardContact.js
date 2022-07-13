@@ -1,5 +1,4 @@
 import { useState } from "react";
-import LayoutPage from "./LayoutPage";
 import Button from "./Button";
 
 const CardContact = () => {
@@ -60,20 +59,23 @@ const CardContact = () => {
 
   return (
     <div className="flex flex-col">
+      <h1 className="overflow-hidden text-center text-clip text-size-header">
+        CONTACT
+      </h1>
       <form
         onSubmit={e => {
           handleSubmit(e);
         }}
       >
-        <div className="grid grid-cols-1 gap-6 w-80 sm:w-96">
+        <div className="grid grid-cols-1 gap-6 mt-4 w-80 sm:w-96">
           <p>
             We would love to hear from you! Just fill out the form below and
-            we'll be in touch. If you want to report any page issues, please use
-            the "Report issues" button at the bottom of the page.
+            we'll be in touch. To report any page issues, please use the
+            designated button at the bottom of the page.
           </p>
           <label className="block">
             <span className="text-primary-light dark:text-primary-dark">
-              Your full name
+              Your name
             </span>
             <input
               type="text"
@@ -90,7 +92,7 @@ const CardContact = () => {
           </label>
           <label className="block">
             <span className="text-primary-light dark:text-primary-dark">
-              Your email address
+              Your email
             </span>
             <input
               type="email"

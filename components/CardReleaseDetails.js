@@ -5,7 +5,7 @@ const CardReleaseDetails = ({ release }) => {
   return (
     <div
       id={release.key}
-      className="flex flex-col items-center space-y-2 text-size-small md:text-size-regular md:space-y-0 sm:flex-row"
+      className="flex flex-col items-center space-y-2 text-size-small sm:text-size-regular sm:space-y-0 sm:flex-row"
     >
       <Slideshow imgSlugs={release.slideshow} />
       <div className="px-4 space-y-2 text-primary-light dark:text-primary-dark">

@@ -1,34 +1,33 @@
 import SoMeBar from "../components/SoMeBar";
 import Button from "../components/Button";
+import Nav from "./Nav";
 
-const Footer = () => {
-  return (
-    <footer className="py-2 border-t-2 border-gray-300 dark:border-gray-600 bg-primary-light dark:bg-primary-dark">
-      <div className="flex place-content-between text-size-small text-primary-light dark:text-primary-dark">
-        <div className="pt-2 ml-4 space-y-1">
-          <Button>
-            <a href="https://github.com/aleksati">Report issues</a>
-          </Button>
-        </div>
-        <div className="space-y-1">
-          <p>The Holy Mountain &copy; {new Date().getFullYear()}</p>
-          <SoMeBar
-            iconSize="text-md"
-            exclude={["nothing"]}
-            className="justify-center space-x-4"
-          />
-          <p className="text-center text-secondary">
-            By <a href="https://github.com/aleksati">Aleksander Tidemann</a>
-          </p>
-        </div>
-        <div className="invisible pt-2 ml-4 space-y-1">
-          <Button>
-            <a href="https://github.com/aleksati">Report issues</a>
-          </Button>
-        </div>
+const Footer = () => (
+  <footer className="py-4 border-t-2 border-gray-300 dark:border-gray-600 bg-primary-light dark:bg-primary-dark">
+    <div className="flex place-content-evenly lg:text-size-regular text-size-small text-primary-light dark:text-primary-dark">
+      <div className="-mt-1 space-y-1 text-center ">
+        <p>The Holy Mountain &copy; {new Date().getFullYear()}</p>
+        <a className="text-secondary" href="https://github.com/aleksati">
+          By Aleksander Tidemann
+        </a>
       </div>
-    </footer>
-  );
-};
+      <div className="hidden sm:flex">
+        <SoMeBar
+          iconSize="text-md sm:text-2xl md:text-3xl"
+          exclude={["nothing"]}
+          className="justify-center space-x-4 align-bottom"
+        />
+      </div>
+      <div className="flex -mt-2 space-x-2">
+        <div>
+          <Button>
+            <a href="https://github.com/aleksati">Report issues</a>
+          </Button>
+        </div>
+        <Nav className="flex space-x-2" />
+      </div>
+    </div>
+  </footer>
+);
 
 export default Footer;
