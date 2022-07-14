@@ -23,6 +23,7 @@ const Button = React.forwardRef(
         onClick={onClick}
         className={`p-3 flex bg-primary-light dark:bg-primary-dark border ${color} rounded-full transistion ease-in-out duration-200 ${className}`}
         ref={ref}
+        type="button"
         {...props}
       >
         {children}

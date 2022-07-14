@@ -70,8 +70,8 @@ const CardContact = () => {
         <div className="grid grid-cols-1 gap-6 mt-4 w-80 sm:w-96">
           <p>
             We would love to hear from you! Just fill out the form below and
-            we'll be in touch. To report any page issues, please use the
-            designated button at the bottom of the page.
+            we'll be in touch. To report issues with the page, please use the
+            button at the bottom of the page.
           </p>
           <label className="block">
             <span className="text-primary-light dark:text-primary-dark">
@@ -147,12 +147,20 @@ const CardContact = () => {
                 <p>Sorry, something's not right..</p>
               </div>
             ) : !isLoading ? (
-              <Button className="place-content-center">
+              <Button
+                className="place-content-center"
+                name="Submit message button"
+                type="submit"
+              >
                 <input type="submit" />
               </Button>
             ) : (
               <div className="flex place-content-center">
-                <img src="/img/loading/loading.gif" width="20px" />
+                <img
+                  src="/img/loading/loading.gif"
+                  alt="loading"
+                  width="20px"
+                />
               </div>
             )
           ) : (

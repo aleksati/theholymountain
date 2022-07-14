@@ -17,8 +17,8 @@ const CardReleaseAudio = ({ className, url }) => {
         </p>
       )}
       <SoMeBar
-        iconSize="text-xl"
-        exclude={["spotify"]}
+        iconSize="text-3xl"
+        exclude={["instagram", "facebook", "youtube"]}
         className="justify-around p-4"
       />
     </>

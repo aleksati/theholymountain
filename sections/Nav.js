@@ -6,7 +6,7 @@ import CardAbout from "../components/CardAbout";
 import Button from "../components/Button";
 import Icon from "../components/Icon";
 
-const Nav = ({ className }) => {
+const Nav = ({ className, reportBtnVisibility }) => {
   const popupRef = useRef(null);
   const [isAbout, setIsAbout] = useState(false);
   const [isContact, setIsContact] = useState(false);
@@ -38,9 +38,16 @@ const Nav = ({ className }) => {
       ) : null}
       <div className={className}>
         <Button
+          className={`-mt-1 ${reportBtnVisibility}`}
+          name="Report issues button"
+        >
+          <a href="https://github.com/aleksati">Report issues</a>
+        </Button>
+        <Button
           onClick={handleAboutClick}
           showTooltip={true}
           tooltipMessage="About"
+          name="About us button"
         >
           <Icon id="about" />
         </Button>
@@ -48,6 +55,7 @@ const Nav = ({ className }) => {
           onClick={handleContactClick}
           showTooltip={true}
           tooltipMessage="Contact"
+          name="Contact us button"
         >
           <Icon id="contact" />
         </Button>

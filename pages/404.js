@@ -3,6 +3,7 @@ import LayoutPage from "../components/LayoutPage";
 import CoverPhoto from "../components/CoverPhoto";
 import Button from "../components/Button";
 import Link from "next/link";
+import { SITE_DOMAIN } from "../config";
 
 const src = "/img/404.png";
 const placeholder = "/img/placeholders/404.png";
@@ -11,7 +12,7 @@ const FourOhFour = () => {
   const meta = {
     title: "Oops! You found a missing page! - The Holy Mountain",
     description: "Oops! It looks like this page is lost in space somewhere!",
-    // url: `${SITE_DOMAIN}/404`,
+    url: `${SITE_DOMAIN}/404`,
   };
 
   return (

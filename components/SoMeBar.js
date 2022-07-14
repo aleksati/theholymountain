@@ -22,6 +22,10 @@ const SoMeBar = ({ iconSize, exclude = [], className }) => {
       key: "spotify",
       url: "https://open.spotify.com/artist/04GXo6z6x1KLMG9weDPayK?si=rzFLNrlkTvml0zaKqo_tuQ",
     },
+    {
+      key: "soundcloud",
+      url: "https://soundcloud.com/theholymountainduo",
+    },
   ];
 
   return (

@@ -6,13 +6,13 @@ import Meta from "./Meta";
 const LayoutApp = ({ children, appMeta }) => {
   const mainRef = useRef(null);
   const [isMounted, setIsMounted] = useState(false);
-  const [navPosition, setNavPosition] = useState("fixed");
+  const [reportBtnVisibility, setReportBtnVisibility] = useState("hidden");
 
   const listenToScroll = () => {
     const mainHeight = mainRef.current.offsetHeight;
-    const pageBottom = window.pageYOffset + window.innerHeight;
-    if (pageBottom < mainHeight) return setNavPosition("fixed");
-    setNavPosition("hidden");
+    const pageBottom = window.pageYOffset + window.innerHeight - 40;
+    if (pageBottom < mainHeight) return setReportBtnVisibility("hidden");
+    setReportBtnVisibility("");
   };
 
   useEffect(() => {
@@ -31,7 +31,10 @@ const LayoutApp = ({ children, appMeta }) => {
       <Meta {...appMeta} />
       <main className="flex-grow" ref={mainRef}>
         {children}
-        <Nav className={`flex space-x-2 right-4 bottom-4 ${navPosition}`} />
+        <Nav
+          className={`flex z-10 space-x-2 text-size-small sm:text-size-regular right-4 bottom-4 fixed`}
+          reportBtnVisibility={reportBtnVisibility}
+        />
       </main>
       <Footer />
     </>

@@ -3,7 +3,7 @@ import Image from "next/image";
 const CoverPhoto = ({ imgSrc, placeholder }) => (
   <Image
     src={imgSrc}
-    alt="Cover photo"
+    alt="Band photo of The Holy Mountain"
     quality={100}
     placeholder="blur"
     layout="fill"

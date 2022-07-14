@@ -1,7 +1,7 @@
 import logoWhite from "../public/img/logo-white.png";
 import logoBlack from "../public/img/logo-black.png";
 import getCurrTheme from "../utils/getCurrTheme";
-import SoMeBar from "./SoMeBar";
+// import SoMeBar from "./SoMeBar";
 import Image from "next/image";
 import React from "react";
 
@@ -17,11 +17,11 @@ const CardAbout = () => {
         and vocals. Our members are Andreas Angell, Aleksander Tidemann and
         Catharina Janner Røed.
       </p>
-      <SoMeBar
-        iconSize="text-xl"
+      {/* <SoMeBar
+        iconSize="text-3xl"
         exclude={["nothing"]}
         className="justify-around p-4"
-      />
+      /> */}
     </div>
   );
 };

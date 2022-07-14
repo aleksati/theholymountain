@@ -17,7 +17,12 @@ const ToggleTheme = () => {
   if (!mounted) return null;
 
   return (
-    <Button onClick={handleClick} showTooltip={true} tooltipMessage="Theme">
+    <Button
+      onClick={handleClick}
+      showTooltip={true}
+      tooltipMessage="Theme"
+      name={`Light/dark mode button`}
+    >
       {currTheme === "dark" ? <Icon id="sun" /> : <Icon id="moon" />}
     </Button>
   );

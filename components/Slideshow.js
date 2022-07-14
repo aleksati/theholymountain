@@ -28,7 +28,7 @@ const Slideshow = ({ imgSlugs = [], className }) => (
           key={slug}
           src={`/img/${slug}.png`}
           className="rounded-md shadow-md"
-          alt={`${slug} slide`}
+          alt={`slideshow image of release, ${slug}`}
           width="600px"
           height="600px"
           layout="responsive"
