@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
-import getCurrTheme from "../utils/getCurrTheme";
 import Icon from "./Icon";
 import Button from "./Button";
+import getCurrTheme from "../utils/getCurrTheme";
 
-const ToggleTheme = () => {
+const ThemeToggle = ({ tabOrder }) => {
   const [mounted, setMounted] = useState(false);
   const { currTheme, setTheme } = getCurrTheme();
 
@@ -21,11 +21,13 @@ const ToggleTheme = () => {
       onClick={handleClick}
       showTooltip={true}
       tooltipMessage="Theme"
-      name={`Light/dark mode button`}
+      aria-label={`Toggle light or dark mode theme`}
+      aria-pressed={currTheme === "dark" ? "true" : "false"}
+      tabOrder={tabOrder}
     >
       {currTheme === "dark" ? <Icon id="sun" /> : <Icon id="moon" />}
     </Button>
   );
 };
 
-export default ToggleTheme;
+export default ThemeToggle;

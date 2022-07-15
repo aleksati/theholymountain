@@ -19,7 +19,7 @@ const Footer = () => (
         </a>
       </div>
       <div className="invisible">
-        <Nav className="flex space-x-2" />
+        <Nav className="flex space-x-2" reportBtnVisibility={""} />
       </div>
     </div>
   </footer>

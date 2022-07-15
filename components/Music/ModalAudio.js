@@ -1,8 +1,8 @@
-import SoMeBar from "./SoMeBar";
+import SoMeBar from "../SoMeBar";
 
-const CardReleaseAudio = ({ className, url }) => {
+const ModalAudio = ({ url, label }) => {
   return (
-    <>
+    <div aria-label={`${label} audio dialog`}>
       {url ? (
         <iframe
           className={"p-4"}
@@ -21,10 +21,10 @@ const CardReleaseAudio = ({ className, url }) => {
         exclude={["instagram", "facebook", "youtube"]}
         className="justify-around p-4"
       />
-    </>
+    </div>
   );
 };
 
-export default CardReleaseAudio;
+export default ModalAudio;
 
 // https://bandcamp.com/EmbeddedPlayer/album=2600402427/size=large/bgcol=333333/linkcol=0f91ff/artwork=none/transparent=true/

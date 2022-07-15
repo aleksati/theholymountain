@@ -10,7 +10,9 @@ const Button = React.forwardRef(
       className,
       showTooltip = false,
       tooltipMessage,
+      tabOrder,
       props,
+      btnType,
     },
     ref
   ) => {
@@ -20,10 +22,11 @@ const Button = React.forwardRef(
 
     const renderLink = () => (
       <button
-        onClick={onClick}
-        className={`p-3 flex bg-primary-light dark:bg-primary-dark border ${color} rounded-full transistion ease-in-out duration-200 ${className}`}
         ref={ref}
-        type="button"
+        onClick={onClick}
+        className={`p-3 flex items-center bg-primary-light dark:bg-primary-dark border ${color} rounded-full transistion ease-in-out duration-200 ${className}`}
+        type={btnType ? btnType : "button"}
+        tabIndex={tabOrder}
         {...props}
       >
         {children}

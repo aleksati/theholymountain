@@ -36,6 +36,8 @@ const SoMeBar = ({ iconSize, exclude = [], className }) => {
           <a
             key={some.key}
             href={some.url}
+            role="link"
+            aria-label={some.key}
             className="transition duration-200 ease-in-out hover:scale-105"
           >
             <Icon id={some.key} iconSize={iconSize} />

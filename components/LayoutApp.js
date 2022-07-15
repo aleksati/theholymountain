@@ -31,10 +31,7 @@ const LayoutApp = ({ children, appMeta }) => {
       <Meta {...appMeta} />
       <main className="flex-grow" ref={mainRef}>
         {children}
-        <Nav
-          className={`flex z-10 space-x-2 text-size-small sm:text-size-regular right-4 bottom-4 fixed`}
-          reportBtnVisibility={reportBtnVisibility}
-        />
+        <Nav reportBtnVisibility={reportBtnVisibility} />
       </main>
       <Footer />
     </>

@@ -1,9 +1,9 @@
 import React from "react";
-import SoMeBar from "./SoMeBar";
+import SoMeBar from "../SoMeBar";
 
-const CardReleaseShop = () => {
+const ModalShop = ({ label }) => {
   return (
-    <div>
+    <div aria-label={`${label} shop dialog`}>
       <p className="p-4 text-center text-size-regular">
         Coming soon! In the mean time:
       </p>
@@ -16,4 +16,4 @@ const CardReleaseShop = () => {
   );
 };
 
-export default CardReleaseShop;
+export default ModalShop;

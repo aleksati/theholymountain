@@ -5,4 +5,5 @@ const getCurrTheme = () => {
   const currTheme = theme === "system" ? systemTheme : theme;
   return { currTheme, setTheme };
 };
+
 export default getCurrTheme;

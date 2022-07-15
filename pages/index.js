@@ -1,16 +1,25 @@
-import Discography from "../sections/Discography";
-import Front from "../sections/Front";
-import { SITE_DOMAIN } from "../config";
-import Videos from "../sections/Videos";
+import MusicPage from "../sections/MusicPage";
 import LayoutApp from "../components/LayoutApp";
+import Videos from "../sections/Videos";
+import { SITE_DOMAIN } from "../config";
+import Front from "../sections/Front";
+import Test from "../sections/Test";
+
+// avoid Modal to hit the wall and ceiling
+// refactor the Video component. Find similarities, make Grid folder.
+
+// add more correct grid accesiblity
+// add more correct nav/toolbar accessibility
+// slideshow / carousell accessibility
 
 export default function Home({ releaseData, videoData }) {
   return (
     <LayoutApp>
       <div className="divide-y divide-gray-300 dark:divide-gray-600">
         <Front />
-        <Discography releaseData={releaseData} />
+        <MusicPage musicData={releaseData} />
         <Videos videoData={videoData} />
+        <Test />
         {/* For the like counter: Use SWR data fetching for client-side data fetching. Should call an API endpoint that: 
         - Collects and hashes the ip
         - Checks the database for the same user. 

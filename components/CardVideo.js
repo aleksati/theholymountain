@@ -8,9 +8,11 @@ const CardVideo = ({ video }) => (
       showCloseButton={false}
       className="mt-4 mb-4"
       maxWidth="override"
+      label={`${video.title}`}
     >
       <iframe
         width="100%"
+        alt={`${video.title} YouTube player`}
         height="315"
         src={video.url}
         loading="lazy"
