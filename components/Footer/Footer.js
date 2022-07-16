@@ -1,6 +1,6 @@
-import SoMeBar from "../components/SoMeBar";
-import Button from "../components/Button";
-import Nav from "./Nav";
+import SoMeBar from "../SoMeBar";
+import Button from "../Button";
+import Nav from "../Nav/Nav";
 
 const Footer = () => (
   <footer className="z-0 py-4 border-gray-300 border-t-1 dark:border-gray-600 bg-primary-light dark:bg-primary-dark brightness-95">

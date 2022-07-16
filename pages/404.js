@@ -1,5 +1,5 @@
 import CoverTextPoster from "../components/CoverTextPoster";
-import LayoutPage from "../components/LayoutPage";
+import PageLayout from "../components/Page/PageLayout";
 import CoverPhoto from "../components/CoverPhoto";
 import Button from "../components/Button";
 import Link from "next/link";
@@ -16,7 +16,7 @@ const FourOhFour = () => {
   };
 
   return (
-    <LayoutPage id="404" pageMeta={meta}>
+    <PageLayout id="404" pageMeta={meta}>
       <CoverPhoto imgSrc={src} placeholder={placeholder} />
       <CoverTextPoster>
         <h1 className="text-size-header-big">Lost?</h1>
@@ -24,7 +24,7 @@ const FourOhFour = () => {
           <Button>Go to homepage</Button>
         </Link>
       </CoverTextPoster>
-    </LayoutPage>
+    </PageLayout>
   );
 };
 

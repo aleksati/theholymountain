@@ -1,9 +1,9 @@
 import React from "react";
-import ReportIssues from "../components/ReportIssues";
-import ModalContact from "../components/Nav/ModalContact";
-import ModalAbout from "../components/Nav/ModalAbout";
-import ThemeToggle from "../components/ThemeToggle";
-import Modal from "../components/Modal/Modal";
+import ReportIssues from "../Footer/ReportIssues";
+import ModalContact from "./ModalContact";
+import ModalAbout from "./ModalAbout";
+import ThemeToggle from "./ThemeToggle";
+import Modal from "../Modal/Modal";
 
 const aboutModal = <ModalAbout />;
 const aboutModalProps = {
@@ -26,7 +26,7 @@ const contactModalProps = {
 };
 
 const Nav = ({ reportBtnVisibility }) => (
-  <nav className="fixed z-10 flex space-x-2 text-size-small sm:text-size-regular right-4 top-4">
+  <nav className="fixed z-10 flex space-x-2 text-size-small sm:text-size-regular right-4 bottom-4">
     <ReportIssues visibility={reportBtnVisibility} />
     <Modal modalContent={aboutModal} modalProps={aboutModalProps} />
     <Modal modalContent={contactModal} modalProps={contactModalProps} />

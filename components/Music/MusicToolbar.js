@@ -4,8 +4,8 @@ import ModalAudio from "./ModalAudio";
 import ModalShop from "./ModalShop";
 import Modal from "../Modal/Modal";
 
-const MusicGridItemToolbar = ({ album }) => {
-  const detailsModal = <ModalDetails album={album} />;
+const MusicToolbar = ({ item }) => {
+  const detailsModal = <ModalDetails album={item} />;
   const detailsModalProps = {
     triggerIcon: "details",
     triggerLabel: "Album details",
@@ -13,7 +13,7 @@ const MusicGridItemToolbar = ({ album }) => {
     modalMaxSize: "max-w-4xl",
   };
 
-  const audioModal = <ModalAudio url={album.spotifyurl} />;
+  const audioModal = <ModalAudio url={item.spotifyurl} />;
   const audioModalProps = {
     triggerIcon: "audio",
     triggerLabel: "Listen to album",
@@ -37,4 +37,4 @@ const MusicGridItemToolbar = ({ album }) => {
   );
 };
 
-export default MusicGridItemToolbar;
+export default MusicToolbar;

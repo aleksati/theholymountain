@@ -1,12 +1,7 @@
-import MusicPage from "../sections/MusicPage";
-import LayoutApp from "../components/LayoutApp";
-import Videos from "../sections/Videos";
+import AppLayout from "../components/AppLayout";
 import { SITE_DOMAIN } from "../config";
-import Front from "../sections/Front";
-import Test from "../sections/Test";
-
-// avoid Modal to hit the wall and ceiling
-// refactor the Video component. Find similarities, make Grid folder.
+import FrontPage from "../components/FrontPage/FrontPage";
+import PageMedia from "../components/Page/PageMedia";
 
 // add more correct grid accesiblity
 // add more correct nav/toolbar accessibility
@@ -14,12 +9,11 @@ import Test from "../sections/Test";
 
 export default function Home({ releaseData, videoData }) {
   return (
-    <LayoutApp>
+    <AppLayout>
       <div className="divide-y divide-gray-300 dark:divide-gray-600">
-        <Front />
-        <MusicPage musicData={releaseData} />
-        <Videos videoData={videoData} />
-        <Test />
+        <FrontPage />
+        <PageMedia content={releaseData} pagetitle="discography" />
+        <PageMedia content={videoData} pagetitle="videos" />
         {/* For the like counter: Use SWR data fetching for client-side data fetching. Should call an API endpoint that: 
         - Collects and hashes the ip
         - Checks the database for the same user. 
@@ -28,7 +22,7 @@ export default function Home({ releaseData, videoData }) {
         - or send back negative response. do not increment. 
     */}
       </div>
-    </LayoutApp>
+    </AppLayout>
   );
 }
 

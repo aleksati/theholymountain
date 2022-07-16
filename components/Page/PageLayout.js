@@ -1,6 +1,6 @@
-import Meta from "./Meta";
+import Meta from "../Meta";
 
-const LayoutPage = ({ children, id, className = "", pageMeta }) => {
+const PageLayout = ({ children, id, className = "", pageMeta }) => {
   return (
     <>
       <Meta {...pageMeta} />
@@ -14,4 +14,4 @@ const LayoutPage = ({ children, id, className = "", pageMeta }) => {
   );
 };
 
-export default LayoutPage;
+export default PageLayout;

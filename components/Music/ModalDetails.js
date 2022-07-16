@@ -3,7 +3,6 @@ import Slideshow from "../Slideshow";
 const ModalDetails = ({ album, label }) => {
   return (
     <div
-      //   id={album.key}
       className="flex flex-col items-center space-y-2 text-size-small md:text-size-regular sm:space-y-0 sm:flex-row"
       aria-label={`${label} details dialog`}
     >

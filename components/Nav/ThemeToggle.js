@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import Icon from "./Icon";
-import Button from "./Button";
-import getCurrTheme from "../utils/getCurrTheme";
+import getCurrTheme from "../../utils/getCurrTheme";
+import Button from "../Button";
+import Icon from "../Icon";
 
 const ThemeToggle = ({ tabOrder }) => {
   const [mounted, setMounted] = useState(false);

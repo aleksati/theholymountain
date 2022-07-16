@@ -1,9 +1,9 @@
 import { useRef, useState, useEffect } from "react";
-import Footer from "../sections/Footer";
-import Nav from "../sections/Nav";
+import Footer from "./Footer/Footer";
+import Nav from "./Nav/Nav";
 import Meta from "./Meta";
 
-const LayoutApp = ({ children, appMeta }) => {
+const AppLayout = ({ children, appMeta }) => {
   const mainRef = useRef(null);
   const [isMounted, setIsMounted] = useState(false);
   const [reportBtnVisibility, setReportBtnVisibility] = useState("hidden");
@@ -38,4 +38,4 @@ const LayoutApp = ({ children, appMeta }) => {
   );
 };
 
-export default LayoutApp;
+export default AppLayout;

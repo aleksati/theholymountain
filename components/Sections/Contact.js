@@ -1,6 +1,6 @@
 import { useState } from "react";
-import LayoutPage from "../components/LayoutPage";
-import Button from "../components/Button";
+import LayoutPage from "../Page/PageLayout";
+import Button from "../Button";
 
 // CONTACT IS NOW A NAV ITEM..
 

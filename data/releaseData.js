@@ -1,5 +1,6 @@
 const releaseData = [
   {
+    id: "music",
     key: "toadoflight",
     title: "Toad of Light",
     category: "Album",
@@ -18,6 +19,7 @@ const releaseData = [
     buyurl: "https://theholymountain.bandcamp.com/album/toad-of-light",
   },
   {
+    id: "music",
     key: "theholymountain",
     title: "The Holy Mountain",
     category: "EP",
@@ -37,6 +39,7 @@ const releaseData = [
     buyurl: "https://theholymountain.bandcamp.com/album/the-holy-mountain",
   },
   {
+    id: "music",
     key: "endingitalltonight",
     title: "Ending It All Tonight",
     category: "Album",
@@ -59,6 +62,7 @@ const releaseData = [
     buyurl: "https://theholymountain.bandcamp.com/album/ending-it-all-tonight",
   },
   {
+    id: "music",
     key: "finite",
     title: "FINITE",
     category: "Soundtrack",
