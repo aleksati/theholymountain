@@ -1,12 +1,19 @@
 import React from "react";
 import Button from "../Button";
+import { useRouter } from "next/router";
 
-const ReportIssues = () => (
-  <Button>
-    <a role="link" href="https://github.com/aleksati/theholymountain/issues">
+const ReportIssues = () => {
+  const router = useRouter();
+  return (
+    <Button
+      btnType="link"
+      onClick={() =>
+        router.push("https://github.com/aleksati/theholymountain/issues")
+      }
+    >
       Report issues
-    </a>
-  </Button>
-);
+    </Button>
+  );
+};
 
 export default ReportIssues;

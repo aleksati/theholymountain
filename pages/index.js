@@ -1,30 +1,34 @@
 import AppLayout from "../components/AppLayout";
-import { SITE_DOMAIN } from "../config";
 import FrontPage from "../components/FrontPage/FrontPage";
 import PageMedia from "../components/Page/PageMedia";
 
-export default function Home({ releaseData, videoData }) {
+export default function Home({ sortedMusicData, sortedVideoData }) {
   return (
     <AppLayout>
       <div className="divide-y divide-gray-300 dark:divide-gray-600">
         <FrontPage />
-        <PageMedia content={releaseData} pagetitle="discography" />
-        <PageMedia content={videoData} pagetitle="videos" />
+        <PageMedia content={sortedMusicData} pagetitle="discography" />
+        <PageMedia content={sortedVideoData} pagetitle="videos" />
       </div>
     </AppLayout>
   );
 }
 
+import musicData from "../lib/musicData";
+import videoData from "../lib/videoData";
+
 export const getStaticProps = async () => {
-  const relRes = await fetch(`${SITE_DOMAIN}/api/release`);
-  const vidRes = await fetch(`${SITE_DOMAIN}/api/video`);
-  const releaseData = await relRes.json();
-  const videoData = await vidRes.json();
+  const sortedMusicData = await musicData.sort(
+    (a, b) => Number(b.year) - Number(a.year)
+  );
+  const sortedVideoData = await videoData.sort(
+    (a, b) => Number(b.year) - Number(a.year)
+  );
 
   return {
     props: {
-      releaseData,
-      videoData,
+      sortedMusicData,
+      sortedVideoData,
     },
   };
 };

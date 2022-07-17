@@ -46,7 +46,7 @@ const Modal = ({ modalProps, modalContent }) => {
   };
 
   const toggleScrollLock = () => {
-    document.querySelector("html").classList.toggle("scroll-lock");
+    // document.querySelector("html").classList.toggle("scroll-lock");
   };
 
   return (

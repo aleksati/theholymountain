@@ -26,7 +26,7 @@ const contactModalProps = {
 
 const Nav = () => (
   <nav
-    className="fixed z-50 flex space-x-2 text-size-regular right-4 top-4"
+    className="fixed z-10 flex space-x-2 text-size-regular right-4 top-4"
     role="toolbar"
     aria-label="Navigation toolbar"
   >

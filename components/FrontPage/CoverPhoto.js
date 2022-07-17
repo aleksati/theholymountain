@@ -1,3 +1,4 @@
+import { memo } from "react";
 import Image from "next/image";
 
 const CoverPhoto = ({ imgSrc, placeholder }) => (
@@ -13,4 +14,4 @@ const CoverPhoto = ({ imgSrc, placeholder }) => (
   />
 );
 
-export default CoverPhoto;
+export default memo(CoverPhoto);
