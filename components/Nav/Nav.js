@@ -30,8 +30,12 @@ const Nav = () => (
     role="toolbar"
     aria-label="Navigation toolbar"
   >
-    <Modal modalContent={aboutModal} modalProps={aboutModalProps} />
-    <Modal modalContent={contactModal} modalProps={contactModalProps} />
+    <Modal key="About" modalContent={aboutModal} modalProps={aboutModalProps} />
+    <Modal
+      key="Contact"
+      modalContent={contactModal}
+      modalProps={contactModalProps}
+    />
     <ThemeToggle tabOrder="3" />
   </nav>
 );

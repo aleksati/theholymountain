@@ -34,9 +34,17 @@ const MusicToolbar = ({ item }) => {
       role="toolbar"
       aria-label="Music album toolbar"
     >
-      <Modal modalContent={detailsModal} modalProps={detailsModalProps} />
-      <Modal modalContent={audioModal} modalProps={audioModalProps} />
-      <Modal modalContent={shopModal} modalProps={shopModalProps} />
+      <Modal
+        key="Details"
+        modalContent={detailsModal}
+        modalProps={detailsModalProps}
+      />
+      <Modal
+        key="Audio"
+        modalContent={audioModal}
+        modalProps={audioModalProps}
+      />
+      <Modal key="Shop" modalContent={shopModal} modalProps={shopModalProps} />
     </div>
   );
 };
