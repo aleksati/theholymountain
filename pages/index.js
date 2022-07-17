@@ -10,19 +10,10 @@ export default function Home({ releaseData, videoData }) {
         <FrontPage />
         <PageMedia content={releaseData} pagetitle="discography" />
         <PageMedia content={videoData} pagetitle="videos" />
-        {/* For the like counter: Use SWR data fetching for client-side data fetching. Should call an API endpoint that: 
-        - Collects and hashes the ip
-        - Checks the database for the same user. 
-        - if not present, add it. 
-        - send the length as success response, (then increment 1 in browser).
-        - or send back negative response. do not increment. 
-    */}
       </div>
     </AppLayout>
   );
 }
-
-// Change to SSR just to hydrate with release info AND current likes.
 
 export const getStaticProps = async () => {
   const relRes = await fetch(`${SITE_DOMAIN}/api/release`);
