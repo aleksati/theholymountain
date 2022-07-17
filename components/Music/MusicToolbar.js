@@ -29,7 +29,11 @@ const MusicToolbar = ({ item }) => {
     modalMaxSize: "max-w-4xl",
   };
   return (
-    <div className="flex items-center justify-center space-x-2 text-size-small">
+    <div
+      className="flex items-center justify-center space-x-2 text-size-small"
+      role="toolbar"
+      aria-label="Music album toolbar"
+    >
       <Modal modalContent={detailsModal} modalProps={detailsModalProps} />
       <Modal modalContent={audioModal} modalProps={audioModalProps} />
       <Modal modalContent={shopModal} modalProps={shopModalProps} />

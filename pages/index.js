@@ -3,10 +3,6 @@ import { SITE_DOMAIN } from "../config";
 import FrontPage from "../components/FrontPage/FrontPage";
 import PageMedia from "../components/Page/PageMedia";
 
-// add more correct grid accesiblity
-// add more correct nav/toolbar accessibility
-// slideshow / carousell accessibility
-
 export default function Home({ releaseData, videoData }) {
   return (
     <AppLayout>

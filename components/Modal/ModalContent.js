@@ -28,7 +28,6 @@ const ModalContent = React.forwardRef(
               <button
                 ref={closeBtnRef}
                 aria-label="Close Modal"
-                aria-labelledby="close-modal"
                 onClick={closeModal}
               >
                 <Icon id="closeButton" />

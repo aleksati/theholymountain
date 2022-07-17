@@ -1,5 +1,4 @@
 import React from "react";
-import ReportIssues from "../Footer/ReportIssues";
 import ModalContact from "./ModalContact";
 import ModalAbout from "./ModalAbout";
 import ThemeToggle from "./ThemeToggle";
@@ -25,9 +24,12 @@ const contactModalProps = {
   tabOrder: "2",
 };
 
-const Nav = ({ reportBtnVisibility }) => (
-  <nav className="fixed z-10 flex space-x-2 text-size-small sm:text-size-regular right-4 bottom-4">
-    <ReportIssues visibility={reportBtnVisibility} />
+const Nav = () => (
+  <nav
+    className="fixed z-10 flex space-x-2 text-size-regular right-4 top-4"
+    role="toolbar"
+    aria-label="Navigation toolbar"
+  >
     <Modal modalContent={aboutModal} modalProps={aboutModalProps} />
     <Modal modalContent={contactModal} modalProps={contactModalProps} />
     <ThemeToggle tabOrder="3" />

@@ -1,9 +1,9 @@
-import CoverTextPoster from "../components/CoverTextPoster";
+import PageTextPoster from "../components/Page/PageTextPoster";
 import PageLayout from "../components/Page/PageLayout";
-import CoverPhoto from "../components/CoverPhoto";
+import CoverPhoto from "../components/FrontPage/CoverPhoto";
+import { SITE_DOMAIN } from "../config";
 import Button from "../components/Button";
 import Link from "next/link";
-import { SITE_DOMAIN } from "../config";
 
 const src = "/img/404.png";
 const placeholder = "/img/placeholders/404.png";
@@ -18,12 +18,12 @@ const FourOhFour = () => {
   return (
     <PageLayout id="404" pageMeta={meta}>
       <CoverPhoto imgSrc={src} placeholder={placeholder} />
-      <CoverTextPoster>
+      <PageTextPoster>
         <h1 className="text-size-header-big">Lost?</h1>
         <Link href="/" passHref>
           <Button>Go to homepage</Button>
         </Link>
-      </CoverTextPoster>
+      </PageTextPoster>
     </PageLayout>
   );
 };

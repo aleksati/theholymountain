@@ -1,7 +1,7 @@
 import logoWhite from "../../public/img/logo-white.png";
 import logoBlack from "../../public/img/logo-black.png";
 import getCurrTheme from "../../utils/getCurrTheme";
-// import SoMeBar from "./SoMeBar";
+import SoMeBar from "../SoMeBar";
 import Image from "next/image";
 import React from "react";
 
@@ -17,11 +17,11 @@ const ModalAbout = ({ label }) => {
         and vocals. Our members are Andreas Angell, Aleksander Tidemann and
         Catharina Janner Røed.
       </p>
-      {/* <SoMeBar
+      <SoMeBar
         iconSize="text-3xl"
-        exclude={["nothing"]}
-        className="justify-around p-4"
-      /> */}
+        exclude={["bandcamp"]}
+        className="justify-center m-4 space-x-6 text-secondary"
+      />
     </div>
   );
 };

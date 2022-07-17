@@ -9,7 +9,7 @@ const PageMedia = ({ content, pagetitle, children }) => (
     <PageMediaTitle title={pagetitle} />
     <PageMediaGrid>
       {content.map(item => (
-        <PageMediaGridItem key={item.key} item={item}>
+        <PageMediaGridItem key={item.key} item={item} maxCols="3">
           {pagetitle === "discography" ? <MusicToolbar item={item} /> : null}
         </PageMediaGridItem>
       ))}

@@ -1,10 +1,10 @@
 import Slideshow from "../Slideshow";
 
-const ModalDetails = ({ album, label }) => {
+const ModalDetails = ({ album }) => {
   return (
     <div
       className="flex flex-col items-center space-y-2 text-size-small md:text-size-regular sm:space-y-0 sm:flex-row"
-      aria-label={`${label} details dialog`}
+      aria-label={`${album.title} details dialog`}
     >
       <Slideshow imgSlugs={album.slideshow} />
       <div className="px-4 space-y-2 text-primary-light dark:text-primary-dark">
