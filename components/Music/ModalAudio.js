@@ -12,15 +12,17 @@ const ModalAudio = ({ url, label }) => {
           height="440"
         ></iframe>
       ) : (
-        <p className="p-4 text-center text-size-regular">
-          Sorry, no spotify audio preview avaliable{" "}
-        </p>
+        <>
+          <p className="p-4 text-center text-size-regular">
+            Sorry, no spotify audio preview avaliable{" "}
+          </p>
+          <SoMeBar
+            iconSize="text-3xl"
+            exclude={["instagram", "facebook", "youtube"]}
+            className="justify-around p-4"
+          />
+        </>
       )}
-      <SoMeBar
-        iconSize="text-3xl"
-        exclude={["instagram", "facebook", "youtube"]}
-        className="justify-around p-4"
-      />
     </div>
   );
 };

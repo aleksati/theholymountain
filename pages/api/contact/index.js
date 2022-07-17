@@ -27,7 +27,6 @@ export default async function handler(req, res) {
     });
     return res.status(200).send("Message sent: " + result.messageId);
   } catch (error) {
-    console.log(error);
     return res.status(500).send(error);
   }
 }

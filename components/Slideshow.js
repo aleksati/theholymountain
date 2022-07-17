@@ -42,6 +42,7 @@ const Slideshow = ({ imgSlugs = [], className }) => {
             layout="responsive"
             objectFit="contain"
             blurDataURL={`/img/placeholders/${slug}.png`}
+            priority
           />
         ))}
       </Slide>
