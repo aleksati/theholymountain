@@ -1,6 +1,6 @@
 # The Holy Mountain
 
-A simple promotional website for my band, built with Nextjs. 
+A simple promotional website built with Nextjs. 
 
 Current production build deployment status:
 
