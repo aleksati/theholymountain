@@ -30,7 +30,7 @@ const ModalContent = React.forwardRef(
                 aria-label="Close Modal"
                 onClick={closeModal}
               >
-                <Icon id="closeButton" />
+                <Icon id="closeButton" iconSize={"text-lg"} />
               </button>
             </div>
             {content}
@@ -40,5 +40,7 @@ const ModalContent = React.forwardRef(
     );
   }
 );
+
+ModalContent.displayName = "ModalContent";
 
 export default ModalContent;

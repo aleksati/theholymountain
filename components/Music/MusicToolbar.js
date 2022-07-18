@@ -10,7 +10,7 @@ const MusicToolbar = ({ item }) => {
     triggerIcon: "details",
     triggerLabel: "Album details",
     triggerText: " Details",
-    modalMaxSize: "max-w-4xl",
+    modalMaxSize: "max-w-sm sm:max-w-4xl",
   };
 
   const audioModal = <ModalAudio url={item.spotifyurl} />;
@@ -18,7 +18,7 @@ const MusicToolbar = ({ item }) => {
     triggerIcon: "audio",
     triggerLabel: "Listen to album",
     triggerText: " Listen",
-    modalMaxSize: "max-w-4xl",
+    modalMaxSize: "max-w-sm sm:max-w-4xl",
   };
 
   const shopModal = <ModalShop />;
@@ -26,7 +26,7 @@ const MusicToolbar = ({ item }) => {
     triggerIcon: "shop",
     triggerLabel: "Buy album",
     triggerText: " Shop",
-    modalMaxSize: "max-w-4xl",
+    modalMaxSize: "max-w-sm",
   };
   return (
     <div

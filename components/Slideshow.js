@@ -3,10 +3,10 @@ import Image from "next/image";
 import Icon from "./Icon";
 
 const indicators = index => (
-  <div
+  <button
     tabIndex="0"
     className="w-2 h-2 m-0.5 bg-gray-300 dark:bg-gray-600 rounded-full cursor-pointer"
-  ></div>
+  ></button>
 );
 
 const properties = {

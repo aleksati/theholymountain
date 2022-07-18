@@ -30,4 +30,6 @@ const ModalTrigger = React.forwardRef(
   }
 );
 
+ModalTrigger.displayName = "ModalTrigger";
+
 export default ModalTrigger;
