@@ -20,7 +20,7 @@ const ModalContent = React.forwardRef(
         >
           {/* The Modal Card*/}
           <div
-            className={`rounded-md bg-primary-light dark:bg-primary-dark shadow-md p-4 ${modalMaxSize}`}
+            className={`rounded-md bg-primary-light border border-secondary dark:bg-primary-dark shadow-md p-4 ${modalMaxSize}`}
             ref={modalRef}
           >
             {/* The close button at the top right */}

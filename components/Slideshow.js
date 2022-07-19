@@ -5,7 +5,7 @@ import Icon from "./Icon";
 const indicators = index => (
   <button
     tabIndex="0"
-    className="w-2 h-2 m-0.5 bg-gray-300 dark:bg-gray-600 rounded-full cursor-pointer"
+    className="w-2 h-2 m-0.5 bg-secondary rounded-full"
   ></button>
 );
 
@@ -17,30 +17,29 @@ const properties = {
   defaultIndex: 2,
   nextArrow: (
     <button className="text-primary-dark" aria-label="next slideshow image">
-      <Icon id="nextArrow" iconSize={"text-2xl"} />
+      <Icon id="nextArrow" iconSize={"text-4xl md:text-4xl"} />
     </button>
   ),
   prevArrow: (
     <button className="text-primary-dark" aria-label="previous slideshow image">
-      <Icon id="prevArrow" iconSize={"text-2xl"} />
+      <Icon id="prevArrow" iconSize={"text-3xl md:text-4xl"} />
     </button>
   ),
 };
 
 const Slideshow = ({ imgSlugs = [], className }) => {
   return (
-    <div className={`w-96 p-2 ${className}`} aria-label="slideshow container">
+    <div className={`w-full p-2 ${className}`} aria-label="slideshow container">
       <Slide {...properties} indicators={indicators}>
         {imgSlugs.map(slug => (
           <Image
             key={slug}
             src={`/img/${slug}.png`}
-            className="bg-transparent rounded-md shadow-md"
+            className="rounded-md shadow-md"
             alt={`slideshow image of release; ${slug}`}
-            width="600px"
-            height="600px"
+            width="100%"
+            height="100%"
             layout="responsive"
-            objectFit="contain"
             blurDataURL={`/img/placeholders/${slug}.png`}
             priority
           />

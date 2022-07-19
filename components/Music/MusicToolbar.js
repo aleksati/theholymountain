@@ -9,28 +9,31 @@ const MusicToolbar = ({ item }) => {
   const detailsModalProps = {
     triggerIcon: "details",
     triggerLabel: "Album details",
-    triggerText: " Details",
-    modalMaxSize: "max-w-sm sm:max-w-4xl",
+    triggerText: "Details",
+    modalMaxSize: "max-w-sm sm:max-w-xl md:max-w-3xl lg:max-w-4xl xl:max-w-6xl", //2xl:max-w-7xl
+    btnSize: "text-size-md sm:text-size-small",
   };
 
   const audioModal = <ModalAudio url={item.spotifyurl} />;
   const audioModalProps = {
     triggerIcon: "audio",
     triggerLabel: "Listen to album",
-    triggerText: " Listen",
+    triggerText: "Listen",
     modalMaxSize: "max-w-sm sm:max-w-4xl",
+    btnSize: "text-size-md sm:text-size-small",
   };
 
   const shopModal = <ModalShop />;
   const shopModalProps = {
     triggerIcon: "shop",
     triggerLabel: "Buy album",
-    triggerText: " Shop",
+    triggerText: "Shop",
     modalMaxSize: "max-w-sm",
+    btnSize: "text-size-md sm:text-size-small",
   };
   return (
     <div
-      className="flex items-center justify-center space-x-2 text-size-small"
+      className="flex items-center justify-center space-x-2"
       role="toolbar"
       aria-label="Music album toolbar"
     >

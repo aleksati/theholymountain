@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
+import { useScrollLock } from "../Hooks/useScrollLock";
 import ModalContent from "./ModalContent";
 import ModalTrigger from "./ModalTrigger";
 
@@ -11,6 +12,7 @@ const Modal = ({ modalProps, modalContent }) => {
     triggerLabel,
     modalMaxSize,
     tabOrder,
+    btnSize,
   } = modalProps;
 
   const [isShown, setIsShown] = useState(false);
@@ -18,6 +20,7 @@ const Modal = ({ modalProps, modalContent }) => {
   const closeBtnRef = useRef();
   const triggerBtnRef = useRef();
   const contentRefs = useRef({ modalRef, closeBtnRef });
+  const { lockScroll, unlockScroll } = useScrollLock();
 
   useEffect(() => {
     if (isShown) {
@@ -27,13 +30,13 @@ const Modal = ({ modalProps, modalContent }) => {
 
   const showModal = () => {
     setIsShown(true);
-    toggleScrollLock();
+    lockScroll();
   };
 
   const closeModal = () => {
     setIsShown(false);
     triggerBtnRef.current.focus();
-    toggleScrollLock();
+    unlockScroll();
   };
 
   const onKeyDown = event => {
@@ -45,9 +48,9 @@ const Modal = ({ modalProps, modalContent }) => {
     closeModal();
   };
 
-  const toggleScrollLock = () => {
-    document.querySelector("html").classList.toggle("scroll-lock");
-  };
+  //   const toggleScrollLock = () => {
+  //     document.querySelector("html").classList.toggle("scroll-lock");
+  //   };
 
   return (
     <>
@@ -70,6 +73,7 @@ const Modal = ({ modalProps, modalContent }) => {
         triggerTooltipMessage={triggerTooltipMessage}
         triggerLabel={triggerLabel}
         tabOrder={tabOrder}
+        btnSize={btnSize}
       />
     </>
   );

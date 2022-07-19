@@ -2,19 +2,21 @@ import SoMeBar from "../SoMeBar";
 import ReportIssues from "./ReportIssues";
 
 const Footer = () => (
-  <footer className="z-0 py-4 border-gray-300 border-t-1 dark:border-gray-600 bg-primary-light dark:bg-primary-dark brightness-95">
-    <div className="flex items-center justify-around ml-4 mr-4 text-center text-size-small sm:text-size-regular text-primary-light dark:text-primary-dark">
-      <div className="space-y-2">
-        <p> The Holy Mountain &copy; {new Date().getFullYear()}</p>
+  <footer className="py-4 border-t border-secondary-skin-light dark:border-secondary-skin-dark text-primary-light dark:text-primary-dark bg-primary-light dark:bg-primary-dark">
+    <div className="flex flex-col items-center justify-center space-y-4 text-center sm:space-y-0 sm:px-4 sm:justify-around sm:flex-row text-size-regular">
+      <div className="sm:order-2">
         <SoMeBar
-          iconSize="text-md sm:text-2xl"
+          iconSize="text-4xl"
           exclude={["youtube"]}
-          className="justify-center space-x-4 text-secondary"
+          className="justify-center"
         />
       </div>
-      <div className="flex flex-col items-center justify-center space-y-1">
+      <div className="sm:order-3">
         <ReportIssues />
-        <p className="hidden sm:flex text-secondary text-size-small">
+      </div>
+      <div className="flex flex-col items-center text-size-small sm:items-start sm:order-1 text-secondary">
+        <p> The Holy Mountain &copy; {new Date().getFullYear()}</p>
+        <p>
           Page by&nbsp;
           <a className="hover:underline" href="https://github.com/aleksati">
             Aleksander Tidemann

@@ -10,18 +10,27 @@ const ModalAbout = ({ label }) => {
   const imgSrc = currTheme === "dark" ? logoWhite : logoBlack;
 
   return (
-    <div className="flex flex-col" aria-label={`${label} dialog`}>
-      <Image src={imgSrc} alt="logo" placeholder="blur" />
-      <p className="mb-4 text-primary-light dark:text-primary-dark text-size-regular">
-        An avant-garde pop group from Norway with accordion, synthesizer, drums,
-        and vocals. Our members are Andreas Angell, Aleksander Tidemann and
-        Catharina Janner Røed.
-      </p>
-      <SoMeBar
-        iconSize="text-3xl"
-        exclude={["bandcamp"]}
-        className="justify-center m-4 space-x-6 text-secondary"
-      />
+    <div className="flex flex-col p-4 space-y-2" aria-label={`${label} dialog`}>
+      <Image src={imgSrc} alt="band logo" placeholder="blur" />
+
+      <div>
+        <p className="mb-2 text-primary-light dark:text-primary-dark text-size-regular">
+          An avant-garde pop group from Oslo, Norway with accordion,
+          synthesizer, drums, and vocals. New music out soon.
+        </p>
+      </div>
+      <div className="text-size-small sm:text-size-regular text-secondary">
+        <p>Andreas Angell - Accordion</p>
+        <p>Catharina Janner Røed - Vocals </p>
+        <p>Aleksander Tidemann - Drums / Synthesizer</p>
+      </div>
+      <div>
+        <SoMeBar
+          iconSize="text-2xl sm:text-4xl"
+          exclude={["nothing"]}
+          className="mt-2"
+        />
+      </div>
     </div>
   );
 };

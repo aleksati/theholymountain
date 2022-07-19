@@ -12,6 +12,7 @@ const ModalTrigger = React.forwardRef(
       triggerTooltipMessage,
       triggerLabel,
       tabOrder,
+      btnSize,
     },
     ref
   ) => {
@@ -23,8 +24,10 @@ const ModalTrigger = React.forwardRef(
         tooltipMessage={triggerHasTooltip ? triggerTooltipMessage : null}
         aria-label={triggerLabel}
         tabOrder={tabOrder}
+        className={btnSize ? btnSize : null}
       >
-        <Icon id={triggerIcon} /> {triggerText ? triggerText : null}
+        <Icon id={triggerIcon} />
+        {triggerText ? <p>&nbsp;{triggerText}</p> : null}
       </Button>
     );
   }

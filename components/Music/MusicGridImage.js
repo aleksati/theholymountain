@@ -10,9 +10,8 @@ const MusicGridImage = ({ item }) => (
     width="100%"
     height="100%"
     layout="responsive"
-    objectFit="contain"
+    // objectFit="fill"
     blurDataURL={`/img/placeholders/${item.key}.png`}
-    tabIndex="0"
   />
 );
 

@@ -29,21 +29,24 @@ module.exports = {
         "button-dark": "#A258E9",
       },
       colors: {
+        // text colors
         "primary-light": "#000", // for header and titles
-        secondary: "#6b7280", // for text and small text
         "primary-dark": "#fff",
-        // "secondary-dark": "#6b7280",
+        secondary: "#8b949e", // for small/seondary text and active borders. old - #6b7280 "#8b949e"
+        "secondary-skin-light": "#e0e0e0", // for inactive button borders and grid lines
+        "secondary-skin-dark": "#2d2d2d",
       },
       keyframes: {
         // for the tooltip to appear after a given duration
         tooltip_show: {
           "0%": { visibility: "hidden", opacity: "0" },
           "15%": { visibility: "hidden", opacity: "0" },
+          "50%": { visibility: "hidden", opacity: "0" },
           "100%": { visibility: "visible", opacity: "100" },
         },
       },
       animation: {
-        tooltip_show: "tooltip_show 6s ease forwards", // specify the duration here.
+        tooltip_show: "tooltip_show .2s ease forwards", // specify the duration here.
       },
     },
   },

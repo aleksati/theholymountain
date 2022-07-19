@@ -3,7 +3,7 @@ import {
   MdOutlineArrowBackIosNew,
 } from "react-icons/md";
 import { BsFillSunFill, BsFillMoonFill } from "react-icons/bs";
-import { CgDetailsMore } from "react-icons/cg";
+// import { CgDetailsMore } from "react-icons/cg";
 import { RiQuestionMark } from "react-icons/ri";
 import { RiCloseLine } from "react-icons/ri";
 import { FaBandcamp } from "react-icons/fa";
@@ -16,6 +16,8 @@ import { TbWaveSine } from "react-icons/tb";
 import { GrSoundcloud } from "react-icons/gr";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 
+import { GiMagnifyingGlass } from "react-icons/gi";
+
 const defaultSize = "text-md";
 
 const icons = {
@@ -23,7 +25,7 @@ const icons = {
   moon: s => <BsFillMoonFill className={s} />,
   audio: s => <TbWaveSine className={s} />,
   about: s => <RiQuestionMark className={s} />,
-  details: s => <CgDetailsMore className={s} />,
+  details: s => <GiMagnifyingGlass className={s} />,
   prevArrow: s => <MdOutlineArrowBackIosNew className={s} />,
   nextArrow: s => <MdOutlineArrowForwardIos className={s} />,
   closeButton: s => <RiCloseLine className={s} />,

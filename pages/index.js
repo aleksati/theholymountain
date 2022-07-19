@@ -5,11 +5,13 @@ import PageMedia from "../components/Page/PageMedia";
 export default function Home({ sortedMusicData, sortedVideoData }) {
   return (
     <AppLayout>
-      <div className="divide-y divide-gray-300 dark:divide-gray-600">
-        <FrontPage />
-        <PageMedia content={sortedMusicData} pagetitle="discography" />
-        <PageMedia content={sortedVideoData} pagetitle="videos" />
-      </div>
+      <FrontPage />
+      <PageMedia
+        content={sortedMusicData}
+        pageTitle="discography"
+        maxGridCols="4"
+      />
+      <PageMedia content={sortedVideoData} pageTitle="videos" maxGridCols="3" />
     </AppLayout>
   );
 }
@@ -18,10 +20,10 @@ import musicData from "../lib/musicData";
 import videoData from "../lib/videoData";
 
 export const getStaticProps = async () => {
-  const sortedMusicData = await musicData.sort(
+  const sortedMusicData = musicData.sort(
     (a, b) => Number(b.year) - Number(a.year)
   );
-  const sortedVideoData = await videoData.sort(
+  const sortedVideoData = videoData.sort(
     (a, b) => Number(b.year) - Number(a.year)
   );
 

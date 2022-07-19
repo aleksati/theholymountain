@@ -29,7 +29,7 @@ const SoMeBar = ({ iconSize, exclude = [], className }) => {
   ];
 
   return (
-    <div className={`flex flex-row ${className}`}>
+    <div className={`flex flex-row space-x-4 ${className}`}>
       {some.map(some => {
         if (exclude.includes(some.key)) return;
         return (
@@ -38,7 +38,7 @@ const SoMeBar = ({ iconSize, exclude = [], className }) => {
             href={some.url}
             role="link"
             aria-label={some.key}
-            className="transition duration-200 ease-in-out hover:scale-105"
+            className="transition duration-200 ease-in-out text-secondary opacity-40 hover:opacity-80"
           >
             <Icon id={some.key} iconSize={iconSize} />
           </a>

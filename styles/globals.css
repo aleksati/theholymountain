@@ -34,9 +34,9 @@
   }
 }
 
-/* Enable to diable scolling when modal is up */
-.scroll-lock {
-  overflow: hidden;
+/* compensate for our scrollLock hook. Is applied to Nav*/
+[data-scroll-lock] .scrollLock-compensation {
+  margin-right: var(--scrollbar-compensation);
 }
 
 /* For the active slideshow indicators */

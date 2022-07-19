@@ -5,21 +5,23 @@ import YoutubePlayer from "../Video/YoutubePlayer";
 const PageMediaGridItem = ({ item, children }) => {
   return (
     <div
-      className={`rounded-md bg-primary-light dark:bg-primary-dark mt-4 mb-4 space-y-2`}
-      aria-label={item.title}
+      className={`flex flex-col p-4 items-center justify-center border border-secondary-skin-light dark:border-secondary-skin-dark hover:border-secondary hover:dark:border-secondary duration-200 transition rounded-md space-y-4`}
+      aria-label={`${item.title} album grid item`}
+      tabIndex="0"
     >
-      <>
+      <div className="relative w-full">
         {item.id === "music" ? (
           <MusicGridImage item={item} />
         ) : (
           <YoutubePlayer item={item} />
         )}
-      </>
-      <div>
-        <h2 className="tracking-tight text-center text-size-title text-primary-light dark:text-primary-dark">
+      </div>
+
+      <div className="leading-8 text-center">
+        <h2 className="text-size-title">
           <b>{item.title.toUpperCase()}</b>
         </h2>
-        <p className="text-center text-secondary text-size-small">
+        <p className="text-secondary">
           {item.category} / {item.year}
         </p>
       </div>

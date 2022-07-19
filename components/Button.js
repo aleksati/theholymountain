@@ -18,7 +18,7 @@ const Button = React.forwardRef(
   ) => {
     const color = colorStyle
       ? colorStyle
-      : "border-gray-300 dark:border-gray-600 hover:border-black hover:dark:border-white";
+      : "border-secondary-skin-light dark:border-secondary-skin-dark hover:border-secondary hover:dark:border-secondary";
 
     const renderLink = () => (
       <button
