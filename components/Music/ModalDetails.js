@@ -24,9 +24,9 @@ const ModalDetails = ({ album }) => {
           ))}
         </div>
         <SoMeBar
-          iconSize="text-2xl sm:text-4xl"
+          iconSize="text-2xl lg:text-4xl"
           exclude={["nothing"]}
-          className="mt-2"
+          className="hidden mt-2 sm:flex"
         />
       </div>
     </div>

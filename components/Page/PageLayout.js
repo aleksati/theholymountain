@@ -1,6 +1,6 @@
 import Meta from "../Meta";
 
-const PageLayout = ({ children, id, className = "", pageMeta }) => {
+const PageLayout = ({ children, id, className, pageMeta }) => {
   return (
     <>
       <Meta {...pageMeta} />
