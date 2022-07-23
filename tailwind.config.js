@@ -7,6 +7,14 @@ module.exports = {
   ],
   darkMode: "class",
   theme: {
+    container: {
+      screens: {
+        sm: "100%",
+        md: "100%",
+        lg: "100%",
+        xl: "1280px",
+      },
+    },
     extend: {
       fontFamily: {
         jost: ["Jost", "sans-serif"],
@@ -46,7 +54,7 @@ module.exports = {
         },
       },
       animation: {
-        tooltip_show: "tooltip_show .2s ease forwards", // specify the duration here.
+        tooltip_show: "tooltip_show .5s ease forwards", // specify the duration here.
       },
     },
   },

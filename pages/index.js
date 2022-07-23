@@ -1,17 +1,14 @@
 import AppLayout from "../components/AppLayout";
-import FrontPage from "../components/FrontPage/FrontPage";
-import PageMedia from "../components/Page/PageMedia";
+import FrontPage from "../sections/FrontPage";
+import Discography from "../sections/Discography";
+import Videos from "../sections/Videos";
 
 export default function Home({ sortedMusicData, sortedVideoData }) {
   return (
     <AppLayout>
       <FrontPage />
-      <PageMedia
-        content={sortedMusicData}
-        pageTitle="discography"
-        maxGridCols="4"
-      />
-      <PageMedia content={sortedVideoData} pageTitle="videos" maxGridCols="3" />
+      <Discography musicData={sortedMusicData} maxGridCols="3" />
+      <Videos videoData={sortedVideoData} maxGridCols="2" />
     </AppLayout>
   );
 }

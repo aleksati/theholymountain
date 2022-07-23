@@ -5,7 +5,7 @@ const PageLayout = ({ children, id, className, pageMeta }) => {
     <>
       <Meta {...pageMeta} />
       <div
-        className={`relative w-full min-h-screen text-size-regular text-primary-light dark:text-primary-dark bg-primary-light dark:bg-primary-dark ${className}`}
+        className={`relative min-h-screen container mx-auto ${className}`}
         id={id}
       >
         {children}

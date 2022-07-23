@@ -1,20 +1,8 @@
 import React, { useState, useRef, useEffect } from "react";
 import { useScrollLock } from "../Hooks/useScrollLock";
 import ModalContent from "./ModalContent";
-import ModalTrigger from "./ModalTrigger";
 
-const Modal = ({ modalProps, modalContent }) => {
-  const {
-    triggerIcon,
-    triggerText,
-    triggerHasTooltip,
-    triggerTooltipMessage,
-    triggerLabel,
-    modalMaxSize,
-    tabOrder,
-    btnSize,
-  } = modalProps;
-
+const Modal = ({ modalMaxSize, modalContent, children }) => {
   const [isShown, setIsShown] = useState(false);
   const modalRef = useRef();
   const closeBtnRef = useRef();
@@ -48,13 +36,9 @@ const Modal = ({ modalProps, modalContent }) => {
     closeModal();
   };
 
-  //   const toggleScrollLock = () => {
-  //     document.querySelector("html").classList.toggle("scroll-lock");
-  //   };
-
   return (
     <>
-      {isShown ? (
+      {isShown && (
         <ModalContent
           ref={contentRefs}
           closeModal={closeModal}
@@ -63,18 +47,8 @@ const Modal = ({ modalProps, modalContent }) => {
           onKeyDown={onKeyDown}
           onClickOutside={onClickOutside}
         />
-      ) : null}
-      <ModalTrigger
-        ref={triggerBtnRef}
-        showModal={showModal}
-        triggerIcon={triggerIcon}
-        triggerText={triggerText}
-        triggerHasTooltip={triggerHasTooltip}
-        triggerTooltipMessage={triggerTooltipMessage}
-        triggerLabel={triggerLabel}
-        tabOrder={tabOrder}
-        btnSize={btnSize}
-      />
+      )}
+      {children(triggerBtnRef, showModal)}
     </>
   );
 };

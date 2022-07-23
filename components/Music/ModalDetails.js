@@ -11,14 +11,14 @@ const ModalDetails = ({ album }) => {
         <Slideshow imgSlugs={album.slideshow} />
       </div>
       <div className="flex flex-col items-start justify-center h-full px-4 space-y-2 text-primary-light dark:text-primary-dark">
-        <h2 className="mb-2 leading-8 text-size-header">
+        <h2 className="leading-8 text-size-header ">
           <b>{album.title.toUpperCase()}</b>
         </h2>
-        <p className="text-secondary text-size-small lg:text-size-regular">
+        <p className="mb-2 text-secondary text-size-small lg:text-size-regular">
           {album.category} / {album.year}
         </p>
-        <p>{album.text}</p>
-        <div className="text-secondary text-size-small lg:text-size-regular">
+        <p className="mb-2">{album.text}</p>
+        <div className="mb-2 text-secondary text-size-small lg:text-size-regular">
           {album.credits.map((credit, index) => (
             <p key={index}>{credit}</p>
           ))}

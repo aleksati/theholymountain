@@ -2,6 +2,8 @@ import React from "react";
 import FocusTrap from "focus-trap-react";
 import Icon from "../Icon";
 
+// use callBacks and useMemo... to reduce rendering.
+
 const ModalContent = React.forwardRef(
   ({ onClickOutside, onKeyDown, content, closeModal, modalMaxSize }, ref) => {
     const { modalRef, closeBtnRef } = ref.current;

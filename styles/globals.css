@@ -25,7 +25,8 @@
 @tailwind utilities;
 
 @layer base {
-  html {
+  html,
+  p {
     font-family: "Jost", sans-serif;
     font-weight: 500;
   }

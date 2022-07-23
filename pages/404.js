@@ -1,9 +1,9 @@
 import PageTextPoster from "../components/Page/PageTextPoster";
-import PageLayout from "../components/Page/PageLayout";
-import CoverPhoto from "../components/FrontPage/CoverPhoto";
+import CoverPhoto from "../components/CoverPhoto";
 import { SITE_DOMAIN } from "../config";
 import Button from "../components/Button";
 import Link from "next/link";
+import Meta from "../components/Meta";
 
 const src = "/img/404.png";
 const placeholder = "/img/placeholders/404.png";
@@ -16,15 +16,18 @@ const FourOhFour = () => {
   };
 
   return (
-    <PageLayout id="404" pageMeta={meta}>
-      <CoverPhoto imgSrc={src} placeholder={placeholder} />
-      <PageTextPoster>
-        <h1 className="text-size-header-big">Lost?</h1>
-        <Link href="/" passHref>
-          <Button>Go to homepage</Button>
-        </Link>
-      </PageTextPoster>
-    </PageLayout>
+    <>
+      <Meta {...meta} />
+      <div className="relative min-h-screen" id="404">
+        <CoverPhoto imgSrc={src} placeholder={placeholder} />
+        <PageTextPoster>
+          <h1 className="text-size-header-big">Lost?</h1>
+          <Link href="/" passHref>
+            Go to homepage
+          </Link>
+        </PageTextPoster>
+      </div>
+    </>
   );
 };
 
