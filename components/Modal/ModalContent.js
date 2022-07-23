@@ -1,16 +1,21 @@
-import React from "react";
-import FocusTrap from "focus-trap-react";
+import React, { memo, useEffect, useState } from "react";
 import Icon from "../Icon";
-
-// use callBacks and useMemo... to reduce rendering.
+import FocusTrap from "focus-trap-react";
 
 const ModalContent = React.forwardRef(
   ({ onClickOutside, onKeyDown, content, closeModal, modalMaxSize }, ref) => {
     const { modalRef, closeBtnRef } = ref.current;
+    const [isMounted, setIsMounted] = useState(false);
+
+    // so pressing Enter to open the modal
+    // doesnt close it again immediatley
+    useEffect(() => {
+      setIsMounted(true);
+    }, []);
 
     return (
+      // The Modal container (popupCard) centered
       <FocusTrap>
-        {/* The Modal container (popupCard) centered */}
         <aside
           tag="aside"
           role="dialog"
@@ -26,15 +31,17 @@ const ModalContent = React.forwardRef(
             ref={modalRef}
           >
             {/* The close button at the top right */}
-            <div className="flex place-content-end">
-              <button
-                ref={closeBtnRef}
-                aria-label="Close Modal"
-                onClick={closeModal}
-              >
-                <Icon id="closeButton" iconSize={"text-lg"} />
-              </button>
-            </div>
+            {isMounted && (
+              <div className="flex place-content-end">
+                <button
+                  ref={closeBtnRef}
+                  aria-label="Close Modal"
+                  onClick={closeModal}
+                >
+                  <Icon id="closeButton" iconSize={"text-lg"} />
+                </button>
+              </div>
+            )}
             {content}
           </div>
         </aside>
@@ -45,4 +52,4 @@ const ModalContent = React.forwardRef(
 
 ModalContent.displayName = "ModalContent";
 
-export default ModalContent;
+export default memo(ModalContent);

@@ -10,7 +10,10 @@ const ModalAbout = ({ label }) => {
   const imgSrc = currTheme === "dark" ? logoWhite : logoBlack;
 
   return (
-    <div className="flex flex-col p-4 space-y-2" aria-label={`${label} dialog`}>
+    <div
+      className="flex flex-col p-4 space-y-2 sm:p-6"
+      aria-label={`${label} dialog`}
+    >
       <Image src={imgSrc} alt="band logo" placeholder="blur" />
 
       <div>

@@ -6,6 +6,7 @@ const ModalAudio = ({ url, label }) => {
       {url ? (
         <iframe
           className={"p-4"}
+          tabIndex="0"
           src={url}
           loading="lazy"
           width="100%"
