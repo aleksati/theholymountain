@@ -14,11 +14,11 @@ export default function Home({ sortedMusicData, sortedVideoData }) {
       <FrontPage />
       <Discography musicData={sortedMusicData} maxGridCols="3" />
       <Videos videoData={sortedVideoData} maxGridCols="2" />
-      <PageLayout id="test">
+      {/* <PageLayout id="test">
         <div className="relative w-3/4 m-auto">
           <AudioPlayer />
         </div>
-      </PageLayout>
+      </PageLayout> */}
     </AppLayout>
   );
 }

@@ -3,7 +3,6 @@ import {
   MdOutlineArrowBackIosNew,
 } from "react-icons/md";
 import { BsFillSunFill, BsFillMoonFill } from "react-icons/bs";
-// import { CgDetailsMore } from "react-icons/cg";
 import { RiQuestionMark } from "react-icons/ri";
 import { RiCloseLine } from "react-icons/ri";
 import { FaBandcamp } from "react-icons/fa";
@@ -15,6 +14,8 @@ import { FiMail } from "react-icons/fi";
 import { TbWaveSine } from "react-icons/tb";
 import { GrSoundcloud } from "react-icons/gr";
 import { AiOutlineShoppingCart } from "react-icons/ai";
+import { FiPlay } from "react-icons/fi";
+import { AiOutlinePause } from "react-icons/ai";
 
 import { GiMagnifyingGlass } from "react-icons/gi";
 
@@ -37,6 +38,8 @@ const icons = {
   contact: s => <FiMail className={s} />,
   soundcloud: s => <GrSoundcloud className={s} />,
   shop: s => <AiOutlineShoppingCart className={s} />,
+  play: s => <FiPlay className={s} />,
+  pause: s => <AiOutlinePause className={s} />,
 };
 
 const Icon = ({ iconSize, id }) => {
