@@ -21,22 +21,28 @@ const Modal = ({ modalMaxSize, modalContent, children }) => {
   const showModal = useCallback(() => {
     setIsShown(true);
     lockScroll();
-  }, []);
+  }, [lockScroll]);
 
   const closeModal = useCallback(() => {
     setIsShown(false);
     triggerBtnRef.current.focus();
     unlockScroll();
-  }, []);
+  }, [unlockScroll]);
 
-  const onKeyDown = useCallback(event => {
-    if (event.keyCode === 27) return closeModal();
-  }, []);
+  const onKeyDown = useCallback(
+    event => {
+      if (event.keyCode === 27) return closeModal();
+    },
+    [closeModal]
+  );
 
-  const onClickOutside = useCallback(event => {
-    if (modalRef.current && modalRef.current.contains(event.target)) return;
-    return closeModal();
-  }, []);
+  const onClickOutside = useCallback(
+    event => {
+      if (modalRef.current && modalRef.current.contains(event.target)) return;
+      return closeModal();
+    },
+    [closeModal]
+  );
 
   return (
     <>

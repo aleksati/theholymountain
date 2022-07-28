@@ -1,3 +1,4 @@
+import "react-slideshow-image/dist/styles.css";
 import { Slide } from "react-slideshow-image";
 import Image from "next/image";
 import Icon from "./Icon";

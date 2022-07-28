@@ -71,7 +71,7 @@ const AudioPlayer = ({ src }) => {
   useEffect(() => {
     if (currTheme === stateTheme) return;
     setStateTheme(currTheme);
-  }, [currTheme]);
+  }, [currTheme, stateTheme]);
 
   // set waveform colors based on theme
   useEffect(() => {
