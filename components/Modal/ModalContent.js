@@ -9,6 +9,7 @@ const ModalContent = React.forwardRef(
 
     // so pressing Enter to open the modal
     // doesnt close it again immediatley
+    // moves the focus to other elements in the modal first
     useEffect(() => {
       setIsMounted(true);
     }, []);

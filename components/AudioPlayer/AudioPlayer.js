@@ -20,11 +20,7 @@ const WaveFormOptions = ref => ({
   normalize: true,
 });
 
-// Store audio in MongoDB .. After likes ocunter.
-
 const url = "./audio/celestial-city.mp3";
-
-//"https://www.mfiles.co.uk/mp3-downloads/brahms-st-anthony-chorale-theme-two-pianos.mp3";
 
 const AudioPlayer = ({ src }) => {
   const containerRef = useRef(null);

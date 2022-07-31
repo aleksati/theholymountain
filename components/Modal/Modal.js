@@ -46,10 +46,8 @@ const Modal = ({ modalMaxSize, modalContent, children }) => {
 
   return (
     <>
-      {/* Once I first render the modal, I keep it in "cache" so as not to re-render all photos at every time I open it. */}
       {isShown && (
         <ModalContent
-          //   isShown={isShown}
           ref={contentRefs}
           closeModal={closeModal}
           content={modalContent}
