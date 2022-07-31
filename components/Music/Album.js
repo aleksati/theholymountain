@@ -30,10 +30,10 @@ const Album = React.forwardRef(({ album, showModal }, ref) => {
     <div
       ref={ref}
       tabIndex="0"
-      type="button"
+      //   type="button"
       onClick={handleClick}
       onKeyDown={handleKey}
-      className={`flex flex-col cursor-pointer p-4 items-center justify-center border rounded-md border-secondary-skin-light hover:border-secondary hover:dark:border-secondary transistion ease-in-out duration-200 dark:border-secondary-skin-dark space-y-4`}
+      className={`flex flex-col cursor-pointer p-4 border rounded-md items-center justify-center border-secondary-skin-light hover:border-secondary hover:dark:border-secondary transistion ease-in-out duration-200 dark:border-secondary-skin-dark space-y-4`}
       aria-label={`${album.title} album grid cell`}
     >
       <AlbumCover item={album} />
