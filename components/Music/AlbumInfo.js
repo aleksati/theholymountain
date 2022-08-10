@@ -1,10 +1,8 @@
 import React from "react";
 
 const AlbumInfo = ({ album }) => (
-  <div className="leading-8 text-center">
-    <h2 className="text-size-title">
-      <b>{album.title.toUpperCase()}</b>
-    </h2>
+  <div className="text-center">
+    <h2 className="font-normal text-size-title">{album.title.toUpperCase()}</h2>
     <p className="text-secondary">
       {album.category} / {album.year}
     </p>

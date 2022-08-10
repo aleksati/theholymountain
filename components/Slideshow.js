@@ -15,7 +15,6 @@ const properties = {
   canSwipe: true,
   indicators: true,
   transitionDuration: 200,
-  defaultIndex: 2,
   nextArrow: (
     <button className="text-primary-dark" aria-label="next slideshow image">
       <Icon id="nextArrow" iconSize={"text-4xl md:text-4xl"} />
@@ -28,24 +27,25 @@ const properties = {
   ),
 };
 
-const Slideshow = ({ imgSlugs = [], className }) => {
+const Slideshow = ({ imgSlugs = [] }) => {
   return (
-    <div className={`w-full p-2 ${className}`} aria-label="slideshow container">
-      <Slide {...properties} indicators={indicators}>
-        {imgSlugs.map(slug => (
-          <Image
-            key={slug}
-            src={`/img/${slug}.png`}
-            className="rounded-md shadow-md"
-            alt={`slideshow image of release; ${slug}`}
-            width="100%"
-            height="100%"
-            layout="responsive"
-            blurDataURL={`/img/placeholders/${slug}.png`}
-            priority
-          />
-        ))}
-      </Slide>
+    <div className="relative p-2 w-96 md:w-3/6">
+      <div className={`w-full`} aria-label="slideshow container">
+        <Slide {...properties} indicators={indicators}>
+          {imgSlugs.map(slug => (
+            <Image
+              key={slug}
+              src={`/img/${slug}.png`}
+              className="rounded-md shadow-md"
+              alt={`slideshow image of release; ${slug}`}
+              width="100%"
+              height="100%"
+              layout="responsive"
+              blurDataURL={`/img/placeholders/${slug}.png`}
+            />
+          ))}
+        </Slide>
+      </div>
     </div>
   );
 };

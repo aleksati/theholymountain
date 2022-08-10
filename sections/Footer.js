@@ -17,7 +17,7 @@ const Footer = () => (
       <div className="flex flex-col items-center text-size-small md:items-start md:order-1 text-secondary">
         <p> The Holy Mountain &copy; {new Date().getFullYear()}</p>
         <p>
-          Page by&nbsp;
+          By&nbsp;
           <a className="hover:underline" href="https://github.com/aleksati">
             Aleksander Tidemann
           </a>

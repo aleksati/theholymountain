@@ -17,14 +17,19 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        jost: ["Jost", "sans-serif"],
+        source: ['"Source Sans Pro"', "sans-serif"],
       },
       fontSize: {
         "size-header-big": ["3.75rem"], // text-6xl
         "size-header": ["2.25rem"], // text-4xl
         "size-title": ["1.875rem"], // text-3xl
-        "size-regular": ["1.125rem"], //text-lg
-        "size-small": ["0.75rem"], // text-xs
+        "size-regular": ["1.25rem"], //text-lg
+        "size-small": ["1rem"], // text-xs
+        //   "size-header-big": ["6rem"], // text-8xl
+        //   "size-header": ["3.75rem"], // text-6xl
+        //   "size-title": ["2.25rem"], // text-4xl
+        //   "size-regular": ["1.125rem"], //text-lg
+        //   "size-small": ["1.5em"], // text-regular
       }, // https://tailwindcss.com/docs/font-size
       backgroundColor: {
         "primary-light": "#fff",
@@ -38,7 +43,7 @@ module.exports = {
       },
       colors: {
         // text colors
-        "primary-light": "#000", // for header and titles
+        "primary-light": "#000",
         "primary-dark": "#fff",
         secondary: "#8b949e", // for small/seondary text and active borders. old - #6b7280 "#8b949e"
         "secondary-skin-light": "#e0e0e0", // for inactive button borders and grid lines

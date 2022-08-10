@@ -67,17 +67,17 @@ const ModalContact = () => {
         className="flex flex-col"
         aria-label="Contact form"
       >
-        <h1 className="overflow-hidden text-center text-clip text-size-header">
+        <h1 className="overflow-hidden font-normal text-center text-clip text-size-header">
           CONTACT
         </h1>
         <div className="grid grid-cols-1 gap-6 mt-4 w-80 sm:w-96">
-          <p>
+          {/* <p>
             We would love to hear from you! Just fill out the form below and
             we&apos;ll be in touch.
-          </p>
+          </p> */}
           <label className="block">
             <span className="text-primary-light dark:text-primary-dark">
-              Your name
+              Name
             </span>
             <input
               type="text"
@@ -94,7 +94,7 @@ const ModalContact = () => {
           </label>
           <label className="block">
             <span className="text-primary-light dark:text-primary-dark">
-              Your email
+              Email
             </span>
             <input
               type="email"

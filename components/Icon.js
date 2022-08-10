@@ -16,8 +16,8 @@ import { GrSoundcloud } from "react-icons/gr";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { FiPlay } from "react-icons/fi";
 import { AiOutlinePause } from "react-icons/ai";
-
 import { GiMagnifyingGlass } from "react-icons/gi";
+import { AiOutlineHeart, AiOutlineMail } from "react-icons/ai";
 
 const defaultSize = "text-md";
 
@@ -35,11 +35,13 @@ const icons = {
   bandcamp: s => <FaBandcamp className={s} />,
   youtube: s => <AiFillYoutube className={s} />,
   spotify: s => <BsSpotify className={s} />,
-  contact: s => <FiMail className={s} />,
+  //   contact: s => <FiMail className={s} />,
+  contact: s => <AiOutlineMail className={s} />,
   soundcloud: s => <GrSoundcloud className={s} />,
   shop: s => <AiOutlineShoppingCart className={s} />,
   play: s => <FiPlay className={s} />,
   pause: s => <AiOutlinePause className={s} />,
+  heart: s => <AiOutlineHeart className={s} />,
 };
 
 const Icon = ({ iconSize, id }) => {
