@@ -9,7 +9,6 @@ const AlbumModalWrapper = ({ album }) => {
     triggerIcon: "details",
     triggerLabel: "Album details",
     triggerText: "Details",
-    modalMaxSize: "max-w-sm sm:max-w-xl md:max-w-3xl lg:max-w-4xl xl:max-w-6xl", //2xl:max-w-7xl
   };
 
   return (

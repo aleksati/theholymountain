@@ -11,7 +11,7 @@ const aboutModalProps = {
   triggerHasTooltip: true,
   triggerTooltipMessage: "About",
   triggerLabel: "About Us",
-  modalMaxSize: "max-w-sm sm:max-w-xl",
+  modalMaxSize: "max-w-xl", //   modalMaxSize: "max-w-sm sm:max-w-xl",
   tabOrder: "1",
 };
 
@@ -21,7 +21,7 @@ const contactModalProps = {
   triggerHasTooltip: true,
   triggerTooltipMessage: "Contact",
   triggerLabel: "Contact Us",
-  modalMaxSize: "max-w-sm sm:max-w-md",
+  modalMaxSize: "max-w-md",
   tabOrder: "2",
 };
 

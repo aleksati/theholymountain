@@ -24,11 +24,11 @@ const ModalContent = React.forwardRef(
           aria-modal="true"
           onClick={onClickOutside}
           onKeyDown={onKeyDown}
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 backdrop-brightness-50"
+          className="fixed inset-0 z-50 flex items-center justify-center p-2 backdrop-brightness-50"
         >
           {/* The Modal Card*/}
           <div
-            className={`rounded-md bg-primary-light max-h-screen dark:bg-primary-dark shadow-md p-4 ${modalMaxSize}`}
+            className={`rounded-md container mx-auto bg-primary-light max-h-screen dark:bg-primary-dark shadow-md p-4 ${modalMaxSize}`}
             ref={modalRef}
           >
             {/* The close button at the top right */}
@@ -39,7 +39,7 @@ const ModalContent = React.forwardRef(
                   aria-label="Close Modal"
                   onClick={closeModal}
                 >
-                  <Icon id="closeButton" iconSize={"text-xl"} />
+                  <Icon id="closeButton" iconSize={"text-2xl"} />
                 </button>
               </div>
             )}
