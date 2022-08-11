@@ -19,8 +19,9 @@ const ThemeToggle = ({ tabOrder }) => {
   return (
     <Button
       onClick={handleClick}
-      showTooltip={true}
-      tooltipMessage="Theme"
+      //   showTooltip={true}
+      //   tooltipMessage="Theme"
+      className="p-4"
       aria-label={`Toggle light or dark mode theme`}
       aria-pressed={currTheme === "dark" ? "true" : "false"}
       tabOrder={tabOrder}

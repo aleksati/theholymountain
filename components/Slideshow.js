@@ -29,23 +29,22 @@ const properties = {
 
 const Slideshow = ({ imgSlugs = [] }) => {
   return (
-    <div className="relative w-full p-2 md:w-3/6">
-      <div className={`w-full`} aria-label="slideshow container">
-        <Slide {...properties} indicators={indicators}>
-          {imgSlugs.map(slug => (
-            <Image
-              key={slug}
-              src={`/img/${slug}.png`}
-              className="rounded-md shadow-md"
-              alt={`slideshow image of release; ${slug}`}
-              width="100%"
-              height="100%"
-              layout="responsive"
-              blurDataURL={`/img/placeholders/${slug}.png`}
-            />
-          ))}
-        </Slide>
-      </div>
+    <div className="relative w-full" aria-label="slideshow container">
+      <Slide {...properties} indicators={indicators}>
+        {imgSlugs.map(slug => (
+          <Image
+            key={slug}
+            src={`/img/${slug}.png`}
+            className="rounded-md"
+            alt={`slideshow image of ${slug}`}
+            width="100%"
+            height="100%"
+            layout="responsive"
+            blurDataURL={`/img/placeholders/${slug}.png`}
+            priority
+          />
+        ))}
+      </Slide>
     </div>
   );
 };

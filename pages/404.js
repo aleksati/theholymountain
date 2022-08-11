@@ -1,7 +1,6 @@
 import PageTextPoster from "../components/Page/PageTextPoster";
 import CoverPhoto from "../components/CoverPhoto";
 import { SITE_DOMAIN } from "../config";
-import Button from "../components/Button";
 import Link from "next/link";
 import Meta from "../components/Meta";
 

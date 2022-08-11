@@ -1,40 +1,32 @@
-import React, { useEffect, useState } from "react";
-import AppLayout from "../components/AppLayout";
+import musicData from "../lib/musicData";
+import videoData from "../lib/videoData";
 import FrontPage from "../sections/FrontPage";
 import Discography from "../sections/Discography";
 import Videos from "../sections/Videos";
-import PageLayout from "../components/Page/PageLayout";
-import AudioPlayer from "../components/AudioPlayer/AudioPlayer";
-import musicData from "../lib/musicData";
-import videoData from "../lib/videoData";
 
-export default function Home({ sortedMusicData, sortedVideoData }) {
+export default function Home({ filteredMusicData, filteredVideoData }) {
   return (
-    <AppLayout>
+    <>
       <FrontPage />
-      <Discography musicData={sortedMusicData} maxGridCols="3" />
-      <Videos videoData={sortedVideoData} maxGridCols="2" />
-      {/* <PageLayout id="test">
-        <div className="relative w-3/4 m-auto">
-          <AudioPlayer />
-        </div>
-      </PageLayout> */}
-    </AppLayout>
+      <Discography musicData={filteredMusicData} maxGridCols="3" />
+      <Videos videoData={filteredVideoData} maxGridCols="2" />
+    </>
   );
 }
 
 export const getStaticProps = async () => {
-  const sortedMusicData = musicData.sort(
+  const filteredMusicData = musicData.sort(
     (a, b) => Number(b.year) - Number(a.year)
   );
-  const sortedVideoData = videoData.sort(
+
+  const filteredVideoData = videoData.sort(
     (a, b) => Number(b.year) - Number(a.year)
   );
 
   return {
     props: {
-      sortedMusicData,
-      sortedVideoData,
+      filteredMusicData,
+      filteredVideoData,
     },
   };
 };

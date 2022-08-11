@@ -1,7 +1,6 @@
-import React from "react";
 import ModalContact from "../components/Nav/ModalContact";
 import ModalAbout from "../components/Nav/ModalAbout";
-import ThemeToggle from "../components/Nav/ThemeToggle";
+// import ThemeToggle from "../components/Nav/ThemeToggle";
 import Modal from "../components/Modal/Modal";
 import ModalTrigger from "../components/Modal/ModalTrigger";
 
@@ -57,7 +56,7 @@ const Nav = () => (
         />
       )}
     </Modal>
-    <ThemeToggle tabOrder="3" />
+    {/* <ThemeToggle tabOrder="3" /> */}
   </nav>
 );
 

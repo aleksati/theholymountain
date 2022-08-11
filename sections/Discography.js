@@ -1,14 +1,14 @@
 import PageLayout from "../components/Page/PageLayout";
 import PageGrid from "../components/Page/PageGrid";
-import AlbumModalWrapper from "../components/Music/AlbumModalWrapper";
+import MusicItem from "../components/Music/MusicItem";
 import PageTitle from "../components/Page/PageTitle";
 
 const Discography = ({ musicData, children, maxGridCols }) => (
-  <PageLayout id={"Discography"} className="pb-4">
+  <PageLayout id="discography" className="pb-4">
     <PageTitle title="Discography" />
     <PageGrid maxGridCols={maxGridCols}>
-      {musicData.map(album => (
-        <AlbumModalWrapper key={album.key} album={album} />
+      {musicData.map(item => (
+        <MusicItem key={item.key} item={item} />
       ))}
     </PageGrid>
     {children}

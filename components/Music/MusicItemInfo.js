@@ -1,14 +1,14 @@
 import React from "react";
 
-const AlbumInfo = ({ album }) => (
+const MusicItemInfo = ({ title, category, year }) => (
   <div className="text-center">
     <h2 className="font-normal leading-8 text-size-title">
-      {album.title.toUpperCase()}
+      {title.toUpperCase()}
     </h2>
     <p className="text-secondary">
-      {album.category} / {album.year}
+      {category} / {year}
     </p>
   </div>
 );
 
-export default AlbumInfo;
+export default MusicItemInfo;

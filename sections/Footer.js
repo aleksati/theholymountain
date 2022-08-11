@@ -1,5 +1,6 @@
 import SoMeBar from "../components/SoMeBar";
 import ReportIssues from "../components/ReportIssues";
+import ThemeToggle from "../components/Nav/ThemeToggle";
 
 const Footer = () => (
   <footer className="py-4 border-t border-secondary-skin-light dark:border-secondary-skin-dark text-primary-light dark:text-primary-dark bg-primary-light dark:bg-primary-dark">
@@ -11,7 +12,8 @@ const Footer = () => (
           className="justify-center"
         />
       </div>
-      <div className="md:order-3">
+      <div className="flex space-x-2 md:order-3">
+        <ThemeToggle />
         <ReportIssues />
       </div>
       <div className="flex flex-col items-center text-size-small md:items-start md:order-1 text-secondary">
