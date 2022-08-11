@@ -1,18 +1,17 @@
 import React from "react";
 import ModalTrigger from "../Modal/ModalTrigger";
-// import ModalDetails from "./ModalDetails";
-import ModalAudio from "./ModalAudio";
+// import ModalListen from "./ModalListen";
 import ModalShop from "./ModalShop";
 import Modal from "../Modal/Modal";
 
 const AlbumToolbar = React.forwardRef(({ album }, ref) => {
-  const audioModal = <ModalAudio url={album.spotifyurl} />;
-  const audioModalProps = {
-    triggerIcon: "audio",
-    triggerLabel: "Listen to album",
-    triggerText: "Listen",
-    modalMaxSize: "max-w-sm sm:max-w-4xl",
-  };
+  //   const audioModal = <ModalListen url={album.spotifyurl} />;
+  //   const audioModalProps = {
+  //     triggerIcon: "audio",
+  //     triggerLabel: "Listen to album",
+  //     triggerText: "Listen",
+  //     modalMaxSize: "max-w-sm sm:max-w-4xl",
+  //   };
 
   const shopModal = <ModalShop />;
   const shopModalProps = {
@@ -28,7 +27,7 @@ const AlbumToolbar = React.forwardRef(({ album }, ref) => {
       aria-label="Music album toolbar"
       ref={ref}
     >
-      <Modal
+      {/* <Modal
         key="Audio"
         modalContent={audioModal}
         modalMaxSize={audioModalProps.modalMaxSize}
@@ -40,7 +39,7 @@ const AlbumToolbar = React.forwardRef(({ album }, ref) => {
             {...audioModalProps}
           />
         )}
-      </Modal>
+      </Modal> */}
       <Modal
         key="Shop"
         modalContent={shopModal}

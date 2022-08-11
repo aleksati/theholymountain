@@ -70,7 +70,7 @@ const ModalContact = () => {
         <h1 className="overflow-hidden font-normal text-center text-clip text-size-header">
           CONTACT
         </h1>
-        <div className="grid grid-cols-1 gap-6 mt-4 w-96">
+        <div className="grid grid-cols-1 gap-6 mt-4">
           {/* <p>
             We would love to hear from you! Just fill out the form below and
             we&apos;ll be in touch.

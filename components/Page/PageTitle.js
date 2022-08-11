@@ -5,7 +5,7 @@ const PageTitle = ({ title }) => (
     aria-label="Media page title"
     className="mt-4 mb-4 overflow-hidden font-normal text-center text-clip text-size-header-big sm:text-size-header-big"
   >
-    <b>{title.toUpperCase()}</b>
+    {title.toUpperCase()}
   </h1>
 );
 

@@ -1,5 +1,5 @@
 import Slideshow from "../Slideshow";
-// import SoMeBar from "../SoMeBar";
+import SoMeBar from "../SoMeBar";
 
 const ModalDetails = ({ album }) => {
   return (
@@ -8,24 +8,35 @@ const ModalDetails = ({ album }) => {
       aria-label={`${album.title} details dialog`}
     >
       <Slideshow imgSlugs={album.slideshow} />
-      <div className="flex flex-col items-start justify-center h-full px-4 space-y-2 text-primary-light dark:text-primary-dark">
-        <h2 className="font-normal leading-8 text-size-header">
-          {album.title.toUpperCase()}
-        </h2>
-        <p className="mb-2 text-secondary text-size-small lg:text-size-regular">
-          {album.category} / {album.year}
-        </p>
-        <p className="mb-2">{album.text}</p>
-        <div className="mb-2 text-secondary text-size-small lg:text-size-regular">
+      <div className="flex flex-col items-start justify-center h-full px-4 space-y-3 text-primary-light dark:text-primary-dark">
+        <div className="font-normal leading-8 text-size-header">
+          <h2>{album.title.toUpperCase()}</h2>
+        </div>
+        <div className="flex md:hidden lg:flex text-secondary text-size-small lg:text-size-regular">
+          <p>
+            {album.category} / {album.year}
+          </p>
+        </div>
+        <div className="block w-full md:hidden lg:block">
+          <SoMeBar iconSize="text-xl" exclude={["spotify"]} />
+        </div>
+        <div>
+          <p>{album.text}</p>
+        </div>
+        <div className="w-full" tabIndex="0">
+          <iframe
+            className="rounded-md"
+            src={album.spotifyurl}
+            loading="lazy"
+            width="100%"
+            height="200px"
+          ></iframe>
+        </div>
+        {/* <div className="block md:hidden lg:block text-secondary text-size-small">
           {album.credits.map((credit, index) => (
             <p key={index}>{credit}</p>
           ))}
-        </div>
-        {/* <SoMeBar
-          iconSize="text-2xl lg:text-4xl"
-          exclude={["nothing"]}
-          className="hidden mt-2 sm:flex"
-        /> */}
+        </div> */}
       </div>
     </div>
   );

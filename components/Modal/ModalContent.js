@@ -1,52 +1,48 @@
-import React, { memo, useEffect, useState } from "react";
+import React, { memo } from "react";
+import ClientOnlyPortal from "../ClientOnlyPortal";
 import Icon from "../Icon";
 import FocusTrap from "focus-trap-react";
+
+// try to cache it better.
 
 const ModalContent = React.forwardRef(
   ({ onClickOutside, onKeyDown, content, closeModal, modalMaxSize }, ref) => {
     const { modalRef, closeBtnRef } = ref.current;
-    const [isMounted, setIsMounted] = useState(false);
-
-    // so pressing Enter to open the modal
-    // doesnt close it again immediatley
-    // moves the focus to other elements in the modal first
-    useEffect(() => {
-      setIsMounted(true);
-    }, []);
 
     return (
-      // The Modal container (popupCard) centered
-      <FocusTrap>
-        <aside
-          tag="aside"
-          role="dialog"
-          tabIndex="-1"
-          aria-modal="true"
-          onClick={onClickOutside}
-          onKeyDown={onKeyDown}
-          className="fixed inset-0 z-50 flex items-center justify-center p-2 backdrop-brightness-50"
-        >
-          {/* The Modal Card*/}
-          <div
-            className={`rounded-md container mx-auto bg-primary-light max-h-screen dark:bg-primary-dark shadow-md p-4 ${modalMaxSize}`}
-            ref={modalRef}
+      <ClientOnlyPortal selector="#modal">
+        <FocusTrap>
+          {/* The Modal container (popupCard) centered */}
+          <aside
+            tag="aside"
+            role="dialog"
+            tabIndex="-1"
+            aria-modal="true"
+            onClick={onClickOutside}
+            onKeyDown={onKeyDown}
+            className="fixed inset-0 z-50 flex items-center justify-center p-2 backdrop-brightness-50"
           >
-            {/* The close button at the top right */}
-            {isMounted && (
+            {/* The Modal Card*/}
+            <div
+              className={`rounded-md max-h-screen m-2 overflow-auto container mx-auto bg-primary-light dark:bg-primary-dark shadow-md p-4 ${modalMaxSize}`}
+              ref={modalRef}
+            >
+              {/* The close button at the top right */}
               <div className="flex place-content-end">
                 <button
                   ref={closeBtnRef}
                   aria-label="Close Modal"
                   onClick={closeModal}
                 >
-                  <Icon id="closeButton" iconSize={"text-2xl"} />
+                  <Icon id="closeButton" iconSize={"text-3xl"} />
                 </button>
               </div>
-            )}
-            {content}
-          </div>
-        </aside>
-      </FocusTrap>
+
+              {content}
+            </div>
+          </aside>
+        </FocusTrap>
+      </ClientOnlyPortal>
     );
   }
 );

@@ -29,7 +29,7 @@ const properties = {
 
 const Slideshow = ({ imgSlugs = [] }) => {
   return (
-    <div className="relative p-2 w-96 md:w-3/6">
+    <div className="relative w-full p-2 md:w-3/6">
       <div className={`w-full`} aria-label="slideshow container">
         <Slide {...properties} indicators={indicators}>
           {imgSlugs.map(slug => (
