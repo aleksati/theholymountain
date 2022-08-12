@@ -12,7 +12,7 @@ const Footer = () => (
           className="justify-center"
         />
       </div>
-      <div className="flex space-x-2 md:order-3">
+      <div className="flex space-x-2 w-50 md:order-3">
         <ThemeToggle />
         <ReportIssues />
       </div>

@@ -1,12 +1,19 @@
 import musicData from "../../lib/musicData";
 import MusicPage from "../../sections/MusicPage";
+import AppLayout from "../../components/AppLayout";
+import BackButton from "../../components/Music/BackButton";
 
 export default function handler({ item }) {
   const meta = {
     title: `The Holy Mountain | ${item.title}`,
   };
 
-  return <MusicPage meta={meta} item={item} />;
+  return (
+    <AppLayout>
+      <BackButton />
+      <MusicPage meta={meta} item={item} />
+    </AppLayout>
+  );
 }
 
 export const getStaticProps = async context => {

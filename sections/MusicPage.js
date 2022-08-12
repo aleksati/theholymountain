@@ -6,9 +6,8 @@ import Shop from "../components/Music/Shop";
 const MusicPage = ({ item, meta }) => {
   return (
     <PageLayout pageMeta={meta}>
-      <BackButton text="Home" />
       <div
-        className="grid min-h-screen grid-cols-1 gap-6 p-4 pb-8 md:grid-cols-2 md:space-y-0"
+        className="grid min-h-screen grid-cols-1 gap-6 p-4 pb-12 md:grid-cols-2 md:space-y-0"
         aria-label={`${item.title} page`}
       >
         <div className="col-span-1">
@@ -31,7 +30,7 @@ const MusicPage = ({ item, meta }) => {
               <p>{item.text}</p>
             </div>
             {item.spotifyurl ? (
-              <div>
+              <div className="pt-4 pb-4">
                 <iframe
                   className="h-20 rounded-md lg:h-52"
                   src={item.spotifyurl}

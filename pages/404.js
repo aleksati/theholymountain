@@ -18,11 +18,18 @@ const FourOhFour = () => {
     <>
       <Meta {...meta} />
       <div className="relative min-h-screen" id="404">
-        <CoverPhoto imgSrc={src} placeholder={placeholder} />
+        <CoverPhoto
+          imgSrc={src}
+          placeholder={placeholder}
+          credit="Katinka Hustad"
+          creditLink="http://www.katinkahustad.com/"
+        />
         <PageTextPoster>
-          <h1 className="text-size-header-big">Lost?</h1>
+          <h1 className="font-bold text-size-header-big">Lost?</h1>
           <Link href="/" passHref>
-            Go to homepage
+            <a className="p-2 border rounded-full text-size-regular">
+              Homepage
+            </a>
           </Link>
         </PageTextPoster>
       </div>

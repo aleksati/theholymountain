@@ -7,9 +7,7 @@ const AppLayout = ({ children, appMeta }) => {
     <>
       <Meta {...appMeta} />
       <main className="flex-grow text-size-regular text-primary-light dark:text-primary-dark bg-primary-light dark:bg-primary-dark">
-        <div className="divide-y divide-secondary-skin-light dark:divide-secondary-skin-dark">
-          {children}
-        </div>
+        {children}
         <Nav />
       </main>
       <Footer />

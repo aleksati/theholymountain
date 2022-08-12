@@ -1,3 +1,4 @@
+import AppLayout from "../components/AppLayout";
 import musicData from "../lib/musicData";
 import videoData from "../lib/videoData";
 import FrontPage from "../sections/FrontPage";
@@ -6,11 +7,13 @@ import Videos from "../sections/Videos";
 
 export default function Home({ filteredMusicData, filteredVideoData }) {
   return (
-    <>
-      <FrontPage />
-      <Discography musicData={filteredMusicData} maxGridCols="3" />
-      <Videos videoData={filteredVideoData} maxGridCols="2" />
-    </>
+    <AppLayout>
+      <div className="divide-y divide-secondary-skin-light dark:divide-secondary-skin-dark">
+        <FrontPage />
+        <Discography musicData={filteredMusicData} maxGridCols="3" />
+        <Videos videoData={filteredVideoData} maxGridCols="2" />
+      </div>
+    </AppLayout>
   );
 }
 
