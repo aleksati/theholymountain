@@ -25,9 +25,6 @@ export const getStaticProps = async context => {
   let res = await MusicData.find({ key: url });
   let item = await JSON.parse(JSON.stringify(res[0]));
 
-  //const filteredMusicData = musicData.filter(music => music.key === url);
-  //const item = filteredMusicData[0];
-
   return {
     props: {
       item,
@@ -42,11 +39,6 @@ export const getStaticPaths = async () => {
   let res = await MusicData.find();
   let items = await JSON.parse(JSON.stringify(res));
   let keys = items.map(item => item.key);
-
-  //   const filteredMusicData = musicData.sort(
-  //     (a, b) => Number(b.year) - Number(a.year)
-  //   );
-  //   const keys = filteredMusicData.map(music => music.key);
 
   let paths = keys.map(key => ({ params: { key } }));
 

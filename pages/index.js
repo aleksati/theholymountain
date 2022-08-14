@@ -49,17 +49,4 @@ export const getStaticProps = async () => {
       notFound: true,
     };
   }
-
-  //   const filteredMusicData = musicData.sort(
-  //     (a, b) => Number(b.year) - Number(a.year)
-  //   );
-  //   const filteredVideoData = videoData.sort(
-  //     (a, b) => Number(b.year) - Number(a.year)
-  //   );
-  //   return {
-  //     props: {
-  //       filteredMusicData,
-  //       filteredVideoData,
-  //     },
-  //   };
 };
