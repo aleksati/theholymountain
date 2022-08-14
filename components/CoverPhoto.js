@@ -15,7 +15,7 @@ const CoverPhoto = ({ imgSrc, placeholder, credit, creditLink }) => (
       priority
     />
     {credit ? (
-      <div className="absolute text-size-small left-4 bottom-4 text-primary-dark">
+      <div className="absolute text-size-small right-4 bottom-4 text-primary-dark">
         <p>
           Photo |{" "}
           <a className="hover:underline" href={creditLink}>

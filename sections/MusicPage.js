@@ -7,7 +7,7 @@ const MusicPage = ({ item, meta }) => {
   return (
     <PageLayout pageMeta={meta}>
       <div
-        className="grid min-h-screen grid-cols-1 gap-6 p-4 pb-12 md:grid-cols-2 md:space-y-0"
+        className="grid min-h-screen grid-cols-1 gap-6 p-4 pb-12 md:pb-0 md:grid-cols-2 md:space-y-0"
         aria-label={`${item.title} page`}
       >
         <div className="col-span-1">

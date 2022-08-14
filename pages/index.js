@@ -1,9 +1,12 @@
 import AppLayout from "../components/AppLayout";
-import musicData from "../lib/musicData";
-import videoData from "../lib/videoData";
-import FrontPage from "../sections/FrontPage";
+// import musicData from "../lib/musicData";
+// import videoData from "../lib/videoData";
 import Discography from "../sections/Discography";
+import FrontPage from "../sections/FrontPage";
 import Videos from "../sections/Videos";
+import connectMongo from "../utils/connectMongo";
+import MusicData from "../models/MusicData";
+import VideoData from "../models/VideoData";
 
 export default function Home({ filteredMusicData, filteredVideoData }) {
   return (
@@ -18,18 +21,45 @@ export default function Home({ filteredMusicData, filteredVideoData }) {
 }
 
 export const getStaticProps = async () => {
-  const filteredMusicData = musicData.sort(
-    (a, b) => Number(b.year) - Number(a.year)
-  );
+  try {
+    await connectMongo();
+    const musicData = await MusicData.find();
+    const videoData = await VideoData.find();
 
-  const filteredVideoData = videoData.sort(
-    (a, b) => Number(b.year) - Number(a.year)
-  );
+    let filteredMusicData = await JSON.parse(JSON.stringify(musicData));
+    let filteredVideoData = await JSON.parse(JSON.stringify(videoData));
 
-  return {
-    props: {
-      filteredMusicData,
-      filteredVideoData,
-    },
-  };
+    filteredMusicData = await filteredMusicData.sort(
+      (a, b) => Number(b.year) - Number(a.year)
+    );
+
+    filteredVideoData = await filteredVideoData.sort(
+      (a, b) => Number(b.year) - Number(a.year)
+    );
+
+    return {
+      props: {
+        filteredMusicData,
+        filteredVideoData,
+      },
+    };
+  } catch (error) {
+    console.log(error);
+    return {
+      notFound: true,
+    };
+  }
+
+  //   const filteredMusicData = musicData.sort(
+  //     (a, b) => Number(b.year) - Number(a.year)
+  //   );
+  //   const filteredVideoData = videoData.sort(
+  //     (a, b) => Number(b.year) - Number(a.year)
+  //   );
+  //   return {
+  //     props: {
+  //       filteredMusicData,
+  //       filteredVideoData,
+  //     },
+  //   };
 };
