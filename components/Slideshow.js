@@ -35,13 +35,13 @@ const Slideshow = ({ imgSlugs = [] }) => {
           <Image
             key={slug}
             src={`/img/${slug}.png`}
-            className="rounded-md"
+            className="rounded-md backdrop-brightness-75"
             alt={`slideshow image of ${slug}`}
             width="100%"
             height="100%"
             layout="responsive"
+            objectFit="contain"
             blurDataURL={`/img/placeholders/${slug}.png`}
-            priority
           />
         ))}
       </Slide>

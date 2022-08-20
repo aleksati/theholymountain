@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from "react";
+import { useRef, useEffect, useState } from "react";
 import getCurrTheme from "../../utils/getCurrTheme";
 import getClockValue from "../../utils/getClockValue";
 import Image from "next/image";
@@ -20,7 +20,7 @@ const WaveFormOptions = ref => ({
   normalize: true,
 });
 
-const url = "./audio/celestial-city.mp3";
+// const url = "./audio/celest.mp3";
 
 const AudioPlayer = ({ src }) => {
   const containerRef = useRef(null);
@@ -35,7 +35,7 @@ const AudioPlayer = ({ src }) => {
       const WaveSurfer = (await import("wavesurfer.js")).default;
       const options = WaveFormOptions(containerRef.current);
       waveFormRef.current = WaveSurfer.create(options);
-      waveFormRef.current.load(url);
+      waveFormRef.current.load(src);
 
       waveFormRef.current.on("audioprocess", () => {
         let currTime = waveFormRef.current.getCurrentTime();
@@ -74,12 +74,12 @@ const AudioPlayer = ({ src }) => {
     if (isMounted && stateTheme && waveFormRef.current) {
       if (stateTheme === "dark") {
         waveFormRef.current.setProgressColor("rgb(50, 141, 120)");
-        waveFormRef.current.setWaveColor("rgb(33, 31, 36)");
+        waveFormRef.current.setWaveColor("rgb(255, 255, 255)");
         waveFormRef.current.setCursorColor("rgb(50, 141, 120)");
       }
       if (stateTheme === "light") {
         waveFormRef.current.setProgressColor("rgb(217, 56, 33)");
-        waveFormRef.current.setWaveColor("rgb(255, 255, 255)");
+        waveFormRef.current.setWaveColor("rgb(33, 31, 36)");
         waveFormRef.current.setCursorColor("rgb(217, 56, 33)");
       }
     }
@@ -91,7 +91,7 @@ const AudioPlayer = ({ src }) => {
   };
 
   return (
-    <div className="flex items-center justify-center">
+    <div className="flex items-center justify-start">
       {isMounted ? (
         <>
           <div>
@@ -99,7 +99,7 @@ const AudioPlayer = ({ src }) => {
               <Icon id={isPlaying ? "pause" : "play"} />
             </Button>
           </div>
-          <div className="w-8 m-2 text-size-small text-primary-dark">
+          <div className="w-8 m-2 text-size-small">
             <p id="audiotime">00:00 </p>
           </div>
         </>

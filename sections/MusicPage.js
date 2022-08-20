@@ -1,11 +1,10 @@
 import PageLayout from "../components/Page/PageLayout";
 import Slideshow from "../components/Slideshow";
-import BackButton from "../components/Music/BackButton";
 import Shop from "../components/Music/Shop";
 
 const MusicPage = ({ item, meta }) => {
   return (
-    <PageLayout pageMeta={meta}>
+    <PageLayout pageMeta={meta} border={false}>
       <div
         className="grid min-h-screen grid-cols-1 gap-6 p-4 pb-12 md:pb-0 md:grid-cols-2 md:space-y-0"
         aria-label={`${item.title} page`}

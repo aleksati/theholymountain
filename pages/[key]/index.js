@@ -11,9 +11,9 @@ export default function handler({ item }) {
   };
 
   return (
-    <AppLayout>
+    <AppLayout appMeta={meta}>
       <BackButton />
-      <MusicPage meta={meta} item={item} />
+      <MusicPage item={item} />
     </AppLayout>
   );
 }

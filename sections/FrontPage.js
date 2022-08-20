@@ -1,6 +1,6 @@
 import CoverPhoto from "../components/CoverPhoto";
-// import AudioPlayer from "../components/AudioPlayer/AudioPlayer";
 // import PageTextPoster from "../components/Page/PageTextPoster";
+import Link from "next/link";
 
 const src = "/img/cover.png";
 const placeholder = "/img/placeholders/cover.png";
@@ -15,10 +15,14 @@ const FrontPage = () => {
         creditLink="http://www.katinkahustad.com/"
       />
       {/* <PageTextPoster>
-        <h1 className="text-size-header-big text-primary-dark">Coming Soon!</h1>
-        <div className="relative w-full">
-          <AudioPlayer />
-        </div>
+        <h1 className="text-8xl text-primary-dark">
+          New Single <br />
+          <Link href="/awake">
+            <b className="cursor-pointer hover:underline">AWAKE</b>
+          </Link>
+          <br />
+          Out Now
+        </h1>
       </PageTextPoster> */}
     </div>
   );

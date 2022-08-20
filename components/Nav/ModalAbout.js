@@ -16,7 +16,7 @@ const ModalAbout = ({ label }) => {
       <div>
         <p className="mb-2 text-primary-light dark:text-primary-dark text-size-regular">
           An avant-garde pop group from Oslo, Norway with accordion,
-          synthesizer, drums, and vocals. New music out soon.
+          synthesizer, drums, and vocals.
         </p>
       </div>
       <div className="text-size-small sm:text-size-regular text-secondary">
