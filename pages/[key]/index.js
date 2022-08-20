@@ -1,4 +1,4 @@
-import musicData from "../../lib/musicData";
+// import musicData from "../../lib/musicData";
 import MusicPage from "../../sections/MusicPage";
 import AppLayout from "../../components/AppLayout";
 import BackButton from "../../components/Music/BackButton";

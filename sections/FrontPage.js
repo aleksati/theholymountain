@@ -1,6 +1,6 @@
 import CoverPhoto from "../components/CoverPhoto";
-import AudioPlayer from "../components/AudioPlayer/AudioPlayer";
-import PageTextPoster from "../components/Page/PageTextPoster";
+// import AudioPlayer from "../components/AudioPlayer/AudioPlayer";
+// import PageTextPoster from "../components/Page/PageTextPoster";
 
 const src = "/img/cover.png";
 const placeholder = "/img/placeholders/cover.png";

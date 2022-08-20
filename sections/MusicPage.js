@@ -39,7 +39,7 @@ const MusicPage = ({ item, meta }) => {
                 ></iframe>
               </div>
             ) : (
-              <div className="flex items-center justify-center w-full h-20 border rounded-md border-secondary">
+              <div className="flex items-center justify-center w-full h-20 pt-4 pb-4 border rounded-md border-secondary">
                 <p>Sorry, no Spotify preview avaliable</p>
               </div>
             )}
