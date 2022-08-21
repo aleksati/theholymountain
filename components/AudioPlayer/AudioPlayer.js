@@ -14,7 +14,7 @@ const WaveFormOptions = ref => ({
   barWidth: 6,
   barRadius: 3,
   responsive: true,
-  height: 150,
+  height: 100,
   partialRender: false, //true
   hideScrollbar: true,
   normalize: true,
@@ -107,6 +107,7 @@ const AudioPlayer = ({ src }) => {
         <div className="flex place-content-center">
           <Image
             src="/img/loading/loading.gif"
+            unoptimized={true}
             alt="loading"
             width="25%"
             height="25%"

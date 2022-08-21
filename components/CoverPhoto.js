@@ -1,4 +1,3 @@
-import { memo } from "react";
 import Image from "next/image";
 
 const CoverPhoto = ({ imgSrc, placeholder, credit, creditLink }) => (
@@ -17,7 +16,7 @@ const CoverPhoto = ({ imgSrc, placeholder, credit, creditLink }) => (
     {credit ? (
       <div className="absolute text-size-small right-4 bottom-4 text-primary-dark">
         <p>
-          Photo |{" "}
+          Photos |{" "}
           <a className="hover:underline" href={creditLink}>
             {credit}
           </a>
@@ -27,4 +26,4 @@ const CoverPhoto = ({ imgSrc, placeholder, credit, creditLink }) => (
   </div>
 );
 
-export default memo(CoverPhoto);
+export default CoverPhoto;

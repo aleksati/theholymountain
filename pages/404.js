@@ -9,7 +9,7 @@ const placeholder = "/img/placeholders/404.png";
 
 const FourOhFour = () => {
   const meta = {
-    title: "Oops! You found a missing page! - The Holy Mountain",
+    title: "Oops! Missing page!",
     description: "Oops! It looks like this page is lost in space somewhere!",
     url: `${SITE_DOMAIN}/404`,
   };
@@ -25,10 +25,10 @@ const FourOhFour = () => {
           creditLink="http://www.katinkahustad.com/"
         />
         <PageTextPoster>
-          <h1 className="font-bold text-size-header-big">Lost?</h1>
+          <h1 className="font-bold text-8xl">Lost?</h1>
           <Link href="/" passHref>
             <a className="p-2 border rounded-full text-size-regular">
-              Homepage
+              Go to Homepage
             </a>
           </Link>
         </PageTextPoster>

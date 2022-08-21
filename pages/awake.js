@@ -6,7 +6,7 @@ import Image from "next/image";
 
 const src = "/img/cover.png";
 const placeholder = "/img/placeholders/cover.png";
-const audioPath = "./audio/celest.mp3";
+const audioPath = "/audio/celest.mp3";
 
 const awake = () => {
   const meta = {
@@ -54,6 +54,13 @@ const awake = () => {
                 <p>You waste</p>
                 <p>Away</p>
               </div> */}
+              <div>
+                <p>
+                  The first single of our new studio album. Featuring imagery by
+                  Katinka Hustad, design by Bjørn Erik Nyhus, and lyrics
+                  inspired by poet Arsenij Tarkovsky.
+                </p>
+              </div>
               <div className="relative w-full pt-4 pb-4">
                 <AudioPlayer src={audioPath} />
               </div>
