@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Button from "../Button";
-import Image from "next/image";
+import LoadingGif from "../LoadingGif";
 
 const ModalContact = () => {
   const [name, setName] = useState("");
@@ -148,14 +148,7 @@ const ModalContact = () => {
                 <input tabIndex="-1" type="submit" />
               </Button>
             ) : (
-              <div className="flex place-content-center">
-                <Image
-                  src="/img/loading/loading.gif"
-                  alt="loading"
-                  width="25%"
-                  height="25%"
-                />
-              </div>
+              <LoadingGif />
             )
           ) : (
             <div className="flex place-content-center">

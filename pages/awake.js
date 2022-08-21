@@ -65,7 +65,6 @@ const awake = () => {
                 <AudioPlayer src={audioPath} />
               </div>
               <div className="text-secondary">
-                <p>Produced by The Holy Mountain</p>
                 <p>
                   Recorded by Dag Erik Johansen, Audun Strype and David
                   Michelsen

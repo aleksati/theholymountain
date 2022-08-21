@@ -1,7 +1,7 @@
 import { useRef, useEffect, useState } from "react";
 import getCurrTheme from "../../utils/getCurrTheme";
 import getClockValue from "../../utils/getClockValue";
-import Image from "next/image";
+import LoadingGif from "../LoadingGif";
 import Button from "../Button";
 import Icon from "../Icon";
 
@@ -104,15 +104,7 @@ const AudioPlayer = ({ src }) => {
           </div>
         </>
       ) : (
-        <div className="flex place-content-center">
-          <Image
-            src="/img/loading/loading.gif"
-            unoptimized={true}
-            alt="loading"
-            width="25%"
-            height="25%"
-          />
-        </div>
+        <LoadingGif />
       )}
       <div className="relative w-2/4">
         <div id="waveform" ref={containerRef} />
