@@ -22,7 +22,7 @@ const FourOhFour = () => {
           imgSrc={src}
           placeholder={placeholder}
           credit="Katinka Hustad"
-          creditLink="http://www.katinkahustad.com/"
+          creditLink="https://www.katinkahustad.com/"
         />
         <PageTextPoster>
           <h1 className="font-bold text-8xl">Lost?</h1>
