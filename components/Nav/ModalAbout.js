@@ -7,11 +7,15 @@ import React from "react";
 
 const ModalAbout = ({ label }) => {
   const { currTheme } = getCurrTheme();
-  const imgSrc = currTheme === "dark" ? logoWhite : logoBlack;
+  //   const imgSrc = currTheme === "dark" ? logoWhite : logoBlack;
 
   return (
     <div className="flex flex-col p-4 space-y-2" aria-label={`${label} dialog`}>
-      <Image src={imgSrc} alt="band logo" placeholder="blur" />
+      {currTheme === "dark" ? (
+        <Image src={logoWhite} alt="band logo" placeholder="blur" />
+      ) : (
+        <Image src={logoBlack} alt="band logo" placeholder="blur" />
+      )}
 
       <div>
         <p className="mb-2 text-primary-light dark:text-primary-dark text-size-regular">

@@ -6,7 +6,7 @@ import Image from "next/image";
 
 const src = "/img/cover.png";
 const placeholder = "/img/placeholders/cover.png";
-const audioPath = "/audio/celest.mp3";
+const previewurl = "/audio/celest.mp3";
 
 const awake = () => {
   const meta = {
@@ -45,24 +45,15 @@ const awake = () => {
               <div className="text-secondary">
                 <p>Single / 2022</p>
               </div>
-              {/* <div>
-                <Shop />
-              </div> */}
-              {/* <div>
-                <p>You ran, choking,</p>
-                <p>Until you fell.</p>
-                <p>You waste</p>
-                <p>Away</p>
-              </div> */}
               <div>
                 <p>
-                  The first single of our new studio album. Featuring imagery by
-                  Katinka Hustad, design by Bjørn Erik Nyhus, and lyrics
-                  inspired by poet Arsenij Tarkovsky.
+                  The first single of our new studio album. Featuring original
+                  artwork by Katinka Hustad, cover design by Bjørn Erik Nyhus,
+                  and lyrics inspired by poet Arsenij Tarkovsky.
                 </p>
               </div>
               <div className="relative w-full pt-4 pb-4">
-                <AudioPlayer src={audioPath} />
+                <AudioPlayer src={previewurl} />
               </div>
               <div className="text-secondary">
                 <p>
