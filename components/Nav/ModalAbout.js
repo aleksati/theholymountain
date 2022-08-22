@@ -7,7 +7,6 @@ import React from "react";
 
 const ModalAbout = ({ label }) => {
   const { currTheme } = getCurrTheme();
-  //   const imgSrc = currTheme === "dark" ? logoWhite : logoBlack;
 
   return (
     <div className="flex flex-col p-4 space-y-2" aria-label={`${label} dialog`}>

@@ -1,3 +1,4 @@
+import MusicAudio from "../components/Music/MusicAudio";
 import PageLayout from "../components/Page/PageLayout";
 import Slideshow from "../components/Slideshow";
 import Shop from "../components/Music/Shop";
@@ -28,20 +29,7 @@ const MusicPage = ({ item, meta }) => {
             <div>
               <p>{item.text}</p>
             </div>
-            {item.spotifyurl ? (
-              <div className="pt-4 pb-4">
-                <iframe
-                  className="h-20 rounded-md lg:h-52"
-                  src={item.spotifyurl}
-                  width="100%"
-                  height="260px"
-                ></iframe>
-              </div>
-            ) : (
-              <div className="flex items-center justify-center w-full h-20 pt-4 pb-4 border rounded-md border-secondary">
-                <p>Sorry, no Spotify preview avaliable</p>
-              </div>
-            )}
+            <MusicAudio item={item} />
             <div className="text-secondary">
               {item.credits.map((credit, index) => (
                 <p key={index}>{credit}</p>

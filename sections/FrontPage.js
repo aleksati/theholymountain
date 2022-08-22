@@ -1,6 +1,6 @@
 import CoverPhoto from "../components/CoverPhoto";
 // import PageTextPoster from "../components/Page/PageTextPoster";
-import Link from "next/link";
+// import Link from "next/link";
 
 const src = "/img/cover.png";
 const placeholder = "/img/placeholders/cover.png";

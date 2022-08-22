@@ -8,9 +8,11 @@ const Discography = ({ musicData, children, maxGridCols }) => {
     <PageLayout id="discography" className="pb-4">
       <PageTitle title="Discography" />
       <PageGrid maxGridCols={maxGridCols}>
-        {musicData.map(item => (
-          <MusicItem key={item.key} item={item} />
-        ))}
+        {musicData.map(item => {
+          // just ignore the single for now..
+          if (item.key !== "awake")
+            return <MusicItem key={item.key} item={item} />;
+        })}
       </PageGrid>
       {children}
     </PageLayout>

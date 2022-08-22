@@ -5,7 +5,8 @@ const ModalShop = ({ label }) => {
   return (
     <div aria-label={`${label} shop dialog`}>
       <p className="p-4 text-center text-size-regular">
-        Our shop is coming soon. In the meantime, visit our Bandcamp shop.
+        Our web shop is under development. In the meantime, visit our Bandcamp
+        shop.
       </p>
       <SoMeBar
         className="justify-around p-4"

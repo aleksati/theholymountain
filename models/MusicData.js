@@ -4,6 +4,7 @@ const schema = new Schema({
   type: String,
   key: String,
   title: String,
+  year: String,
   category: String,
   formats: [String],
   price: String,
@@ -11,6 +12,7 @@ const schema = new Schema({
   credits: [String],
   slideshow: [String],
   spotifyurl: String,
+  previewurl: String,
   buyurl: String,
 });
 
