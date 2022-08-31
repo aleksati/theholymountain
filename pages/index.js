@@ -1,25 +1,23 @@
-import AppLayout from "../components/AppLayout";
+import LayoutApp from "../components/LayoutApp";
 import Discography from "../sections/Discography";
 import FrontPage from "../sections/FrontPage";
 import Videos from "../sections/Videos";
 import connectMongo from "../utils/connectMongo";
 import MusicData from "../models/MusicData";
 import VideoData from "../models/VideoData";
-import ShowMoreWrapper from "../components/ShowMoreWrapper";
+import WrapperShowMore from "../components/WrapperShowMore";
 
 export default function Home({ filteredMusicData, filteredVideoData }) {
   return (
-    <AppLayout>
+    <LayoutApp>
       <FrontPage />
       <Discography musicData={filteredMusicData} maxGridCols="3" />
-      <ShowMoreWrapper>
+      <WrapperShowMore>
         <Videos videoData={filteredVideoData} maxGridCols="2" />
-      </ShowMoreWrapper>
-    </AppLayout>
+      </WrapperShowMore>
+    </LayoutApp>
   );
 }
-
-// import singleData from "../public/singleData/singleData.js";
 
 export const getStaticProps = async () => {
   try {
@@ -29,9 +27,6 @@ export const getStaticProps = async () => {
 
     let filteredMusicData = await JSON.parse(JSON.stringify(musicData));
     let filteredVideoData = await JSON.parse(JSON.stringify(videoData));
-
-    // add new singles
-    // filteredMusicData.push(...singleData);
 
     filteredMusicData = await filteredMusicData.sort(
       (a, b) => Number(b.year) - Number(a.year)

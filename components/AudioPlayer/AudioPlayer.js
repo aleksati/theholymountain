@@ -1,9 +1,9 @@
 import { useRef, useEffect, useState } from "react";
 import getCurrTheme from "../../utils/getCurrTheme";
 import getClockValue from "../../utils/getClockValue";
-import LoadingGif from "../LoadingGif";
-import Button from "../Button";
-import Icon from "../Icon";
+import Spinner from "../Spinner";
+import WrapperAudioPlayer from "./WrapperAudioPlayer";
+import ControlsAudioPlayer from "./ControlsAudioPlayer";
 
 const WaveFormOptions = ref => ({
   container: ref,
@@ -91,25 +91,20 @@ const AudioPlayer = ({ src }) => {
   };
 
   return (
-    <div className="flex items-center justify-start">
+    <WrapperAudioPlayer>
       {isMounted ? (
-        <>
-          <div>
-            <Button onClick={handlePlayPause}>
-              <Icon id={isPlaying ? "pause" : "play"} />
-            </Button>
-          </div>
-          <div className="w-8 m-2 text-size-small">
-            <p id="audiotime">00:00 </p>
-          </div>
-        </>
+        <ControlsAudioPlayer
+          onPlayPause={handlePlayPause}
+          isPlaying={isPlaying}
+          timerId="audiotime"
+        />
       ) : (
-        <LoadingGif />
+        <Spinner />
       )}
       <div className="relative w-2/4">
         <div id="waveform" ref={containerRef} />
       </div>
-    </div>
+    </WrapperAudioPlayer>
   );
 };
 

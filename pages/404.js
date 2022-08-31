@@ -28,7 +28,7 @@ const FourOhFour = () => {
           <h1 className="font-bold text-8xl">Lost?</h1>
           <Link href="/" passHref>
             <a className="p-2 border rounded-full text-size-regular">
-              Go to Homepage
+              Come Home
             </a>
           </Link>
         </PageTextPoster>

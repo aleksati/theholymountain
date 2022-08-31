@@ -35,7 +35,7 @@ const Slideshow = ({ imgSlugs = [] }) => {
           <Image
             key={slug}
             src={`/img/${slug}.png`}
-            className="rounded-md backdrop-brightness-75"
+            className="rounded-md"
             alt={`slideshow image of ${slug}`}
             width="100%"
             height="100%"

@@ -1,7 +1,7 @@
 // import musicData from "../../lib/musicData";
-import MusicPage from "../../sections/MusicPage";
-import AppLayout from "../../components/AppLayout";
-import BackButton from "../../components/Music/BackButton";
+import Release from "../../sections/Release";
+import LayoutApp from "../../components/LayoutApp";
+import ButtonToDiscography from "../../components/ButtonToDiscography";
 import connectMongo from "../../utils/connectMongo";
 import MusicData from "../../models/MusicData";
 
@@ -11,25 +11,33 @@ export default function handler({ item }) {
   };
 
   return (
-    <AppLayout appMeta={meta}>
-      <BackButton />
-      <MusicPage item={item} />
-    </AppLayout>
+    <LayoutApp appMeta={meta}>
+      <ButtonToDiscography />
+      <Release item={item} />
+    </LayoutApp>
   );
 }
 
 export const getStaticProps = async context => {
-  const url = context.params.key;
+  try {
+    await connectMongo();
 
-  await connectMongo();
-  let res = await MusicData.find({ key: url });
-  let item = await JSON.parse(JSON.stringify(res[0]));
+    const url = context.params.key;
+    let res = await MusicData.find({ key: url });
+    let item = await JSON.parse(JSON.stringify(res[0]));
 
-  return {
-    props: {
-      item,
-    },
-  };
+    return {
+      props: {
+        item,
+      },
+    };
+  } catch (error) {
+    console.log(error);
+    // should not be needed because of the "fallback: false" mode
+    return {
+      notFound: true,
+    };
+  }
 };
 
 // in this context, must return an object with format:

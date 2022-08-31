@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Button from "../Button";
-import LoadingGif from "../LoadingGif";
+import Spinner from "../Spinner";
 
 const ModalContact = () => {
   const [name, setName] = useState("");
@@ -148,7 +148,7 @@ const ModalContact = () => {
                 <input tabIndex="-1" type="submit" />
               </Button>
             ) : (
-              <LoadingGif />
+              <Spinner />
             )
           ) : (
             <div className="flex place-content-center">

@@ -1,11 +1,11 @@
-import PageLayout from "../components/Page/PageLayout";
+import LayoutPage from "../components/LayoutPage";
 import PageGrid from "../components/Page/PageGrid";
 import MusicItem from "../components/Music/MusicItem";
 import PageTitle from "../components/Page/PageTitle";
 
 const Discography = ({ musicData, children, maxGridCols }) => {
   return (
-    <PageLayout id="discography" className="pb-4">
+    <LayoutPage id="discography" className="pb-4">
       <PageTitle title="Discography" />
       <PageGrid maxGridCols={maxGridCols}>
         {musicData.map(item => {
@@ -15,7 +15,7 @@ const Discography = ({ musicData, children, maxGridCols }) => {
         })}
       </PageGrid>
       {children}
-    </PageLayout>
+    </LayoutPage>
   );
 };
 

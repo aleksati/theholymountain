@@ -7,24 +7,23 @@ import React from "react";
 
 const ModalAbout = ({ label }) => {
   const { currTheme } = getCurrTheme();
-
   return (
     <div className="flex flex-col p-4 space-y-2" aria-label={`${label} dialog`}>
-      {currTheme === "dark" ? (
-        <Image src={logoWhite} alt="band logo" placeholder="blur" />
-      ) : (
-        <Image src={logoBlack} alt="band logo" placeholder="blur" />
-      )}
-
+      <Image
+        src={currTheme === "dark" ? logoWhite : logoBlack}
+        alt="band logo"
+        placeholder="blur"
+      />
       <div>
         <p className="mb-2 text-primary-light dark:text-primary-dark text-size-regular">
           An avant-garde pop group from Oslo, Norway with accordion,
-          synthesizer, drums, and vocals.
+          synthesizer, drums, and vocals. We play hypnotic, dark and atmospheric
+          music.
         </p>
       </div>
       <div className="text-size-small sm:text-size-regular text-secondary">
-        <p>Andreas Angell - Accordion</p>
         <p>Catharina Janner Røed - Vocals </p>
+        <p>Andreas Angell - Accordion / Songwriter</p>
         <p>Aleksander Tidemann - Drums / Synthesizer</p>
       </div>
       <div>

@@ -1,3 +1,4 @@
+import { IconContext } from "react-icons";
 import {
   MdOutlineArrowForwardIos,
   MdOutlineArrowBackIosNew,
@@ -10,7 +11,6 @@ import { BsFacebook } from "react-icons/bs";
 import { AiFillYoutube } from "react-icons/ai";
 import { RiInstagramFill } from "react-icons/ri";
 import { BsSpotify } from "react-icons/bs";
-import { FiMail } from "react-icons/fi";
 import { TbWaveSine } from "react-icons/tb";
 import { GrSoundcloud } from "react-icons/gr";
 import { AiOutlineShoppingCart } from "react-icons/ai";
@@ -35,7 +35,6 @@ const icons = {
   bandcamp: s => <FaBandcamp className={s} />,
   youtube: s => <AiFillYoutube className={s} />,
   spotify: s => <BsSpotify className={s} />,
-  //   contact: s => <FiMail className={s} />,
   contact: s => <AiOutlineMail className={s} />,
   soundcloud: s => <GrSoundcloud className={s} />,
   shop: s => <AiOutlineShoppingCart className={s} />,

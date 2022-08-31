@@ -1,6 +1,5 @@
 import ModalContact from "../components/Nav/ModalContact";
 import ModalAbout from "../components/Nav/ModalAbout";
-// import ThemeToggle from "../components/Nav/ThemeToggle";
 import Modal from "../components/Modal/Modal";
 import ModalTrigger from "../components/Modal/ModalTrigger";
 
@@ -26,7 +25,7 @@ const contactModalProps = {
 
 const Nav = () => (
   <nav
-    className="fixed z-10 flex space-x-2 scrollLock-compensation text-size-regular right-4 top-4"
+    className="fixed z-10 flex space-x-2 scrollLock-compensation right-4 top-4"
     role="toolbar"
     aria-label="Navigation toolbar"
   >
@@ -56,7 +55,6 @@ const Nav = () => (
         />
       )}
     </Modal>
-    {/* <ThemeToggle tabOrder="3" /> */}
   </nav>
 );
 
