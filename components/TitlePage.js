@@ -1,6 +1,4 @@
-import React from "react";
-
-const PageTitle = ({ title }) => (
+const TitlePage = ({ title }) => (
   <h1
     aria-label="Media page title"
     className="mt-4 mb-4 overflow-hidden font-normal text-center text-clip text-size-header-big sm:text-size-header-big"
@@ -9,4 +7,4 @@ const PageTitle = ({ title }) => (
   </h1>
 );
 
-export default PageTitle;
+export default TitlePage;

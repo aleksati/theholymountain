@@ -1,7 +1,7 @@
-import ModalContact from "../components/Nav/ModalContact";
-import ModalAbout from "../components/Nav/ModalAbout";
-import Modal from "../components/Modal/Modal";
-import ModalTrigger from "../components/Modal/ModalTrigger";
+import ModalContact from "../components/ModalContact";
+import ModalAbout from "../components/ModalAbout";
+import Modal from "../components/Modal";
+import ModalTrigger from "../components/ModalTrigger";
 
 const aboutModal = <ModalAbout />;
 const aboutModalProps = {

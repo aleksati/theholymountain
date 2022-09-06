@@ -1,7 +1,7 @@
-import logoWhite from "../../public/img/logo-white.png";
-import logoBlack from "../../public/img/logo-black.png";
-import getCurrTheme from "../../utils/getCurrTheme";
-import SoMeBar from "../SoMeBar";
+import logoWhite from "../public/img/logo-white.png";
+import logoBlack from "../public/img/logo-black.png";
+import getCurrTheme from "../utils/getCurrTheme";
+import SoMeBar from "./SoMeBar";
 import Image from "next/image";
 import React from "react";
 

@@ -1,5 +1,4 @@
-import React from "react";
-import SoMeBar from "../SoMeBar";
+import SoMeBar from "./SoMeBar";
 
 const ModalShop = ({ label }) => {
   return (

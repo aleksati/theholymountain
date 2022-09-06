@@ -1,6 +1,6 @@
 import { useState } from "react";
-import Button from "../Button";
-import Spinner from "../Spinner";
+import Button from "./Button";
+import Spinner from "./Spinner";
 
 const ModalContact = () => {
   const [name, setName] = useState("");

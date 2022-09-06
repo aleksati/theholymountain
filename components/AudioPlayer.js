@@ -1,9 +1,9 @@
 import { useRef, useEffect, useState } from "react";
-import getCurrTheme from "../../utils/getCurrTheme";
-import getClockValue from "../../utils/getClockValue";
-import Spinner from "../Spinner";
+import getCurrTheme from "../utils/getCurrTheme";
+import getClockValue from "../utils/getClockValue";
 import WrapperAudioPlayer from "./WrapperAudioPlayer";
 import ControlsAudioPlayer from "./ControlsAudioPlayer";
+import Spinner from "./Spinner";
 
 const WaveFormOptions = ref => ({
   container: ref,

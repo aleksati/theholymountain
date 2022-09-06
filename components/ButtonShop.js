@@ -1,8 +1,8 @@
 import ModalShop from "./ModalShop";
-import Modal from "../Modal/Modal";
-import ModalTrigger from "../Modal/ModalTrigger";
+import Modal from "./Modal";
+import ModalTrigger from "./ModalTrigger";
 
-const Shop = ({ data }) => {
+const ButtonShop = ({ data }) => {
   const shopModalProps = {
     triggerIcon: "shop",
     triggerLabel: "Buy album",
@@ -27,4 +27,4 @@ const Shop = ({ data }) => {
   );
 };
 
-export default Shop;
+export default ButtonShop;

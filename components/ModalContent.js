@@ -1,7 +1,7 @@
-import React, { memo } from "react";
-import ClientOnlyPortal from "../ClientOnlyPortal";
-import Icon from "../Icon";
+import ClientOnlyPortal from "./ClientOnlyPortal";
 import FocusTrap from "focus-trap-react";
+import React, { memo } from "react";
+import Icon from "./Icon";
 
 // try to cache it better.
 

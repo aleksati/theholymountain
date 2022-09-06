@@ -1,8 +1,8 @@
-import MusicAudio from "../components/Music/MusicAudio";
+import AudioRelease from "../components/AudioRelease";
 import LayoutPage from "../components/LayoutPage";
 import Slideshow from "../components/Slideshow";
 import LikesCounter from "./LikesCounter";
-import Shop from "../components/Music/Shop";
+import ButtonShop from "../components/ButtonShop";
 
 const Release = ({ item, meta }) => {
   return (
@@ -15,23 +15,26 @@ const Release = ({ item, meta }) => {
           <Slideshow imgSlugs={item.slideshow} />
         </div>
         <div className="col-span-1">
-          <div className="flex flex-col px-4 space-y-2 text-primary-light dark:text-primary-dark">
-            <div className="font-normal leading-8 text-size-header">
-              <h2>{item.title.toUpperCase()}</h2>
+          <div className="flex flex-col px-4 space-y-4 text-primary-light dark:text-primary-dark">
+            <div className="mb-4 space-y-2">
+              <div className="font-normal leading-8 text-size-header">
+                <h2>{item.title.toUpperCase()}</h2>
+              </div>
+              <div className="flex text-secondary">
+                <p>
+                  {item.category} | {item.year}
+                </p>
+              </div>
+              <div className="flex space-x-2">
+                <ButtonShop />
+                <LikesCounter releaseKey={item.key} />
+              </div>
             </div>
-            <div className="flex space-x-1 text-secondary">
-              <p>
-                {item.category} | {item.year}
-              </p>
+            <div className="space-y-2">
+              <p>{item.formatText}</p>
+              <p>{item.description}</p>
             </div>
-            <div className="flex space-x-2">
-              <Shop />
-              {/* <LikesCounter /> */}
-            </div>
-            <div>
-              <p>{item.text}</p>
-            </div>
-            <MusicAudio item={item} />
+            <AudioRelease item={item} />
             <div className="text-secondary">
               {item.credits.map((credit, index) => (
                 <p key={index}>{credit}</p>

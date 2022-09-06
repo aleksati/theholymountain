@@ -1,7 +1,6 @@
-import React from "react";
 import Image from "next/image";
 
-const MusicItemCover = ({ itemKey, title }) => (
+const DiscographyItemCover = ({ itemKey, title }) => (
   <div className="relative w-full">
     <Image
       className="rounded-md backdrop-brightness-75"
@@ -17,4 +16,4 @@ const MusicItemCover = ({ itemKey, title }) => (
   </div>
 );
 
-export default MusicItemCover;
+export default DiscographyItemCover;

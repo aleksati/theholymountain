@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-const PageGrid = ({ children, maxGridCols }) => {
+const GridPage = ({ children, maxGridCols }) => {
   const [cols, setCols] = useState("lg:grid-cols-3");
 
   useEffect(() => {
@@ -18,4 +18,4 @@ const PageGrid = ({ children, maxGridCols }) => {
   );
 };
 
-export default PageGrid;
+export default GridPage;

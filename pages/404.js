@@ -1,4 +1,4 @@
-import PageTextPoster from "../components/Page/PageTextPoster";
+import TextPosterPage from "../components/TextPosterPage";
 import CoverPhoto from "../components/CoverPhoto";
 import { SITE_DOMAIN } from "../config";
 import Link from "next/link";
@@ -24,14 +24,14 @@ const FourOhFour = () => {
           credit="Katinka Hustad"
           creditLink="https://www.katinkahustad.com/"
         />
-        <PageTextPoster>
+        <TextPosterPage>
           <h1 className="font-bold text-8xl">Lost?</h1>
           <Link href="/" passHref>
             <a className="p-2 border rounded-full text-size-regular">
               Come Home
             </a>
           </Link>
-        </PageTextPoster>
+        </TextPosterPage>
       </div>
     </>
   );

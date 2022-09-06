@@ -1,6 +1,6 @@
 import React from "react";
 
-const MusicItemInfo = ({ title, category, year }) => (
+const DiscographyItemInfo = ({ title, category, year }) => (
   <div className="text-center">
     <h2 className="font-normal leading-8 text-size-title">
       {title.toUpperCase()}
@@ -11,4 +11,4 @@ const MusicItemInfo = ({ title, category, year }) => (
   </div>
 );
 
-export default MusicItemInfo;
+export default DiscographyItemInfo;

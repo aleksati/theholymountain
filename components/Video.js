@@ -1,5 +1,4 @@
-import React from "react";
-import YoutubePlayer from "./YoutubePlayer";
+import VideoPlayer from "./VideoPlayer";
 
 const Video = ({ video, children }) => (
   <div
@@ -7,7 +6,7 @@ const Video = ({ video, children }) => (
     aria-label={`${video.title} video grid cell`}
   >
     <div className="relative w-full">
-      <YoutubePlayer url={video.url} title={video.title} />
+      <VideoPlayer url={video.url} title={video.title} />
     </div>
 
     <div className="leading-8 text-center">

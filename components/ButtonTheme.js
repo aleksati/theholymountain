@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
-import getCurrTheme from "../../utils/getCurrTheme";
-import Button from "../Button";
-import Icon from "../Icon";
+import getCurrTheme from "../utils/getCurrTheme";
+import Button from "./Button";
+import Icon from "./Icon";
 
-const ThemeToggle = ({ tabOrder }) => {
+const ButtonTheme = ({ tabOrder }) => {
   const [mounted, setMounted] = useState(false);
   const { currTheme, setTheme } = getCurrTheme();
 
@@ -31,4 +31,4 @@ const ThemeToggle = ({ tabOrder }) => {
   );
 };
 
-export default ThemeToggle;
+export default ButtonTheme;

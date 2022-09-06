@@ -5,34 +5,55 @@ import getLikesFromDB from "../utils/getLikesFromDB";
 import { SITE_DOMAIN } from "../config";
 import { useEffect, useState } from "react";
 
-// I set the button state (localBtnState) locally for quicker performance
-// it mimicks what I get from the db.
-
-const LikesCounter = () => {
+const LikesCounter = ({ releaseKey }) => {
   const [localBtnState, setLocalBtnState] = useState(null);
-  const { data, isLoading, isError, mutate } = getLikesFromDB();
+  const [localLikesCounter, setLocalLikesCounter] = useState(null);
+  const [isLocalError, setIsLocalError] = useState(false);
 
+  const { data, isLoading, isError, mutate } = getLikesFromDB(releaseKey);
+
+  // on mount, and when new data is saved to db (through mutate()),
+  // update our local variables
   useEffect(() => {
-    if (!isLoading && !isError && data.userDoesLike)
+    if (!isLoading && !isError && data) {
       setLocalBtnState(data.userDoesLike);
+      setLocalLikesCounter(data.likesCounter);
+    }
   }, [data, isLoading, isError]);
 
+  // manage errors locally
+  useEffect(() => {
+    setIsLocalError(isError ? true : false);
+  }, [isError]);
+
   const handleClick = async () => {
+    // set local state first for a quick UI
     setLocalBtnState(prevState => !prevState);
+    setLocalLikesCounter(prevState =>
+      localBtnState ? prevState - 1 : prevState + 1
+    );
 
     try {
-      await fetch(`${SITE_DOMAIN}/api/likes/addOrRemoveLike`, {
-        method: "POST",
+      // and update the likes in the database
+      await fetch(`${SITE_DOMAIN}/api/updateLikes`, {
+        method: "PUT",
+        body: JSON.stringify({
+          key: releaseKey,
+        }),
+        headers: {
+          "Content-Type": "application/json",
+        },
       });
-    } catch (error) {
-      console.log(error);
-    }
 
-    // get fresh like values from likes db through getLikesFromDb()
-    mutate();
+      // Finally, mutate and get fresh likes list from db through getLikesFromDb()
+      mutate();
+    } catch (error) {
+      setIsLocalError(true);
+      console.log("Error while fetching likes: ", error.message);
+    }
   };
 
-  if (isError)
+  if (isLocalError)
     return (
       <WrapperLikes>
         <p>ERROR!!</p>
@@ -48,9 +69,10 @@ const LikesCounter = () => {
 
   return (
     <WrapperLikes>
-      {/* {console.log("btn-state: ", localBtnState)}
+      {/* {console.log("userDoesLike (local): ", localBtnState)}
       {console.log("userDoesLike (db): ", data.userDoesLike)}
-      {console.log("amount of likes (db): ", data.likes_amount)} */}
+      {console.log("likesCounter (db): ", data.likesCounter)}
+      {console.log("likesCounter (local): ", localLikesCounter)} */}
       <a
         aria-label="Likes button"
         className="cursor-pointer hover:scale-105"
@@ -58,10 +80,10 @@ const LikesCounter = () => {
       >
         <Icon
           id="heart"
-          iconSize={`text-xl ${localBtnState ? "text-red-400" : null}`}
+          iconSize={`text-2xl ${localBtnState ? "text-red-400" : null}`}
         />
       </a>
-      <p className="m-0 text-size-small">{data.likes_amount}</p>
+      <p className="m-0 text-size-small">{localLikesCounter}</p>
     </WrapperLikes>
   );
 };

@@ -1,16 +1,16 @@
 import LayoutPage from "../components/LayoutPage";
-import PageGrid from "../components/Page/PageGrid";
-import Video from "../components/Videos/Video";
-import PageTitle from "../components/Page/PageTitle";
+import GridPage from "../components/GridPage";
+import Video from "../components/Video";
+import TitlePage from "../components/TitlePage";
 
 const Videos = ({ videoData, children, maxGridCols }) => (
   <LayoutPage id={"Videos"} className="pb-4">
-    <PageTitle title="Videos" />
-    <PageGrid maxGridCols={maxGridCols}>
+    <TitlePage title="Videos" />
+    <GridPage maxGridCols={maxGridCols}>
       {videoData.map(video => (
         <Video key={video.key} video={video} />
       ))}
-    </PageGrid>
+    </GridPage>
     {children}
   </LayoutPage>
 );

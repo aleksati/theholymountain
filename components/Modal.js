@@ -1,5 +1,5 @@
-import React, { useState, useCallback, useRef, useEffect } from "react";
-import { useScrollLock } from "../Hooks/useScrollLock";
+import { useState, useCallback, useRef, useEffect } from "react";
+import { useScrollLock } from "./Hooks/useScrollLock";
 import ModalContent from "./ModalContent";
 
 const Modal = ({ modalMaxSize, modalContent, children }) => {

@@ -1,5 +1,5 @@
 import CoverPhoto from "../components/CoverPhoto";
-// import PageTextPoster from "../components/Page/PageTextPoster";
+// import TextPosterPage from "../components/TextPosterPage";
 // import Link from "next/link";
 
 const src = "/img/cover.png";
@@ -14,7 +14,7 @@ const FrontPage = () => {
         credit="Katinka Hustad"
         creditLink="http://www.katinkahustad.com/"
       />
-      {/* <PageTextPoster>
+      {/* <TextPosterPage>
         <h1 className="text-8xl text-primary-dark">
           New Single <br />
           <Link href="/awake">
@@ -23,7 +23,7 @@ const FrontPage = () => {
           <br />
           Out Now
         </h1>
-      </PageTextPoster> */}
+      </TextPosterPage> */}
     </div>
   );
 };

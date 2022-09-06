@@ -1,6 +1,6 @@
 import React from "react";
 
-const YoutubePlayer = ({ url, title }) => (
+const VideoPlayer = ({ url, title }) => (
   <iframe
     width="100%"
     alt={`${title} YouTube video`}
@@ -11,4 +11,4 @@ const YoutubePlayer = ({ url, title }) => (
   ></iframe>
 );
 
-export default YoutubePlayer;
+export default VideoPlayer;

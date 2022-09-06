@@ -1,19 +1,19 @@
 import LayoutPage from "../components/LayoutPage";
-import PageGrid from "../components/Page/PageGrid";
-import MusicItem from "../components/Music/MusicItem";
-import PageTitle from "../components/Page/PageTitle";
+import GridPage from "../components/GridPage";
+import DiscographyItem from "../components/DiscographyItem";
+import TitlePage from "../components/TitlePage";
 
 const Discography = ({ musicData, children, maxGridCols }) => {
   return (
     <LayoutPage id="discography" className="pb-4">
-      <PageTitle title="Discography" />
-      <PageGrid maxGridCols={maxGridCols}>
+      <TitlePage title="Discography" />
+      <GridPage maxGridCols={maxGridCols}>
         {musicData.map(item => {
           // just ignore the single for now..
-          if (item.key !== "awake")
-            return <MusicItem key={item.key} item={item} />;
+          if (item.key !== "awake" && item.key !== "something")
+            return <DiscographyItem key={item.key} item={item} />;
         })}
-      </PageGrid>
+      </GridPage>
       {children}
     </LayoutPage>
   );

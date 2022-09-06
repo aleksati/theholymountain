@@ -2,7 +2,7 @@ import React from "react";
 import Button from "./Button";
 import { useRouter } from "next/router";
 
-const ReportIssues = () => {
+const ButtonToReportIssues = () => {
   const router = useRouter();
   return (
     <Button
@@ -16,4 +16,4 @@ const ReportIssues = () => {
   );
 };
 
-export default ReportIssues;
+export default ButtonToReportIssues;
