@@ -17,7 +17,6 @@ export default async function handler(req, res) {
     return res.status(200).json({
       likesCounter,
       userDoesLike: isMatch,
-      clientIP,
     });
   } catch (error) {
     console.log("Error while getting likes: ", error.message);

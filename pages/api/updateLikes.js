@@ -18,7 +18,7 @@ export default async function updateLikes(req, res) {
 
     const likes = await release.getLikes();
 
-    res.status(200).json({ likes, clientIP });
+    res.status(200).json({ likes });
   } catch (error) {
     console.log("Error while updating like: ", error.message);
     res.status(500).json(error);
