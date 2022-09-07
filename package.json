@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@netlify/plugin-nextjs": "^4.16.0",
+    "@netlify/plugin-nextjs": "^4.21.2",
     "bcrypt": "^5.0.1",
     "express-validator": "^6.14.2",
     "focus-trap-react": "^9.0.2",
