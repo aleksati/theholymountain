@@ -28,8 +28,8 @@ const LikesCounter = ({ releaseKey }) => {
 
   const handleClick = async () => {
     // set local state first for a quick UI
-    setLocalBtnState(prevState => !prevState);
-    setLocalLikesCounter(prevState =>
+    setLocalBtnState((prevState) => !prevState);
+    setLocalLikesCounter((prevState) =>
       localBtnState ? prevState - 1 : prevState + 1
     );
 
