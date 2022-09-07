@@ -6,8 +6,8 @@ import Modal from "../components/Modal";
 const aboutModal = <ModalAbout />;
 const aboutModalProps = {
   iconId: "about",
-  hasTooltip: true,
-  tooltipText: "About",
+  //   hasTooltip: true,
+  //   tooltipText: "About",
   label: "About Us",
   modalMaxSize: "max-w-xl", //   modalMaxSize: "max-w-sm sm:max-w-xl",
   tabOrder: "1",
@@ -17,8 +17,8 @@ const aboutModalProps = {
 const contactModal = <ModalContact />;
 const contactModalProps = {
   iconId: "contact",
-  hasTooltip: true,
-  tooltipText: "Contact",
+  //   hasTooltip: true,
+  //   tooltipText: "Contact",
   label: "Contact Us",
   modalMaxSize: "max-w-md",
   tabOrder: "2",
