@@ -1,7 +1,4 @@
-// import musicData from "../../lib/musicData";
 import Release from "../../sections/Release";
-import LayoutApp from "../../components/LayoutApp";
-import ButtonToDiscography from "../../components/ButtonToDiscography";
 import connectMongo from "../../utils/connectMongo";
 import MusicData from "../../models/MusicData";
 
@@ -10,12 +7,7 @@ export default function handler({ item }) {
     title: `The Holy Mountain | ${item.title}`,
   };
 
-  return (
-    <LayoutApp appMeta={meta}>
-      <ButtonToDiscography />
-      <Release item={item} />
-    </LayoutApp>
-  );
+  return <Release item={item} meta={meta} />;
 }
 
 export const getStaticProps = async context => {
@@ -32,7 +24,10 @@ export const getStaticProps = async context => {
       },
     };
   } catch (error) {
-    console.log(error);
+    console.log(
+      "Error while fetching static MusicData collection from db during build: ",
+      error.message
+    );
     // should not be needed because of the "fallback: false" mode
     return {
       notFound: true,

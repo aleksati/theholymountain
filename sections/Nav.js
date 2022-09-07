@@ -1,26 +1,28 @@
+import ButtonIconAndText from "../components/ButtonIconAndText";
 import ModalContact from "../components/ModalContact";
 import ModalAbout from "../components/ModalAbout";
 import Modal from "../components/Modal";
-import ModalTrigger from "../components/ModalTrigger";
 
 const aboutModal = <ModalAbout />;
 const aboutModalProps = {
-  triggerIcon: "about",
-  triggerHasTooltip: true,
-  triggerTooltipMessage: "About",
-  triggerLabel: "About Us",
+  iconId: "about",
+  hasTooltip: true,
+  tooltipText: "About",
+  label: "About Us",
   modalMaxSize: "max-w-xl", //   modalMaxSize: "max-w-sm sm:max-w-xl",
   tabOrder: "1",
+  text: "About",
 };
 
 const contactModal = <ModalContact />;
 const contactModalProps = {
-  triggerIcon: "contact",
-  triggerHasTooltip: true,
-  triggerTooltipMessage: "Contact",
-  triggerLabel: "Contact Us",
+  iconId: "contact",
+  hasTooltip: true,
+  tooltipText: "Contact",
+  label: "Contact Us",
   modalMaxSize: "max-w-md",
   tabOrder: "2",
+  text: "Contact",
 };
 
 const Nav = () => (
@@ -35,9 +37,9 @@ const Nav = () => (
       modalMaxSize={aboutModalProps.modalMaxSize}
     >
       {(triggerBtnRef, showModal) => (
-        <ModalTrigger
+        <ButtonIconAndText
           ref={triggerBtnRef}
-          showModal={showModal}
+          onClick={showModal}
           {...aboutModalProps}
         />
       )}
@@ -48,9 +50,9 @@ const Nav = () => (
       modalMaxSize={contactModalProps.modalMaxSize}
     >
       {(triggerBtnRef, showModal) => (
-        <ModalTrigger
+        <ButtonIconAndText
           ref={triggerBtnRef}
-          showModal={showModal}
+          onClick={showModal}
           {...contactModalProps}
         />
       )}

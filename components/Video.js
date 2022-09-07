@@ -2,7 +2,7 @@ import VideoPlayer from "./VideoPlayer";
 
 const Video = ({ video, children }) => (
   <div
-    className={`flex flex-col p-4 items-center justify-center border border-secondary-skin-light dark:border-secondary-skin-dark rounded-md space-y-4`}
+    className={`flex flex-col p-4 items-center justify-center rounded-md space-y-2`}
     aria-label={`${video.title} video grid cell`}
   >
     <div className="relative w-full">

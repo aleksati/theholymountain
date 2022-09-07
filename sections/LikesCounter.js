@@ -1,5 +1,6 @@
 import Icon from "../components/Icon";
 import Spinner from "../components/Spinner";
+import Error from "../components/Error";
 import WrapperLikes from "../components/WrapperLikes";
 import getLikesFromDB from "../utils/getLikesFromDB";
 import { SITE_DOMAIN } from "../config";
@@ -28,8 +29,8 @@ const LikesCounter = ({ releaseKey }) => {
 
   const handleClick = async () => {
     // set local state first for a quick UI
-    setLocalBtnState((prevState) => !prevState);
-    setLocalLikesCounter((prevState) =>
+    setLocalBtnState(prevState => !prevState);
+    setLocalLikesCounter(prevState =>
       localBtnState ? prevState - 1 : prevState + 1
     );
 
@@ -56,7 +57,7 @@ const LikesCounter = ({ releaseKey }) => {
   if (isLocalError)
     return (
       <WrapperLikes>
-        <p>ERROR!!</p>
+        <Error />
       </WrapperLikes>
     );
 
@@ -71,8 +72,8 @@ const LikesCounter = ({ releaseKey }) => {
     <WrapperLikes>
       {/* {console.log("userDoesLike (local): ", localBtnState)}
       {console.log("userDoesLike (db): ", data.userDoesLike)}
-      {console.log("likesCounter (db): ", data.likesCounter)}
-      {console.log("likesCounter (local): ", localLikesCounter)} */}
+      {console.log("likesCounter (local): ", localLikesCounter)}
+      {console.log("likesCounter (db): ", data.likesCounter)} */}
       <a
         aria-label="Likes button"
         className="cursor-pointer hover:scale-105"

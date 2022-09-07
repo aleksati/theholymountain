@@ -34,7 +34,7 @@ const ModalContent = React.forwardRef(
                   aria-label="Close Modal"
                   onClick={closeModal}
                 >
-                  <Icon id="closeButton" iconSize={"text-3xl"} />
+                  <Icon id="x" iconSize="text-3xl" />
                 </button>
               </div>
 

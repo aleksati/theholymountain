@@ -1,12 +1,12 @@
 import ModalShop from "./ModalShop";
 import Modal from "./Modal";
-import ModalTrigger from "./ModalTrigger";
+import ButtonIconAndText from "./ButtonIconAndText";
 
 const ButtonShop = ({ data }) => {
   const shopModalProps = {
-    triggerIcon: "shop",
-    triggerLabel: "Buy album",
-    triggerText: "Shop",
+    iconId: "shop",
+    label: "Shop release",
+    text: "Shop",
     modalMaxSize: "max-w-sm",
   };
 
@@ -17,9 +17,9 @@ const ButtonShop = ({ data }) => {
       modalMaxSize={shopModalProps.modalMaxSize}
     >
       {(triggerBtnRef, showModal) => (
-        <ModalTrigger
+        <ButtonIconAndText
           ref={triggerBtnRef}
-          showModal={showModal}
+          onClick={showModal}
           {...shopModalProps}
         />
       )}

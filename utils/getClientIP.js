@@ -3,7 +3,7 @@ const getClientIP = req => {
 
   const userIP =
     typeof forwarded === "string"
-      ? forwarded.split(",")[0]
+      ? forwarded.split(/,/)
       : req.socket.remoteAddress;
 
   return userIP;

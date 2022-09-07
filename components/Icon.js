@@ -18,6 +18,7 @@ import { FiPlay } from "react-icons/fi";
 import { AiOutlinePause } from "react-icons/ai";
 import { GiMagnifyingGlass } from "react-icons/gi";
 import { AiOutlineHeart, AiOutlineMail } from "react-icons/ai";
+import { MdOutlineReportProblem } from "react-icons/md";
 
 const defaultSize = "text-md";
 
@@ -29,7 +30,13 @@ const icons = {
   details: s => <GiMagnifyingGlass className={s} />,
   prevArrow: s => <MdOutlineArrowBackIosNew className={s} />,
   nextArrow: s => <MdOutlineArrowForwardIos className={s} />,
-  closeButton: s => <RiCloseLine className={s} />,
+  downArrow: s => (
+    <MdOutlineArrowForwardIos
+      className={s}
+      style={{ transform: "rotate(90deg)" }}
+    />
+  ),
+  x: s => <RiCloseLine className={s} />,
   facebook: s => <BsFacebook className={s} />,
   instagram: s => <RiInstagramFill className={s} />,
   bandcamp: s => <FaBandcamp className={s} />,
@@ -41,6 +48,7 @@ const icons = {
   play: s => <FiPlay className={s} />,
   pause: s => <AiOutlinePause className={s} />,
   heart: s => <AiOutlineHeart className={s} />,
+  issue: s => <MdOutlineReportProblem className={s} />,
 };
 
 const Icon = ({ iconSize, id }) => {

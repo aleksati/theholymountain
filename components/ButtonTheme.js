@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import getCurrTheme from "../utils/getCurrTheme";
-import Button from "./Button";
-import Icon from "./Icon";
+import ButtonIconAndText from "./ButtonIconAndText";
 
 const ButtonTheme = ({ tabOrder }) => {
   const [mounted, setMounted] = useState(false);
@@ -17,17 +16,14 @@ const ButtonTheme = ({ tabOrder }) => {
   if (!mounted) return null;
 
   return (
-    <Button
-      onClick={handleClick}
-      //   showTooltip={true}
-      //   tooltipMessage="Theme"
-      className="p-4 m-auto"
-      aria-label={`Toggle light or dark mode theme`}
-      aria-pressed={currTheme === "dark" ? "true" : "false"}
+    <ButtonIconAndText
+      text="Theme"
+      pressed={currTheme === "dark" ? "true" : "false"}
+      label="Toggle light or dark mode theme"
+      iconId={currTheme === "dark" ? "sun" : "moon"}
       tabOrder={tabOrder}
-    >
-      {currTheme === "dark" ? <Icon id="sun" /> : <Icon id="moon" />}
-    </Button>
+      onClick={handleClick}
+    />
   );
 };
 

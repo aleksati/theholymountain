@@ -1,11 +1,19 @@
 import AudioRelease from "../components/AudioRelease";
+import LayoutApp from "../components/LayoutApp";
 import LayoutPage from "../components/LayoutPage";
 import Slideshow from "../components/Slideshow";
 import LikesCounter from "./LikesCounter";
 import ButtonShop from "../components/ButtonShop";
+import ButtonIconAndText from "../components/ButtonIconAndText";
+import Link from "next/link";
 
-const Release = ({ item, meta }) => {
-  return (
+const Release = ({ item, meta }) => (
+  <LayoutApp appMeta={meta}>
+    <div className="flex pt-4 pl-4 place-content-start">
+      <Link href="/#discography" passHref>
+        <ButtonIconAndText text="Back" iconId="prevArrow" />
+      </Link>
+    </div>
     <LayoutPage pageMeta={meta} border={false}>
       <div
         className="grid min-h-screen grid-cols-1 gap-6 p-4 pb-12 md:pb-0 md:grid-cols-2 md:space-y-0"
@@ -44,7 +52,7 @@ const Release = ({ item, meta }) => {
         </div>
       </div>
     </LayoutPage>
-  );
-};
+  </LayoutApp>
+);
 
 export default Release;
