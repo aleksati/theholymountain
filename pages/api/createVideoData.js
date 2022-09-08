@@ -1,4 +1,4 @@
-import connectMongo from "../../utils/connectMongo";
+import connectMongo from "../../functions/connectMongo";
 import VideoData from "../../models/VideoData";
 
 // post request. We are creating new data.

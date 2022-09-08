@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import getCurrTheme from "../utils/getCurrTheme";
+import getCurrTheme from "../functions/getCurrTheme";
 import ButtonIconAndText from "./ButtonIconAndText";
 
 const ButtonTheme = ({ tabOrder }) => {

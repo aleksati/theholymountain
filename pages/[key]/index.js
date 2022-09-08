@@ -1,5 +1,5 @@
-import Release from "../../sections/Release";
-import connectMongo from "../../utils/connectMongo";
+import PageRelease from "../../templates/PageRelease";
+import connectMongo from "../../functions/connectMongo";
 import MusicData from "../../models/MusicData";
 
 export default function handler({ item }) {
@@ -7,10 +7,10 @@ export default function handler({ item }) {
     title: `The Holy Mountain | ${item.title}`,
   };
 
-  return <Release item={item} meta={meta} />;
+  return <PageRelease item={item} meta={meta} />;
 }
 
-export const getStaticProps = async context => {
+export const getStaticProps = async (context) => {
   try {
     await connectMongo();
 
@@ -41,9 +41,9 @@ export const getStaticPaths = async () => {
   await connectMongo();
   let res = await MusicData.find();
   let items = await JSON.parse(JSON.stringify(res));
-  let keys = items.map(item => item.key);
+  let keys = items.map((item) => item.key);
 
-  let paths = keys.map(key => ({ params: { key } }));
+  let paths = keys.map((key) => ({ params: { key } }));
 
   return {
     paths,

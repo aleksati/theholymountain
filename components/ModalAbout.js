@@ -1,9 +1,8 @@
 import logoWhite from "../public/img/logo-white.png";
 import logoBlack from "../public/img/logo-black.png";
-import getCurrTheme from "../utils/getCurrTheme";
+import getCurrTheme from "../functions/getCurrTheme";
 import SoMeBar from "./SoMeBar";
 import Image from "next/image";
-import React from "react";
 
 const ModalAbout = ({ label }) => {
   const { currTheme } = getCurrTheme();

@@ -1,5 +1,5 @@
-import TextPosterPage from "../components/TextPosterPage";
-import CoverPhoto from "../components/CoverPhoto";
+import TextOverImageFullscreen from "../components/TextOverImageFullscreen";
+import ImageFullscreen from "../components/ImageFullscreen";
 import { SITE_DOMAIN } from "../config";
 import Link from "next/link";
 import Meta from "../components/Meta";
@@ -18,20 +18,20 @@ const FourOhFour = () => {
     <>
       <Meta {...meta} />
       <div className="relative min-h-screen" id="404">
-        <CoverPhoto
+        <ImageFullscreen
           imgSrc={src}
           placeholder={placeholder}
           credit="Katinka Hustad"
           creditLink="https://www.katinkahustad.com/"
         />
-        <TextPosterPage>
+        <TextOverImageFullscreen>
           <h1 className="font-bold text-8xl">Lost?</h1>
           <Link href="/" passHref>
             <a className="p-2 border rounded-full text-size-regular">
               Come Home
             </a>
           </Link>
-        </TextPosterPage>
+        </TextOverImageFullscreen>
       </div>
     </>
   );

@@ -1,5 +1,5 @@
 import { useState, useCallback, useRef, useEffect } from "react";
-import { useScrollLock } from "./Hooks/useScrollLock";
+import { useScrollLock } from "../hooks/useScrollLock";
 import ModalContent from "./ModalContent";
 
 const Modal = ({ modalMaxSize, modalContent, children }) => {
@@ -30,14 +30,14 @@ const Modal = ({ modalMaxSize, modalContent, children }) => {
   }, [unlockScroll]);
 
   const onKeyDown = useCallback(
-    event => {
+    (event) => {
       if (event.keyCode === 27) return closeModal();
     },
     [closeModal]
   );
 
   const onClickOutside = useCallback(
-    event => {
+    (event) => {
       if (modalRef.current && modalRef.current.contains(event.target)) return;
       return closeModal();
     },

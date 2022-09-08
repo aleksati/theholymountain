@@ -1,8 +1,7 @@
-import LayoutApp from "../components/LayoutApp";
-import Discography from "../sections/Discography";
-import FrontPage from "../sections/FrontPage";
-import Videos from "../sections/Videos";
-import connectMongo from "../utils/connectMongo";
+import LayoutApp from "../layouts/LayoutApp";
+import PageMedia from "../templates/PageMedia";
+import PageFront from "../templates/PageFront";
+import connectMongo from "../functions/connectMongo";
 import MusicData from "../models/MusicData";
 import VideoData from "../models/VideoData";
 import WrapperShowMore from "../components/WrapperShowMore";
@@ -10,10 +9,10 @@ import WrapperShowMore from "../components/WrapperShowMore";
 export default function Home({ filteredMusicData, filteredVideoData }) {
   return (
     <LayoutApp>
-      <FrontPage />
-      <Discography musicData={filteredMusicData} maxGridCols="3" />
+      <PageFront />
+      <PageMedia data={filteredMusicData} maxGridCols="3" page="Discography" />
       <WrapperShowMore>
-        <Videos videoData={filteredVideoData} maxGridCols="2" />
+        <PageMedia data={filteredVideoData} maxGridCols="2" page="Videos" />
       </WrapperShowMore>
     </LayoutApp>
   );

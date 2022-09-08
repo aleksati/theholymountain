@@ -1,6 +1,6 @@
-import connectMongo from "../../utils/connectMongo";
+import connectMongo from "../../functions/connectMongo";
 import MusicData from "../../models/MusicData";
-import getClientIP from "../../utils/getClientIP";
+import getClientIP from "../../functions/getClientIP";
 
 export default async function updateLikes(req, res) {
   if (req.method !== "PUT")

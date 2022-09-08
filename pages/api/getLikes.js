@@ -1,6 +1,6 @@
-import connectMongo from "../../utils/connectMongo";
+import connectMongo from "../../functions/connectMongo";
 import MusicData from "../../models/MusicData";
-import getClientIP from "../../utils/getClientIP";
+import getClientIP from "../../functions/getClientIP";
 
 export default async function handler(req, res) {
   if (req.method !== "POST") res.status(404).json("Page not found!");

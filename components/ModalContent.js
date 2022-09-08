@@ -1,4 +1,4 @@
-import ClientOnlyPortal from "./ClientOnlyPortal";
+import PortalClientOnly from "./PortalClientOnly";
 import FocusTrap from "focus-trap-react";
 import React, { memo } from "react";
 import Icon from "./Icon";
@@ -10,7 +10,7 @@ const ModalContent = React.forwardRef(
     const { modalRef, closeBtnRef } = ref.current;
 
     return (
-      <ClientOnlyPortal selector="#modal">
+      <PortalClientOnly selector="#modal">
         <FocusTrap>
           {/* The Modal container (popupCard) centered */}
           <aside
@@ -42,7 +42,7 @@ const ModalContent = React.forwardRef(
             </div>
           </aside>
         </FocusTrap>
-      </ClientOnlyPortal>
+      </PortalClientOnly>
     );
   }
 );
