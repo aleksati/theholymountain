@@ -1,6 +1,7 @@
-import { useState } from "react";
 import Button from "./Button";
 import Spinner from "./Spinner";
+import { useState } from "react";
+import { SITE_DOMAIN } from "../config";
 
 const ModalContact = () => {
   const [name, setName] = useState("");
@@ -21,7 +22,7 @@ const ModalContact = () => {
 
   const handleSubmit = async e => {
     e.preventDefault();
-    console.log("Sending");
+    console.log("Sending message...");
     setIsLoading(true);
 
     let data = {
@@ -32,27 +33,19 @@ const ModalContact = () => {
     };
 
     try {
-      let res = await fetch("/api/contact", {
+      let res = await fetch(`${SITE_DOMAIN}/api/contact`, {
         method: "POST",
         headers: {
-          Accept: "application/json, text/plain, */*",
           "Content-Type": "application/json",
         },
         body: JSON.stringify(data),
       });
 
-      if (res.status == 200) {
-        console.log("Message sent!");
-        setIsSubmit(true);
-      } else {
-        console.log(
-          "Error occured (500) on the backend with the mailing service",
-          res
-        );
-        setIsError(true);
-      }
+      let data = await res.json();
+      console.log(data.message);
+      setIsSubmit(true);
     } catch (error) {
-      console.log("Error occured when calling the API/backend: ", error);
+      console.log("Error with the mailing service: ", error.message);
       setIsError(true);
     }
     resetData();

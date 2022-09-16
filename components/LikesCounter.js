@@ -1,60 +1,38 @@
-import Icon from "./Icon";
+import fetchLikes from "../functions/fetchLikes";
+import { useEffect, useState } from "react";
+import WrapperLikes from "./WrapperLikes";
 import Spinner from "./Spinner";
 import Error from "./Error";
-import WrapperLikes from "./WrapperLikes";
-import getLikesFromDB from "../functions/getLikesFromDB";
-import { SITE_DOMAIN } from "../config";
-import { useEffect, useState } from "react";
+import Icon from "./Icon";
 
 const LikesCounter = ({ releaseKey }) => {
   const [localBtnState, setLocalBtnState] = useState(null);
   const [localLikesCounter, setLocalLikesCounter] = useState(null);
-  const [isLocalError, setIsLocalError] = useState(false);
+  const [fetchMethod, setFetchMethod] = useState("POST");
 
-  const { data, isLoading, isError, mutate } = getLikesFromDB(releaseKey);
+  const { data, isLoading, isError } = fetchLikes(fetchMethod, releaseKey);
 
-  // on mount, and when new data is saved to db (through mutate()),
-  // update our local variables
+  // on mount, and when new data is saved to db,
+  // update/validate our local variables
   useEffect(() => {
-    if (!isLoading && !isError && data) {
-      setLocalBtnState(data.userDoesLike);
-      setLocalLikesCounter(data.likesCounter);
-    }
+    if (isLoading || isError) return;
+
+    setLocalBtnState(data.client.likesRelease);
+    setLocalLikesCounter(data.likesCounter);
   }, [data, isLoading, isError]);
 
-  // manage errors locally
-  useEffect(() => {
-    setIsLocalError(isError ? true : false);
-  }, [isError]);
-
+  // set local state first for a quick UI
   const handleClick = async () => {
-    // set local state first for a quick UI
-    setLocalBtnState((prevState) => !prevState);
-    setLocalLikesCounter((prevState) =>
+    setLocalLikesCounter(prevState =>
       localBtnState ? prevState - 1 : prevState + 1
     );
+    setLocalBtnState(prevState => !prevState);
 
-    try {
-      // and update the likes in the database
-      await fetch(`${SITE_DOMAIN}/api/updateLikes`, {
-        method: "PUT",
-        body: JSON.stringify({
-          key: releaseKey,
-        }),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-
-      // Finally, mutate and get fresh likes list from db through getLikesFromDb()
-      mutate();
-    } catch (error) {
-      setIsLocalError(true);
-      console.log("Error while fetching likes: ", error.message);
-    }
+    // update the likes counter in the DB
+    setFetchMethod("PATCH");
   };
 
-  if (isLocalError)
+  if (isError)
     return (
       <WrapperLikes>
         <Error />
@@ -70,10 +48,6 @@ const LikesCounter = ({ releaseKey }) => {
 
   return (
     <WrapperLikes>
-      {/* {console.log("userDoesLike (local): ", localBtnState)}
-      {console.log("userDoesLike (db): ", data.userDoesLike)}
-      {console.log("likesCounter (local): ", localLikesCounter)}
-      {console.log("likesCounter (db): ", data.likesCounter)} */}
       <a
         aria-label="Likes button"
         className="cursor-pointer hover:scale-105"

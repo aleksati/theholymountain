@@ -11,7 +11,7 @@ const PageRelease = ({ item, meta }) => (
   <LayoutApp appMeta={meta}>
     <div className="flex pt-4 pl-4 place-content-start">
       <Link href="/#discography" passHref>
-        <ButtonIconAndText text="Back" iconId="prevArrow" />
+        <ButtonIconAndText iconId="prevArrow" />
       </Link>
     </div>
     <LayoutPage pageMeta={meta} border={false}>

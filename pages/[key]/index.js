@@ -10,13 +10,13 @@ export default function handler({ item }) {
   return <PageRelease item={item} meta={meta} />;
 }
 
-export const getStaticProps = async (context) => {
+export const getStaticProps = async context => {
   try {
     await connectMongo();
 
     const url = context.params.key;
-    let res = await MusicData.find({ key: url });
-    let item = await JSON.parse(JSON.stringify(res[0]));
+    let res = await MusicData.findOne({ key: url });
+    let item = await JSON.parse(JSON.stringify(res));
 
     return {
       props: {
@@ -41,9 +41,9 @@ export const getStaticPaths = async () => {
   await connectMongo();
   let res = await MusicData.find();
   let items = await JSON.parse(JSON.stringify(res));
-  let keys = items.map((item) => item.key);
+  let keys = items.map(item => item.key);
 
-  let paths = keys.map((key) => ({ params: { key } }));
+  let paths = keys.map(key => ({ params: { key } }));
 
   return {
     paths,

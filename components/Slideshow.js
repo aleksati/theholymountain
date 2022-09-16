@@ -30,21 +30,35 @@ const properties = {
 const Slideshow = ({ imgSlugs = [] }) => {
   return (
     <div className="relative w-full" aria-label="slideshow container">
-      <Slide {...properties} indicators={indicators}>
-        {imgSlugs.map(slug => (
-          <Image
-            key={slug}
-            src={`/img/${slug}.png`}
-            className="rounded-md"
-            alt={`slideshow image of ${slug}`}
-            width="100%"
-            height="100%"
-            layout="responsive"
-            objectFit="contain"
-            blurDataURL={`/img/placeholders/${slug}.png`}
-          />
-        ))}
-      </Slide>
+      {imgSlugs.length > 1 ? (
+        <Slide {...properties} indicators={indicators}>
+          {imgSlugs.map(slug => (
+            <Image
+              key={slug}
+              src={`/img/${slug}.png`}
+              className="rounded-md"
+              alt={`slideshow image of ${slug}`}
+              width="100%"
+              height="100%"
+              layout="responsive"
+              objectFit="contain"
+              blurDataURL={`/img/placeholders/${slug}.png`}
+            />
+          ))}
+        </Slide>
+      ) : (
+        <Image
+          key={imgSlugs[0]}
+          src={`/img/${imgSlugs[0]}.png`}
+          className="rounded-md"
+          alt={`slideshow image of ${imgSlugs[0]}`}
+          width="100%"
+          height="100%"
+          layout="responsive"
+          objectFit="contain"
+          blurDataURL={`/img/placeholders/${imgSlugs[0]}.png`}
+        />
+      )}
     </div>
   );
 };

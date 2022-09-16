@@ -16,14 +16,17 @@ const ButtonTheme = ({ tabOrder }) => {
   if (!mounted) return null;
 
   return (
-    <ButtonIconAndText
-      text="Theme"
-      pressed={currTheme === "dark" ? "true" : "false"}
-      label="Toggle light or dark mode theme"
-      iconId={currTheme === "dark" ? "sun" : "moon"}
-      tabOrder={tabOrder}
-      onClick={handleClick}
-    />
+    <div className="flex items-center justify-center">
+      <ButtonIconAndText
+        pressed={currTheme === "dark" ? "true" : "false"}
+        label="Toggle light or dark mode theme"
+        iconId={currTheme === "dark" ? "sun" : "moon"}
+        tabOrder={tabOrder}
+        onClick={handleClick}
+        // hasTooltip={true}
+        // tooltipText="Theme"
+      />
+    </div>
   );
 };
 

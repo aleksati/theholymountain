@@ -1,8 +1,39 @@
-export default async function handler(req, res) {
-  if (req.method !== "POST") return res.status(404).send("Page not found");
+import handlerApi from "../../functions/handlerApi.js";
+import { initValidation, check, post } from "../../middleware/middlewareApi";
 
+const validator = initValidation([
+  check("name")
+    .exists()
+    .withMessage("Name is missing")
+    .notEmpty()
+    .withMessage("Name is empty")
+    .isLength({ min: 3 })
+    .withMessage("Name must be over 3 characters"),
+  check("email")
+    .exists()
+    .withMessage("Email is missing")
+    .notEmpty()
+    .withMessage("Email is empty")
+    .isEmail()
+    .withMessage("Email must be email"),
+  check("subject")
+    .exists()
+    .withMessage("Subject is missing")
+    .notEmpty()
+    .withMessage("Subject is empty")
+    .isLength({ min: 3 })
+    .withMessage("Subject must be over 3 characters"),
+  check("message")
+    .exists()
+    .withMessage("Message is missing")
+    .notEmpty()
+    .withMessage("Message is empty")
+    .isLength({ min: 3 })
+    .withMessage("Message must be over 3 characters"),
+]);
+
+export default handlerApi.use(post(validator)).post(async (req, res) => {
   let data = req.body;
-
   //   return res.setTimeout(2000, () => res.status(500).send("hey"));
 
   let nodemailer = require("nodemailer");
@@ -17,16 +48,16 @@ export default async function handler(req, res) {
     },
   });
 
-  try {
-    let result = await transporter.sendMail({
-      from: `${data.name} <${process.env.burnermail}>`,
-      to: process.env.bandmail,
-      subject: data.subject,
-      text: data.message,
-      html: `<div>${data.message} <br/> <br/> From, <br/> ${data.name} <br/> ${data.email} <br/> Sent from website contact page </div>`,
-    });
-    return res.status(200).send("Message sent: " + result.messageId);
-  } catch (error) {
-    return res.status(500).send(error);
-  }
-}
+  let result = await transporter.sendMail({
+    from: `${data.name} <${process.env.burnermail}>`,
+    to: process.env.bandmail,
+    subject: data.subject,
+    text: data.message,
+    html: `<div>${data.message} <br/> <br/> From, <br/> ${data.name} <br/> ${data.email} <br/> Sent from website contact page </div>`,
+  });
+
+  res.status(200).json({
+    message: "message sent!",
+    data: result,
+  });
+});
