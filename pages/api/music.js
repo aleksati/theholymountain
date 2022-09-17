@@ -8,7 +8,7 @@ import connectMongo from "../../functions/connectMongo";
 import MusicData from "../../models/MusicData";
 import handlerApi from "../../functions/handlerApi.js";
 
-const postValidator = initValidation([
+const musicPostValidator = initValidation([
   check("key")
     .exists()
     .withMessage("Key is missing")
@@ -83,7 +83,7 @@ const postValidator = initValidation([
     .withMessage("Credits must be array"),
 ]);
 
-const deleteValidator = initValidation([
+const musicDeleteValidator = initValidation([
   check("key")
     .exists()
     .withMessage("Key is missing")
@@ -95,8 +95,8 @@ const deleteValidator = initValidation([
 ]);
 
 export default handlerApi
-  .use(post(postValidator))
-  .use(del(deleteValidator))
+  .use(post(musicPostValidator))
+  .use(del(musicDeleteValidator))
   .get(async (req, res) => {
     await connectMongo();
     const musicData = await MusicData.find();

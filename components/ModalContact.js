@@ -37,11 +37,11 @@ const ModalContact = () => {
         console.log(res.message);
         setIsSubmit(true);
       } else {
-        console.log("Error with the mailing service: ", error.message);
+        console.log("Error with the mailing service: ", res.error);
         setIsError(true);
       }
     } catch (error) {
-      console.log("Error with the mailing service: ", error.message);
+      console.log("Error with the contacting the mail API: ", error);
       setIsError(true);
     }
 

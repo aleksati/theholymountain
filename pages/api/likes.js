@@ -9,7 +9,7 @@ import {
   post,
 } from "../../middleware/middlewareApi";
 
-const validator = initValidation([
+const likesValidator = initValidation([
   check("key")
     .exists()
     .withMessage("Key is missing")
@@ -21,8 +21,8 @@ const validator = initValidation([
 ]);
 
 export default handlerApi
-  .use(post(validator))
-  .use(patch(validator))
+  .use(post(likesValidator))
+  .use(patch(likesValidator))
   .post(async (req, res) => {
     // Should optimally be a "get" method with params
     const releaseKey = req.body.key;

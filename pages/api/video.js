@@ -8,7 +8,7 @@ import connectMongo from "../../functions/connectMongo";
 import VideoData from "../../models/VideoData";
 import handlerApi from "../../functions/handlerApi.js";
 
-const postValidator = initValidation([
+const videoPostValidator = initValidation([
   check("key")
     .exists()
     .withMessage("Key is missing")
@@ -51,7 +51,7 @@ const postValidator = initValidation([
     .withMessage("url must be over 3 characters"),
 ]);
 
-const deleteValidator = initValidation([
+const videoDeleteValidator = initValidation([
   check("key")
     .exists()
     .withMessage("Key is missing")
@@ -63,8 +63,8 @@ const deleteValidator = initValidation([
 ]);
 
 export default handlerApi
-  .use(post(postValidator))
-  .use(del(deleteValidator))
+  .use(post(videoPostValidator))
+  .use(del(videoDeleteValidator))
   .get(async (req, res) => {
     await connectMongo();
     const videoData = await VideoData.find();

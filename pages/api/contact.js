@@ -1,7 +1,7 @@
 import handlerApi from "../../functions/handlerApi.js";
 import { initValidation, check, post } from "../../middleware/middlewareApi";
 
-const validator = initValidation([
+const contactValidator = initValidation([
   check("name")
     .exists()
     .withMessage("Name is missing")
@@ -32,7 +32,7 @@ const validator = initValidation([
     .withMessage("Message must be over 3 characters"),
 ]);
 
-export default handlerApi.use(post(validator)).post(async (req, res) => {
+export default handlerApi.use(post(contactValidator)).post(async (req, res) => {
   let data = req.body;
   //   return res.setTimeout(2000, () => res.status(500).send("hey"));
 
