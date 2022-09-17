@@ -1,7 +1,7 @@
-import Button from "./Button";
-import Spinner from "./Spinner";
+import sendMail from "../functions/sendMail";
 import { useState } from "react";
-import { SITE_DOMAIN } from "../config";
+import Spinner from "./Spinner";
+import Button from "./Button";
 
 const ModalContact = () => {
   const [name, setName] = useState("");
@@ -11,6 +11,13 @@ const ModalContact = () => {
   const [isSubmit, setIsSubmit] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
+
+  const mailData = {
+    name,
+    email,
+    subject,
+    message,
+  };
 
   const resetData = () => {
     setIsLoading(false);
@@ -22,41 +29,29 @@ const ModalContact = () => {
 
   const handleSubmit = async e => {
     e.preventDefault();
-    console.log("Sending message...");
     setIsLoading(true);
 
-    let data = {
-      name,
-      email,
-      subject,
-      message,
-    };
-
     try {
-      let res = await fetch(`${SITE_DOMAIN}/api/contact`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
-
-      let data = await res.json();
-      console.log(data.message);
-      setIsSubmit(true);
+      let res = await sendMail(mailData);
+      if (!res.error) {
+        console.log(res.message);
+        setIsSubmit(true);
+      } else {
+        console.log("Error with the mailing service: ", error.message);
+        setIsError(true);
+      }
     } catch (error) {
       console.log("Error with the mailing service: ", error.message);
       setIsError(true);
     }
+
     resetData();
   };
 
   return (
     <div>
       <form
-        onSubmit={e => {
-          handleSubmit(e);
-        }}
+        onSubmit={e => handleSubmit(e)}
         className="flex flex-col"
         aria-label="Contact form"
       >

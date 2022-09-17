@@ -6,8 +6,8 @@ import Error from "./Error";
 import Icon from "./Icon";
 
 const LikesCounter = ({ releaseKey }) => {
-  const [localBtnState, setLocalBtnState] = useState(null);
-  const [localLikesCounter, setLocalLikesCounter] = useState(null);
+  const [btnState, setBtnState] = useState(null);
+  const [likesCounter, setLikesCounter] = useState(null);
   const [fetchMethod, setFetchMethod] = useState("POST");
 
   const { data, isLoading, isError } = fetchLikes(fetchMethod, releaseKey);
@@ -17,16 +17,14 @@ const LikesCounter = ({ releaseKey }) => {
   useEffect(() => {
     if (isLoading || isError) return;
 
-    setLocalBtnState(data.client.likesRelease);
-    setLocalLikesCounter(data.likesCounter);
+    setLikesCounter(data.likesCounter);
+    setBtnState(data.client.likesRelease);
   }, [data, isLoading, isError]);
 
   // set local state first for a quick UI
   const handleClick = async () => {
-    setLocalLikesCounter(prevState =>
-      localBtnState ? prevState - 1 : prevState + 1
-    );
-    setLocalBtnState(prevState => !prevState);
+    setLikesCounter(prevState => (btnState ? prevState - 1 : prevState + 1));
+    setBtnState(prevState => !prevState);
 
     // update the likes counter in the DB
     setFetchMethod("PATCH");
@@ -39,7 +37,7 @@ const LikesCounter = ({ releaseKey }) => {
       </WrapperLikes>
     );
 
-  if (isLoading)
+  if (!likesCounter)
     return (
       <WrapperLikes>
         <Spinner />
@@ -55,10 +53,10 @@ const LikesCounter = ({ releaseKey }) => {
       >
         <Icon
           id="heart"
-          iconSize={`text-2xl ${localBtnState ? "text-red-400" : null}`}
+          iconSize={`text-2xl ${btnState ? "text-red-400" : null}`}
         />
       </a>
-      <p className="m-0 text-size-small">{localLikesCounter}</p>
+      <p className="m-0 text-size-small">{likesCounter}</p>
     </WrapperLikes>
   );
 };

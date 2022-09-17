@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const GridPageMediaItem = ({ item, page }) => {
   const router = useRouter();
-  const handleKeyPress = (event) => {
+  const handleKeyPress = event => {
     if (event.key === "Enter") {
       router.push(`/${item.key}`);
     }
@@ -41,9 +41,9 @@ const releaseItem = (item, onKeyPress) => (
   </Link>
 );
 
-const videoItem = (item) => (
+const videoItem = item => (
   <div
-    className={`flex flex-col p-4 items-center justify-center rounded-md space-y-2`}
+    className={`flex flex-col p-2 items-center justify-center rounded-md space-y-2`}
     aria-label={`${item.title} video grid cell`}
   >
     <div className="relative w-full">
