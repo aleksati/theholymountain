@@ -1,13 +1,25 @@
 import PageRelease from "../../templates/PageRelease";
 import connectMongo from "../../functions/connectMongo";
 import MusicData from "../../models/MusicData";
+import ButtonIconAndText from "../../components/ButtonIconAndText";
+import LayoutApp from "../../layouts/LayoutApp";
+import Link from "next/link";
 
 export default function handler({ item }) {
   const meta = {
     title: `The Holy Mountain | ${item.title}`,
   };
 
-  return <PageRelease item={item} meta={meta} />;
+  return (
+    <LayoutApp appMeta={meta}>
+      <div className="flex pt-4 pl-4 place-content-start">
+        <Link href="/#discography" passHref>
+          <ButtonIconAndText iconId="prevArrow" />
+        </Link>
+      </div>
+      <PageRelease item={item} />
+    </LayoutApp>
+  );
 }
 
 export const getStaticProps = async context => {

@@ -30,7 +30,7 @@ const get = middleware => {
 };
 
 const del = middleware => {
-  return nextConnect().del(middleware);
+  return nextConnect().delete(middleware);
 };
 
 export { patch, post, get, del, initValidation, check };
