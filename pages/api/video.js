@@ -1,12 +1,13 @@
+import nextConnect from "next-connect";
+import connectMongo from "../../functions/connectMongo";
+import VideoData from "../../models/VideoData";
+import { commonApiHandlers } from "../../functions/commonApiHandlers.js";
 import {
   initValidation,
   check,
   post,
   del,
 } from "../../middleware/middlewareApi";
-import connectMongo from "../../functions/connectMongo";
-import VideoData from "../../models/VideoData";
-import handlerApi from "../../functions/handlerApi.js";
 
 const videoPostValidator = initValidation([
   check("key")
@@ -62,7 +63,8 @@ const videoDeleteValidator = initValidation([
     .withMessage("Key must be over 3 characters"),
 ]);
 
-export default handlerApi
+export default nextConnect()
+  .use(commonApiHandlers)
   .use(post(videoPostValidator))
   .use(del(videoDeleteValidator))
   .get(async (req, res) => {

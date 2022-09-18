@@ -1,6 +1,6 @@
 import nextConnect from "next-connect";
 
-export default nextConnect({
+export const commonApiHandlers = nextConnect({
   onError(error, req, res) {
     res
       .status(501)

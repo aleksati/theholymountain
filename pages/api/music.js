@@ -1,12 +1,13 @@
+import nextConnect from "next-connect";
+import connectMongo from "../../functions/connectMongo";
+import MusicData from "../../models/MusicData";
+import { commonApiHandlers } from "../../functions/commonApiHandlers.js";
 import {
   initValidation,
   check,
   post,
   del,
 } from "../../middleware/middlewareApi";
-import connectMongo from "../../functions/connectMongo";
-import MusicData from "../../models/MusicData";
-import handlerApi from "../../functions/handlerApi.js";
 
 const musicPostValidator = initValidation([
   check("key")
@@ -94,7 +95,8 @@ const musicDeleteValidator = initValidation([
     .withMessage("Key must be over 3 characters"),
 ]);
 
-export default handlerApi
+export default nextConnect()
+  .use(commonApiHandlers)
   .use(post(musicPostValidator))
   .use(del(musicDeleteValidator))
   .get(async (req, res) => {

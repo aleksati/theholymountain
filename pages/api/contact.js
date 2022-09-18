@@ -1,5 +1,6 @@
-import handlerApi from "../../functions/handlerApi.js";
+import { commonApiHandlers } from "../../functions/commonApiHandlers.js";
 import { initValidation, check, post } from "../../middleware/middlewareApi";
+import nextConnect from "next-connect";
 
 const contactValidator = initValidation([
   check("name")
@@ -32,32 +33,35 @@ const contactValidator = initValidation([
     .withMessage("Message must be over 3 characters"),
 ]);
 
-export default handlerApi.use(post(contactValidator)).post(async (req, res) => {
-  let data = req.body;
-  //   return res.setTimeout(2000, () => res.status(500).send("hey"));
+export default nextConnect()
+  .use(commonApiHandlers)
+  .use(post(contactValidator))
+  .post(async (req, res) => {
+    let data = req.body;
+    //   return res.setTimeout(2000, () => res.status(500).send("hey"));
 
-  let nodemailer = require("nodemailer");
-  const transporter = nodemailer.createTransport({
-    // port: 465,
-    // secure: true,
-    // host: "smtp.gmail.com",
-    service: "gmail",
-    auth: {
-      user: process.env.burnermail,
-      pass: process.env.burnermail_app_password,
-    },
-  });
+    let nodemailer = require("nodemailer");
+    const transporter = nodemailer.createTransport({
+      // port: 465,
+      // secure: true,
+      // host: "smtp.gmail.com",
+      service: "gmail",
+      auth: {
+        user: process.env.burnermail,
+        pass: process.env.burnermail_app_password,
+      },
+    });
 
-  let result = await transporter.sendMail({
-    from: `${data.name} <${process.env.burnermail}>`,
-    to: process.env.bandmail,
-    subject: data.subject,
-    text: data.message,
-    html: `<div>${data.message} <br/> <br/> From, <br/> ${data.name} <br/> ${data.email} <br/> Sent from website contact page </div>`,
-  });
+    let result = await transporter.sendMail({
+      from: `${data.name} <${process.env.burnermail}>`,
+      to: process.env.bandmail,
+      subject: data.subject,
+      text: data.message,
+      html: `<div>${data.message} <br/> <br/> From, <br/> ${data.name} <br/> ${data.email} <br/> Sent from website contact page </div>`,
+    });
 
-  res.status(200).json({
-    message: "message sent!",
-    data: result,
+    res.status(200).json({
+      message: "message sent!",
+      data: result,
+    });
   });
-});

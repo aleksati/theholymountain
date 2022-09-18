@@ -1,7 +1,8 @@
+import nextConnect from "next-connect";
 import connectMongo from "../../functions/connectMongo";
 import MusicData from "../../models/MusicData";
 import getClientIP from "../../functions/getClientIP";
-import handlerApi from "../../functions/handlerApi.js";
+import { commonApiHandlers } from "../../functions/commonApiHandlers.js";
 import {
   initValidation,
   check,
@@ -20,7 +21,8 @@ const likesValidator = initValidation([
     .withMessage("Key must be over 3 characters"),
 ]);
 
-export default handlerApi
+export default nextConnect()
+  .use(commonApiHandlers)
   .use(post(likesValidator))
   .use(patch(likesValidator))
   .post(async (req, res) => {
