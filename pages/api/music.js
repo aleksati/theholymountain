@@ -7,6 +7,8 @@ import {
   check,
   post,
   del,
+  put,
+  oneOf,
 } from "../../middleware/middlewareApi";
 
 const musicPostValidator = initValidation([
@@ -95,10 +97,81 @@ const musicDeleteValidator = initValidation([
     .withMessage("Key must be over 3 characters"),
 ]);
 
+const musicPutValidator = initValidation([
+  check("key")
+    .exists()
+    .withMessage("Key is missing")
+    .trim()
+    .notEmpty()
+    .withMessage("key is empty"),
+  oneOf([
+    check("title")
+      .exists()
+      .withMessage("Title is missing")
+      .trim()
+      .notEmpty()
+      .withMessage("Title is empty")
+      .isLength({ min: 3 })
+      .withMessage("Title must be over 3 characters"),
+    check("category")
+      .exists()
+      .withMessage("Category is missing")
+      .trim()
+      .notEmpty()
+      .withMessage("category is empty")
+      .isLength({ min: 3 })
+      .withMessage("Category must be over 3 characters"),
+    check("year")
+      .exists()
+      .withMessage("Year is missing")
+      .notEmpty()
+      .withMessage("Year is empty")
+      .isLength({ min: 3 })
+      .withMessage("Year must be over 3 characters"),
+    check("description")
+      .exists()
+      .withMessage("Description is missing")
+      .notEmpty()
+      .withMessage("Description is empty")
+      .isLength({ min: 3 })
+      .withMessage("Description must be over 3 characters"),
+    check("formatText")
+      .exists()
+      .withMessage("FormatText is missing")
+      .notEmpty()
+      .withMessage("FormatText is empty")
+      .isLength({ min: 3 })
+      .withMessage("FormatText must be over 3 characters"),
+    check("price")
+      .exists()
+      .withMessage("Price is missing")
+      .notEmpty()
+      .withMessage("Price is empty")
+      .isLength({ min: 2 })
+      .withMessage("Price must be over 2 characters"),
+    check("formats")
+      .exists()
+      .withMessage("Formats is missing")
+      .isArray({ min: 1 })
+      .withMessage("Formats must be array"),
+    check("slideshow")
+      .exists()
+      .withMessage("Slideshow is missing")
+      .isArray({ min: 1 })
+      .withMessage("Slideshow must be array"),
+    check("credits")
+      .exists()
+      .withMessage("Credits is missing")
+      .isArray({ min: 1 })
+      .withMessage("Credits must be array"),
+  ]),
+]);
+
 export default nextConnect()
   .use(commonApiHandlers)
   .use(post(musicPostValidator))
   .use(del(musicDeleteValidator))
+  .use(put(musicPutValidator))
   .get(async (req, res) => {
     await connectMongo();
     const musicData = await MusicData.find();
@@ -129,4 +202,19 @@ export default nextConnect()
       );
 
     res.status(200).json({ message: `MusicData ${req.body.key} was removed` });
+  })
+  .put(async (req, res) => {
+    await connectMongo();
+
+    const filter = { key: req.body.key };
+    const update = { ...req.body };
+    delete update.key;
+
+    const doc = await MusicData.findOneAndUpdate(filter, update);
+
+    if (!doc) throw new Error("data not found ...");
+
+    await doc.save();
+
+    res.status(200).json(doc);
   });

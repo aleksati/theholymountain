@@ -9,12 +9,15 @@ const LikesCounter = ({ releaseKey }) => {
   const [btnState, setBtnState] = useState(null);
   const [likesCounter, setLikesCounter] = useState(null);
   const [fetchMethod, setFetchMethod] = useState("POST");
+  const [isMounted, setIsMounted] = useState(true);
 
   const { data, isLoading, isError } = fetchLikes(fetchMethod, releaseKey);
 
   // on mount, and when new data is saved to db,
   // update/validate our local variables
   useEffect(() => {
+    setIsMounted(true);
+
     if (isLoading || isError) return;
 
     setLikesCounter(data.likesCounter);
@@ -22,7 +25,7 @@ const LikesCounter = ({ releaseKey }) => {
   }, [data, isLoading, isError]);
 
   // set local state first for a quick UI
-  const handleClick = async () => {
+  const handleClick = async event => {
     setLikesCounter(prevState => (btnState ? prevState - 1 : prevState + 1));
     setBtnState(prevState => !prevState);
 
@@ -47,17 +50,22 @@ const LikesCounter = ({ releaseKey }) => {
 
   return (
     <WrapperLikes>
-      <a
-        aria-label="Likes button"
-        className="cursor-pointer hover:scale-105"
-        onClick={handleClick}
-      >
-        <Icon
-          id="heart"
-          iconSize={`text-2xl ${btnState ? "text-red-400" : null}`}
-        />
-      </a>
-      <p className="m-0 text-size-small">{likesCounter}</p>
+      {isMounted ? (
+        <>
+          <button
+            disabled={isLoading || isError}
+            aria-label="Likes button"
+            className="cursor-pointer hover:scale-105"
+            onClick={handleClick}
+          >
+            <Icon
+              id="heart"
+              iconSize={`text-2xl ${btnState ? "text-red-400" : null}`}
+            />
+          </button>
+          <p className="m-0 text-size-small">{likesCounter}</p>
+        </>
+      ) : null}
     </WrapperLikes>
   );
 };

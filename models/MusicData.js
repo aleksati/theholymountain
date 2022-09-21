@@ -26,7 +26,8 @@ const schema = new Schema({
   },
 });
 
-// methods
+// Methods
+// Likes
 schema.methods.compareLike = async function (clientIP) {
   try {
     // compare all likes in db with clientIP.
@@ -74,6 +75,10 @@ schema.methods.getLikes = async function () {
 schema.methods.countLikes = async function () {
   return await this.likes.length;
 };
+
+// Adding new items
+// addArrayItem
+// addStringItem
 
 const MusicData = models.musicdata || model("musicdata", schema);
 
