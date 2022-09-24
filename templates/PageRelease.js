@@ -1,8 +1,8 @@
 import AudioPageRelease from "../components/AudioPageRelease";
-import LayoutPage from "../layouts/LayoutPage";
-import Slideshow from "../components/Slideshow";
 import LikesCounter from "../components/LikesCounter";
 import ButtonShop from "../components/ButtonShop";
+import Slideshow from "../components/Slideshow";
+import LayoutPage from "../layouts/LayoutPage";
 
 const PageRelease = ({ item }) => (
   <LayoutPage border={false}>
@@ -10,10 +10,10 @@ const PageRelease = ({ item }) => (
       className="grid min-h-screen grid-cols-1 gap-6 p-4 pb-12 md:pb-0 md:grid-cols-2 md:space-y-0"
       aria-label={`${item.title} page`}
     >
-      <div className="col-span-1">
+      <div className="order-1 col-span-1">
         <Slideshow imgSlugs={item.slideshow} />
       </div>
-      <div className="col-span-1">
+      <div className="order-2 col-span-1">
         <div className="flex flex-col px-4 space-y-4 text-primary-light dark:text-primary-dark">
           <div className="mb-4 space-y-2">
             <div className="font-normal leading-8 text-size-header">

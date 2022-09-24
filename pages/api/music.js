@@ -135,6 +135,11 @@ const musicPutValidator = initValidation([
       .withMessage("Description is empty")
       .isLength({ min: 3 })
       .withMessage("Description must be over 3 characters"),
+    check("previewurl")
+      .exists()
+      .withMessage("previewurl is missing")
+      .notEmpty()
+      .withMessage("previewurl is empty"),
     check("formatText")
       .exists()
       .withMessage("FormatText is missing")
@@ -174,23 +179,25 @@ export default nextConnect()
   .use(put(musicPutValidator))
   .get(async (req, res) => {
     await connectMongo();
-    const musicData = await MusicData.find();
 
-    if (!musicData.length) throw new Error(`No musicData was found`);
+    let musicData;
 
-    res.status(200).json({
-      message: `MusicData retrieved`,
-      data: musicData,
-    });
+    if (req.query.key) {
+      let key = req.query.key;
+      musicData = await MusicData.findOne({ key });
+    } else {
+      musicData = await MusicData.find();
+    }
+
+    if (!musicData) throw new Error(`No musicData was found`);
+
+    res.status(200).json(musicData);
   })
   .post(async (req, res) => {
     await connectMongo();
     const musicData = await MusicData.create(req.body);
 
-    res.status(201).json({
-      message: `musicData ${req.body.key} was created`,
-      data: musicData,
-    });
+    res.status(201).json(musicData);
   })
   .delete(async (req, res) => {
     await connectMongo();

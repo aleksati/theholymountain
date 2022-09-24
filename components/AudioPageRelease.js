@@ -16,14 +16,14 @@ const AudioPageRelease = ({ item }) => {
 
   if (item.previewurl) {
     return (
-      <div className="relative w-full">
+      <div className="relative w-full pt-2 pb-2">
         <AudioPlayer src={item.previewurl} />
       </div>
     );
   }
 
   return (
-    <div className="flex items-center justify-center w-full h-20 border rounded-md border-secondary">
+    <div className="flex items-center justify-center w-full h-20 pt-2 pb-2 border rounded-md border-secondary">
       <p>Sorry, no audio preview avaliable..</p>
     </div>
   );
