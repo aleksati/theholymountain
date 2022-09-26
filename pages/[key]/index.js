@@ -13,7 +13,7 @@ export default function handler({ item }) {
   return (
     <LayoutApp appMeta={meta}>
       <div className="flex pt-4 pl-4 place-content-start">
-        <Link href="/#discography" passHref>
+        <Link href="/#music" passHref>
           <ButtonIconAndText iconId="prevArrow" />
         </Link>
       </div>
@@ -22,7 +22,7 @@ export default function handler({ item }) {
   );
 }
 
-export const getStaticProps = async context => {
+export const getStaticProps = async (context) => {
   try {
     await connectMongo();
 
@@ -53,9 +53,9 @@ export const getStaticPaths = async () => {
   await connectMongo();
   let res = await MusicData.find();
   let items = await JSON.parse(JSON.stringify(res));
-  let keys = items.map(item => item.key);
+  let keys = items.map((item) => item.key);
 
-  let paths = keys.map(key => ({ params: { key } }));
+  let paths = keys.map((key) => ({ params: { key } }));
 
   return {
     paths,

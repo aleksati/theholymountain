@@ -5,13 +5,13 @@ import Link from "next/link";
 
 const GridPageMediaItem = ({ item, page }) => {
   const router = useRouter();
-  const handleKeyPress = event => {
+  const handleKeyPress = (event) => {
     if (event.key === "Enter") {
       router.push(`/${item.key}`);
     }
   };
 
-  return page.toLowerCase() === "discography"
+  return page.toLowerCase() === "music"
     ? releaseItem(item, handleKeyPress)
     : videoItem(item);
 };
@@ -19,16 +19,16 @@ const GridPageMediaItem = ({ item, page }) => {
 export default GridPageMediaItem;
 
 const releaseItem = (item, onKeyPress) => (
-  <div>
+  <div className="p-2">
     <Link href={`/${item.key}`}>
       <div
-        className="relative w-full p-2 transition ease-in-out cursor-pointer hover:scale-[1.005] duration-200"
+        className="relative w-full transition ease-in-out pb-2 cursor-pointer hover:scale-[1.005]"
         tabIndex="0"
         onKeyPress={onKeyPress}
         aria-label={`${item.title} Music item`}
       >
         <Image
-          className="rounded-md backdrop-brightness-75"
+          className=""
           src={`/img/${item.key}.png`}
           alt={`${item.title} album cover`}
           placeholder="blur"
@@ -40,28 +40,27 @@ const releaseItem = (item, onKeyPress) => (
         />
       </div>
     </Link>
-    <div className="pl-2">
-      <p>{item.title}</p>
+    <div>
+      <p>{item.title.toUpperCase()}</p>
       <p className="text-secondary text-size-small">{item.year}</p>
     </div>
   </div>
 );
 
-const videoItem = item => (
-  <div
-    className={`flex flex-col p-2 items-center justify-center rounded-md space-y-2`}
-    aria-label={`${item.title} video grid cell`}
-  >
-    <div className="relative w-full">
-      <VideoPlayer url={item.url} title={item.title} />
+const videoItem = (item) => (
+  <div className="p-2">
+    <div
+      className={`flex flex-col pb-2 items-center justify-center rounded-md space-y-2`}
+      aria-label={`${item.title} video grid cell`}
+    >
+      <div className="relative w-full">
+        <VideoPlayer url={item.url} title={item.title} />
+      </div>
     </div>
-
-    <div className="leading-8 text-center">
-      <h2 className="text-size-title">
-        <b>{item.title.toUpperCase()}</b>
-      </h2>
-      <p className="text-secondary">
-        {item.category} / {item.year}
+    <div>
+      <p>{item.title.toUpperCase()}</p>
+      <p className="text-secondary text-size-small">
+        {item.year} / {item.category}
       </p>
     </div>
   </div>
