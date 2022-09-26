@@ -15,7 +15,7 @@ const PageFront = () => {
         creditLink="http://www.katinkahustad.com/"
       />
       <TextOverImageFullscreen>
-        <h1 className="font-bold text-9xl">
+        <h1 className="font-bold text-9xl text-primary-dark">
           {/* <Link className="cursor-pointer hover:underline" href="/awake"> */}
           <b>AWAKE</b>
           {/* </Link> */}

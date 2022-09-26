@@ -19,26 +19,32 @@ const GridPageMediaItem = ({ item, page }) => {
 export default GridPageMediaItem;
 
 const releaseItem = (item, onKeyPress) => (
-  <Link href={`/${item.key}`}>
-    <div
-      className="relative w-full p-2 transition ease-in-out cursor-pointer hover:scale-[1.01] duration-400"
-      tabIndex="0"
-      onKeyPress={onKeyPress}
-      aria-label={`${item.title} Music item`}
-    >
-      <Image
-        className="rounded-md backdrop-brightness-75"
-        src={`/img/${item.key}.png`}
-        alt={`${item.title} album cover`}
-        placeholder="blur"
-        width="100%"
-        height="100%"
-        layout="responsive"
-        objectFit="contain"
-        blurDataURL={`/img/placeholders/${item.key}.png`}
-      />
+  <div>
+    <Link href={`/${item.key}`}>
+      <div
+        className="relative w-full p-2 transition ease-in-out cursor-pointer hover:scale-[1.005] duration-200"
+        tabIndex="0"
+        onKeyPress={onKeyPress}
+        aria-label={`${item.title} Music item`}
+      >
+        <Image
+          className="rounded-md backdrop-brightness-75"
+          src={`/img/${item.key}.png`}
+          alt={`${item.title} album cover`}
+          placeholder="blur"
+          width="100%"
+          height="100%"
+          layout="responsive"
+          objectFit="contain"
+          blurDataURL={`/img/placeholders/${item.key}.png`}
+        />
+      </div>
+    </Link>
+    <div className="pl-2">
+      <p>{item.title}</p>
+      <p className="text-secondary text-size-small">{item.year}</p>
     </div>
-  </Link>
+  </div>
 );
 
 const videoItem = item => (

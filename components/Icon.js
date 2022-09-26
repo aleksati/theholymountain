@@ -1,10 +1,14 @@
-import { IconContext } from "react-icons";
+// import { IconContext } from "react-icons";
 import {
   MdOutlineArrowForwardIos,
   MdOutlineArrowBackIosNew,
 } from "react-icons/md";
-import { BsFillSunFill, BsFillMoonFill } from "react-icons/bs";
-import { RiQuestionMark } from "react-icons/ri";
+import {
+  BsFillSunFill,
+  BsFillMoonFill,
+  BsFillPeopleFill,
+} from "react-icons/bs";
+// import { RiQuestionMark } from "react-icons/ri";
 import { RiCloseLine } from "react-icons/ri";
 import { FaBandcamp } from "react-icons/fa";
 import { BsFacebook } from "react-icons/bs";
@@ -26,7 +30,7 @@ const icons = {
   sun: s => <BsFillSunFill className={s} />,
   moon: s => <BsFillMoonFill className={s} />,
   audio: s => <TbWaveSine className={s} />,
-  about: s => <RiQuestionMark className={s} />,
+  about: s => <BsFillPeopleFill className={s} />,
   details: s => <GiMagnifyingGlass className={s} />,
   prevArrow: s => <MdOutlineArrowBackIosNew className={s} />,
   nextArrow: s => <MdOutlineArrowForwardIos className={s} />,
