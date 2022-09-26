@@ -3,7 +3,7 @@ import VideoPlayer from "./VideoPlayer";
 import Image from "next/image";
 import Link from "next/link";
 
-const GridPageMediaItem = ({ item, page }) => {
+const GridItemPageMedia = ({ item, page }) => {
   const router = useRouter();
   const handleKeyPress = (event) => {
     if (event.key === "Enter") {
@@ -16,13 +16,13 @@ const GridPageMediaItem = ({ item, page }) => {
     : videoItem(item);
 };
 
-export default GridPageMediaItem;
+export default GridItemPageMedia;
 
 const releaseItem = (item, onKeyPress) => (
   <div className="p-2">
     <Link href={`/${item.key}`}>
       <div
-        className="relative w-full transition ease-in-out pb-2 cursor-pointer hover:scale-[1.005]"
+        className="relative w-full pb-2 cursor-pointer"
         tabIndex="0"
         onKeyPress={onKeyPress}
         aria-label={`${item.title} Music item`}
@@ -42,7 +42,9 @@ const releaseItem = (item, onKeyPress) => (
     </Link>
     <div>
       <p>{item.title.toUpperCase()}</p>
-      <p className="text-secondary text-size-small">{item.year}</p>
+      <p className="text-secondary text-size-small">
+        {item.year} | {item.category}
+      </p>
     </div>
   </div>
 );
@@ -60,7 +62,7 @@ const videoItem = (item) => (
     <div>
       <p>{item.title.toUpperCase()}</p>
       <p className="text-secondary text-size-small">
-        {item.year} / {item.category}
+        {item.year} | {item.category}
       </p>
     </div>
   </div>

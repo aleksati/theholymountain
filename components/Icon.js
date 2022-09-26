@@ -8,7 +8,7 @@ import {
   BsFillMoonFill,
   BsFillPeopleFill,
 } from "react-icons/bs";
-// import { RiQuestionMark } from "react-icons/ri";
+import { RiQuestionMark } from "react-icons/ri";
 import { RiCloseLine } from "react-icons/ri";
 import { FaBandcamp } from "react-icons/fa";
 import { BsFacebook } from "react-icons/bs";
@@ -27,32 +27,32 @@ import { MdOutlineReportProblem } from "react-icons/md";
 const defaultSize = "text-md";
 
 const icons = {
-  sun: s => <BsFillSunFill className={s} />,
-  moon: s => <BsFillMoonFill className={s} />,
-  audio: s => <TbWaveSine className={s} />,
-  about: s => <BsFillPeopleFill className={s} />,
-  details: s => <GiMagnifyingGlass className={s} />,
-  prevArrow: s => <MdOutlineArrowBackIosNew className={s} />,
-  nextArrow: s => <MdOutlineArrowForwardIos className={s} />,
-  downArrow: s => (
+  sun: (s) => <BsFillSunFill className={s} />,
+  moon: (s) => <BsFillMoonFill className={s} />,
+  audio: (s) => <TbWaveSine className={s} />,
+  about: (s) => <RiQuestionMark className={s} />,
+  details: (s) => <GiMagnifyingGlass className={s} />,
+  prevArrow: (s) => <MdOutlineArrowBackIosNew className={s} />,
+  nextArrow: (s) => <MdOutlineArrowForwardIos className={s} />,
+  downArrow: (s) => (
     <MdOutlineArrowForwardIos
       className={s}
       style={{ transform: "rotate(90deg)" }}
     />
   ),
-  x: s => <RiCloseLine className={s} />,
-  facebook: s => <BsFacebook className={s} />,
-  instagram: s => <RiInstagramFill className={s} />,
-  bandcamp: s => <FaBandcamp className={s} />,
-  youtube: s => <AiFillYoutube className={s} />,
-  spotify: s => <BsSpotify className={s} />,
-  contact: s => <AiOutlineMail className={s} />,
-  soundcloud: s => <GrSoundcloud className={s} />,
-  shop: s => <AiOutlineShoppingCart className={s} />,
-  play: s => <FiPlay className={s} />,
-  pause: s => <AiOutlinePause className={s} />,
-  heart: s => <AiOutlineHeart className={s} />,
-  issue: s => <MdOutlineReportProblem className={s} />,
+  x: (s) => <RiCloseLine className={s} />,
+  facebook: (s) => <BsFacebook className={s} />,
+  instagram: (s) => <RiInstagramFill className={s} />,
+  bandcamp: (s) => <FaBandcamp className={s} />,
+  youtube: (s) => <AiFillYoutube className={s} />,
+  spotify: (s) => <BsSpotify className={s} />,
+  contact: (s) => <AiOutlineMail className={s} />,
+  soundcloud: (s) => <GrSoundcloud className={s} />,
+  shop: (s) => <AiOutlineShoppingCart className={s} />,
+  play: (s) => <FiPlay className={s} />,
+  pause: (s) => <AiOutlinePause className={s} />,
+  heart: (s) => <AiOutlineHeart className={s} />,
+  issue: (s) => <MdOutlineReportProblem className={s} />,
 };
 
 const Icon = ({ iconSize, id }) => {
