@@ -20,7 +20,7 @@ const PageFront = () => {
           <b>AWAKE</b>
           {/* </Link> */}
         </h1>
-        <h2 className="text-4xl">new single out friday</h2>
+        <h2 className="text-4xl text-primary-dark">new single out friday</h2>
       </TextOverImageFullscreen>
     </div>
   );

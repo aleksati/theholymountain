@@ -5,13 +5,13 @@ import Link from "next/link";
 
 const GridItemPageMedia = ({ item, page }) => {
   const router = useRouter();
-  const handleKeyPress = (event) => {
+  const handleKeyPress = event => {
     if (event.key === "Enter") {
       router.push(`/${item.key}`);
     }
   };
 
-  return page.toLowerCase() === "music"
+  return page.toLowerCase() === "discography"
     ? releaseItem(item, handleKeyPress)
     : videoItem(item);
 };
@@ -28,7 +28,7 @@ const releaseItem = (item, onKeyPress) => (
         aria-label={`${item.title} Music item`}
       >
         <Image
-          className=""
+          className="rounded-md"
           src={`/img/${item.key}.png`}
           alt={`${item.title} album cover`}
           placeholder="blur"
@@ -49,7 +49,7 @@ const releaseItem = (item, onKeyPress) => (
   </div>
 );
 
-const videoItem = (item) => (
+const videoItem = item => (
   <div className="p-2">
     <div
       className={`flex flex-col pb-2 items-center justify-center rounded-md space-y-2`}

@@ -10,7 +10,12 @@ export default function Home({ filteredMusicData, filteredVideoData }) {
   return (
     <LayoutApp>
       <PageFront />
-      <PageMedia data={filteredMusicData} maxGridCols="3" page="music" />
+      <PageMedia
+        data={filteredMusicData}
+        border={false}
+        maxGridCols="3"
+        page="discography"
+      />
       <WrapperShowMore>
         <PageMedia data={filteredVideoData} maxGridCols="2" page="videos" />
       </WrapperShowMore>

@@ -25,11 +25,10 @@ const FourOhFour = () => {
           creditLink="https://www.katinkahustad.com/"
         />
         <TextOverImageFullscreen>
-          <h1 className="font-bold text-8xl">Lost?</h1>
           <Link href="/" passHref>
-            <a className="p-2 border rounded-full text-size-regular">
-              Come Home
-            </a>
+            <h1 className="font-bold hover:underline hover:cursor-pointer text-9xl">
+              Lost?
+            </h1>
           </Link>
         </TextOverImageFullscreen>
       </div>

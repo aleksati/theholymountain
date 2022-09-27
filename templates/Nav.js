@@ -2,6 +2,7 @@ import ButtonIconAndText from "../components/ButtonIconAndText";
 import ModalContact from "../components/ModalContact";
 import ModalAbout from "../components/ModalAbout";
 import Modal from "../components/Modal";
+// import ButtonTheme from "../components/ButtonTheme";
 
 const aboutModal = <ModalAbout />;
 const aboutModalProps = {
@@ -57,6 +58,7 @@ const Nav = () => (
         />
       )}
     </Modal>
+    {/* <ButtonTheme /> */}
   </nav>
 );
 

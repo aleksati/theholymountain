@@ -37,7 +37,7 @@ module.exports = {
         "primary-light": "#fff",
         "secondary-light": "#F6F8FA",
         "ternary-light": "#e2e8f0", // ternary is used for buttons and card backgrounds. everything else than page backgriounds.
-        "primary-dark": "#211F24", // #111827 - old one // Ny jævlig fin #211F24 fra snapshot.org
+        "primary-dark": "#030408", // "#000", //"#211F24", // #111827 - old one // Ny jævlig fin #211F24 fra snapshot.org
         "secondary-dark": "#0A192F", // #102c44c - old one
         "ternary-dark": "#2d3748", // ternary is used for buttons and card backgrounds. everything else than page backgriounds.
         "button-light": "#37BDF8",
