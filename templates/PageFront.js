@@ -1,16 +1,21 @@
 import ImageFullscreen from "../components/ImageFullscreen";
 import TextOverImageFullscreen from "../components/TextOverImageFullscreen";
+import isTouchDevice from "../functions/isTouchDevice";
 import Link from "next/link";
 
-const src = "/img/cover.png";
-const placeholder = "/img/placeholders/cover.png";
+const touchSrc = "/img/touchCover.png";
+const desktopSrc = "/img/dektopCover.png";
+const desktopPlaceholder = "/img/placeholders/desktopCover.png";
+const touchPlaceholder = "/img/placeholders/touchCover.png";
 
 const PageFront = () => {
+  const isTouch = isTouchDevice();
+
   return (
     <div className="relative min-h-screen" id="home">
       <ImageFullscreen
-        imgSrc={src}
-        placeholder={placeholder}
+        imgSrc={isTouch ? touchSrc : desktopSrc}
+        placeholder={isTouch ? touchPlaceholder : desktopPlaceholder}
         credit="Katinka Hustad"
         creditLink="http://www.katinkahustad.com/"
       />
