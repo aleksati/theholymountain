@@ -19,13 +19,14 @@ const GridItemPageMedia = ({ item, page }) => {
 export default GridItemPageMedia;
 
 const releaseItem = (item, onKeyPress) => (
-  <div className="p-2">
+  <div className="p-2" role="gridcell" aria-label={item.title}>
     <Link href={`/${item.key}`}>
       <div
         className="relative w-full pb-2 cursor-pointer"
-        tabIndex="0"
-        onKeyPress={onKeyPress}
         aria-label={`${item.title} Music item`}
+        onKeyPress={onKeyPress}
+        role="button"
+        tabIndex="0"
       >
         <Image
           className="rounded-md"
@@ -50,7 +51,7 @@ const releaseItem = (item, onKeyPress) => (
 );
 
 const videoItem = item => (
-  <div className="p-2">
+  <div className="p-2" role="gridcell" aria-label={item.title}>
     <div
       className={`flex flex-col pb-2 items-center justify-center rounded-md space-y-2`}
       aria-label={`${item.title} video grid cell`}
