@@ -1,5 +1,5 @@
-import ImageFullscreen from "../components/ImageFullscreen";
 import TextOverImageFullscreen from "../components/TextOverImageFullscreen";
+import ImageFullscreen from "../components/ImageFullscreen";
 import isTouchDevice from "../functions/isTouchDevice";
 import Link from "next/link";
 

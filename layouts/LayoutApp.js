@@ -1,6 +1,7 @@
 import Footer from "../templates/Footer";
 import Nav from "../templates/Nav";
 import Meta from "../components/Meta";
+import { SITE_DOMAIN } from "../config";
 
 const LayoutApp = ({ children, appMeta }) => {
   return (
