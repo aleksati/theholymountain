@@ -10,8 +10,7 @@ const GridPageMedia = ({ children, maxGridCols }) => {
   return (
     <div
       className={`grid gap-4 grid-cols-1 md:grid-cols-2 ${cols} p-4`}
-      role="grid"
-      aria-label="Page grid"
+      aria-label="Media page grid"
     >
       {children}
     </div>
