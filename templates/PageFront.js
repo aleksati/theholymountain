@@ -4,7 +4,7 @@ import isTouchDevice from "../functions/isTouchDevice";
 import Link from "next/link";
 
 const touchSrc = "/img/touchCover.png";
-const desktopSrc = "/img/dektopCover.png";
+const desktopSrc = "/img/desktopCover.png";
 const desktopPlaceholder = "/img/placeholders/desktopCover.png";
 const touchPlaceholder = "/img/placeholders/touchCover.png";
 
