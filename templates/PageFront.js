@@ -20,13 +20,12 @@ const PageFront = () => {
         creditLink="http://www.katinkahustad.com/"
       />
       <TextOverImageFullscreen>
-        <h1 className="font-bold text-8xl sm:text-9xl text-primary-dark">
-          {/*  hover:cursor-pointer hover:underline */}
-          {/* <Link href="/awake"> */}
-          <b>AWAKE</b>
-          {/* </Link> */}
+        <h1 className="font-bold text-8xl sm:text-9xl hover:cursor-pointer hover:underline text-primary-dark">
+          <Link href="/awake">
+            <b>AWAKE</b>
+          </Link>
         </h1>
-        <h2 className="text-4xl text-primary-dark">new single out soon</h2>
+        <h2 className="text-4xl text-primary-dark">new single out now</h2>
       </TextOverImageFullscreen>
     </div>
   );

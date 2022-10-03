@@ -8,11 +8,9 @@ const PageMedia = ({ data, maxGridCols, children, border = true, page }) => {
     <LayoutPage id={page} className="pb-4" border={border}>
       <TitlePageMedia title={page} />
       <GridPageMedia maxGridCols={maxGridCols}>
-        {data.map(item => {
-          if (item.key !== "awake") {
-            return <GridItemPageMedia key={item.key} item={item} page={page} />;
-          }
-        })}
+        {data.map((item) => (
+          <GridItemPageMedia key={item.key} item={item} page={page} />
+        ))}
       </GridPageMedia>
       {children}
     </LayoutPage>
