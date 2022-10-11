@@ -25,9 +25,9 @@ const LikesCounter = ({ releaseKey }) => {
   }, [data, isLoading, isError]);
 
   // set local state first for a quick UI
-  const handleClick = async event => {
-    setLikesCounter(prevState => (btnState ? prevState - 1 : prevState + 1));
-    setBtnState(prevState => !prevState);
+  const handleClick = async (event) => {
+    setLikesCounter((prevState) => (btnState ? prevState - 1 : prevState + 1));
+    setBtnState((prevState) => !prevState);
 
     // update the likes counter in the DB
     setFetchMethod("PATCH");

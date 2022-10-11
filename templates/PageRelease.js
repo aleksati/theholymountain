@@ -33,12 +33,12 @@ const PageRelease = ({ item }) => (
             <p>{item.formatText}</p>
             <p>{item.description}</p>
           </div>
-          <AudioPageRelease item={item} />
           <div className="text-secondary">
             {item.credits.map((credit, index) => (
               <p key={index}>{credit}</p>
             ))}
           </div>
+          <AudioPageRelease item={item} />
         </div>
       </div>
     </div>

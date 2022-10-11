@@ -3,7 +3,7 @@ import { Slide } from "react-slideshow-image";
 import Image from "next/image";
 import Icon from "./Icon";
 
-const indicators = index => (
+const indicators = (index) => (
   <button
     tabIndex="0"
     className="w-2 h-2 m-0.5 bg-secondary rounded-full"
@@ -32,11 +32,11 @@ const Slideshow = ({ imgSlugs = [] }) => {
     <div className="relative w-full" aria-label="slideshow container">
       {imgSlugs.length > 1 ? (
         <Slide {...properties} indicators={indicators}>
-          {imgSlugs.map(slug => (
+          {imgSlugs.map((slug) => (
             <Image
               key={slug}
               src={`/img/${slug}.png`}
-              className="rounded-md"
+              // className="rounded-md"
               alt={`slideshow image of ${slug}`}
               width="100%"
               height="100%"

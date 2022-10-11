@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const GridItemPageMedia = ({ item, page }) => {
   const router = useRouter();
-  const handleKeyPress = event => {
+  const handleKeyPress = (event) => {
     if (event.key === "Enter") {
       router.push(`/${item.key}`);
     }
@@ -22,14 +22,14 @@ const releaseItem = (item, onKeyPress) => (
   <div className="p-2" aria-label={item.title}>
     <Link href={`/${item.key}`}>
       <div
-        className="relative w-full pb-2 cursor-pointer"
+        className="relative w-full pb-2 cursor-pointer hover:brightness-90"
         aria-label={`${item.title} Music item`}
         onKeyPress={onKeyPress}
         role="button"
         tabIndex="0"
       >
         <Image
-          className="rounded-md"
+          // className="rounded-md"
           src={`/img/${item.key}.png`}
           alt={`${item.title} album cover`}
           placeholder="blur"
@@ -50,7 +50,7 @@ const releaseItem = (item, onKeyPress) => (
   </div>
 );
 
-const videoItem = item => (
+const videoItem = (item) => (
   <div className="p-2" aria-label={item.title}>
     <div
       className={`flex flex-col pb-2 items-center justify-center rounded-md space-y-2`}
