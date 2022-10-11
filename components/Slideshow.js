@@ -50,7 +50,7 @@ const Slideshow = ({ imgSlugs = [] }) => {
         <Image
           key={imgSlugs[0]}
           src={`/img/${imgSlugs[0]}.png`}
-          className="rounded-md"
+          // className="rounded-md"
           alt={`slideshow image of ${imgSlugs[0]}`}
           width="100%"
           height="100%"
