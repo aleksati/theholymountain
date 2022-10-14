@@ -41,7 +41,7 @@ const releaseItem = (item, onKeyPress) => (
         />
       </div>
     </Link>
-    <div className="text-center">
+    <div className="">
       <p className="font-normal">{item.title.toUpperCase()}</p>
       <p className="text-secondary text-size-small">
         {item.year} | {item.category}
@@ -60,8 +60,8 @@ const videoItem = item => (
         <VideoPlayer url={item.url} title={item.title} />
       </div>
     </div>
-    <div>
-      <p>{item.title.toUpperCase()}</p>
+    <div className="">
+      <p className="font-normal">{item.title.toUpperCase()}</p>
       <p className="text-secondary text-size-small">
         {item.year} | {item.category}
       </p>
