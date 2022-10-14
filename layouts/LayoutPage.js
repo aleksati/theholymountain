@@ -3,7 +3,7 @@ const LayoutPage = ({ children, id, className, border = true }) => {
     "border-t border-secondary-skin-light dark:border-secondary-skin-dark";
   return (
     <div
-      className={`min-h-screen container mx-auto ${
+      className={`min-h-screen container pb-14 mx-auto ${
         border ? borderTop : null
       } ${className}`}
       id={id}

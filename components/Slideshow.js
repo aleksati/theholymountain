@@ -3,7 +3,7 @@ import { Slide } from "react-slideshow-image";
 import Image from "next/image";
 import Icon from "./Icon";
 
-const indicators = (index) => (
+const indicators = index => (
   <button
     tabIndex="0"
     className="w-2 h-2 m-0.5 bg-secondary rounded-full"
@@ -22,7 +22,7 @@ const properties = {
   ),
   prevArrow: (
     <button className="text-primary-dark" aria-label="previous slideshow image">
-      <Icon id="prevArrow" iconSize={"text-3xl md:text-4xl"} />
+      <Icon id="prevArrow" iconSize={"text-4xl md:text-4xl"} />
     </button>
   ),
 };
@@ -32,7 +32,7 @@ const Slideshow = ({ imgSlugs = [] }) => {
     <div className="relative w-full" aria-label="slideshow container">
       {imgSlugs.length > 1 ? (
         <Slide {...properties} indicators={indicators}>
-          {imgSlugs.map((slug) => (
+          {imgSlugs.map(slug => (
             <Image
               key={slug}
               src={`/img/${slug}.png`}
