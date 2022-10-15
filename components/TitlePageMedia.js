@@ -12,7 +12,7 @@ const TitlePageMedia = ({ title }) => (
   //     <ButtonIconAndText keepTextOnSmallScreen={true} text="Merch" />
   //   </div>
   <h1
-    aria-label="Media page title"
+    aria-label="Media page titl"
     className="mt-4 mb-4 overflow-hidden font-bold text-center text-clip text-size-header"
   >
     {title.toUpperCase()}
