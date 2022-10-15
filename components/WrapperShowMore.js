@@ -10,7 +10,7 @@ const WrapperShowMore = ({ children }) => {
     <div className="absolute bottom-0 flex items-center justify-center w-full p-4 from-zinc-200 dark:from-zinc-900 bg-gradient-to-t to-transparent">
       <ButtonIconAndText
         keepTextOnSmallScreen={true}
-        text="Show More"
+        text="Show Videos"
         onClick={() => setIsShown(true)}
         iconId="downArrow"
       />

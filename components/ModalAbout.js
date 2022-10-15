@@ -20,7 +20,7 @@ const ModalAbout = ({ label }) => {
           music.
         </p>
       </div>
-      <div className="text-size-small sm:text-size-regular text-secondary">
+      <div className="text-size-small text-secondary">
         <p>Catharina Janner Røed - Vocals </p>
         <p>Andreas Angell - Accordion / Songwriter</p>
         <p>Aleksander Tidemann - Drums / Synthesizer</p>

@@ -23,7 +23,7 @@ export default function Home({ filteredMusicData, filteredVideoData }) {
         data={filteredMusicData}
         border={false}
         maxGridCols="3"
-        page="discography"
+        page="Discography"
       />
       <WrapperShowMore>
         <PageMedia data={filteredVideoData} maxGridCols="2" page="videos" />

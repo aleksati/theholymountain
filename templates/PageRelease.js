@@ -7,7 +7,7 @@ import LayoutPage from "../layouts/LayoutPage";
 const PageRelease = ({ item }) => (
   <LayoutPage border={false} className="px-12">
     <div
-      className="grid min-h-screen grid-cols-1 gap-6 md:border border-secondary-skin-dark dark:border-text-secondary md:p-14 md:pb-0 md:grid-cols-2 md:space-y-0"
+      className="grid min-h-screen grid-cols-1 gap-6 md:p-14 md:pb-0 md:grid-cols-2 md:space-y-0"
       aria-label={`${item.title} page`}
     >
       <div className="order-1 col-span-1">
