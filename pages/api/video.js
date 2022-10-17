@@ -28,6 +28,16 @@ const videoPostValidator = initValidation([
     .withMessage("title is empty")
     .isLength({ min: 3 })
     .withMessage("Title must be over 3 characters"),
+  check("type")
+    .exists()
+    .withMessage("Type is missing")
+    .trim()
+    .notEmpty()
+    .withMessage("Type is empty")
+    .isLength({ min: 3 })
+    .withMessage("Type must be over 3 characters")
+    .equals("video")
+    .withMessage("Type should be music"),
   check("category")
     .exists()
     .withMessage("Category is missing")

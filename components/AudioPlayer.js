@@ -5,7 +5,7 @@ import WrapperAudioPlayer from "./WrapperAudioPlayer";
 import ControlsAudioPlayer from "./ControlsAudioPlayer";
 import Spinner from "./Spinner";
 
-const WaveFormOptions = (ref) => ({
+const WaveFormOptions = ref => ({
   container: ref,
   waveColor: "#000", // "#211F24",
   progressColor: "rgb(217, 56, 33)", // "#300415",
@@ -86,7 +86,7 @@ const AudioPlayer = ({ src }) => {
   }, [stateTheme, isMounted, waveFormRef]);
 
   const handlePlayPause = () => {
-    setIsPlaying((prevstate) => !prevstate);
+    setIsPlaying(prevstate => !prevstate);
     waveFormRef.current.playPause();
   };
 

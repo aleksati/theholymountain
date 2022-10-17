@@ -1,13 +1,13 @@
 import LayoutApp from "../layouts/LayoutApp";
-import PageMedia from "../templates/PageMedia";
+import PageMediaTwo from "../templates/PageMediaTwo";
 import PageFront from "../templates/PageFront";
 import connectMongo from "../functions/connectMongo";
 import MusicData from "../models/MusicData";
 import VideoData from "../models/VideoData";
-import WrapperShowMore from "../components/WrapperShowMore";
+// import WrapperShowMore from "../components/WrapperShowMore";
 import { SITE_DOMAIN } from "../config";
 
-export default function Home({ filteredMusicData, filteredVideoData }) {
+export default function Home({ data }) {
   const meta = {
     title: "The Holy Mountain",
     keywords:
@@ -19,15 +19,10 @@ export default function Home({ filteredMusicData, filteredVideoData }) {
   return (
     <LayoutApp appMeta={meta}>
       <PageFront />
-      <PageMedia
-        data={filteredMusicData}
-        border={false}
-        maxGridCols="3"
-        page="Discography"
-      />
-      <WrapperShowMore>
+      <PageMediaTwo data={data} border={false} pageId="stuff" />
+      {/* <WrapperShowMore>
         <PageMedia data={filteredVideoData} maxGridCols="2" page="videos" />
-      </WrapperShowMore>
+      </WrapperShowMore> */}
     </LayoutApp>
   );
 }
@@ -35,24 +30,26 @@ export default function Home({ filteredMusicData, filteredVideoData }) {
 export const getStaticProps = async () => {
   try {
     await connectMongo();
+    // get data (objects) in an array
     const musicData = await MusicData.find();
     const videoData = await VideoData.find();
 
     let filteredMusicData = await JSON.parse(JSON.stringify(musicData));
     let filteredVideoData = await JSON.parse(JSON.stringify(videoData));
 
-    filteredMusicData = await filteredMusicData.sort(
-      (a, b) => Number(b.year) - Number(a.year)
-    );
+    // concat into one array
+    let data = filteredMusicData.concat(filteredVideoData);
 
-    filteredVideoData = await filteredVideoData.sort(
-      (a, b) => Number(b.year) - Number(a.year)
-    );
+    // sort the data items by year.
+    data = await data.sort((a, b) => Number(b.year) - Number(a.year));
+
+    // filteredVideoData = await filteredVideoData.sort(
+    //   (a, b) => Number(b.year) - Number(a.year)
+    // );
 
     return {
       props: {
-        filteredMusicData,
-        filteredVideoData,
+        data,
       },
     };
   } catch (error) {

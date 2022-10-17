@@ -3,22 +3,28 @@ import VideoPlayer from "./VideoPlayer";
 import Image from "next/image";
 import Link from "next/link";
 
-const GridItemPageMedia = ({ item, page }) => {
+const GridItemPageMedia = ({ item, type }) => {
   const router = useRouter();
   const handleKeyPress = event => {
     if (event.key === "Enter") {
       router.push(`/${item.key}`);
     }
   };
-
-  return page.toLowerCase() === "discography"
-    ? releaseItem(item, handleKeyPress)
-    : videoItem(item);
+  switch (type) {
+    case "music":
+      return musicItem(item, handleKeyPress);
+      break;
+    case "video":
+      return videoItem(item);
+      break;
+    default:
+      return null;
+  }
 };
 
 export default GridItemPageMedia;
 
-const releaseItem = (item, onKeyPress) => (
+const musicItem = (item, onKeyPress) => (
   <div className="p-2" aria-label={item.title}>
     <Link href={`/${item.key}`}>
       <div

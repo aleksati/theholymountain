@@ -41,6 +41,12 @@ const icons = {
       style={{ transform: "rotate(90deg)" }}
     />
   ),
+  upArrow: s => (
+    <MdOutlineArrowForwardIos
+      className={s}
+      style={{ transform: "rotate(-90deg)" }}
+    />
+  ),
   x: s => <RiCloseLine className={s} />,
   facebook: s => <BsFacebook className={s} />,
   instagram: s => <RiInstagramFill className={s} />,

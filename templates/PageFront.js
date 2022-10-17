@@ -25,7 +25,7 @@ const PageFront = () => {
             <b>AWAKE</b>
           </Link>
         </h1>
-        <h2 className="text-4xl text-primary-dark">new single out now</h2>
+        <h2 className="text-4xl text-primary-dark">new single now</h2>
       </TextOverImageFullscreen>
     </div>
   );
