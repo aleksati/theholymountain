@@ -1,10 +1,10 @@
+// import WrapperShowMore from "../components/WrapperShowMore";
 import LayoutApp from "../layouts/LayoutApp";
 import PageMediaTwo from "../templates/PageMediaTwo";
 import PageFront from "../templates/PageFront";
 import connectMongo from "../functions/connectMongo";
 import MusicData from "../models/MusicData";
 import VideoData from "../models/VideoData";
-// import WrapperShowMore from "../components/WrapperShowMore";
 import { SITE_DOMAIN } from "../config";
 
 export default function Home({ data }) {
@@ -20,7 +20,8 @@ export default function Home({ data }) {
     <LayoutApp appMeta={meta}>
       <PageFront />
       <PageMediaTwo data={data} border={false} pageId="stuff" />
-      {/* <WrapperShowMore>
+      {/*<PageMedia data={filteredMusicData} maxGridCols="3" page="music" />
+      <WrapperShowMore>
         <PageMedia data={filteredVideoData} maxGridCols="2" page="videos" />
       </WrapperShowMore> */}
     </LayoutApp>

@@ -3,10 +3,10 @@ import ImageFullscreen from "../components/ImageFullscreen";
 import isTouchDevice from "../functions/isTouchDevice";
 import Link from "next/link";
 
-const touchSrc = "/img/touchCover.png";
-const desktopSrc = "/img/desktopCover.png";
-const desktopPlaceholder = "/img/placeholders/desktopCover.png";
-const touchPlaceholder = "/img/placeholders/touchCover.png";
+const touchSrc = "/img/coverTouch.png";
+const desktopSrc = "/img/coverDesktop.png";
+const desktopPlaceholder = "/img/placeholders/coverDesktop.png";
+const touchPlaceholder = "/img/placeholders/coverTouch.png";
 
 const PageFront = () => {
   const isTouch = isTouchDevice();

@@ -24,7 +24,7 @@ const PageMediaTwo = ({ data, children, border = true, pageId }) => {
     }
   }, [activeFilters]);
 
-  const handleClick = event => {
+  const handleClick = (event) => {
     const filter = event;
 
     // only one filter at a time
@@ -46,7 +46,7 @@ const PageMediaTwo = ({ data, children, border = true, pageId }) => {
         activeFilters={activeFilters}
       />
       <GridPageMedia maxGridCols={maxGridCols}>
-        {data.map(item => {
+        {data.map((item) => {
           if (activeFilters.includes(item.type)) {
             return (
               <GridItemPageMedia key={item.key} item={item} type={item.type} />

@@ -42,7 +42,7 @@ module.exports = {
         "ternary-dark": "#2d3748", // ternary is used for buttons and card backgrounds. everything else than page backgriounds.
         "button-light": "#37BDF8",
         "button-dark": "#A258E9",
-        "button-filter-light": "rgb(217, 56, 33)",
+        "button-filter-light": "#ef4444", //"rgb(217, 56, 33)",
         "button-filter-dark": "rgb(50, 141, 120)",
       },
       colors: {

@@ -1,9 +1,6 @@
 import ButtonIconAndText from "./ButtonIconAndText";
 import getCurrTheme from "../functions/getCurrTheme";
 
-// rgb(50, 141, 120)
-// rgb(217, 56, 33)
-
 const ControlsPageMedia = ({ onClick, filters, activeFilters }) => {
   const { currTheme } = getCurrTheme();
   const color =
@@ -11,7 +8,7 @@ const ControlsPageMedia = ({ onClick, filters, activeFilters }) => {
 
   return (
     <div className="flex items-center justify-center p-4 space-x-4">
-      {filters.map(filter => (
+      {filters.map((filter) => (
         <ButtonIconAndText
           key={filter}
           keepTextOnSmallScreen={true}
