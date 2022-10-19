@@ -8,7 +8,7 @@ import Spinner from "./Spinner";
 const WaveFormOptions = (ref) => ({
   container: ref,
   waveColor: "#000", // "#211F24",
-  progressColor: "rgb(217, 56, 33)", // "#300415",
+  progressColor: "rgb(239, 68, 68)", // "#300415",
   cursorColor: "#fff", // "#300415",
   cursorWidth: 3,
   barWidth: 6,
@@ -78,9 +78,9 @@ const AudioPlayer = ({ src }) => {
         waveFormRef.current.setCursorColor("rgb(50, 141, 120)");
       }
       if (stateTheme === "light") {
-        waveFormRef.current.setProgressColor("rgb(217, 56, 33)");
+        waveFormRef.current.setProgressColor("rgb(239, 68, 68)");
         waveFormRef.current.setWaveColor("rgb(33, 31, 36)");
-        waveFormRef.current.setCursorColor("rgb(217, 56, 33)");
+        waveFormRef.current.setCursorColor("rgb(239, 68, 68)");
       }
     }
   }, [stateTheme, isMounted, waveFormRef]);

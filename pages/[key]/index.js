@@ -1,10 +1,9 @@
-import ButtonIconAndText from "../../components/ButtonIconAndText";
+import ButtonBackTo from "../../components/ButtonBackTo";
 import connectMongo from "../../functions/connectMongo";
 import PageRelease from "../../templates/PageRelease";
 import LayoutApp from "../../layouts/LayoutApp";
 import MusicData from "../../models/MusicData";
 import { SITE_DOMAIN } from "../../config";
-import Link from "next/link";
 
 export default function handler({ item }) {
   const meta = {
@@ -17,17 +16,13 @@ export default function handler({ item }) {
 
   return (
     <LayoutApp appMeta={meta}>
-      <div className="flex pt-4 pl-4 place-content-start">
-        <Link href="/#discography" passHref>
-          <ButtonIconAndText iconId="prevArrow" />
-        </Link>
-      </div>
+      <ButtonBackTo />
       <PageRelease item={item} />
     </LayoutApp>
   );
 }
 
-export const getStaticProps = async (context) => {
+export const getStaticProps = async context => {
   try {
     await connectMongo();
 
@@ -58,9 +53,9 @@ export const getStaticPaths = async () => {
   await connectMongo();
   let res = await MusicData.find();
   let items = await JSON.parse(JSON.stringify(res));
-  let keys = items.map((item) => item.key);
+  let keys = items.map(item => item.key);
 
-  let paths = keys.map((key) => ({ params: { key } }));
+  let paths = keys.map(key => ({ params: { key } }));
 
   return {
     paths,

@@ -20,6 +20,16 @@ const musicPostValidator = initValidation([
     .withMessage("Key is empty")
     .isLength({ min: 3 })
     .withMessage("Key must be over 3 characters"),
+  check("type")
+    .exists()
+    .withMessage("Type is missing")
+    .trim()
+    .notEmpty()
+    .withMessage("Type is empty")
+    .isLength({ min: 3 })
+    .withMessage("Type must be over 3 characters")
+    .equals("music")
+    .withMessage("Type should be music"),
   check("title")
     .exists()
     .withMessage("Title is missing")

@@ -25,9 +25,9 @@ const LikesCounter = ({ releaseKey }) => {
   }, [data, isLoading, isError]);
 
   // set local state first for a quick UI
-  const handleClick = async event => {
-    setLikesCounter(prevState => (btnState ? prevState - 1 : prevState + 1));
-    setBtnState(prevState => !prevState);
+  const handleClick = async (event) => {
+    setLikesCounter((prevState) => (btnState ? prevState - 1 : prevState + 1));
+    setBtnState((prevState) => !prevState);
 
     // update the likes counter in the DB
     setFetchMethod("PATCH");
@@ -60,7 +60,7 @@ const LikesCounter = ({ releaseKey }) => {
           >
             <Icon
               id="heart"
-              iconSize={`text-2xl ${btnState ? "text-red-400" : null}`}
+              iconSize={`text-2xl ${btnState ? "text-red-500" : null}`}
             />
           </button>
           <p className="m-0 text-size-small">{likesCounter}</p>

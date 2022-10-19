@@ -5,9 +5,9 @@ import Slideshow from "../components/Slideshow";
 import LayoutPage from "../layouts/LayoutPage";
 
 const PageRelease = ({ item }) => (
-  <LayoutPage border={false} className="px-12">
+  <LayoutPage border={false} className="p-4 md:px-18 lg:px-24">
     <div
-      className="grid min-h-screen grid-cols-1 gap-6 md:p-14 md:pb-0 md:grid-cols-2 md:space-y-0"
+      className="grid min-h-screen grid-cols-1 gap-6 md:grid-cols-2 md:space-y-0"
       aria-label={`${item.title} page`}
     >
       <div className="order-1 col-span-1">
