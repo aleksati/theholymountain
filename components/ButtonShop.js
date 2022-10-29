@@ -2,11 +2,12 @@ import ModalShop from "./ModalShop";
 import Modal from "./Modal";
 import ButtonIconAndText from "./ButtonIconAndText";
 
-const ButtonShop = ({ data }) => {
+const ButtonShop = ({ item }) => {
   const shopModalProps = {
     iconId: "shop",
     label: "Shop release",
-    text: "Shop",
+    hasTooltip: true,
+    tooltipText: `Buy`,
     modalMaxSize: "max-w-sm",
   };
 

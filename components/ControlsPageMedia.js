@@ -4,11 +4,13 @@ import getCurrTheme from "../functions/getCurrTheme";
 const ControlsPageMedia = ({ onClick, filters, activeFilters }) => {
   const { currTheme } = getCurrTheme();
   const color =
-    currTheme === "dark" ? "!bg-button-filter-dark" : "!bg-button-filter-light";
+    currTheme === "dark"
+      ? "!bg-button-filter-light"
+      : "!bg-button-filter-light";
 
   return (
     <div className="flex items-center justify-center p-4 space-x-4">
-      {filters.map((filter) => (
+      {filters.map(filter => (
         <ButtonIconAndText
           key={filter}
           keepTextOnSmallScreen={true}

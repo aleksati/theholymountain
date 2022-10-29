@@ -25,7 +25,7 @@ const PageRelease = ({ item }) => (
               </p>
             </div>
             <div className="flex space-x-2 ">
-              <ButtonShop />
+              <ButtonShop item={item} />
               <LikesCounter releaseKey={item.key} />
             </div>
           </div>

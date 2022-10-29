@@ -5,11 +5,11 @@ import WrapperAudioPlayer from "./WrapperAudioPlayer";
 import ControlsAudioPlayer from "./ControlsAudioPlayer";
 import Spinner from "./Spinner";
 
-const WaveFormOptions = (ref) => ({
+const WaveFormOptions = ref => ({
   container: ref,
-  waveColor: "#000", // "#211F24",
+  waveColor: "rgb(33, 31, 36)", // "#211F24",
   progressColor: "rgb(239, 68, 68)", // "#300415",
-  cursorColor: "#fff", // "#300415",
+  cursorColor: "rgb(239, 68, 68)", // "#300415",
   cursorWidth: 3,
   barWidth: 6,
   barRadius: 3,
@@ -70,23 +70,23 @@ const AudioPlayer = ({ src }) => {
   }, [currTheme, stateTheme]);
 
   // set waveform colors based on theme
-  useEffect(() => {
-    if (isMounted && stateTheme && waveFormRef.current) {
-      if (stateTheme === "dark") {
-        waveFormRef.current.setProgressColor("rgb(50, 141, 120)");
-        waveFormRef.current.setWaveColor("rgb(255, 255, 255)");
-        waveFormRef.current.setCursorColor("rgb(50, 141, 120)");
-      }
-      if (stateTheme === "light") {
-        waveFormRef.current.setProgressColor("rgb(239, 68, 68)");
-        waveFormRef.current.setWaveColor("rgb(33, 31, 36)");
-        waveFormRef.current.setCursorColor("rgb(239, 68, 68)");
-      }
-    }
-  }, [stateTheme, isMounted, waveFormRef]);
+  //   useEffect(() => {
+  //     if (isMounted && stateTheme && waveFormRef.current) {
+  //       if (stateTheme === "dark") {
+  //         waveFormRef.current.setProgressColor("rgb(50, 141, 120)");
+  //         waveFormRef.current.setWaveColor("rgb(255, 255, 255)");
+  //         waveFormRef.current.setCursorColor("rgb(50, 141, 120)");
+  //       }
+  //       if (stateTheme === "light") {
+  //         waveFormRef.current.setProgressColor("rgb(239, 68, 68)");
+  //         waveFormRef.current.setWaveColor("rgb(33, 31, 36)");
+  //         waveFormRef.current.setCursorColor("rgb(239, 68, 68)");
+  //       }
+  //     }
+  //   }, [stateTheme, isMounted, waveFormRef]);
 
   const handlePlayPause = () => {
-    setIsPlaying((prevstate) => !prevstate);
+    setIsPlaying(prevstate => !prevstate);
     waveFormRef.current.playPause();
   };
 
