@@ -1,7 +1,7 @@
 // import WrapperShowMore from "../components/WrapperShowMore";
 import LayoutApp from "../layouts/LayoutApp";
 import PageMediaTwo from "../templates/PageMediaTwo";
-import PageFront from "../templates/PageFront";
+// import PageFront from "../templates/PageFront";
 import connectMongo from "../functions/connectMongo";
 import MusicData from "../models/MusicData";
 import VideoData from "../models/VideoData";
@@ -18,7 +18,7 @@ export default function Home({ data }) {
 
   return (
     <LayoutApp appMeta={meta}>
-      <PageFront />
+      {/* <PageFront /> */}
       <PageMediaTwo data={data} border={false} pageId="stuff" />
       {/*<PageMedia data={filteredMusicData} maxGridCols="3" page="music" />
       <WrapperShowMore>

@@ -25,7 +25,7 @@ module.exports = {
         "size-header-big": ["3.75rem"], // text-6xl
         "size-header": ["2.25rem"], // text-4xl
         "size-title": ["1.875rem"], // text-3xl
-        "size-regular": ["1.25rem"], //text-lg
+        "size-regular": ["1.125rem"], //text-lg
         "size-small": ["1rem"], // text-xs
         //   "size-header-big": ["6rem"], // text-8xl
         //   "size-header": ["3.75rem"], // text-6xl

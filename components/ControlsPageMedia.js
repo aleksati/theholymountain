@@ -10,12 +10,15 @@ const ControlsPageMedia = ({ onClick, filters, activeFilters }) => {
 
   return (
     <div className="flex items-center justify-center p-4 space-x-4">
-      {filters.map((filter) => {
+      {filters.map(filter => {
         let underline = activeFilters.includes(filter) ? "underline" : "";
         return (
           <a
+            key={filter}
             onClick={() => onClick(filter)}
-            className={"hover:underline cursor-pointer " + underline}
+            className={
+              "hover:underline cursor-pointer text-size-title " + underline
+            }
           >
             {filter}
           </a>
