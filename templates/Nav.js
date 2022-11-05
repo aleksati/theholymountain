@@ -9,7 +9,7 @@ const aboutModalProps = {
   hasTooltip: true,
   tooltipText: "About",
   label: "About Us",
-  modalMaxSize: "max-w-xl", //   modalMaxSize: "max-w-sm sm:max-w-xl",
+  modalMaxSize: "max-w-md", //   modalMaxSize: "max-w-sm sm:max-w-xl",
   tabOrder: "1",
   //   text: "About",
 };
@@ -25,39 +25,41 @@ const contactModalProps = {
   //   text: "Contact",
 };
 
-const Nav = () => (
-  <nav
-    className="fixed z-10 flex space-x-2 scrollLock-compensation right-4 top-4"
-    role="toolbar"
-    aria-label="Navigation toolbar"
-  >
-    <Modal
-      key="About"
-      modalContent={aboutModal}
-      modalMaxSize={aboutModalProps.modalMaxSize}
+const Nav = () => {
+  return (
+    <nav
+      className="fixed z-10 flex space-x-2 scrollLock-compensation right-4 top-4"
+      role="toolbar"
+      aria-label="Navigation toolbar"
     >
-      {(triggerBtnRef, showModal) => (
-        <ButtonIconAndText
-          ref={triggerBtnRef}
-          onClick={showModal}
-          {...aboutModalProps}
-        />
-      )}
-    </Modal>
-    <Modal
-      key="Contact"
-      modalContent={contactModal}
-      modalMaxSize={contactModalProps.modalMaxSize}
-    >
-      {(triggerBtnRef, showModal) => (
-        <ButtonIconAndText
-          ref={triggerBtnRef}
-          onClick={showModal}
-          {...contactModalProps}
-        />
-      )}
-    </Modal>
-  </nav>
-);
+      <Modal
+        key="About"
+        modalContent={aboutModal}
+        modalMaxSize={aboutModalProps.modalMaxSize}
+      >
+        {(triggerBtnRef, showModal) => (
+          <ButtonIconAndText
+            ref={triggerBtnRef}
+            onClick={showModal}
+            {...aboutModalProps}
+          />
+        )}
+      </Modal>
+      <Modal
+        key="Contact"
+        modalContent={contactModal}
+        modalMaxSize={contactModalProps.modalMaxSize}
+      >
+        {(triggerBtnRef, showModal) => (
+          <ButtonIconAndText
+            ref={triggerBtnRef}
+            onClick={showModal}
+            {...contactModalProps}
+          />
+        )}
+      </Modal>
+    </nav>
+  );
+};
 
 export default Nav;
