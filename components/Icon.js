@@ -24,6 +24,7 @@ import { GiMagnifyingGlass } from "react-icons/gi";
 import { AiOutlineHeart, AiOutlineMail } from "react-icons/ai";
 import { MdOutlineReportProblem } from "react-icons/md";
 import { AiOutlineCheck } from "react-icons/ai";
+import { HiDotsHorizontal } from "react-icons/hi";
 
 const defaultSize = "text-md";
 
@@ -61,6 +62,7 @@ const icons = {
   heart: s => <AiOutlineHeart className={s} />,
   issue: s => <MdOutlineReportProblem className={s} />,
   check: s => <AiOutlineCheck className={s} />,
+  threedots: s => <HiDotsHorizontal className={s} />,
 };
 
 const Icon = ({ iconSize, id }) => {

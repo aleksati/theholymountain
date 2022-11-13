@@ -3,8 +3,6 @@ import FocusTrap from "focus-trap-react";
 import React, { memo } from "react";
 import Icon from "./Icon";
 
-// try to cache it better.
-
 const ModalContent = React.forwardRef(
   ({ onClickOutside, onKeyDown, content, closeModal, modalMaxSize }, ref) => {
     const { modalRef, closeBtnRef } = ref.current;
