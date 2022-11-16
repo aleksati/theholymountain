@@ -9,6 +9,9 @@ const nextConfig = {
       "m.theholymountain.net",
     ],
   },
+  // env: {
+  //   stripe_publishable_key: process.env.stripe_publishable_key,
+  // },
   //   async rewrites() {
   //     return [
   //       {

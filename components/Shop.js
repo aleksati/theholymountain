@@ -2,7 +2,7 @@ import ModalShop from "./ModalShop";
 import Modal from "./Modal";
 import ButtonIconAndText from "./ButtonIconAndText";
 
-const ButtonShop = ({ item }) => {
+const Shop = ({ item, publishableKey }) => {
   const shopModalProps = {
     iconId: "shop",
     label: "Shop release",
@@ -14,7 +14,7 @@ const ButtonShop = ({ item }) => {
   return (
     <Modal
       key="Shop"
-      modalContent={<ModalShop />}
+      modalContent={<ModalShop item={item} publishableKey={publishableKey} />}
       modalMaxSize={shopModalProps.modalMaxSize}
     >
       {(triggerBtnRef, showModal) => (
@@ -28,4 +28,4 @@ const ButtonShop = ({ item }) => {
   );
 };
 
-export default ButtonShop;
+export default Shop;
