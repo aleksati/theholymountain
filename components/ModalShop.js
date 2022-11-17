@@ -9,6 +9,8 @@ const ModalShop = ({ item, publishableKey }) => {
   const [isLoading, setIsLoading] = useState(false);
 
   const router = useRouter();
+
+  // inject Stripe into the document headers. This is important.
   const stripePromise = loadStripe(publishableKey);
 
   useEffect(() => {
@@ -24,7 +26,6 @@ const ModalShop = ({ item, publishableKey }) => {
   const createCheckOutSession = async () => {
     setIsLoading(true);
     try {
-      const stripe = await stripePromise;
       const res = await fetch("/api/createStripeSession", {
         method: "POST",
         body: JSON.stringify(shopItem),
@@ -36,7 +37,6 @@ const ModalShop = ({ item, publishableKey }) => {
       // redirect user to the checkoutpage
       router.push(checkout.url);
 
-      setIsError(false);
       setIsLoading(false);
     } catch (error) {
       console.log(error);

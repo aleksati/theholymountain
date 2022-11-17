@@ -10,7 +10,7 @@ const fetcher = (url, method, releaseKey) =>
     },
   }).then(res => res.json());
 
-const fetchLikes = (method, releaseKey) => {
+const getLikes = (method, releaseKey) => {
   const { data, error, mutate } = useSWR(
     [`${SITE_DOMAIN}/api/likes`, method, releaseKey],
     fetcher
@@ -24,4 +24,4 @@ const fetchLikes = (method, releaseKey) => {
   };
 };
 
-export default fetchLikes;
+export default getLikes;

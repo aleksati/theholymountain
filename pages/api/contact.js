@@ -1,6 +1,7 @@
 import { commonApiHandlers } from "../../functions/commonApiHandlers.js";
 import { initValidation, check, post } from "../../middleware/middlewareApi";
 import nextConnect from "next-connect";
+import nodemailer from "nodemailer";
 
 const contactValidator = initValidation([
   check("name")
@@ -40,7 +41,6 @@ export default nextConnect()
     let data = req.body;
     //   return res.setTimeout(2000, () => res.status(500).send("hey"));
 
-    let nodemailer = require("nodemailer");
     const transporter = nodemailer.createTransport({
       // port: 465,
       // secure: true,

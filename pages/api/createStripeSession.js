@@ -34,16 +34,16 @@ const stripeValidators = initValidation([
     .withMessage("Description is empty"),
 ]);
 
+const stripe = new Stripe(
+  process.env.NODE_ENV !== "production"
+    ? process.env.STRIPE_SECRET_KEY_TEST
+    : process.env.STRIPE_SECRET_KEY
+);
+
 export default nextConnect()
   .use(commonApiHandlers)
   .use(post(stripeValidators))
   .post(async (req, res) => {
-    const stripe = new Stripe(
-      process.env.NODE_ENV !== "production"
-        ? process.env.STRIPE_SECRET_KEY_TEST
-        : process.env.STRIPE_SECRET_KEY
-    );
-
     const shopItem = req.body;
     const imgPath = SITE_DOMAIN + "/img/" + shopItem.key + "-shop.png";
 
