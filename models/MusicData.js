@@ -46,7 +46,7 @@ schema.methods.compareLike = async function (clientIP) {
 schema.methods.addLike = async function (clientIP) {
   try {
     // hash to IP for security
-    const salt = await bcrypt.genSalt(Number(process.env.salt));
+    const salt = await bcrypt.genSalt(Number(process.env.SALT));
     const hashedIP = await bcrypt.hash(clientIP, salt);
 
     // push it to the db

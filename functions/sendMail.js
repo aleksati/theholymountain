@@ -1,7 +1,7 @@
 import { SITE_DOMAIN } from "../config";
 
 const sendMail = async data => {
-  console.log("Sending message...");
+  console.log("Sending message..");
   let res = await fetch(`${SITE_DOMAIN}/api/contact`, {
     method: "POST",
     headers: {

@@ -47,14 +47,14 @@ export default nextConnect()
       // host: "smtp.gmail.com",
       service: "gmail",
       auth: {
-        user: process.env.burnermail,
-        pass: process.env.burnermail_app_password,
+        user: process.env.BURNERMAIL,
+        pass: process.env.BURNERMAIL_APP_PASSWORD,
       },
     });
 
     let result = await transporter.sendMail({
-      from: `${data.name} <${process.env.burnermail}>`,
-      to: process.env.bandmail,
+      from: `${data.name} <${process.env.BURNERMAIL}>`,
+      to: process.env.BANDMAIL,
       subject: data.subject,
       text: data.message,
       html: `<div>${data.message} <br/> <br/> From, <br/> ${data.name} <br/> ${data.email} <br/> Sent from website contact page </div>`,
