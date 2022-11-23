@@ -1,20 +1,58 @@
-import ModalShop from "./ModalShop";
-import Modal from "./Modal";
 import ButtonIconAndText from "./ButtonIconAndText";
+import getApiKeys from "../functions/getApiKeys";
+import { useEffect, useState } from "react";
+import ModalShop from "./ModalShop";
+import Spinner from "./Spinner";
+import Modal from "./Modal";
+import Error from "./Error";
 
-const Shop = ({ item, publishableKey }) => {
-  const shopModalProps = {
-    iconId: "shop",
-    label: "Shop release",
-    hasTooltip: true,
-    tooltipText: `Buy`,
-    modalMaxSize: "max-w-sm",
+const shopModalProps = {
+  iconId: "shop",
+  label: "Shop release",
+  hasTooltip: true,
+  tooltipText: `Buy`,
+  modalMaxSize: "max-w-sm",
+};
+
+const Shop = ({ item }) => {
+  const [stripeKey, setStripeKey] = useState();
+  const [stripeIsLoading, setStripeIsLoading] = useState(false);
+  const [stripeIsError, setStripeIsError] = useState(false);
+
+  // get stripe publishable key for shop
+  const getKeys = async () => {
+    setStripeIsLoading(true);
+    try {
+      const { publishableKey } = await getApiKeys();
+      setStripeKey(publishableKey);
+      setStripeIsLoading(false);
+    } catch (error) {
+      setStripeIsError(true);
+      console.log(error);
+    }
   };
+
+  useEffect(() => {
+    getKeys();
+  }, []);
+
+  if (stripeIsError) {
+    return <Error />;
+  }
+
+  if (stripeIsLoading) {
+    return <Spinner />;
+  }
 
   return (
     <Modal
       key="Shop"
-      modalContent={<ModalShop item={item} publishableKey={publishableKey} />}
+      modalContent={
+        <div className="flex items-center justify-center pb-4">
+          <p>Web shop coming soon ...</p>
+        </div>
+      }
+      //   modalContent={<ModalShop item={item} publishableKey={stripeKey} />}
       modalMaxSize={shopModalProps.modalMaxSize}
     >
       {(triggerBtnRef, showModal) => (

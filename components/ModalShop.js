@@ -74,7 +74,7 @@ const ModalShop = ({ item, publishableKey }) => {
         <input
           min="0"
           type="number"
-          className="w-16 p-2 rounded text-primary-light border-secondary-skin-light dark:border-secondary-skin-dark"
+          className="w-12 p-2 text-center rounded dark:bg-primary-dark bg-primary-light text-primary-light dark:text-primary-dark border-secondary-skin-light dark:border-secondary-skin-dark"
           value={shopItem.quantity}
           onChange={event =>
             setShopItem({

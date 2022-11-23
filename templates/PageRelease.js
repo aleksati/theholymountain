@@ -1,45 +1,17 @@
-import { useEffect, useState } from "react";
+import ButtonPageReleaseAction from "../components/ButtonPageReleaseAction";
 import AudioPageRelease from "../components/AudioPageRelease";
 import LikesCounter from "../components/LikesCounter";
-import getApiKeys from "../functions/getApiKeys";
 import Slideshow from "../components/Slideshow";
 import LayoutPage from "../layouts/LayoutPage";
-import Spinner from "../components/Spinner";
-import Error from "../components/Error";
-import Shop from "../components/Shop";
+import { useEffect } from "react";
 
 const PageRelease = ({ item }) => {
-  const [isMounted, setIsMounted] = useState(false);
-  const [publishableKey, setPublishableKey] = useState();
-  const [stripeIsLoading, setStripeIsLoading] = useState(false);
-  const [stripeIsError, setStripeIsError] = useState(false);
-
-  // scroll to top. attempt to fix issue on mobile
+  // force scroll to top.
   useEffect(() => {
     setTimeout(() => {
       window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-      setIsMounted(true);
     }, [200]);
   }, []);
-
-  // get stripe publishable key for shop
-  const getKeys = async () => {
-    setStripeIsLoading(true);
-    try {
-      const { publishableKey } = await getApiKeys();
-      setPublishableKey(publishableKey);
-      setStripeIsLoading(false);
-    } catch (error) {
-      setStripeIsError(true);
-      console.log(error);
-    }
-  };
-
-  useEffect(() => {
-    if (isMounted) {
-      getKeys();
-    }
-  }, [isMounted]);
 
   return (
     <LayoutPage border={false} className="p-4 md:px-18 lg:px-24">
@@ -62,13 +34,7 @@ const PageRelease = ({ item }) => {
                 </p>
               </div>
               <div className="flex space-x-2 ">
-                {stripeIsError ? (
-                  <Error />
-                ) : stripeIsLoading ? (
-                  <Spinner />
-                ) : (
-                  <Shop item={item} publishableKey={publishableKey} />
-                )}
+                <ButtonPageReleaseAction item={item} />
                 <LikesCounter releaseKey={item.key} />
               </div>
             </div>
