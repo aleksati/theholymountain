@@ -1,12 +1,12 @@
+import ButtonPageReleaseAction from "../components/ButtonPageReleaseAction";
 import AudioPageRelease from "../components/AudioPageRelease";
 import LikesCounter from "../components/LikesCounter";
-import ButtonShop from "../components/ButtonShop";
 import Slideshow from "../components/Slideshow";
 import LayoutPage from "../layouts/LayoutPage";
 import { useEffect } from "react";
 
 const PageRelease = ({ item }) => {
-  // scroll to top. attempt to fix issue on mobile
+  // force scroll to top.
   useEffect(() => {
     setTimeout(() => {
       window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
@@ -26,7 +26,7 @@ const PageRelease = ({ item }) => {
           <div className="flex flex-col px-4 space-y-4 text-primary-light dark:text-primary-dark">
             <div className="mb-4 space-y-2">
               <div className="font-bold leading-8 text-size-header">
-                <h2>{item.title.toUpperCase()}</h2>
+                <h1>{item.title.toUpperCase()}</h1>
               </div>
               <div className="flex text-secondary">
                 <p>
@@ -34,7 +34,7 @@ const PageRelease = ({ item }) => {
                 </p>
               </div>
               <div className="flex space-x-2 ">
-                <ButtonShop item={item} />
+                <ButtonPageReleaseAction item={item} />
                 <LikesCounter releaseKey={item.key} />
               </div>
             </div>
