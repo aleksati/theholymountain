@@ -21,7 +21,7 @@ const ModalShop = ({ item, publishableKey }) => {
       quantity: 0,
       price: item.price,
     });
-  }, []);
+  }, [item]);
 
   const createCheckOutSession = async () => {
     setIsLoading(true);

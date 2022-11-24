@@ -8,7 +8,7 @@ import Nav from "../../templates/Nav";
 import { useRef } from "react";
 import Meta from "../../components/Meta";
 
-export default function handler({ item }) {
+const Handler = ({ item }) => {
   const pageRef = useRef(null);
   return (
     <LayoutPage id="top" ref={pageRef}>
@@ -23,7 +23,9 @@ export default function handler({ item }) {
       <ButtonScrollTo targetId="top" parentRef={pageRef} />
     </LayoutPage>
   );
-}
+};
+
+export default Handler;
 
 export const getStaticProps = async context => {
   try {
