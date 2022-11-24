@@ -1,4 +1,4 @@
-const ControlsPageMedia = ({ onTabClick, tabs, activeTab }) => {
+const ControlsPageMedia = ({ onTabClick, tabs, activeTab, menuIsVisible }) => {
   const onKeyDown = (event, tab) => {
     if (event.keyCode === 13) {
       onTabClick(tab);
@@ -6,7 +6,13 @@ const ControlsPageMedia = ({ onTabClick, tabs, activeTab }) => {
   };
 
   return (
-    <>
+    <div
+      className={`space-x-4 text-2xl ${
+        menuIsVisible
+          ? "text-secondary text-opacity-50"
+          : "text-primary-light dark:text-primary-dark"
+      }`}
+    >
       {tabs.map(tab => {
         let underline = activeTab === tab ? "underline" : "";
         return (
@@ -21,7 +27,7 @@ const ControlsPageMedia = ({ onTabClick, tabs, activeTab }) => {
           </a>
         );
       })}
-    </>
+    </div>
   );
 };
 

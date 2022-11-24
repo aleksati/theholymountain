@@ -6,8 +6,8 @@ const Footer = () => {
   const router = useRouter();
   return (
     <footer className="py-4 border-t border-secondary-skin-light dark:border-secondary-skin-dark text-primary-light dark:text-primary-dark bg-primary-light dark:bg-primary-dark">
-      <div className="container flex flex-col items-center justify-center mx-auto space-y-4 text-center md:space-y-0 md:px-4 md:justify-between md:flex-row text-size-regular">
-        <div className="flex space-x-2 w-50 md:order-3">
+      <div className="container flex items-center justify-center px-4 mx-auto space-y-4 text-center md:space-y-0 md:px-4 md:justify-between md:flex-row text-size-regular">
+        <div className="order-3 hidden space-x-2 md:flex w-50">
           <ButtonIconAndText
             text="Report issues"
             iconId="issue"
@@ -16,7 +16,7 @@ const Footer = () => {
             }
           />
         </div>
-        <div className="flex flex-col items-center text-size-small md:items-start md:order-1 text-secondary">
+        <div className="flex flex-col items-center order-1 md:items-start text-size-small text-secondary">
           <p> The Holy Mountain &copy; {new Date().getFullYear()}</p>
           <p>
             Page by&nbsp;
@@ -25,12 +25,8 @@ const Footer = () => {
             </a>
           </p>
         </div>
-        <div className="md:order-2">
-          <SoMeBar
-            iconSize="text-4xl"
-            exclude={["nothing"]}
-            className="justify-center"
-          />
+        <div className="hidden lg:flex md:order-2">
+          <SoMeBar iconSize="text-4xl" exclude={["nothing"]} />
         </div>
       </div>
     </footer>

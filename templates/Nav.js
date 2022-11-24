@@ -53,16 +53,17 @@ const Nav = ({
             <ButtonTo path="/" icon="prevArrow" text="home" />
           ) : null}
         </div>
-        <div className="flex items-center justify-center space-x-4 text-2xl w-100">
+        <div className="flex items-center justify-center w-100">
           {showMediaTabControls ? (
             <ControlsPageMedia
               tabs={tabs}
               onTabClick={onTabClick}
               activeTab={activeTab}
+              menuIsVisible={menuIsVisible}
             />
           ) : null}
         </div>
-        <div className="flex space-x-2 place-content-end">
+        <div className="flex flex-grow space-x-2 place-content-end">
           {menuIsVisible ? (
             <>
               <Modal
