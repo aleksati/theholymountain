@@ -1,30 +1,36 @@
-// import WrapperShowMore from "../components/WrapperShowMore";
-import LayoutApp from "../layouts/LayoutApp";
-import PageMediaTwo from "../templates/PageMediaTwo";
-// import PageFront from "../templates/PageFront";
+import ButtonScrollTo from "../components/ButtonScrollTo";
 import connectMongo from "../functions/connectMongo";
+import LayoutPage from "../layouts/LayoutPage";
+import PageMedia from "../templates/PageMedia";
 import MusicData from "../models/MusicData";
 import VideoData from "../models/VideoData";
-import { SITE_DOMAIN } from "../config";
+import { useState, useRef } from "react";
+import Nav from "../templates/Nav";
+import Meta from "../components/Meta";
 
 export default function Home({ data }) {
-  const meta = {
-    title: "The Holy Mountain",
-    keywords:
-      "band, music, norway, artist, avant-garde, pop, minimalism, dreampop, electropop, akkordeon, accordion, synthesizer, synthwave, drums, roland juno, vocals, The Holy Mountain, The Holy Mountain discography, The Holy Mountain shows, The Holy Mountain albums, The Holy Mountain merch, The Holy Mountain video, The Holy Mountain music, The Holy Mountain band, The Holy Mountain, Accordion band, Accordion trio, trekkspillmusikk",
-    description: "The official website of The Holy Mountain trio",
-    url: `${SITE_DOMAIN}`,
-  };
+  const pageRef = useRef(null);
+  const navTabs = ["music", "video"];
+  const [activeTab, setActiveTabs] = useState("music");
+
+  const handleTabClick = event => setActiveTabs(event);
 
   return (
-    <LayoutApp appMeta={meta}>
-      {/* <PageFront /> */}
-      <PageMediaTwo data={data} border={false} pageId="stuff" />
-      {/*<PageMedia data={filteredMusicData} maxGridCols="3" page="music" />
-      <WrapperShowMore>
-        <PageMedia data={filteredVideoData} maxGridCols="2" page="videos" />
-      </WrapperShowMore> */}
-    </LayoutApp>
+    <LayoutPage id="top" ref={pageRef}>
+      <Meta
+        title="The Holy Mountain"
+        keywords="band, music, norway, artist, avant-garde, pop, minimalism, dreampop, electropop, akkordeon, accordion, synthesizer, synthwave, drums, roland juno, vocals, The Holy Mountain, The Holy Mountain discography, The Holy Mountain shows, The Holy Mountain albums, The Holy Mountain merch, The Holy Mountain video, The Holy Mountain music, The Holy Mountain band, The Holy Mountain, Accordion band, Accordion trio, trekkspillmusikk"
+        description="The official website of The Holy Mountain trio"
+      />
+      <Nav
+        onTabClick={handleTabClick}
+        showMediaTabControls={true}
+        activeTab={activeTab}
+        tabs={navTabs}
+      />
+      <PageMedia data={data} tab={activeTab} />
+      <ButtonScrollTo targetId="top" parentRef={pageRef} />
+    </LayoutPage>
   );
 }
 
@@ -43,10 +49,6 @@ export const getStaticProps = async () => {
 
     // sort the data items by year.
     data = await data.sort((a, b) => Number(b.year) - Number(a.year));
-
-    // filteredVideoData = await filteredVideoData.sort(
-    //   (a, b) => Number(b.year) - Number(a.year)
-    // );
 
     return {
       props: {

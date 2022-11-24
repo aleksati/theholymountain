@@ -5,15 +5,17 @@ const LayoutPage = React.forwardRef(
     const borderTop =
       "border-t border-secondary-skin-light dark:border-secondary-skin-dark";
     return (
-      <div
-        className={`min-h-screen container pb-14 mx-auto ${
-          border ? borderTop : null
-        } ${className}`}
-        id={id}
-        ref={ref}
-      >
-        {children}
-      </div>
+      <>
+        <div
+          className={`min-h-screen container mx-auto pb-8 ${
+            border ? borderTop : null
+          } ${className}`}
+          id={id}
+          ref={ref}
+        >
+          {children}
+        </div>
+      </>
     );
   }
 );

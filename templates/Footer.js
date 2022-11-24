@@ -1,7 +1,6 @@
+import ButtonIconAndText from "../components/ButtonIconAndText";
 import SoMeBar from "../components/SoMeBar";
 import { useRouter } from "next/router";
-import ButtonTheme from "../components/ButtonTheme";
-import ButtonIconAndText from "../components/ButtonIconAndText";
 
 const Footer = () => {
   const router = useRouter();
@@ -9,7 +8,6 @@ const Footer = () => {
     <footer className="py-4 border-t border-secondary-skin-light dark:border-secondary-skin-dark text-primary-light dark:text-primary-dark bg-primary-light dark:bg-primary-dark">
       <div className="container flex flex-col items-center justify-center mx-auto space-y-4 text-center md:space-y-0 md:px-4 md:justify-between md:flex-row text-size-regular">
         <div className="flex space-x-2 w-50 md:order-3">
-          <ButtonTheme />
           <ButtonIconAndText
             text="Report issues"
             iconId="issue"

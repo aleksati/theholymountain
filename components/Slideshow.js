@@ -15,6 +15,7 @@ const properties = {
   canSwipe: true,
   indicators: true,
   transitionDuration: 200,
+  defaultIndex: 1,
   nextArrow: (
     <button className="text-primary-dark" aria-label="next slideshow image">
       <Icon id="nextArrow" iconSize={"text-4xl md:text-4xl"} />
@@ -36,7 +37,6 @@ const Slideshow = ({ imgSlugs = [] }) => {
             <Image
               key={slug}
               src={`/img/${slug}.png`}
-              //   className=""
               alt={`slideshow image of ${slug}`}
               width="100%"
               height="100%"

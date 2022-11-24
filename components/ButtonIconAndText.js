@@ -16,6 +16,7 @@ const ButtonIconAndText = React.forwardRef(
       tabOrder,
       keepTextOnSmallScreen,
       className,
+      hidden,
     },
     ref
   ) => {

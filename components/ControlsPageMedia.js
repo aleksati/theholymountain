@@ -1,27 +1,27 @@
-const ControlsPageMedia = ({ onClick, filters, activeFilters }) => {
-  const onKeyDown = (event, filter) => {
+const ControlsPageMedia = ({ onTabClick, tabs, activeTab }) => {
+  const onKeyDown = (event, tab) => {
     if (event.keyCode === 13) {
-      onClick(filter);
+      onTabClick(tab);
     }
   };
 
   return (
-    <div className="flex items-center justify-center p-4 space-x-4 text-2xl">
-      {filters.map(filter => {
-        let underline = activeFilters.includes(filter) ? "underline" : "";
+    <>
+      {tabs.map(tab => {
+        let underline = activeTab === tab ? "underline" : "";
         return (
           <a
-            key={filter}
-            onClick={() => onClick(filter)}
-            onKeyDown={event => onKeyDown(event, filter)}
+            key={tab}
+            onClick={() => onTabClick(tab)}
+            onKeyDown={event => onKeyDown(event, tab)}
             className={"hover:underline cursor-pointer " + underline}
             tabIndex="0"
           >
-            {filter}
+            {tab}
           </a>
         );
       })}
-    </div>
+    </>
   );
 };
 

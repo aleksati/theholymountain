@@ -23,8 +23,8 @@ const ButtonTheme = ({ tabOrder }) => {
         iconId={currTheme === "dark" ? "sun" : "moon"}
         tabOrder={tabOrder}
         onClick={handleClick}
-        // hasTooltip={true}
-        // tooltipText="Theme"
+        hasTooltip={true}
+        tooltipText="theme"
       />
     </div>
   );
