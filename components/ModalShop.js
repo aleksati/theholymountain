@@ -4,11 +4,16 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 
 const ModalShop = ({ item, publishableKey }) => {
-  const [shopItem, setShopItem] = useState({});
+  const router = useRouter();
+  const [shopItem, setShopItem] = useState({
+    key: "",
+    name: "",
+    description: "",
+    quantity: "",
+    price: "",
+  });
   const [isError, setIsError] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-
-  const router = useRouter();
 
   // inject Stripe into the document headers. This is important.
   const stripePromise = loadStripe(publishableKey);
@@ -46,7 +51,7 @@ const ModalShop = ({ item, publishableKey }) => {
   };
 
   return (
-    <div className="p-2 ">
+    <div className="p-4">
       <Image
         src={"/img/" + shopItem.key + "-shop.png"}
         width={400}
@@ -61,7 +66,7 @@ const ModalShop = ({ item, publishableKey }) => {
         <button
           className={`px-4 rounded items-center border justify-center hover:border-secondary hover:dark:border-secondary transistion ease-in-out duration-200 border-secondary-skin-light dark:border-secondary-skin-dark`}
           onClick={() => {
-            setShopItem(prevItem => {
+            setShopItem((prevItem) => {
               return {
                 ...prevItem,
                 quantity: prevItem.quantity > 0 ? prevItem.quantity - 1 : 0,
@@ -76,7 +81,7 @@ const ModalShop = ({ item, publishableKey }) => {
           type="number"
           className="w-12 p-2 text-center rounded dark:bg-primary-dark bg-primary-light text-primary-light dark:text-primary-dark border-secondary-skin-light dark:border-secondary-skin-dark"
           value={shopItem.quantity}
-          onChange={event =>
+          onChange={(event) =>
             setShopItem({
               ...shopItem,
               quantity: event.target.value,
@@ -86,7 +91,7 @@ const ModalShop = ({ item, publishableKey }) => {
         <button
           className={`px-4 rounded items-center border justify-center hover:border-secondary hover:dark:border-secondary transistion ease-in-out duration-200 border-secondary-skin-light dark:border-secondary-skin-dark`}
           onClick={() => {
-            setShopItem(prevItem => {
+            setShopItem((prevItem) => {
               return {
                 ...prevItem,
                 quantity: prevItem.quantity + 1,

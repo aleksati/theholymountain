@@ -5,6 +5,7 @@ const Button = React.forwardRef(
   (
     {
       onClick,
+      onKeyDown,
       children,
       colorStyle,
       className,
@@ -24,6 +25,7 @@ const Button = React.forwardRef(
       <button
         ref={ref}
         onClick={onClick}
+        onKeyDown={onKeyDown}
         className={`p-3 flex items-center bg-primary-light dark:bg-primary-dark border ${color} rounded-full transistion ease-in-out duration-200 ${className}`}
         type={btnType ? btnType : "button"}
         aria-label={tooltipMessage ? tooltipMessage : "button"}

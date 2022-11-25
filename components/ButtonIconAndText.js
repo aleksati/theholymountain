@@ -16,7 +16,7 @@ const ButtonIconAndText = React.forwardRef(
       tabOrder,
       keepTextOnSmallScreen,
       className,
-      hidden,
+      onKeyDown,
     },
     ref
   ) => {
@@ -30,6 +30,7 @@ const ButtonIconAndText = React.forwardRef(
         aria-pressed={pressed}
         tabOrder={tabOrder}
         className={className}
+        onKeyDown={onKeyDown}
       >
         <Icon id={iconId} iconSize={iconSize ? iconSize : null} />
         {text ? (

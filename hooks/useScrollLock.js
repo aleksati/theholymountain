@@ -3,7 +3,8 @@ import React from "react";
 const selector = "#__next";
 
 // used in Modal.js
-
+// apparantly I do not need the scrollLock in the Navbar anymore
+// scrollLock-compensation
 function isiOS() {
   return (
     [

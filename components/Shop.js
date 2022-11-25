@@ -11,7 +11,7 @@ const shopModalProps = {
   label: "Shop release",
   hasTooltip: true,
   tooltipText: `Buy`,
-  modalMaxSize: "max-w-sm",
+  modalMaxSize: "max-w-md",
 };
 
 const Shop = ({ item }) => {
@@ -52,7 +52,7 @@ const Shop = ({ item }) => {
           <p>Web shop coming soon ...</p>
         </div>
       }
-      //   modalContent={<ModalShop item={item} publishableKey={stripeKey} />}
+      // modalContent={<ModalShop item={item} publishableKey={stripeKey} />}
       modalMaxSize={shopModalProps.modalMaxSize}
     >
       {(triggerBtnRef, showModal) => (

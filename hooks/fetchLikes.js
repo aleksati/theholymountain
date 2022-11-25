@@ -8,9 +8,9 @@ const fetcher = (url, method, releaseKey) =>
     headers: {
       "Content-Type": "application/json",
     },
-  }).then(res => res.json());
+  }).then((res) => res.json());
 
-const getLikes = (method, releaseKey) => {
+const fetchLikes = (method, releaseKey) => {
   const { data, error, mutate } = useSWR(
     [`${SITE_DOMAIN}/api/likes`, method, releaseKey],
     fetcher
@@ -24,4 +24,4 @@ const getLikes = (method, releaseKey) => {
   };
 };
 
-export default getLikes;
+export default fetchLikes;

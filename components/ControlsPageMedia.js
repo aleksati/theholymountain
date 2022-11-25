@@ -13,15 +13,15 @@ const ControlsPageMedia = ({ onTabClick, tabs, activeTab, menuIsVisible }) => {
           : "text-primary-light dark:text-primary-dark"
       }`}
     >
-      {tabs.map(tab => {
+      {tabs.map((tab, index) => {
         let underline = activeTab === tab ? "underline" : "";
         return (
           <a
             key={tab}
             onClick={() => onTabClick(tab)}
-            onKeyDown={event => onKeyDown(event, tab)}
+            onKeyDown={(event) => onKeyDown(event, tab)}
             className={"hover:underline cursor-pointer " + underline}
-            tabIndex="0"
+            tabIndex={index + 1}
           >
             {tab}
           </a>

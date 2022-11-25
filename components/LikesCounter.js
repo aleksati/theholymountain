@@ -1,4 +1,4 @@
-import getLikes from "../functions/getLikes";
+import fetchLikes from "../hooks/fetchLikes";
 import { useEffect, useState } from "react";
 import WrapperLikes from "./WrapperLikes";
 import Spinner from "./Spinner";
@@ -11,7 +11,7 @@ const LikesCounter = ({ releaseKey }) => {
   const [fetchMethod, setFetchMethod] = useState("POST");
   const [isMounted, setIsMounted] = useState(true);
 
-  const { data, isLoading, isError } = getLikes(fetchMethod, releaseKey);
+  const { data, isLoading, isError } = fetchLikes(fetchMethod, releaseKey);
 
   // on mount, and when new data is saved to db,
   // update/validate our local variables
@@ -25,9 +25,9 @@ const LikesCounter = ({ releaseKey }) => {
   }, [data, isLoading, isError]);
 
   // set local state first for a quick UI
-  const handleClick = async event => {
-    setLikesCounter(prevState => (btnState ? prevState - 1 : prevState + 1));
-    setBtnState(prevState => !prevState);
+  const handleClick = async (event) => {
+    setLikesCounter((prevState) => (btnState ? prevState - 1 : prevState + 1));
+    setBtnState((prevState) => !prevState);
 
     // update the likes counter in the DB
     setFetchMethod("PATCH");
