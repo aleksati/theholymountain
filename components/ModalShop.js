@@ -38,11 +38,8 @@ const ModalShop = ({ item, publishableKey }) => {
       });
 
       const checkout = await res.json();
-
       // redirect user to the checkoutpage
       router.push(checkout.url);
-
-      setIsLoading(false);
     } catch (error) {
       console.log(error);
       setIsError(true);
@@ -58,11 +55,14 @@ const ModalShop = ({ item, publishableKey }) => {
         height={400}
         alt={shopItem.name}
       />
-      <h2 className="text-size-title">Kr {shopItem.price}</h2>
-      <h3 className="text-size-regular">{shopItem.name}</h3>
+      {/* <h2 className="text-size-title">Kr {shopItem.price}</h2> */}
+      <p className="text-size-regular bg-button-filter-light ">
+        !!STILL UNDER DEVELOPMENT!!
+      </p>
+      <p className="text-size-regular">{shopItem.name}</p>
       <p className="text-secondary">{shopItem.description}</p>
       <p className="mt-2 text-size-small text-secondary">Quantity:</p>
-      <div className="flex">
+      <div className="flex space-x-1">
         <button
           className={`px-4 rounded items-center border justify-center hover:border-secondary hover:dark:border-secondary transistion ease-in-out duration-200 border-secondary-skin-light dark:border-secondary-skin-dark`}
           onClick={() => {
@@ -106,11 +106,11 @@ const ModalShop = ({ item, publishableKey }) => {
         Total: Kr {shopItem.quantity * shopItem.price}
       </p>
       <button
-        className={`p-2 disabled:cursor-not-allowed rounded flex items-center text-primary-dark bg-button-filter-light border w-full mt-2 justify-center transistion ease-in-out duration-200 border-secondary-skin-light dark:border-secondary-skin-dark hover:border-secondary hover:dark:border-secondary`}
-        disabled={shopItem.quantity === 0}
+        className={`p-2 disabled:cursor-not-allowed rounded flex items-center text-primary-dark bg-button-filter-light w-full mt-2 justify-center transistion ease-in-out duration-200`}
+        disabled={shopItem.quantity === 0 || isError || isLoading}
         onClick={createCheckOutSession}
       >
-        {isError ? "ERROR" : isLoading ? "Processing..." : "Buy"}
+        {isError ? "ERROR" : isLoading ? "Redirecting..." : "To checkout"}
       </button>
     </div>
   );

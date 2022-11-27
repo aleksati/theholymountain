@@ -1,6 +1,11 @@
 import { commonApiHandlers } from "../../functions/commonApiHandlers.js";
 import { initValidation, check, post } from "../../middleware/middlewareApi";
-import { SITE_DOMAIN } from "../../config";
+import {
+  SITE_DOMAIN,
+  SHIPPING_COUNTRIES,
+  SHIPPING_DOM_PRICE,
+  SHIPPING_WO_PRICE,
+} from "../../config";
 import nextConnect from "next-connect";
 import Stripe from "stripe";
 
@@ -61,17 +66,55 @@ export default nextConnect()
       quantity: shopItem.quantity,
     };
 
-    const session = await stripe.checkout.sessions.create({
-      payment_method_types: ["card"],
-      line_items: [transformedShopItem],
-      mode: "payment",
-      success_url: SITE_DOMAIN + "/success.html",
-      cancel_url: SITE_DOMAIN + "/cancel.html",
-      metadata: {
-        images: imgPath,
-      },
-      automatic_tax: { enabled: true },
-    });
+    try {
+      const session = await stripe.checkout.sessions.create({
+        payment_method_types: ["card"],
+        shipping_address_collection: { allowed_countries: SHIPPING_COUNTRIES },
+        shipping_options: [
+          {
+            shipping_rate_data: {
+              type: "fixed_amount",
+              fixed_amount: {
+                amount: SHIPPING_DOM_PRICE * 100,
+                currency: "nok",
+              },
+              display_name: "Norway",
+              delivery_estimate: {
+                minimum: { unit: "business_day", value: 5 },
+                maximum: { unit: "business_day", value: 10 },
+              },
+              tax_behavior: "exclusive",
+            },
+          },
+          {
+            shipping_rate_data: {
+              type: "fixed_amount",
+              fixed_amount: {
+                amount: SHIPPING_WO_PRICE * 100,
+                currency: "nok",
+              },
+              display_name: "Rest of world",
+              delivery_estimate: {
+                minimum: { unit: "business_day", value: 10 },
+                maximum: { unit: "business_day", value: 20 },
+              },
+              tax_behavior: "exclusive",
+            },
+          },
+        ],
+        line_items: [transformedShopItem],
+        mode: "payment",
+        success_url: SITE_DOMAIN + "/success.html",
+        cancel_url: SITE_DOMAIN + "/cancel.html",
+        metadata: {
+          images: imgPath,
+        },
+        automatic_tax: { enabled: true },
+      });
 
-    res.status(200).json({ url: session.url });
+      res.status(200).json({ url: session.url });
+    } catch (error) {
+      console.log(error);
+      res.status(error.statusCode).json(error);
+    }
   });

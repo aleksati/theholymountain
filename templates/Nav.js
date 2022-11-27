@@ -6,6 +6,7 @@ import ButtonTo from "../components/ButtonTo";
 import ModalAbout from "../components/ModalAbout";
 import Modal from "../components/Modal";
 import { useState, useRef, useEffect } from "react";
+import NavMenu from "../components/NavMenu";
 
 const aboutModal = <ModalAbout />;
 const aboutModalProps = {
@@ -37,31 +38,7 @@ const Nav = ({
   showBackButton = false,
   showMenu = true,
 }) => {
-  const [menuIsVisible, setMenuIsVisible] = useState(false);
-  const menuRef = useRef();
-
-  const toggleMenu = () => setMenuIsVisible((prevState) => !prevState);
-
-  // close the menu if user clicks outside of it.
-  // I cannot use contains() method for html elemtents becuase of the icons.
-  const menuClickHandler = (e) => {
-    // avoid keyDown closing the menu
-    if (menuRef.current && e.pageX !== 0 && e.pageY !== 0) {
-      const { bottom, top, left, right } =
-        menuRef.current.getBoundingClientRect();
-      const mouseX = e.x;
-      const mouseY = e.y;
-
-      if (mouseX > left && mouseX < right && mouseY < bottom && mouseY > top)
-        return;
-      return setMenuIsVisible(false);
-    }
-  };
-
-  useEffect(() => {
-    window.addEventListener("click", menuClickHandler);
-    return () => window.removeEventListener("click", menuClickHandler);
-  }, []);
+  const [menuIsActive, setMenuIsActive] = useState();
 
   return (
     <nav className="z-50" aria-label="Navbar" role="toolbar">
@@ -77,55 +54,11 @@ const Nav = ({
               tabs={tabs}
               onTabClick={onTabClick}
               activeTab={activeTab}
-              menuIsVisible={menuIsVisible}
+              menuIsActive={menuIsActive}
             />
           ) : null}
         </div>
-        <div
-          className="flex flex-grow space-x-2 place-content-end"
-          ref={menuRef}
-        >
-          {menuIsVisible ? (
-            <>
-              <Modal
-                key="About"
-                modalContent={aboutModal}
-                modalMaxSize={aboutModalProps.modalMaxSize}
-              >
-                {(triggerBtnRef, showModal) => (
-                  <ButtonIconAndText
-                    ref={triggerBtnRef}
-                    onClick={showModal}
-                    {...aboutModalProps}
-                  />
-                )}
-              </Modal>
-              <Modal
-                key="Contact"
-                modalContent={contactModal}
-                modalMaxSize={contactModalProps.modalMaxSize}
-              >
-                {(triggerBtnRef, showModal) => (
-                  <ButtonIconAndText
-                    ref={triggerBtnRef}
-                    onClick={showModal}
-                    {...contactModalProps}
-                  />
-                )}
-              </Modal>
-              <ButtonTheme tabOrder="4" />
-            </>
-          ) : null}
-          {showMenu ? (
-            <ButtonIconAndText
-              tabOrder="3"
-              label="show and close nav button"
-              pressed={menuIsVisible}
-              iconId={menuIsVisible ? "x" : "threedots"}
-              onClick={toggleMenu}
-            />
-          ) : null}
-        </div>
+        {showMenu ? <NavMenu isActive={(val) => setMenuIsActive(val)} /> : null}
       </div>
     </nav>
   );

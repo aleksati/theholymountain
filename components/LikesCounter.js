@@ -42,11 +42,7 @@ const LikesCounter = ({ releaseKey }) => {
 
   // I only want the spinner on mount when the intial values are set
   if (!likesCounter && btnState === null)
-    return (
-      <WrapperLikes>
-        <Spinner />
-      </WrapperLikes>
-    );
+    return <WrapperLikes>{/* <Spinner /> */}</WrapperLikes>;
 
   return (
     <WrapperLikes>

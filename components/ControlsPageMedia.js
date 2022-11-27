@@ -1,4 +1,4 @@
-const ControlsPageMedia = ({ onTabClick, tabs, activeTab, menuIsVisible }) => {
+const ControlsPageMedia = ({ onTabClick, tabs, activeTab, menuIsActive }) => {
   const onKeyDown = (event, tab) => {
     if (event.keyCode === 13) {
       onTabClick(tab);
@@ -8,7 +8,7 @@ const ControlsPageMedia = ({ onTabClick, tabs, activeTab, menuIsVisible }) => {
   return (
     <div
       className={`space-x-4 text-2xl ${
-        menuIsVisible
+        menuIsActive
           ? "text-secondary text-opacity-50"
           : "text-primary-light dark:text-primary-dark"
       }`}

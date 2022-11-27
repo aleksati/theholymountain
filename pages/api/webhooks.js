@@ -1,5 +1,6 @@
 import { commonApiHandlers } from "../../functions/commonApiHandlers.js";
 import { initValidation, check, post } from "../../middleware/middlewareApi";
+import sendMail from "../../functions/sendMail";
 import nextConnect from "next-connect";
 import { buffer } from "micro";
 import Stripe from "stripe";
@@ -22,6 +23,8 @@ const stripe = new Stripe(
     : process.env.STRIPE_SECRET_KEY
 );
 
+let receipt_url;
+
 export default nextConnect()
   .use(commonApiHandlers)
   .use(post(hookValidator))
@@ -42,8 +45,53 @@ export default nextConnect()
       return res.status(400).send(`Webhook error: ${error.message}`);
     }
 
-    // buisness logic
-    console.log("event: ", event.type);
+    // get the receipt url
+    if (event.type === "charge.succeeded") {
+      receipt_url = event.data.object.receipt_url;
+    }
+
+    ///// buisness logic /////
+    if (event.type === "checkout.session.completed") {
+      const customer_details = event.data.object.customer_details;
+
+      const mailData = {
+        name: "The Holy Mountain",
+        from_email: "contactholymountain@gmail.com",
+        subject: "Your receipt from The Holy Mountain webshop",
+        message: `Dear ${customer_details.name}, <br/> <br/> Thank you so much for supporting us! Your order will be processed momentarily. <br/> <br/> Your receipt: <br/> ${receipt_url}`,
+      };
+
+      // send email to customer with details of their order + url
+      //   try {
+      //     let res = await sendMail(mailData, customer_details.email);
+      //     if (!res.error) {
+      //       console.log(res.message);
+      //     } else {
+      //       console.log("Error with the mailing service: ", res.error);
+      //     }
+      //   } catch (error) {
+      //     console.log("Error with the contacting the mail API: ", error);
+      //   }
+
+      console.log(mailData);
+    }
 
     res.status(200).send();
   });
+
+// customer_details should return:
+// {
+//   address: {
+//     city: 'Oslo',
+//     country: 'NO',
+//     line1: 'Tuengveien 5',
+//     line2: null,
+//     postal_code: '0374',
+//     state: null
+//   },
+//   email: 'whenaleksbuythings@gmail.com',
+//   name: 'Aleksander Tidemann',
+//   phone: null,
+//   tax_exempt: 'none',
+//   tax_ids: []
+// }

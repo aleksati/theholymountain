@@ -30,7 +30,7 @@ const SoMeBar = ({ iconSize, exclude = [], className }) => {
 
   return (
     <div className={`flex flex-row space-x-4 ${className}`}>
-      {some.map(some => {
+      {some.map((some) => {
         if (exclude.includes(some.key)) return;
         return (
           <a

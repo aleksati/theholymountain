@@ -11,10 +11,14 @@ module.exports = {
   theme: {
     container: {
       screens: {
-        sm: "100%",
-        md: "100%",
-        lg: "100%",
-        xl: "1280px",
+        // sm: "100%",
+        // md: "100%",
+        // lg: "100%",
+        // xl: "1280px",
+        sm: "640px",
+        md: "768px",
+        lg: "1024px", // "100%",
+        xl: "1024px",
       },
     },
     extend: {
@@ -27,11 +31,6 @@ module.exports = {
         "size-title": ["1.875rem"], // text-3xl
         "size-regular": ["1.125rem"], //text-lg
         "size-small": ["1rem"], // text-xs
-        //   "size-header-big": ["6rem"], // text-8xl
-        //   "size-header": ["3.75rem"], // text-6xl
-        //   "size-title": ["2.25rem"], // text-4xl
-        //   "size-regular": ["1.125rem"], //text-lg
-        //   "size-small": ["1.5em"], // text-regular
       }, // https://tailwindcss.com/docs/font-size
       backgroundColor: {
         "primary-light": "#fff",

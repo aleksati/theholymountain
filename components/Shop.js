@@ -1,10 +1,11 @@
 import ButtonIconAndText from "./ButtonIconAndText";
 import getApiKeys from "../functions/getApiKeys";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import ModalShop from "./ModalShop";
 import Spinner from "./Spinner";
 import Modal from "./Modal";
 import Error from "./Error";
+import ModalTrigger from "./ModalTrigger";
 
 const shopModalProps = {
   iconId: "shop",
@@ -18,6 +19,9 @@ const Shop = ({ item }) => {
   const [stripeKey, setStripeKey] = useState();
   const [stripeIsLoading, setStripeIsLoading] = useState(false);
   const [stripeIsError, setStripeIsError] = useState(false);
+
+  const [modalIsShown, setModalIsShown] = useState(false);
+  const modalTriggerRef = useRef();
 
   // get stripe publishable key for shop
   const getKeys = async () => {
@@ -41,28 +45,31 @@ const Shop = ({ item }) => {
   }
 
   if (stripeIsLoading) {
-    return <Spinner />;
+    return null; //<Spinner />;
   }
 
   return (
-    <Modal
-      key="Shop"
-      modalContent={
-        <div className="flex items-center justify-center pb-4">
-          <p>Web shop coming soon ...</p>
-        </div>
-      }
-      // modalContent={<ModalShop item={item} publishableKey={stripeKey} />}
-      modalMaxSize={shopModalProps.modalMaxSize}
-    >
-      {(triggerBtnRef, showModal) => (
-        <ButtonIconAndText
-          ref={triggerBtnRef}
-          onClick={showModal}
-          {...shopModalProps}
-        />
-      )}
-    </Modal>
+    <>
+      {modalIsShown ? (
+        <Modal
+          key="Shop"
+          modalIsShown={modalIsShown}
+          modalTriggerRef={modalTriggerRef}
+          setModalIsShown={setModalIsShown}
+          modalMaxSize={shopModalProps.modalMaxSize}
+        >
+          <ModalShop item={item} publishableKey={stripeKey} />
+          {/* <div className="flex items-center justify-center pb-4">
+              <p>Web shop coming soon ...</p>
+            </div> */}
+        </Modal>
+      ) : null}
+      <ModalTrigger
+        ref={modalTriggerRef}
+        modalProps={shopModalProps}
+        onModalTrigger={() => setModalIsShown(true)}
+      />
+    </>
   );
 };
 

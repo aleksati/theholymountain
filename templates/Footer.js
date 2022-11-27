@@ -4,8 +4,8 @@ import SoMeBar from "../components/SoMeBar";
 const Footer = () => {
   return (
     <footer className="py-4 border-t border-secondary-skin-light dark:border-secondary-skin-dark text-primary-light dark:text-primary-dark bg-primary-light dark:bg-primary-dark">
-      <div className="container flex items-center justify-center px-4 mx-auto space-y-2 text-center md:space-y-0 md:px-4 md:justify-between md:flex-row text-size-regular">
-        <div className="order-3 hidden space-x-2 md:flex w-50">
+      <div className="container grid grid-cols-3 items-center mx-auto text-xs">
+        <div className="flex pl-4">
           <ButtonIconAndText
             text="Report issues"
             iconId="issue"
@@ -14,7 +14,7 @@ const Footer = () => {
             }
           />
         </div>
-        <div className="flex flex-col order-1 md:items-start text-size-small text-secondary">
+        <div className="col-span-2 md:col-span-1 md:items-center flex flex-col space-y-1 items-start text-secondary">
           <p> The Holy Mountain &copy; {new Date().getFullYear()}</p>
           <p>
             Page by&nbsp;
@@ -22,10 +22,13 @@ const Footer = () => {
               Aleksander Tidemann
             </a>
           </p>
+          <SoMeBar
+            iconSize="text-xl"
+            className={"!space-x-2 p-1"}
+            exclude={["nothing"]}
+          />
         </div>
-        <div className="hidden lg:flex md:order-2">
-          <SoMeBar iconSize="text-4xl" exclude={["nothing"]} />
-        </div>
+        {/* <div className="flex"></div> */}
       </div>
     </footer>
   );

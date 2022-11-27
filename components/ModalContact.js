@@ -14,7 +14,7 @@ const ModalContact = () => {
 
   const mailData = {
     name,
-    email,
+    from_email: email,
     subject,
     message,
   };
@@ -27,12 +27,12 @@ const ModalContact = () => {
     setMessage("");
   };
 
-  const handleSubmit = async e => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
 
     try {
-      let res = await sendMail(mailData);
+      let res = await sendMail(mailData, "");
       if (!res.error) {
         console.log(res.message);
         setIsSubmit(true);
@@ -51,7 +51,7 @@ const ModalContact = () => {
   return (
     <div>
       <form
-        onSubmit={e => handleSubmit(e)}
+        onSubmit={(e) => handleSubmit(e)}
         className="flex flex-col"
         aria-label="Contact form"
       >
@@ -67,7 +67,7 @@ const ModalContact = () => {
               type="text"
               minLength="3"
               name="full name"
-              onChange={e => {
+              onChange={(e) => {
                 setName(e.target.value);
               }}
               value={name}
@@ -84,7 +84,7 @@ const ModalContact = () => {
               type="email"
               name="email"
               minLength="5"
-              onChange={e => {
+              onChange={(e) => {
                 setEmail(e.target.value);
               }}
               value={email}
@@ -100,7 +100,7 @@ const ModalContact = () => {
             <input
               type="text"
               name="subject"
-              onChange={e => {
+              onChange={(e) => {
                 setSubject(e.target.value);
               }}
               value={subject}
@@ -116,7 +116,7 @@ const ModalContact = () => {
             <textarea
               name="message"
               minLength="3"
-              onChange={e => {
+              onChange={(e) => {
                 setMessage(e.target.value);
               }}
               value={message}
