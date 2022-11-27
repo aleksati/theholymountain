@@ -75,6 +75,21 @@ export default nextConnect()
             shipping_rate_data: {
               type: "fixed_amount",
               fixed_amount: {
+                amount: 0,
+                currency: "nok",
+              },
+              display_name: "Free",
+              delivery_estimate: {
+                minimum: { unit: "business_day", value: 5 },
+                maximum: { unit: "business_day", value: 10 },
+              },
+              tax_behavior: "exclusive",
+            },
+          },
+          {
+            shipping_rate_data: {
+              type: "fixed_amount",
+              fixed_amount: {
                 amount: SHIPPING_DOM_PRICE * 100,
                 currency: "nok",
               },
