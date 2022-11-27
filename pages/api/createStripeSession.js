@@ -75,7 +75,7 @@ export default nextConnect()
             shipping_rate_data: {
               type: "fixed_amount",
               fixed_amount: {
-                amount: 0,
+                amount: 200,
                 currency: "nok",
               },
               display_name: "Free",

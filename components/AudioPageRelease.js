@@ -5,7 +5,7 @@ const AudioPageRelease = ({ item }) => {
     return (
       <div className="pt-2 pb-2">
         <iframe
-          className="h-20 rounded-md md:h-52"
+          className="h-20 rounded-md xl:h-52"
           src={item.spotifyurl}
           width="100%"
           height="260px"
