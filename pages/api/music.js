@@ -161,9 +161,7 @@ const musicPutValidator = initValidation([
       .exists()
       .withMessage("Price is missing")
       .notEmpty()
-      .withMessage("Price is empty")
-      .isLength({ min: 2 })
-      .withMessage("Price must be over 2 characters"),
+      .withMessage("Price is empty"),
     check("formats")
       .exists()
       .withMessage("Formats is missing")

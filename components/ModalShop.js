@@ -56,8 +56,8 @@ const ModalShop = ({ item, publishableKey }) => {
         alt={shopItem.name}
       />
       {/* <h2 className="text-size-title">Kr {shopItem.price}</h2> */}
-      <p className="text-size-regular bg-button-filter-light ">
-        !!STILL UNDER DEVELOPMENT!!
+      <p className="text-size-regular text-red-400 font-bold">
+        NB: STILL UNDER DEVELOPMENT
       </p>
       <p className="text-size-regular">{shopItem.name}</p>
       <p className="text-secondary">{shopItem.description}</p>

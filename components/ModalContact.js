@@ -32,14 +32,9 @@ const ModalContact = () => {
     setIsLoading(true);
 
     try {
-      let res = await sendMail(mailData, "");
-      if (!res.error) {
-        console.log(res.message);
-        setIsSubmit(true);
-      } else {
-        console.log("Error with the mailing service: ", res.error);
-        setIsError(true);
-      }
+      const mail = await sendMail(mailData, "");
+      setIsSubmit(true);
+      console.log(mail.message);
     } catch (error) {
       console.log("Error with the contacting the mail API: ", error);
       setIsError(true);

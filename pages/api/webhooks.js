@@ -61,22 +61,16 @@ export default nextConnect()
         message: `Dear ${customer_details.name}, <br/> <br/> Thank you so much for supporting us! Your order will be processed momentarily. <br/> <br/> Your receipt: <br/> ${receipt_url}`,
       };
 
-      // send email to customer with details of their order + url
-      //   try {
-      //     let res = await sendMail(mailData, customer_details.email);
-      //     if (!res.error) {
-      //       console.log(res.message);
-      //     } else {
-      //       console.log("Error with the mailing service: ", res.error);
-      //     }
-      //   } catch (error) {
-      //     console.log("Error with the contacting the mail API: ", error);
-      //   }
-
-      console.log(mailData);
+      // send email to customer with details of their order + receipt url
+      try {
+        const mail = await sendMail(mailData, customer_details.email);
+        console.log(mail.message);
+        res.status(200).send();
+      } catch (error) {
+        console.log("Error with the contacting the mail API: ", error);
+        res.status(500).send("Could not send email to customer");
+      }
     }
-
-    res.status(200).send();
   });
 
 // customer_details should return:

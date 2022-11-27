@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <footer className="py-4 border-t border-secondary-skin-light dark:border-secondary-skin-dark text-primary-light dark:text-primary-dark bg-primary-light dark:bg-primary-dark">
       <div className="container grid grid-cols-3 items-center mx-auto text-xs">
-        <div className="flex pl-4">
+        <div className="hidden md:flex pl-4">
           <ButtonIconAndText
             text="Report issues"
             iconId="issue"
@@ -14,7 +14,7 @@ const Footer = () => {
             }
           />
         </div>
-        <div className="col-span-2 md:col-span-1 md:items-center flex flex-col space-y-1 items-start text-secondary">
+        <div className="col-span-3 md:col-span-1 flex flex-col space-y-1 items-center text-secondary">
           <p> The Holy Mountain &copy; {new Date().getFullYear()}</p>
           <p>
             Page by&nbsp;
