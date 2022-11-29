@@ -71,21 +71,21 @@ export default nextConnect()
       payment_method_types: ["card"],
       shipping_address_collection: { allowed_countries: SHIPPING_COUNTRIES },
       shipping_options: [
-        {
-          shipping_rate_data: {
-            type: "fixed_amount",
-            fixed_amount: {
-              amount: 200,
-              currency: "nok",
-            },
-            display_name: "Free",
-            delivery_estimate: {
-              minimum: { unit: "business_day", value: 5 },
-              maximum: { unit: "business_day", value: 10 },
-            },
-            tax_behavior: "exclusive",
-          },
-        },
+        // {
+        //   shipping_rate_data: {
+        //     type: "fixed_amount",
+        //     fixed_amount: {
+        //       amount: 200,
+        //       currency: "nok",
+        //     },
+        //     display_name: "Free",
+        //     delivery_estimate: {
+        //       minimum: { unit: "business_day", value: 5 },
+        //       maximum: { unit: "business_day", value: 10 },
+        //     },
+        //     tax_behavior: "exclusive",
+        //   },
+        // },
         {
           shipping_rate_data: {
             type: "fixed_amount",

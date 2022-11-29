@@ -55,10 +55,10 @@ const ModalShop = ({ item, publishableKey }) => {
         height={400}
         alt={shopItem.name}
       />
-      {/* <h2 className="text-size-title">Kr {shopItem.price}</h2> */}
-      <p className="text-size-regular text-red-400 font-bold">
+      <h2 className="text-size-title">Kr {shopItem.price}</h2>
+      {/* <p className="text-size-regular text-red-400 font-bold">
         NB: STILL UNDER DEVELOPMENT
-      </p>
+      </p> */}
       <p className="text-size-regular">{shopItem.name}</p>
       <p className="text-secondary">{shopItem.description}</p>
       <p className="mt-2 text-size-small text-secondary">Quantity:</p>

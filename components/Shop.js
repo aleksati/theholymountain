@@ -1,17 +1,17 @@
-import ButtonIconAndText from "./ButtonIconAndText";
+// import ButtonIconAndText from "./ButtonIconAndText";
+import { useCallback, useEffect, useState, useRef } from "react";
 import getEnvVar from "../functions/getEnvVar";
-import { useEffect, useState, useRef } from "react";
+import ModalTrigger from "./ModalTrigger";
 import ModalShop from "./ModalShop";
 import Spinner from "./Spinner";
 import Modal from "./Modal";
 import Error from "./Error";
-import ModalTrigger from "./ModalTrigger";
 
 const shopModalProps = {
   iconId: "shop",
-  label: "Shop release",
+  label: "Shop album",
   hasTooltip: true,
-  tooltipText: `Buy`,
+  tooltipText: `shop`,
   modalMaxSize: "max-w-md",
 };
 
@@ -23,7 +23,7 @@ const Shop = ({ item }) => {
   const [modalIsShown, setModalIsShown] = useState(false);
   const modalTriggerRef = useRef();
 
-  const getPubKey = async () => {
+  const getPubKey = useCallback(async () => {
     setStripeIsLoading(true);
     try {
       const { STRIPE_PUBLISHABLE_KEY } = await getEnvVar();
@@ -31,13 +31,13 @@ const Shop = ({ item }) => {
       setStripeIsLoading(false);
     } catch (error) {
       setStripeIsError(true);
-      console.log(error);
+      console.log(error.message);
     }
-  };
+  }, []);
 
   useEffect(() => {
     getPubKey();
-  }, []);
+  }, [getPubKey]);
 
   if (stripeIsError) {
     return <Error />;
@@ -58,9 +58,6 @@ const Shop = ({ item }) => {
           modalMaxSize={shopModalProps.modalMaxSize}
         >
           <ModalShop item={item} publishableKey={stripeKey} />
-          {/* <div className="flex items-center justify-center pb-4">
-              <p>Web shop coming soon ...</p>
-            </div> */}
         </Modal>
       ) : null}
       <ModalTrigger

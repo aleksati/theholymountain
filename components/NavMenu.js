@@ -34,7 +34,7 @@ const NavMenu = ({ isActive }) => {
 
   useEffect(() => {
     isActive(menuIsActive);
-  }, [menuIsActive]);
+  }, [menuIsActive, isActive]);
 
   // close the NavMenu if user clicks outside of Nav.
   const menuClickHandler = useCallback(

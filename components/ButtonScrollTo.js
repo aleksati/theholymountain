@@ -1,23 +1,23 @@
 import ButtonIconAndText from "./ButtonIconAndText";
 import isTouchDevice from "../functions/isTouchDevice";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 const ButtonScrollTo = ({ targetId, visible = true, parentRef }) => {
   const [isVisible, setIsVisible] = useState(false);
   const isTouch = isTouchDevice();
 
-  const detectParentInFullViewPort = () => {
+  const detectParentInFullViewPort = useCallback(() => {
     if (parentRef.current) {
       const height = Math.floor(parentRef.current.getBoundingClientRect().y);
       setIsVisible(height < 0 ? true : false);
     }
-  };
+  }, [parentRef]);
 
   useEffect(() => {
     window.addEventListener("scroll", detectParentInFullViewPort);
     return () =>
       window.removeEventListener("scroll", detectParentInFullViewPort);
-  }, []);
+  }, [detectParentInFullViewPort]);
 
   if (isTouch && isVisible) {
     return (

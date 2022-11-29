@@ -39,7 +39,7 @@ export default nextConnect()
       event = stripe.webhooks.constructEvent(buf, sig, webhookSecret);
     } catch (error) {
       console.log(`Webhook error: ${error.message}`);
-      return res.status(400).send(`Webhook error: ${error.message}`);
+      res.status(400).send(`Webhook error: ${error.message}`);
     }
 
     // get the receipt url
@@ -48,20 +48,26 @@ export default nextConnect()
     // }
 
     ///// buisness logic /////
+    // // send email to customer that their order will be processed.
     if (event.type === "checkout.session.completed") {
-      const customer = event.data.object.customer_details;
+      // const customer = event.data.object.customer_details;
 
+      // const mailData = {
+      //   name: "The Holy Mountain",
+      //   from_email: process.env.BANDMAIL,
+      //   bcc: process.env.BANDMAIL,
+      //   subject: "Your receipt from The Holy Mountain webshop",
+      //   message: `Dear ${customer.name}, <br/> <br/> Thank you for your support! We will process your order momentarily :)`,
+      // };
       const mailData = {
         name: "The Holy Mountain",
         from_email: process.env.BANDMAIL,
-        bcc: process.env.BANDMAIL,
-        subject: "Your receipt from The Holy Mountain webshop",
-        message: `Dear ${customer.name}, <br/> <br/> Thank you for your support! We will process your order momentarily :)`,
+        subject: "Somebody bought something from your webshop",
+        message: `${customer.name} bought something from the webshop. Head over to stripe.com.`,
       };
 
-      // send email to customer with details of their order + receipt url
       try {
-        const mail = await sendMail(mailData, customer.email);
+        const mail = await sendMail(mailData, process.env.BANDMAIL); //customer.email
         console.log(mail.message);
         res.status(200).send();
       } catch (error) {

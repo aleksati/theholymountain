@@ -28,7 +28,7 @@ const Modal = ({
   useEffect(() => {
     lockScroll();
     return () => unlockScroll();
-  }, []);
+  }, [lockScroll, unlockScroll]);
 
   const closeModal = () => {
     setModalIsShown(false);
