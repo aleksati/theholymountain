@@ -8,7 +8,7 @@ import Nav from "../../templates/Nav";
 import { useRef } from "react";
 import Meta from "../../components/Meta";
 
-const release = ({ item }) => {
+const Release = ({ item }) => {
   const pageRef = useRef(null);
   return (
     <LayoutPage id="top" ref={pageRef}>
@@ -25,7 +25,7 @@ const release = ({ item }) => {
   );
 };
 
-export default release;
+export default Release;
 
 export const getStaticProps = async (context) => {
   try {

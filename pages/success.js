@@ -13,7 +13,7 @@ import useSWR from "swr";
 // https://www.youtube.com/watch?v=0T8PcO6WDnE
 // arrived at after customer completes a payment in the Shop.
 
-const success = () => {
+const Success = () => {
   const router = useRouter();
   const { session_id } = router.query;
 
@@ -73,7 +73,7 @@ const success = () => {
   );
 };
 
-export default success;
+export default Success;
 
 // I think I need to define this because I have static in the other pages.
 export async function getServerSideProps(context) {

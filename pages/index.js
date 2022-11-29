@@ -9,7 +9,7 @@ import { SITE_DOMAIN } from "../config";
 import Nav from "../templates/Nav";
 import Meta from "../components/Meta";
 
-const home = ({ data }) => {
+const Home = ({ data }) => {
   const pageRef = useRef(null);
   const navTabs = ["music", "video"];
   const [activeTab, setActiveTabs] = useState("music");
@@ -37,7 +37,7 @@ const home = ({ data }) => {
   );
 };
 
-export default home;
+export default Home;
 
 export const getStaticProps = async () => {
   try {
