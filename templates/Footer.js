@@ -4,7 +4,7 @@ import SoMeBar from "../components/SoMeBar";
 const Footer = () => {
   return (
     <footer className="py-4 border-t border-secondary-skin-light dark:border-secondary-skin-dark text-primary-light dark:text-primary-dark bg-primary-light dark:bg-primary-dark">
-      <div className="container grid grid-cols-3 items-center mx-auto text-xs">
+      <div className="container grid grid-cols-3 items-center mx-auto text-sm">
         <div className="hidden md:flex pl-4">
           <ButtonIconAndText
             text="Report issues"
@@ -23,12 +23,11 @@ const Footer = () => {
             </a>
           </p>
           <SoMeBar
-            iconSize="text-xl"
+            iconSize="text-2xl"
             className={"!space-x-2 p-1"}
             exclude={["nothing"]}
           />
         </div>
-        {/* <div className="flex"></div> */}
       </div>
     </footer>
   );

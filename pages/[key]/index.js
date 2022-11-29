@@ -8,7 +8,7 @@ import Nav from "../../templates/Nav";
 import { useRef } from "react";
 import Meta from "../../components/Meta";
 
-const Handler = ({ item }) => {
+const release = ({ item }) => {
   const pageRef = useRef(null);
   return (
     <LayoutPage id="top" ref={pageRef}>
@@ -18,16 +18,16 @@ const Handler = ({ item }) => {
         description={item.description}
         url={`${SITE_DOMAIN}/${item.key}`}
       />
-      <Nav showBackButton={true} />
+      <Nav showBackButton={true} showMenu={true} />
       <PageRelease item={item} />
       <ButtonScrollTo targetId="top" parentRef={pageRef} />
     </LayoutPage>
   );
 };
 
-export default Handler;
+export default release;
 
-export const getStaticProps = async context => {
+export const getStaticProps = async (context) => {
   try {
     await connectMongo();
 
@@ -42,7 +42,7 @@ export const getStaticProps = async context => {
     };
   } catch (error) {
     console.log(
-      "Error while fetching static MusicData collection from db during build: ",
+      "Error while fetching static MusicData collection from db: ",
       error.message
     );
     // should not be needed because of the "fallback: false" mode
@@ -58,9 +58,9 @@ export const getStaticPaths = async () => {
   await connectMongo();
   let res = await MusicData.find();
   let items = await JSON.parse(JSON.stringify(res));
-  let keys = items.map(item => item.key);
+  let keys = items.map((item) => item.key);
 
-  let paths = keys.map(key => ({ params: { key } }));
+  let paths = keys.map((key) => ({ params: { key } }));
 
   return {
     paths,

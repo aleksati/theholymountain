@@ -5,6 +5,8 @@ import Image from "next/image";
 
 const ModalShop = ({ item, publishableKey }) => {
   const router = useRouter();
+  const [isError, setIsError] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [shopItem, setShopItem] = useState({
     key: "",
     name: "",
@@ -12,8 +14,6 @@ const ModalShop = ({ item, publishableKey }) => {
     quantity: "",
     price: "",
   });
-  const [isError, setIsError] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
 
   // inject Stripe into the document headers. This is important.
   const stripePromise = loadStripe(publishableKey);
@@ -28,10 +28,10 @@ const ModalShop = ({ item, publishableKey }) => {
     });
   }, [item]);
 
-  const createCheckOutSession = async () => {
+  const createCheckoutSession = async () => {
     setIsLoading(true);
     try {
-      const res = await fetch("/api/createStripeSession", {
+      const res = await fetch("/api/shop/checkout", {
         method: "POST",
         body: JSON.stringify(shopItem),
         headers: { "Content-Type": "application/json" },
@@ -108,7 +108,7 @@ const ModalShop = ({ item, publishableKey }) => {
       <button
         className={`p-2 disabled:cursor-not-allowed rounded flex items-center text-primary-dark bg-button-filter-light w-full mt-2 justify-center transistion ease-in-out duration-200`}
         disabled={shopItem.quantity === 0 || isError || isLoading}
-        onClick={createCheckOutSession}
+        onClick={createCheckoutSession}
       >
         {isError ? "ERROR" : isLoading ? "Redirecting..." : "To checkout"}
       </button>

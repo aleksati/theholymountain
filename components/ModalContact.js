@@ -1,9 +1,11 @@
+import getEnvVar from "../functions/getEnvVar";
 import sendMail from "../functions/sendMail";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Spinner from "./Spinner";
 import Button from "./Button";
 
 const ModalContact = () => {
+  const [recipient, setRecipient] = useState("");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
@@ -12,12 +14,21 @@ const ModalContact = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
 
-  const mailData = {
-    name,
-    from_email: email,
-    subject,
-    message,
+  const getRecipientMail = async () => {
+    setIsLoading(true);
+    try {
+      const { BANDMAIL } = await getEnvVar();
+      setRecipient(BANDMAIL);
+      setIsLoading(false);
+    } catch (error) {
+      setIsError(true);
+      console.log("Error while getting bandMail from API", error);
+    }
   };
+
+  useEffect(() => {
+    getRecipientMail();
+  }, []);
 
   const resetData = () => {
     setIsLoading(false);
@@ -32,11 +43,19 @@ const ModalContact = () => {
     setIsLoading(true);
 
     try {
-      const mail = await sendMail(mailData, "");
+      const mail = await sendMail(
+        {
+          name,
+          from_email: email,
+          subject,
+          message,
+        },
+        recipient
+      );
       setIsSubmit(true);
       console.log(mail.message);
     } catch (error) {
-      console.log("Error with the contacting the mail API: ", error);
+      console.log("Error from ModalContact: ", error);
       setIsError(true);
     }
 
@@ -126,12 +145,14 @@ const ModalContact = () => {
               <div className="flex place-content-center">
                 <p>Sorry, something&apos;s not right..</p>
               </div>
-            ) : !isLoading ? (
-              <Button className="place-content-center" btnType="submit">
-                <input tabIndex="-1" type="submit" />
-              </Button>
             ) : (
-              <Spinner />
+              <Button className="place-content-center" btnType="submit">
+                {!isLoading ? (
+                  <input tabIndex="-1" type="submit" />
+                ) : (
+                  <Spinner />
+                )}
+              </Button>
             )
           ) : (
             <div className="flex place-content-center">

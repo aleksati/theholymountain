@@ -1,5 +1,5 @@
 import ButtonIconAndText from "./ButtonIconAndText";
-import getApiKeys from "../functions/getApiKeys";
+import getEnvVar from "../functions/getEnvVar";
 import { useEffect, useState, useRef } from "react";
 import ModalShop from "./ModalShop";
 import Spinner from "./Spinner";
@@ -23,12 +23,11 @@ const Shop = ({ item }) => {
   const [modalIsShown, setModalIsShown] = useState(false);
   const modalTriggerRef = useRef();
 
-  // get stripe publishable key for shop
-  const getKeys = async () => {
+  const getPubKey = async () => {
     setStripeIsLoading(true);
     try {
-      const { publishableKey } = await getApiKeys();
-      setStripeKey(publishableKey);
+      const { STRIPE_PUBLISHABLE_KEY } = await getEnvVar();
+      setStripeKey(STRIPE_PUBLISHABLE_KEY);
       setStripeIsLoading(false);
     } catch (error) {
       setStripeIsError(true);
@@ -37,7 +36,7 @@ const Shop = ({ item }) => {
   };
 
   useEffect(() => {
-    getKeys();
+    getPubKey();
   }, []);
 
   if (stripeIsError) {
@@ -45,7 +44,7 @@ const Shop = ({ item }) => {
   }
 
   if (stripeIsLoading) {
-    return null; //<Spinner />;
+    return <Spinner />;
   }
 
   return (

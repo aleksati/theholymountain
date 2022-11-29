@@ -1,14 +1,14 @@
 import { SITE_DOMAIN } from "../config";
 
-// demands as mailData:
+// should send:
 // {
-//   to: "recipent email address",
 //   mailData: { name: "", from_email: "", subject: "", message: "" },
+//   recipient: "recipent email address",
 // };
 
 // used in /api/contact.js and /api/webhooks.js
 
-const sendMail = async (mailData, to = "") => {
+const sendMail = async (mailData, recipient) => {
   console.log("Sending message..");
   try {
     let res = await fetch(`${SITE_DOMAIN}/api/contact`, {
@@ -17,14 +17,14 @@ const sendMail = async (mailData, to = "") => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        to,
+        recipient,
         mailData,
       }),
     });
     const data = await res.json();
     return data;
   } catch (error) {
-    throw new Error(error);
+    return new Error(error);
   }
 };
 

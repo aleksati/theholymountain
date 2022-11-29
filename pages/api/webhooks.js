@@ -5,8 +5,7 @@ import nextConnect from "next-connect";
 import { buffer } from "micro";
 import Stripe from "stripe";
 
-// handle the orders that are made in my webshop
-// from
+// handle the orders that are made in my webshop from:
 // https://www.youtube.com/watch?v=nVvDr6MyEXE
 
 export const config = {
@@ -22,8 +21,6 @@ const stripe = new Stripe(
     ? process.env.STRIPE_SECRET_KEY_TEST
     : process.env.STRIPE_SECRET_KEY
 );
-
-let receipt_url;
 
 export default nextConnect()
   .use(commonApiHandlers)
@@ -46,24 +43,25 @@ export default nextConnect()
     }
 
     // get the receipt url
-    if (event.type === "charge.succeeded") {
-      receipt_url = event.data.object.receipt_url;
-    }
+    // if (event.type === "charge.succeeded") {
+    //   receipt_url = event.data.object.receipt_url;
+    // }
 
     ///// buisness logic /////
     if (event.type === "checkout.session.completed") {
-      const customer_details = event.data.object.customer_details;
+      const customer = event.data.object.customer_details;
 
       const mailData = {
         name: "The Holy Mountain",
-        from_email: "contactholymountain@gmail.com",
+        from_email: process.env.BANDMAIL,
+        bcc: process.env.BANDMAIL,
         subject: "Your receipt from The Holy Mountain webshop",
-        message: `Dear ${customer_details.name}, <br/> <br/> Thank you so much for supporting us! Your order will be processed momentarily. <br/> <br/> Your receipt: <br/> ${receipt_url}`,
+        message: `Dear ${customer.name}, <br/> <br/> Thank you for your support! We will process your order momentarily :)`,
       };
 
       // send email to customer with details of their order + receipt url
       try {
-        const mail = await sendMail(mailData, customer_details.email);
+        const mail = await sendMail(mailData, customer.email);
         console.log(mail.message);
         res.status(200).send();
       } catch (error) {

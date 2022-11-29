@@ -5,15 +5,16 @@ import PageMedia from "../templates/PageMedia";
 import MusicData from "../models/MusicData";
 import VideoData from "../models/VideoData";
 import { useState, useRef } from "react";
+import { SITE_DOMAIN } from "../config";
 import Nav from "../templates/Nav";
 import Meta from "../components/Meta";
 
-export default function Home({ data }) {
+const home = ({ data }) => {
   const pageRef = useRef(null);
   const navTabs = ["music", "video"];
   const [activeTab, setActiveTabs] = useState("music");
 
-  const handleTabClick = event => setActiveTabs(event);
+  const handleTabClick = (event) => setActiveTabs(event);
 
   return (
     <LayoutPage id="top" ref={pageRef}>
@@ -21,10 +22,12 @@ export default function Home({ data }) {
         title="The Holy Mountain"
         keywords="band, music, norway, artist, avant-garde, pop, minimalism, dreampop, electropop, akkordeon, accordion, synthesizer, synthwave, drums, roland juno, vocals, The Holy Mountain, The Holy Mountain discography, The Holy Mountain shows, The Holy Mountain albums, The Holy Mountain merch, The Holy Mountain video, The Holy Mountain music, The Holy Mountain band, The Holy Mountain, Accordion band, Accordion trio, trekkspillmusikk"
         description="The official website of The Holy Mountain trio"
+        url={`${SITE_DOMAIN}`}
       />
       <Nav
-        onTabClick={handleTabClick}
         showMediaTabControls={true}
+        showMenu={true}
+        onTabClick={handleTabClick}
         activeTab={activeTab}
         tabs={navTabs}
       />
@@ -32,7 +35,9 @@ export default function Home({ data }) {
       <ButtonScrollTo targetId="top" parentRef={pageRef} />
     </LayoutPage>
   );
-}
+};
+
+export default home;
 
 export const getStaticProps = async () => {
   try {

@@ -1,11 +1,11 @@
-import { useRef, useEffect, useState } from "react";
-import getCurrTheme from "../functions/getCurrTheme";
-import getClockValue from "../functions/getClockValue";
-import WrapperAudioPlayer from "./WrapperAudioPlayer";
 import ControlsAudioPlayer from "./ControlsAudioPlayer";
+import getClockValue from "../functions/getClockValue";
+import getCurrTheme from "../functions/getCurrTheme";
+import { useRef, useEffect, useState } from "react";
+import ClientOnly from "./ClientOnly";
 import Spinner from "./Spinner";
 
-const WaveFormOptions = ref => ({
+const WaveFormOptions = (ref) => ({
   container: ref,
   waveColor: "rgb(33, 31, 36)", // "#211F24",
   progressColor: "rgb(239, 68, 68)", // "#300415",
@@ -26,7 +26,7 @@ const AudioPlayer = ({ src }) => {
   const containerRef = useRef(null);
   const waveFormRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
-  const [isMounted, setIsMounted] = useState(false);
+  const [audioIsMounted, setAudioIsMounted] = useState(false);
   const [stateTheme, setStateTheme] = useState(null);
   const { currTheme } = getCurrTheme();
 
@@ -43,7 +43,7 @@ const AudioPlayer = ({ src }) => {
         document.getElementById("audiotime").innerText = currTime;
       });
 
-      waveFormRef.current.on("ready", () => setIsMounted(true));
+      waveFormRef.current.on("ready", () => setAudioIsMounted(true));
     } catch (error) {
       console.log(error);
     }
@@ -56,7 +56,7 @@ const AudioPlayer = ({ src }) => {
     return () => {
       if (waveFormRef.current) {
         waveFormRef.current.destroy();
-        setIsMounted(false);
+        setAudioIsMounted(false);
       }
     };
   }, []);
@@ -71,7 +71,7 @@ const AudioPlayer = ({ src }) => {
 
   // set waveform colors based on theme
   //   useEffect(() => {
-  //     if (isMounted && stateTheme && waveFormRef.current) {
+  //     if (audioIsMounted && stateTheme && waveFormRef.current) {
   //       if (stateTheme === "dark") {
   //         waveFormRef.current.setProgressColor("rgb(50, 141, 120)");
   //         waveFormRef.current.setWaveColor("rgb(255, 255, 255)");
@@ -83,16 +83,16 @@ const AudioPlayer = ({ src }) => {
   //         waveFormRef.current.setCursorColor("rgb(239, 68, 68)");
   //       }
   //     }
-  //   }, [stateTheme, isMounted, waveFormRef]);
+  //   }, [stateTheme, audioIsMounted, waveFormRef]);
 
   const handlePlayPause = () => {
-    setIsPlaying(prevstate => !prevstate);
+    setIsPlaying((prevstate) => !prevstate);
     waveFormRef.current.playPause();
   };
 
   return (
-    <WrapperAudioPlayer>
-      {isMounted ? (
+    <ClientOnly className="flex items-center justify-start">
+      {audioIsMounted ? (
         <ControlsAudioPlayer
           onPlayPause={handlePlayPause}
           isPlaying={isPlaying}
@@ -104,7 +104,7 @@ const AudioPlayer = ({ src }) => {
       <div className="relative w-2/4">
         <div id="waveform" ref={containerRef} />
       </div>
-    </WrapperAudioPlayer>
+    </ClientOnly>
   );
 };
 

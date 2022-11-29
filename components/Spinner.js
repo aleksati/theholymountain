@@ -1,5 +1,6 @@
 import Image from "next/image";
 import loadingGif from "../public/img/loading.gif";
+import Icon from "./Icon";
 
 const Spinner = () => (
   <div className="flex place-content-center">

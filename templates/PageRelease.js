@@ -14,7 +14,7 @@ const PageRelease = ({ item }) => {
 
   return (
     <div
-      className="grid min-h-screen grid-cols-1 gap-6 p-4 md:grid-cols-2 md:space-y-0"
+      className="grid grid-cols-1 gap-4 p-4 md:grid-cols-2 md:space-y-0"
       aria-label={`${item.title} page`}
     >
       <div className="order-1 col-span-1">
@@ -41,7 +41,7 @@ const PageRelease = ({ item }) => {
             <p>{item.description}</p>
           </div>
           <AudioPageRelease item={item} />
-          <div className="text-secondary text-size-small">
+          <div className="text-secondary text-xs">
             {item.credits.map((credit, index) => (
               <p key={index}>{credit}</p>
             ))}
