@@ -6,7 +6,7 @@ const LayoutPage = React.forwardRef(
       "border-t border-secondary-skin-light dark:border-secondary-skin-dark";
     return (
       <div
-        className={`min-h-screen container mx-auto ${
+        className={`min-h-screen container mx-auto pb-12 ${
           border ? borderTop : null
         } ${className}`}
         id={id}
