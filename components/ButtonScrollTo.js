@@ -2,7 +2,7 @@ import ButtonIconAndText from "./ButtonIconAndText";
 import isTouchDevice from "../functions/isTouchDevice";
 import { useCallback, useEffect, useState } from "react";
 
-const ButtonScrollTo = ({ targetId, visible = true, parentRef }) => {
+const ButtonScrollTo = ({ targetId, parentRef }) => {
   const [isVisible, setIsVisible] = useState(false);
   const isTouch = isTouchDevice();
 

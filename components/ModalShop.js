@@ -50,10 +50,12 @@ const ModalShop = ({ item, publishableKey }) => {
   return (
     <div className="p-4">
       <Image
-        src={"/img/" + shopItem.key + "-shop.png"}
+        blurDataURL={`/img/placeholders/${item.key}-shop.png`}
+        src={`/img/${item.key}-shop.png`}
+        alt={item.name}
+        placeholder="blur"
         width={400}
         height={400}
-        alt={shopItem.name}
       />
       <h2 className="text-size-title">Kr {shopItem.price}</h2>
       {/* <p className="text-size-regular text-red-400 font-bold">

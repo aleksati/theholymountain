@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-const GridPageMedia = ({ children, maxGridCols }) => {
+const PageMediaGrid = ({ children, maxGridCols }) => {
   const [cols, setCols] = useState("lg:grid-cols-3");
 
   useEffect(() => {
@@ -17,4 +17,4 @@ const GridPageMedia = ({ children, maxGridCols }) => {
   );
 };
 
-export default GridPageMedia;
+export default PageMediaGrid;

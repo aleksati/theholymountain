@@ -1,7 +1,7 @@
 import { useRef, useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 
-const PortalClientOnly = ({ children, selector }) => {
+const ClientOnlyPortal = ({ children, selector }) => {
   const ref = useRef();
   const [isMounted, setIsMounted] = useState(false);
 
@@ -13,4 +13,4 @@ const PortalClientOnly = ({ children, selector }) => {
   return isMounted ? createPortal(children, ref.current) : null;
 };
 
-export default PortalClientOnly;
+export default ClientOnlyPortal;

@@ -1,5 +1,5 @@
-import ButtonPageReleaseAction from "../components/ButtonPageReleaseAction";
-import AudioPageRelease from "../components/AudioPageRelease";
+import PageReleaseAction from "../components/PageReleaseAction";
+import PageReleaseAudio from "../components/PageReleaseAudio";
 import LikesCounter from "../components/LikesCounter";
 import Slideshow from "../components/Slideshow";
 import { useEffect } from "react";
@@ -32,7 +32,7 @@ const PageRelease = ({ item }) => {
               </p>
             </div>
             <div className="flex space-x-2 ">
-              <ButtonPageReleaseAction item={item} />
+              <PageReleaseAction item={item} />
               <LikesCounter releaseKey={item.key} />
             </div>
           </div>
@@ -40,7 +40,7 @@ const PageRelease = ({ item }) => {
             <p>{item.formatText}</p>
             <p>{item.description}</p>
           </div>
-          <AudioPageRelease item={item} />
+          <PageReleaseAudio item={item} />
           <div className="text-secondary text-xs">
             {item.credits.map((credit, index) => (
               <p key={index}>{credit}</p>

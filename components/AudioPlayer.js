@@ -2,7 +2,6 @@ import ControlsAudioPlayer from "./ControlsAudioPlayer";
 import getClockValue from "../functions/getClockValue";
 import getCurrTheme from "../functions/getCurrTheme";
 import { useRef, useEffect, useState } from "react";
-import ClientOnly from "./ClientOnly";
 import Spinner from "./Spinner";
 
 const WaveFormOptions = (ref) => ({
@@ -91,7 +90,7 @@ const AudioPlayer = ({ src }) => {
   };
 
   return (
-    <ClientOnly className="flex items-center justify-start">
+    <div className="flex items-center justify-start">
       {audioIsMounted ? (
         <ControlsAudioPlayer
           onPlayPause={handlePlayPause}
@@ -99,12 +98,14 @@ const AudioPlayer = ({ src }) => {
           timerId="audiotime"
         />
       ) : (
-        <Spinner />
+        <div className="flex text-xs items-center space-x-2">
+          <Spinner /> <p>Loading audio...</p>
+        </div>
       )}
       <div className="relative w-2/4">
         <div id="waveform" ref={containerRef} />
       </div>
-    </ClientOnly>
+    </div>
   );
 };
 

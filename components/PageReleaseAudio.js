@@ -1,6 +1,6 @@
 import AudioPlayer from "./AudioPlayer";
 
-const AudioPageRelease = ({ item }) => {
+const PageReleaseAudio = ({ item }) => {
   if (item.spotifyurl) {
     return (
       <div className="pt-2 pb-2">
@@ -29,4 +29,4 @@ const AudioPageRelease = ({ item }) => {
   );
 };
 
-export default AudioPageRelease;
+export default PageReleaseAudio;

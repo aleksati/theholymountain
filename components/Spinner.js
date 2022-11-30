@@ -1,6 +1,5 @@
-import Image from "next/image";
 import loadingGif from "../public/img/loading.gif";
-import Icon from "./Icon";
+import Image from "next/image";
 
 const Spinner = () => (
   <div className="flex place-content-center">
@@ -8,8 +7,8 @@ const Spinner = () => (
       src={loadingGif}
       unoptimized={true} // this is the only way make gifs work with Image component, I found
       alt="loading"
-      width="25%"
-      height="25%"
+      width="30%"
+      height="30%"
     />
   </div>
 );

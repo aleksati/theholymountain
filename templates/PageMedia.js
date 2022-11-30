@@ -1,5 +1,5 @@
-import GridItemPageMedia from "../components/GridItemPageMedia";
-import GridPageMedia from "../components/GridPageMedia";
+import PageMediaGridItem from "../components/PageMediaGridItem";
+import PageMediaGrid from "../components/PageMediaGrid";
 import { useEffect, useState } from "react";
 
 const PageMedia = ({ data, tab }) => {
@@ -15,15 +15,15 @@ const PageMedia = ({ data, tab }) => {
   }, [tab]);
 
   return (
-    <GridPageMedia maxGridCols={maxGridCols}>
-      {data.map(item => {
+    <PageMediaGrid maxGridCols={maxGridCols}>
+      {data.map((item) => {
         if (item.type === tab) {
           return (
-            <GridItemPageMedia key={item.key} item={item} type={item.type} />
+            <PageMediaGridItem key={item.key} item={item} type={item.type} />
           );
         }
       })}
-    </GridPageMedia>
+    </PageMediaGrid>
   );
 };
 

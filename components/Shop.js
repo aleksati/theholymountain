@@ -2,6 +2,7 @@
 import { useCallback, useEffect, useState, useRef } from "react";
 import getEnvVar from "../functions/getEnvVar";
 import ModalTrigger from "./ModalTrigger";
+import ClientOnly from "./ClientOnly";
 import ModalShop from "./ModalShop";
 import Spinner from "./Spinner";
 import Modal from "./Modal";
@@ -39,33 +40,33 @@ const Shop = ({ item }) => {
     getPubKey();
   }, [getPubKey]);
 
-  if (stripeIsError) {
-    return <Error />;
-  }
-
-  if (stripeIsLoading) {
-    return <Spinner />;
-  }
-
   return (
-    <>
-      {modalIsShown ? (
-        <Modal
-          key="Shop"
-          modalIsShown={modalIsShown}
-          modalTriggerRef={modalTriggerRef}
-          setModalIsShown={setModalIsShown}
-          modalMaxSize={shopModalProps.modalMaxSize}
-        >
-          <ModalShop item={item} publishableKey={stripeKey} />
-        </Modal>
-      ) : null}
-      <ModalTrigger
-        ref={modalTriggerRef}
-        modalProps={shopModalProps}
-        onModalTrigger={() => setModalIsShown(true)}
-      />
-    </>
+    <ClientOnly>
+      {stripeIsError ? (
+        <Error />
+      ) : stripeIsLoading ? (
+        <Spinner />
+      ) : (
+        <>
+          {modalIsShown ? (
+            <Modal
+              key="Shop"
+              modalIsShown={modalIsShown}
+              modalTriggerRef={modalTriggerRef}
+              setModalIsShown={setModalIsShown}
+              modalMaxSize={shopModalProps.modalMaxSize}
+            >
+              <ModalShop item={item} publishableKey={stripeKey} />
+            </Modal>
+          ) : null}
+          <ModalTrigger
+            ref={modalTriggerRef}
+            modalProps={shopModalProps}
+            onModalTrigger={() => setModalIsShown(true)}
+          />
+        </>
+      )}
+    </ClientOnly>
   );
 };
 

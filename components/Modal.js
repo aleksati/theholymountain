@@ -1,5 +1,5 @@
 import { useScrollLock } from "../hooks/useScrollLock";
-import PortalClientOnly from "./PortalClientOnly";
+import ClientOnlyPortal from "./ClientOnlyPortal";
 import { useRef, useEffect } from "react";
 import FocusTrap from "focus-trap-react";
 import React, { memo } from "react";
@@ -45,9 +45,9 @@ const Modal = ({
   };
 
   return (
-    <PortalClientOnly selector="#modal">
+    <ClientOnlyPortal selector="#modal">
       <FocusTrap>
-        {/* The Modal container (popupCard) centered */}
+        {/* The Modal container with popupCard centered */}
         <aside
           tag="aside"
           role="dialog"
@@ -60,7 +60,7 @@ const Modal = ({
           {/* The Modal Card*/}
           <div
             // border border-secondary-skin-light dark:border-secondary-skin-dark
-            className={`max-h-screen m-2 overflow-auto container mx-auto bg-primary-light dark:bg-primary-dark shadow-md p-4 ${modalMaxSize}`}
+            className={`max-h-full m-2 overflow-auto container mx-auto bg-primary-light dark:bg-primary-dark shadow-md p-4 ${modalMaxSize}`}
             ref={modalRef}
           >
             {/* The close button at the top right */}
@@ -78,7 +78,7 @@ const Modal = ({
           </div>
         </aside>
       </FocusTrap>
-    </PortalClientOnly>
+    </ClientOnlyPortal>
   );
 };
 

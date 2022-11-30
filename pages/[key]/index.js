@@ -1,26 +1,20 @@
 import connectMongo from "../../functions/connectMongo";
 import PageRelease from "../../templates/PageRelease";
-import ButtonScrollTo from "../../components/ButtonScrollTo";
 import LayoutPage from "../../layouts/LayoutPage";
 import MusicData from "../../models/MusicData";
 import { SITE_DOMAIN } from "../../config";
-import Nav from "../../templates/Nav";
-import { useRef } from "react";
-import Meta from "../../components/Meta";
 
 const Release = ({ item }) => {
-  const pageRef = useRef(null);
+  const pageMeta = {
+    title: `The Holy Mountain | ${item.title}`,
+    keywords:
+      "band, music, norway, artist, avant-garde, pop, minimalism, dreampop, electropop, akkordeon, accordion, synthesizer, synthwave, drums, roland juno, vocals, The Holy Mountain, The Holy Mountain discography, The Holy Mountain shows, The Holy Mountain albums, The Holy Mountain merch, The Holy Mountain video, The Holy Mountain music, The Holy Mountain band, The Holy Mountain, Accordion band, Accordion trio, trekkspillmusikk",
+    description: item.description,
+    url: `${SITE_DOMAIN}/${item.key}`,
+  };
   return (
-    <LayoutPage id="top" ref={pageRef}>
-      <Meta
-        title={`The Holy Mountain | ${item.title}`}
-        keywords="band, music, norway, artist, avant-garde, pop, minimalism, dreampop, electropop, akkordeon, accordion, synthesizer, synthwave, drums, roland juno, vocals, The Holy Mountain, The Holy Mountain discography, The Holy Mountain shows, The Holy Mountain albums, The Holy Mountain merch, The Holy Mountain video, The Holy Mountain music, The Holy Mountain band, The Holy Mountain, Accordion band, Accordion trio, trekkspillmusikk"
-        description={item.description}
-        url={`${SITE_DOMAIN}/${item.key}`}
-      />
-      <Nav showBackButton={true} showMenu={true} />
-      <PageRelease item={item} />
-      <ButtonScrollTo targetId="top" parentRef={pageRef} />
+    <LayoutPage pageMeta={pageMeta} showBackButton={true} showMenu={true}>
+      {() => <PageRelease item={item} />}
     </LayoutPage>
   );
 };
