@@ -1,8 +1,8 @@
-import nextConnect from "next-connect";
-import connectMongo from "../../functions/connectMongo";
-import MusicData from "../../models/MusicData";
-import getClientIP from "../../functions/getClientIP";
 import { commonApiHandlers } from "../../functions/commonApiHandlers.js";
+import connectMongo from "../../functions/connectMongo";
+import getClientIP from "../../functions/getClientIP";
+import MusicData from "../../models/MusicData";
+import nextConnect from "next-connect";
 import {
   initValidation,
   check,
@@ -10,36 +10,38 @@ import {
   post,
 } from "../../middleware/middlewareApi";
 
-const likesValidator = initValidation([
-  check("key")
+const postValidator = initValidation([
+  check("key").exists().withMessage("Key is missing").trim(),
+]);
+
+const patchValidator = initValidation([
+  check("key").exists().withMessage("Key is missing").trim(),
+  check("state")
     .exists()
     .withMessage("Key is missing")
-    .trim()
-    .notEmpty()
-    .withMessage("key is empty")
-    .isLength({ min: 3 })
-    .withMessage("Key must be over 3 characters"),
+    .isBoolean()
+    .withMessage("State must be boolean"),
 ]);
 
 export default nextConnect()
   .use(commonApiHandlers)
-  .use(post(likesValidator))
-  .use(patch(likesValidator))
+  .use(post(postValidator))
+  .use(patch(patchValidator))
   .post(async (req, res) => {
     // Should optimally be a "get" method with params
-    const releaseKey = req.body.key;
+    const { key } = req.body;
     const clientIP = getClientIP(req);
 
     await connectMongo();
-    const release = await MusicData.findOne({ key: releaseKey });
 
-    if (!release) throw new Error("Error while getting likes. Key not found!");
+    const release = await MusicData.findOne({ key });
+    if (!release) throw new Error("Error while fetching likes. Key not found!");
 
     const { isMatch } = await release.compareLike(clientIP);
     const likesCounter = await release.countLikes();
 
     res.status(200).json({
-      key: releaseKey,
+      key,
       likesCounter,
       client: {
         ip: clientIP,
@@ -48,26 +50,30 @@ export default nextConnect()
     });
   })
   .patch(async (req, res) => {
-    const releaseKey = req.body.key;
+    const { key, state } = req.body;
     const clientIP = getClientIP(req);
 
     await connectMongo();
-    const release = await MusicData.findOne({ key: releaseKey });
 
+    const release = await MusicData.findOne({ key });
     if (!release) throw new Error("Error while updating likes. Key not found!");
 
     const { isMatch, index } = await release.compareLike(clientIP);
 
-    isMatch ? await release.removeLike(index) : await release.addLike(clientIP);
-
-    const likesCounter = await release.countLikes();
+    // if the states in the browser and db are different
+    if (state !== isMatch) {
+      if (state) {
+        await release.addLike(clientIP);
+      } else {
+        await release.removeLike(index);
+      }
+    }
 
     res.status(200).json({
-      key: releaseKey,
-      likesCounter,
+      key,
       client: {
         ip: clientIP,
-        likesRelease: !isMatch,
+        likesRelease: state,
       },
     });
   });

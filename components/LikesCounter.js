@@ -1,64 +1,95 @@
-import fetchLikes from "../hooks/fetchLikes";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
+import { SITE_DOMAIN } from "../config";
 import ClientOnly from "./ClientOnly";
 import Spinner from "./Spinner";
 import Error from "./Error";
 import Icon from "./Icon";
 
+// only update the db data on unmount
+
 const LikesCounter = ({ releaseKey }) => {
   const [btnState, setBtnState] = useState(null);
   const [likesCounter, setLikesCounter] = useState(null);
-  const [fetchMethod, setFetchMethod] = useState("POST");
+  const [isLoading, setIsLoading] = useState(false);
+  const [isError, setIsError] = useState(false);
 
-  const { data, isLoading, isError } = fetchLikes(fetchMethod, releaseKey);
+  const btnStateRef = useRef(btnState);
 
-  // on mount, and when new data is saved to db,
-  // update/validate our local variables
+  const fetchLikes = async (releaseKey) => {
+    setIsLoading(true);
+    try {
+      const res = await fetch(`${SITE_DOMAIN}/api/likes`, {
+        method: "POST",
+        body: JSON.stringify({ key: releaseKey }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      const data = await res.json();
+
+      setLikesCounter(data.likesCounter);
+      setBtnState(data.client.likesRelease);
+    } catch (error) {
+      console.log(error);
+      setIsError(true);
+    }
+    setIsLoading(false);
+  };
+
+  const updateLikes = async (btnState, releaseKey) => {
+    try {
+      await fetch(`${SITE_DOMAIN}/api/likes`, {
+        method: "PATCH",
+        body: JSON.stringify({ key: releaseKey, state: btnState }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  // this keeps track of the btnState to use in onmount function updateLikes.
   useEffect(() => {
-    if (isLoading || isError) return;
+    btnStateRef.current = btnState;
+  }, [btnState]);
 
-    setLikesCounter(data.likesCounter);
-    setBtnState(data.client.likesRelease);
-  }, [data, isLoading, isError]);
+  useEffect(() => {
+    // on mount
+    // get the likesCounter state from db
+    fetchLikes(releaseKey);
+    // on unmount, update the likesCounter in the db with the browser state
+    return () => updateLikes(btnStateRef.current, releaseKey);
+  }, [releaseKey]);
 
-  // set local state first for a quick UI
   const handleClick = async (event) => {
     setLikesCounter((prevState) => (btnState ? prevState - 1 : prevState + 1));
     setBtnState((prevState) => !prevState);
-
-    // update the likes counter in the DB
-    setFetchMethod("PATCH");
   };
-
-  if (isError)
-    return (
-      <ClientOnly className="flex items-center space-x-1">
-        <Error />
-      </ClientOnly>
-    );
-
-  // I only want the spinner on mount when the intial values are set
-  if (!likesCounter && btnState === null)
-    return (
-      <ClientOnly className="flex items-center space-x-1">
-        <Spinner />
-      </ClientOnly>
-    );
 
   return (
     <ClientOnly className="flex items-center space-x-1">
-      <button
-        disabled={isLoading || isError}
-        aria-label="Likes button"
-        className="cursor-pointer hover:scale-105"
-        onClick={handleClick}
-      >
-        <Icon
-          id="heart"
-          iconSize={`text-2xl ${btnState ? "text-red-500" : null}`}
-        />
-      </button>
-      <p className="m-0 text-size-small">{likesCounter}</p>
+      {isError ? (
+        <Error />
+      ) : isLoading ? (
+        <Spinner />
+      ) : (
+        <>
+          <button
+            disabled={isLoading || isError}
+            aria-label="Likes button"
+            className="cursor-pointer hover:scale-105"
+            onClick={handleClick}
+          >
+            <Icon
+              id="heart"
+              iconSize={`text-2xl ${btnState ? "text-red-500" : null}`}
+            />
+          </button>
+          <p className="m-0 text-size-small">{likesCounter}</p>
+        </>
+      )}
     </ClientOnly>
   );
 };
