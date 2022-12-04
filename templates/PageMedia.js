@@ -1,30 +1,16 @@
-import PageMediaGridItem from "../components/PageMediaGridItem";
+import PageMediaGridItemMusic from "../components/PageMediaGridItemMusic";
+import PageMediaGridItemVideo from "../components/PageMediaGridItemVideo";
 import PageMediaGrid from "../components/PageMediaGrid";
-import { useEffect, useState } from "react";
 
-const PageMedia = ({ data, tab }) => {
-  const [maxGridCols, setMaxGridCols] = useState(3);
-
-  useEffect(() => {
-    if (tab === "music") {
-      setMaxGridCols(3);
-    }
-    if (tab === "video") {
-      setMaxGridCols(2);
-    }
-  }, [tab]);
-
-  return (
-    <PageMediaGrid maxGridCols={maxGridCols}>
-      {data.map((item) => {
-        if (item.type === tab) {
-          return (
-            <PageMediaGridItem key={item.key} item={item} type={item.type} />
-          );
-        }
-      })}
-    </PageMediaGrid>
-  );
-};
+const PageMedia = ({ data, tab }) => (
+  <PageMediaGrid maxGridCols={tab === "music" ? 3 : tab === "video" ? 2 : 3}>
+    {data.map((item) => {
+      if (tab === "music" && item.type === "music")
+        return <PageMediaGridItemMusic key={item.key} item={item} />;
+      if (tab === "video" && item.type === "video")
+        return <PageMediaGridItemVideo key={item.key} item={item} />;
+    })}
+  </PageMediaGrid>
+);
 
 export default PageMedia;
