@@ -19,8 +19,7 @@ const PageMediaGridItemMusic = ({ item }) => {
           aria-label={`${item.title} Music item`}
           onKeyPress={handleKeyPress}
           role="button"
-          tabIndex="0"
-        >
+          tabIndex="0">
           <Image
             src={`/img/${item.key}.png`}
             alt={`${item.title} album cover`}

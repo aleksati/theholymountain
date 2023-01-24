@@ -5,7 +5,7 @@ import PageMediaGrid from "../components/PageMediaGrid";
 const PageMedia = ({ data, tab }) => (
   <PageMediaGrid maxGridCols={tab === "music" ? 3 : tab === "video" ? 2 : 3}>
     {data.map((item) => {
-      if (tab === "music" && item.type === "music")
+      if (tab === "music" && item.type === "music" && item.key !== "awake")
         return <PageMediaGridItemMusic key={item.key} item={item} />;
       if (tab === "video" && item.type === "video")
         return <PageMediaGridItemVideo key={item.key} item={item} />;
