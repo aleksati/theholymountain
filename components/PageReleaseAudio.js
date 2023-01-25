@@ -5,11 +5,12 @@ const PageReleaseAudio = ({ item }) => {
     return (
       <div className="pt-2 pb-2">
         <iframe
-          className="h-20 rounded-md xl:h-52"
-          src={item.spotifyurl}
           width="100%"
-          height="260px"
-        ></iframe>
+          height="152"
+          frameborder="0"
+          allowtransparency="true"
+          className="rounded-2xl"
+          src={item.spotifyurl}></iframe>
       </div>
     );
   }

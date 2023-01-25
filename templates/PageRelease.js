@@ -15,8 +15,7 @@ const PageRelease = ({ item }) => {
   return (
     <div
       className="grid grid-cols-1 gap-4 p-4 md:grid-cols-2 md:space-y-0"
-      aria-label={`${item.title} page`}
-    >
+      aria-label={`${item.title} page`}>
       <div className="order-1 col-span-1">
         <Slideshow imgSlugs={item.slideshow} />
       </div>
