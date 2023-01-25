@@ -13,13 +13,6 @@
     font-weight: 300;
     height: 100%;
   }
-
-  iframe {
-    background-color: transparent !important;
-  }
-
-  /* add iframe here : background-color: transparent !important; */
-  /* and "allow transparancysomething="true" */
 }
 
 /* compensate for our scrollLock hook. Is applied to Nav*/

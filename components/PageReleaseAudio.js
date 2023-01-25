@@ -7,7 +7,6 @@ const PageReleaseAudio = ({ item }) => {
         <iframe
           width="100%"
           height="152"
-          frameborder="0"
           allowtransparency="true"
           className="rounded-2xl"
           src={item.spotifyurl}></iframe>
