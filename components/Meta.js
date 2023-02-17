@@ -1,5 +1,4 @@
 import Head from "next/head";
-import { SITE_DOMAIN } from "../config";
 
 const Meta = ({ title, keywords, description }) => {
   return (
