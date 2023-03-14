@@ -18,12 +18,12 @@ const properties = {
   defaultIndex: 1,
   nextArrow: (
     <button className="text-primary-dark" aria-label="next slideshow image">
-      <Icon id="nextArrow" iconSize={"text-4xl md:text-4xl"} />
+      <Icon id="nextArrow" iconSize={"text-2xl"} />
     </button>
   ),
   prevArrow: (
     <button className="text-primary-dark" aria-label="previous slideshow image">
-      <Icon id="prevArrow" iconSize={"text-4xl md:text-4xl"} />
+      <Icon id="prevArrow" iconSize={"text-2xl"} />
     </button>
   ),
 };
