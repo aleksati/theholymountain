@@ -4,9 +4,10 @@ import getEnvVar from "../functions/getEnvVar";
 import ModalTrigger from "./ModalTrigger";
 import ClientOnly from "./ClientOnly";
 import ModalShop from "./ModalShop";
-import Spinner from "./Spinner";
+// import Spinner from "./Spinner";
 import Modal from "./Modal";
-import Error from "./Error";
+import Icon from "./Icon";
+// import Error from "./Error";
 
 const shopModalProps = {
   iconId: "shop",
@@ -17,21 +18,23 @@ const shopModalProps = {
 };
 
 const Shop = ({ item }) => {
+  if (item.category.toLowerCase() === "single") return <Icon id="audio" />;
+
   const [stripeKey, setStripeKey] = useState();
-  const [stripeIsLoading, setStripeIsLoading] = useState(false);
-  const [stripeIsError, setStripeIsError] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [isError, setIsError] = useState(false);
 
   const [modalIsShown, setModalIsShown] = useState(false);
   const modalTriggerRef = useRef();
 
   const getPubKey = useCallback(async () => {
-    setStripeIsLoading(true);
+    setIsLoading(true);
     try {
       const { STRIPE_PUBLISHABLE_KEY } = await getEnvVar();
       setStripeKey(STRIPE_PUBLISHABLE_KEY);
-      setStripeIsLoading(false);
+      setIsLoading(false);
     } catch (error) {
-      setStripeIsError(true);
+      setIsError(true);
       console.log(error.message);
     }
   }, []);
@@ -42,11 +45,7 @@ const Shop = ({ item }) => {
 
   return (
     <ClientOnly>
-      {stripeIsError ? (
-        <Error />
-      ) : stripeIsLoading ? (
-        <Spinner />
-      ) : (
+      {isError ? null : isLoading ? null : (
         <>
           {modalIsShown ? (
             <Modal

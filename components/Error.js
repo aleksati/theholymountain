@@ -10,7 +10,7 @@ const Error = () => (
       width="25%"
       height="25%"
     /> */}
-    <p className="text-size-small">error...</p>
+    <p className="text-size-small">error occured...</p>
   </div>
 );
 

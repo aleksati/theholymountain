@@ -5,7 +5,7 @@ import Spinner from "./Spinner";
 import Error from "./Error";
 import Icon from "./Icon";
 
-// only update the db data on unmount
+// Updates the db likes counter data on unmount
 
 const LikesCounter = ({ releaseKey }) => {
   const [btnState, setBtnState] = useState(null);
@@ -77,7 +77,7 @@ const LikesCounter = ({ releaseKey }) => {
       ) : (
         <>
           <button
-            disabled={isLoading || isError}
+            // disabled={isLoading || isError}
             aria-label="Likes button"
             className="cursor-pointer hover:scale-105"
             onClick={handleClick}

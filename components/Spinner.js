@@ -10,7 +10,7 @@ const Spinner = () => (
       width="30%"
       height="30%"
     /> */}
-    <p className="text-size-small">loading...</p>
+    {/* <p className="text-size-small text-secondary">loading...</p> */}
   </div>
 );
 

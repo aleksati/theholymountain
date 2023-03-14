@@ -1,9 +1,16 @@
-import Icon from "./Icon";
+// import { useState } from "react";
+import LikesCounter from "./LikesCounter";
+// import Spinner from "./Spinner";
+// import Error from "./Error";
 import Shop from "./Shop";
 
 const PageReleaseAction = ({ item }) => {
-  if (item.category.toLowerCase() === "single") return <Icon id="audio" />;
-  return <Shop item={item} />;
+  return (
+    <div className="flex space-x-2 ">
+      <Shop item={item} />
+      <LikesCounter releaseKey={item.key} />
+    </div>
+  );
 };
 
 export default PageReleaseAction;
