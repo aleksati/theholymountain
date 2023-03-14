@@ -1,16 +1,16 @@
-import ControlsAudioPlayer from "./ControlsAudioPlayer";
 import getClockValue from "../functions/getClockValue";
-import getCurrTheme from "../functions/getCurrTheme";
 import { useRef, useEffect, useState } from "react";
 import Spinner from "./Spinner";
+import Button from "./Button";
+import Icon from "./Icon";
 
 const WaveFormOptions = (ref) => ({
   container: ref,
   waveColor: "rgb(33, 31, 36)", // "#211F24",
   progressColor: "rgb(239, 68, 68)", // "#300415",
   cursorColor: "rgb(239, 68, 68)", // "#300415",
-  cursorWidth: 3,
-  barWidth: 6,
+  cursorWidth: 1,
+  barWidth: 4,
   barRadius: 3,
   responsive: true,
   height: 100,
@@ -26,8 +26,8 @@ const AudioPlayer = ({ src }) => {
   const waveFormRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [audioIsMounted, setAudioIsMounted] = useState(false);
-  const [stateTheme, setStateTheme] = useState(null);
-  const { currTheme } = getCurrTheme();
+  // const [stateTheme, setStateTheme] = useState(null);
+  // const { currTheme } = getCurrTheme();
 
   const create = async () => {
     try {
@@ -63,10 +63,10 @@ const AudioPlayer = ({ src }) => {
   // we need a seperate variable for the theme here because,
   // we dont want it set the waveColors etc, every time we reload.
   // instead, only when the theme actually changes.
-  useEffect(() => {
-    if (currTheme === stateTheme) return;
-    setStateTheme(currTheme);
-  }, [currTheme, stateTheme]);
+  // useEffect(() => {
+  //   if (currTheme === stateTheme) return;
+  //   setStateTheme(currTheme);
+  // }, [currTheme, stateTheme]);
 
   // set waveform colors based on theme
   //   useEffect(() => {
@@ -92,14 +92,17 @@ const AudioPlayer = ({ src }) => {
   return (
     <div className="flex items-center justify-start">
       {audioIsMounted ? (
-        <ControlsAudioPlayer
-          onPlayPause={handlePlayPause}
-          isPlaying={isPlaying}
-          timerId="audiotime"
-        />
+        <div className="flex items-center justify-start">
+          <Button onClick={handlePlayPause}>
+            <Icon id={isPlaying ? "pause" : "play"} />
+          </Button>
+          <div className="w-8 mr-6 text-size-small">
+            <p id="audiotime">00:00</p>
+          </div>
+        </div>
       ) : (
         <div className="flex text-xs items-center space-x-2">
-          <Spinner /> <p>Loading audio...</p>
+          <Spinner />
         </div>
       )}
       <div className="relative w-2/4">
