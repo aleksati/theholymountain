@@ -4,10 +4,9 @@ import getEnvVar from "../functions/getEnvVar";
 import ModalTrigger from "./ModalTrigger";
 import ClientOnly from "./ClientOnly";
 import ModalShop from "./ModalShop";
-// import Spinner from "./Spinner";
+import Spinner from "./Spinner";
 import Modal from "./Modal";
-import Icon from "./Icon";
-// import Error from "./Error";
+import Error from "./Error";
 
 const shopModalProps = {
   iconId: "shop",
@@ -18,8 +17,6 @@ const shopModalProps = {
 };
 
 const Shop = ({ item }) => {
-  if (item.category.toLowerCase() === "single") return <Icon id="audio" />;
-
   const [stripeKey, setStripeKey] = useState();
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
@@ -45,7 +42,11 @@ const Shop = ({ item }) => {
 
   return (
     <ClientOnly>
-      {isError ? null : isLoading ? null : (
+      {isError ? (
+        <Error />
+      ) : isLoading ? (
+        <Spinner />
+      ) : (
         <>
           {modalIsShown ? (
             <Modal

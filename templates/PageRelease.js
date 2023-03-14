@@ -1,6 +1,5 @@
-import PageReleaseAction from "../components/PageReleaseAction";
+import PageReleaseActions from "../components/PageReleaseActions";
 import PageReleaseAudio from "../components/PageReleaseAudio";
-import LikesCounter from "../components/LikesCounter";
 import Slideshow from "../components/Slideshow";
 import { useEffect } from "react";
 
@@ -31,7 +30,7 @@ const PageRelease = ({ item }) => {
                 {item.category} | {item.year}
               </p>
             </div>
-            <PageReleaseAction item={item} />
+            <PageReleaseActions item={item} />
           </div>
           <div className="space-y-2">
             <p>{item.formatText}</p>
