@@ -26,11 +26,7 @@ const ModalAbout = ({ label }) => {
         <p>Aleksander Tidemann - Drums / Synthesizer</p>
       </div>
       <div>
-        <SoMeBar
-          iconSize="text-2xl sm:text-4xl"
-          exclude={["nothing"]}
-          className="mt-2"
-        />
+        <SoMeBar iconSize="text-2xl" exclude={["nothing"]} className="mt-2" />
       </div>
     </div>
   );
