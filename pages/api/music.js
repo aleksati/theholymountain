@@ -115,68 +115,17 @@ const musicPutValidator = initValidation([
     .notEmpty()
     .withMessage("key is empty"),
   oneOf([
-    check("title")
-      .exists()
-      .withMessage("Title is missing")
-      .trim()
-      .notEmpty()
-      .withMessage("Title is empty")
-      .isLength({ min: 3 })
-      .withMessage("Title must be over 3 characters"),
-    check("category")
-      .exists()
-      .withMessage("Category is missing")
-      .trim()
-      .notEmpty()
-      .withMessage("category is empty")
-      .isLength({ min: 3 })
-      .withMessage("Category must be over 3 characters"),
-    check("year")
-      .exists()
-      .withMessage("Year is missing")
-      .notEmpty()
-      .withMessage("Year is empty")
-      .isLength({ min: 3 })
-      .withMessage("Year must be over 3 characters"),
-    check("description")
-      .exists()
-      .withMessage("Description is missing")
-      .notEmpty()
-      .withMessage("Description is empty")
-      .isLength({ min: 3 })
-      .withMessage("Description must be over 3 characters"),
-    check("previewurl")
-      .exists()
-      .withMessage("previewurl is missing")
-      .notEmpty()
-      .withMessage("previewurl is empty"),
-    check("formatText")
-      .exists()
-      .withMessage("FormatText is missing")
-      .notEmpty()
-      .withMessage("FormatText is empty")
-      .isLength({ min: 3 })
-      .withMessage("FormatText must be over 3 characters"),
-    check("price")
-      .exists()
-      .withMessage("Price is missing")
-      .notEmpty()
-      .withMessage("Price is empty"),
-    check("formats")
-      .exists()
-      .withMessage("Formats is missing")
-      .isArray({ min: 1 })
-      .withMessage("Formats must be array"),
-    check("slideshow")
-      .exists()
-      .withMessage("Slideshow is missing")
-      .isArray({ min: 1 })
-      .withMessage("Slideshow must be array"),
-    check("credits")
-      .exists()
-      .withMessage("Credits is missing")
-      .isArray({ min: 1 })
-      .withMessage("Credits must be array"),
+    check("title").exists().withMessage("Title is required"),
+    check("category").exists().withMessage("Category is missing"),
+    check("year").exists().withMessage("Year is missing"),
+    check("description").exists().withMessage("Description is missing"),
+    check("previewurl").exists().withMessage("previewurl is missing"),
+    check("spotifyurl").exists().withMessage("spotifyurl is missing"),
+    check("formatText").exists().withMessage("FormatText is missing"),
+    check("price").exists().withMessage("Price is missing"),
+    check("formats").exists().withMessage("Formats is missing"),
+    check("slideshow").exists().withMessage("Slideshow is missing"),
+    check("credits").exists().withMessage("Credits is missing"),
   ]),
 ]);
 
