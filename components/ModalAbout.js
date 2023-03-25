@@ -15,9 +15,9 @@ const ModalAbout = ({ label }) => {
       />
       <div>
         <p className="mb-2 text-primary-light dark:text-primary-dark text-size-regular">
-          An avant-garde pop group from Oslo, Norway with accordion,
-          synthesizer, drums, and vocals. We play hypnotic, dark and atmospheric
-          music.
+          A captivating avant-garde pop trio hailing from Oslo. The band blends
+          accordion, synthesizer, drums, and vocals to create hypnotic,
+          atmospheric compositions that exude a dark, almost mystical quality.
         </p>
       </div>
       <div className="text-size-small text-secondary">
