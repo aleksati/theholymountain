@@ -79,11 +79,12 @@ const NavMenuMobile = ({ aboutModalProps, contactModalProps }) => {
         </>
       ) : null}
       <ButtonIconAndText
-        tabOrder="3"
+        onClick={() => setMenuIsActive((prevState) => !prevState)}
+        iconId={menuIsActive ? "x" : "threedots"}
         label="show and close nav button"
         pressed={menuIsActive}
-        iconId={menuIsActive ? "x" : "threedots"}
-        onClick={() => setMenuIsActive((prevState) => !prevState)}
+        tabOrder="3"
+        iconSize="text-2xl"
       />
     </div>
   );
