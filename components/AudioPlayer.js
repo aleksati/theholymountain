@@ -90,13 +90,13 @@ const AudioPlayer = ({ src }) => {
   };
 
   return (
-    <div className="flex items-center justify-start">
+    <div className="flex items-center justify-start space-x-6">
       {audioIsMounted ? (
-        <div className="flex items-center justify-start">
+        <div className="flex items-center justify-start space-x-2">
           <Button onClick={handlePlayPause}>
             <Icon id={isPlaying ? "pause" : "play"} />
           </Button>
-          <div className="w-8 mr-6 text-size-small">
+          <div className="w-8 text-size-small">
             <p id="audiotime">00:00</p>
           </div>
         </div>

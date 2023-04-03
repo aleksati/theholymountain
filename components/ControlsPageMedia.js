@@ -1,4 +1,4 @@
-const ControlsPageMedia = ({ onTabClick, tabs, activeTab, menuIsActive }) => {
+const ControlsPageMedia = ({ onTabClick, tabs, activeTab }) => {
   const onKeyDown = (event, tab) => {
     if (event.keyCode === 13) {
       onTabClick(tab);
@@ -6,13 +6,7 @@ const ControlsPageMedia = ({ onTabClick, tabs, activeTab, menuIsActive }) => {
   };
 
   return (
-    <div
-      className={`space-x-4 text-2xl ${
-        menuIsActive
-          ? "text-secondary text-opacity-50"
-          : "text-primary-light dark:text-primary-dark"
-      }`}
-    >
+    <div className="space-x-4 text-2xl text-primary-light dark:text-primary-dark">
       {tabs.map((tab, index) => {
         let underline = activeTab === tab ? "underline" : "";
         return (
@@ -21,8 +15,7 @@ const ControlsPageMedia = ({ onTabClick, tabs, activeTab, menuIsActive }) => {
             onClick={() => onTabClick(tab)}
             onKeyDown={(event) => onKeyDown(event, tab)}
             className={"hover:underline cursor-pointer " + underline}
-            tabIndex={index + 1}
-          >
+            tabIndex={index + 1}>
             {tab}
           </a>
         );

@@ -27,12 +27,11 @@ const Button = React.forwardRef(
         ref={ref}
         onClick={onClick}
         onKeyDown={onKeyDown}
-        className={`p-3 flex items-center bg-primary-light dark:bg-primary-dark ${color} rounded-full transistion ease-in-out duration-200 ${className}`}
+        className={`p-1 flex items-center bg-primary-light dark:bg-primary-dark ${color} rounded-full transistion ease-in-out duration-200 ${className}`}
         type={btnType ? btnType : "button"}
         aria-label={tooltipMessage ? tooltipMessage : "button"}
         tabIndex={tabOrder}
-        {...props}
-      >
+        {...props}>
         {children}
       </button>
     );

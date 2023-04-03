@@ -74,8 +74,7 @@ const ModalShop = ({ item, publishableKey }) => {
                 quantity: prevItem.quantity > 0 ? prevItem.quantity - 1 : 0,
               };
             });
-          }}
-        >
+          }}>
           -
         </button>
         <input
@@ -99,8 +98,7 @@ const ModalShop = ({ item, publishableKey }) => {
                 quantity: prevItem.quantity + 1,
               };
             });
-          }}
-        >
+          }}>
           +
         </button>
       </div>
@@ -110,8 +108,7 @@ const ModalShop = ({ item, publishableKey }) => {
       <button
         className={`p-2 disabled:cursor-not-allowed rounded flex items-center text-primary-dark bg-button-filter-light w-full mt-2 justify-center transistion ease-in-out duration-200`}
         disabled={shopItem.quantity === 0 || isError || isLoading}
-        onClick={createCheckoutSession}
-      >
+        onClick={createCheckoutSession}>
         {isError ? "ERROR" : isLoading ? "Redirecting..." : "To checkout"}
       </button>
     </div>

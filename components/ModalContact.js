@@ -67,8 +67,7 @@ const ModalContact = () => {
       <form
         onSubmit={(e) => handleSubmit(e)}
         className="flex flex-col"
-        aria-label="Contact form"
-      >
+        aria-label="Contact form">
         <h1 className="overflow-hidden font-normal text-center text-clip text-size-header">
           CONTACT
         </h1>
@@ -137,8 +136,7 @@ const ModalContact = () => {
               className="block w-full mt-1 border-gray-300 rounded-md shadow-sm text-primary-light focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
               rows="3"
               placeholder="Elaborate..."
-              required
-            ></textarea>
+              required></textarea>
           </label>
           {!isSubmit ? (
             isError ? (
@@ -146,13 +144,19 @@ const ModalContact = () => {
                 <p>Sorry, something&apos;s not right..</p>
               </div>
             ) : (
-              <Button className="place-content-center" btnType="submit">
+              // <Button className="place-content-center" btnType="submit">
+              /* </Button> */
+              <>
                 {!isLoading ? (
-                  <input tabIndex="-1" type="submit" />
+                  <input
+                    tabIndex="-1"
+                    type="submit"
+                    className="p-2 mx-36 hover:cursor-pointer rounded text-primary-dark bg-button-filter-light"
+                  />
                 ) : (
                   <Spinner />
                 )}
-              </Button>
+              </>
             )
           ) : (
             <div className="flex place-content-center">
