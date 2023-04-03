@@ -55,22 +55,19 @@ const Modal = ({
           aria-modal="true"
           onClick={handleClickOutside}
           onKeyDown={handleKeyDown}
-          className="fixed inset-0 z-50 flex items-center justify-center p-2 backdrop-brightness-50"
-        >
+          className="fixed inset-0 z-50 flex items-center justify-center p-2 backdrop-brightness-50">
           {/* The Modal Card*/}
           <div
             // border border-secondary-skin-light dark:border-secondary-skin-dark
             className={`max-h-full m-2 overflow-auto container mx-auto bg-primary-light dark:bg-primary-dark shadow-md p-4 ${modalMaxSize}`}
-            ref={modalRef}
-          >
+            ref={modalRef}>
             {/* The close button at the top right */}
             <div className="flex place-content-end">
               <button
                 ref={closeBtnRef}
                 aria-label="Close Modal"
-                onClick={closeModal}
-              >
-                <Icon id="x" iconSize="text-3xl" />
+                onClick={closeModal}>
+                <Icon id="x" iconSize="text-2xl" />
               </button>
             </div>
 

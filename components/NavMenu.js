@@ -14,7 +14,7 @@ const NavMenu = ({ aboutModalProps, contactModalProps }) => {
 
   return (
     <div
-      className="flex flex-grow space-x-4 items-center place-content-end"
+      className="flex flex-grow space-x-4 px-2 items-center place-content-end"
       ref={menuRef}>
       {aboutIsShown ? (
         <Modal

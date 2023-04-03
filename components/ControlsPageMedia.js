@@ -6,7 +6,7 @@ const ControlsPageMedia = ({ onTabClick, tabs, activeTab }) => {
   };
 
   return (
-    <div className="space-x-4 text-2xl text-primary-light dark:text-primary-dark">
+    <div className="space-x-4 text-xl md:text-2xl text-primary-light dark:text-primary-dark">
       {tabs.map((tab, index) => {
         let underline = activeTab === tab ? "underline" : "";
         return (

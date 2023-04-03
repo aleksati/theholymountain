@@ -45,7 +45,7 @@ const Nav = ({
             <ButtonTo path="/" icon="prevArrow" text="home" />
           ) : null}
         </div>
-        <div className="flex items-center justify-center w-100 pz4">
+        <div className="flex items-center justify-center w-100">
           {showMediaTabControls ? (
             <ControlsPageMedia
               tabs={tabs}

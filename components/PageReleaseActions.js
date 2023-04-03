@@ -6,7 +6,7 @@ import Icon from "./Icon";
 
 const PageReleaseActions = ({ item }) => {
   return (
-    <div className="flex space-x-4 items-center">
+    <div className="flex space-x-2 items-center">
       {item.category.toLowerCase() === "single" ? (
         <Icon id="audio" />
       ) : (

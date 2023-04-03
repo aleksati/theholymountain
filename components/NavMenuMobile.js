@@ -41,7 +41,7 @@ const NavMenuMobile = ({ aboutModalProps, contactModalProps }) => {
 
   return (
     <div
-      className="flex flex-grow space-x-4 items-center place-content-end"
+      className="flex flex-grow space-x-4 px-2 items-center place-content-end"
       ref={menuRef}>
       {menuIsActive ? (
         <>
@@ -84,7 +84,6 @@ const NavMenuMobile = ({ aboutModalProps, contactModalProps }) => {
         label="show and close nav button"
         pressed={menuIsActive}
         tabOrder="3"
-        iconSize="text-xl"
       />
     </div>
   );
