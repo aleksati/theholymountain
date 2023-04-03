@@ -84,7 +84,7 @@ const NavMenuMobile = ({ aboutModalProps, contactModalProps }) => {
         label="show and close nav button"
         pressed={menuIsActive}
         tabOrder="3"
-        iconSize="text-2xl"
+        iconSize="text-xl"
       />
     </div>
   );
