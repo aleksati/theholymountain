@@ -42,16 +42,27 @@ const NavMenuMobile = ({ aboutModalProps, contactModalProps }) => {
   return (
     <div
       className="flex flex-grow space-x-4 px-2 items-center place-content-end"
-      ref={menuRef}>
+      ref={menuRef}
+    >
+      <ButtonIconAndText
+        onClick={() => setMenuIsActive((prevState) => !prevState)}
+        iconId={menuIsActive ? "x" : "threedots"}
+        label="show and close nav button"
+        pressed={menuIsActive}
+        tabOrder="3"
+      />
       {menuIsActive ? (
-        <>
+        // for menu dropdown with text
+        // bg-primary-light dark:bg-primary-dark border border-secondary rounded-md
+        <div className="absolute z-10 flex flex-col mt-44 space-y-2">
           {aboutIsShown ? (
             <Modal
               key="About"
               modalMaxSize={aboutModalProps.modalMaxSize}
               modalIsShown={aboutIsShown}
               modalTriggerRef={aboutTriggerRef}
-              setModalIsShown={setAboutIsShown}>
+              setModalIsShown={setAboutIsShown}
+            >
               <ModalAbout />
             </Modal>
           ) : null}
@@ -66,7 +77,8 @@ const NavMenuMobile = ({ aboutModalProps, contactModalProps }) => {
               modalMaxSize={contactModalProps.modalMaxSize}
               modalIsShown={contactIsShown}
               modalTriggerRef={contactTriggerRef}
-              setModalIsShown={setContactIsShown}>
+              setModalIsShown={setContactIsShown}
+            >
               <ModalContact />
             </Modal>
           ) : null}
@@ -76,15 +88,8 @@ const NavMenuMobile = ({ aboutModalProps, contactModalProps }) => {
             onModalTrigger={() => setContactIsShown(true)}
           />
           <ButtonTheme tabOrder="4" />
-        </>
+        </div>
       ) : null}
-      <ButtonIconAndText
-        onClick={() => setMenuIsActive((prevState) => !prevState)}
-        iconId={menuIsActive ? "x" : "threedots"}
-        label="show and close nav button"
-        pressed={menuIsActive}
-        tabOrder="3"
-      />
     </div>
   );
 };

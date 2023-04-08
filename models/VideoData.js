@@ -6,6 +6,7 @@ const schema = new Schema({
   category: String,
   year: String,
   url: String,
+  type: String,
 });
 
 const VideoData = models.videodata || model("videodata", schema);

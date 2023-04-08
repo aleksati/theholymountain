@@ -24,7 +24,8 @@ const LayoutPage = ({
     <div
       className={`min-h-screen container mx-auto pb-12 ${className}`}
       id={pageId}
-      ref={ref}>
+      ref={ref}
+    >
       <Meta {...pageMeta} />
       <DynNav
         showMediaTabControls={showMediaTabControls}

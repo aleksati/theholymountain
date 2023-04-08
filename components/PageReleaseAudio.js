@@ -9,7 +9,8 @@ const PageReleaseAudio = ({ item }) => {
           height="152"
           allowtransparency="true"
           className="rounded-2xl"
-          src={item.spotifyurl}></iframe>
+          src={item.spotifyurl}
+        ></iframe>
       </div>
     );
   }

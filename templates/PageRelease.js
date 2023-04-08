@@ -25,7 +25,7 @@ const PageRelease = ({ item }) => {
             <div className="font-bold leading-8 text-size-header">
               <h1>{item.title.toUpperCase()}</h1>
             </div>
-            <div className="flex text-secondary">
+            <div className="text-secondary">
               <p>
                 {item.category} | {item.year}
               </p>

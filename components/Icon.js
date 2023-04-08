@@ -10,7 +10,7 @@ import {
 } from "react-icons/bs";
 import { RiQuestionMark } from "react-icons/ri";
 import { RiCloseLine } from "react-icons/ri";
-import { FaBandcamp } from "react-icons/fa";
+import { FaBandcamp, FaEthereum } from "react-icons/fa";
 import { BsFacebook } from "react-icons/bs";
 import { AiFillYoutube } from "react-icons/ai";
 import { RiInstagramFill } from "react-icons/ri";
@@ -18,7 +18,7 @@ import { BsSpotify } from "react-icons/bs";
 import { TbWaveSine } from "react-icons/tb";
 import { GrSoundcloud } from "react-icons/gr";
 import { AiOutlineShoppingCart } from "react-icons/ai";
-import { FiPlay } from "react-icons/fi";
+import { FiPlay, FiCopy } from "react-icons/fi";
 import { AiOutlinePause } from "react-icons/ai";
 import { GiMagnifyingGlass } from "react-icons/gi";
 import { AiOutlineHeart, AiOutlineMail } from "react-icons/ai";
@@ -62,7 +62,11 @@ const icons = {
   heart: (s) => <AiOutlineHeart className={s} />,
   issue: (s) => <MdOutlineReportProblem className={s} />,
   check: (s) => <AiOutlineCheck className={s} />,
-  threedots: (s) => <HiDotsHorizontal className={s} />,
+  threedots: (s) => (
+    <HiDotsHorizontal className={s} style={{ transform: "rotate(-90deg)" }} />
+  ),
+  copy: (s) => <FiCopy className={s} />,
+  eth: (s) => <FaEthereum className={s} />,
 };
 
 const Icon = ({ iconSize, id }) => {

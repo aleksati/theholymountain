@@ -23,7 +23,7 @@ const FourOhFour = () => (
       />
       <TextOverImageFullscreen>
         <Link href="/" passHref>
-          <h1 className="font-bold hover:underline hover:cursor-pointer text-9xl">
+          <h1 className="font-bold text-primary-dark hover:underline hover:cursor-pointer text-9xl">
             Lost?
           </h1>
         </Link>

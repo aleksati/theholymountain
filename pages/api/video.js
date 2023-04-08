@@ -117,6 +117,14 @@ const videoPutValidator = initValidation([
       .withMessage("url is empty")
       .isLength({ min: 3 })
       .withMessage("url must be over 3 characters"),
+    check("type")
+      .exists()
+      .withMessage("Type is missing")
+      .trim()
+      .notEmpty()
+      .withMessage("Type is empty")
+      .equals("video")
+      .withMessage("Type should be music"),
   ]),
 ]);
 

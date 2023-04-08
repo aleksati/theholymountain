@@ -1,4 +1,5 @@
 import LikesCounter from "./LikesCounter";
+import NftButton from "./NftButton";
 import Shop from "./Shop";
 import Icon from "./Icon";
 
@@ -12,6 +13,7 @@ const PageReleaseActions = ({ item }) => {
       ) : (
         <Shop item={item} />
       )}
+      {item.nfturl ? <NftButton url={item.nfturl} /> : null}
       <LikesCounter releaseKey={item.key} />
     </div>
   );

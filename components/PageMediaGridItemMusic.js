@@ -1,9 +1,11 @@
+import { useMouseHover } from "../hooks/useMouseHover";
 import { useRouter } from "next/router";
 import Image from "next/image";
 import Link from "next/link";
 
 const PageMediaGridItemMusic = ({ item }) => {
   const router = useRouter();
+  const [divRef, divHovered] = useMouseHover();
 
   const handleKeyPress = (event) => {
     if (event.key === "Enter") {
@@ -15,11 +17,13 @@ const PageMediaGridItemMusic = ({ item }) => {
     <div className="p-2" aria-label={item.title}>
       <Link href={`/${item.key}`}>
         <div
-          className="relative w-full pb-2 duration-200 ease-in-out cursor-pointer hover:brightness-90 transistion"
+          className="relative w-full pb-2 cursor-pointer"
           aria-label={`${item.title} Music item`}
           onKeyPress={handleKeyPress}
           role="button"
-          tabIndex="0">
+          tabIndex="0"
+          ref={divRef}
+        >
           <Image
             src={`/img/${item.key}.png`}
             alt={`${item.title} album cover`}
@@ -33,7 +37,7 @@ const PageMediaGridItemMusic = ({ item }) => {
         </div>
       </Link>
       <div className="text-center">
-        <p>
+        <p className={divHovered ? "underline decoration-2" : null}>
           <b>{item.title.toUpperCase()}</b>
         </p>
         <p className="text-secondary text-size-small">

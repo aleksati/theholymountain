@@ -67,18 +67,6 @@ const musicPostValidator = initValidation([
     .withMessage("FormatText is empty")
     .isLength({ min: 3 })
     .withMessage("FormatText must be over 3 characters"),
-  check("price")
-    .exists()
-    .withMessage("Price is missing")
-    .notEmpty()
-    .withMessage("Price is empty")
-    .isLength({ min: 2 })
-    .withMessage("Price must be over 2 characters"),
-  check("formats")
-    .exists()
-    .withMessage("Formats is missing")
-    .isArray({ min: 1 })
-    .withMessage("Formats must be array"),
   check("slideshow")
     .exists()
     .withMessage("Slideshow is missing")
@@ -126,6 +114,7 @@ const musicPutValidator = initValidation([
     check("formats").exists().withMessage("Formats is missing"),
     check("slideshow").exists().withMessage("Slideshow is missing"),
     check("credits").exists().withMessage("Credits is missing"),
+    check("nfturl").exists().withMessage("Nfturl is missing"),
   ]),
 ]);
 
