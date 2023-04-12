@@ -7,17 +7,21 @@ import Image from "next/image";
 const ModalAbout = ({ label }) => {
   const { currTheme } = getCurrTheme();
   return (
-    <div className="flex flex-col p-4 space-y-2" aria-label={`${label} dialog`}>
+    <div
+      className="flex text-size-regular flex-col p-4 space-y-2"
+      aria-label={`${label} dialog`}
+    >
       <Image
         src={currTheme === "dark" ? logoWhite : logoBlack}
         alt="band logo"
         placeholder="blur"
       />
       <div>
-        <p className="mb-2 text-primary-light dark:text-primary-dark text-size-regular">
-          A captivating avant-garde pop trio hailing from Oslo. The band blends
-          accordion, synthesizer, drums, and vocals to create hypnotic,
-          atmospheric compositions that exude a dark, almost mystical quality.
+        <p className="mb-2">
+          The Holy Mountain is a groundbreaking avant-garde pop trio from
+          Norway. The band blends accordion, synthesizer, drums, and vocals to
+          create hypnotic, atmospheric compositions that exude a dark, almost
+          mystical quality.
         </p>
       </div>
       <div className="text-size-small text-secondary">
@@ -26,7 +30,7 @@ const ModalAbout = ({ label }) => {
         <p>Aleksander Tidemann - Drums / Synthesizer</p>
       </div>
       <div>
-        <SoMeBar iconSize="text-2xl" exclude={["nothing"]} className="mt-2" />
+        <SoMeBar iconSize="text-3xl" exclude={["bandcamp"]} className="mt-2" />
       </div>
     </div>
   );

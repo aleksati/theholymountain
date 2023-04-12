@@ -3,11 +3,7 @@ import {
   MdOutlineArrowForwardIos,
   MdOutlineArrowBackIosNew,
 } from "react-icons/md";
-import {
-  BsFillSunFill,
-  BsFillMoonFill,
-  BsFillPeopleFill,
-} from "react-icons/bs";
+import { BsFillSunFill, BsFillMoonFill } from "react-icons/bs";
 import { RiQuestionMark } from "react-icons/ri";
 import { RiCloseLine } from "react-icons/ri";
 import { FaBandcamp, FaEthereum } from "react-icons/fa";
