@@ -104,6 +104,7 @@ const musicPutValidator = initValidation([
     .withMessage("key is empty"),
   oneOf([
     check("title").exists().withMessage("Title is required"),
+    check("type").exists().withMessage("Type is required"),
     check("category").exists().withMessage("Category is missing"),
     check("year").exists().withMessage("Year is missing"),
     check("description").exists().withMessage("Description is missing"),

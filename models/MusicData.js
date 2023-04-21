@@ -8,6 +8,7 @@ const reqString = {
 
 const schema = new Schema({
   key: reqString,
+  type: reqString,
   title: reqString,
   year: reqString,
   category: reqString,

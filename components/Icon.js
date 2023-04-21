@@ -3,7 +3,7 @@ import {
   MdOutlineArrowForwardIos,
   MdOutlineArrowBackIosNew,
 } from "react-icons/md";
-import { BsFillSunFill, BsFillMoonFill } from "react-icons/bs";
+import { BsFillSunFill, BsFillMoonFill, BsPersonCircle } from "react-icons/bs";
 import { RiQuestionMark } from "react-icons/ri";
 import { RiCloseLine } from "react-icons/ri";
 import { FaBandcamp, FaEthereum } from "react-icons/fa";
@@ -19,7 +19,7 @@ import { AiOutlinePause } from "react-icons/ai";
 import { GiMagnifyingGlass } from "react-icons/gi";
 import { AiOutlineHeart, AiOutlineMail } from "react-icons/ai";
 import { MdOutlineReportProblem } from "react-icons/md";
-import { AiOutlineCheck } from "react-icons/ai";
+import { AiOutlineCheck, AiOutlineInfoCircle } from "react-icons/ai";
 import { HiDotsHorizontal } from "react-icons/hi";
 
 const defaultSize = "text-md";
@@ -28,7 +28,7 @@ const icons = {
   sun: (s) => <BsFillSunFill className={s} />,
   moon: (s) => <BsFillMoonFill className={s} />,
   audio: (s) => <TbWaveSine className={s} />,
-  about: (s) => <RiQuestionMark className={s} />,
+  about: (s) => <BsPersonCircle className={s} />,
   details: (s) => <GiMagnifyingGlass className={s} />,
   prevArrow: (s) => <MdOutlineArrowBackIosNew className={s} />,
   nextArrow: (s) => <MdOutlineArrowForwardIos className={s} />,
