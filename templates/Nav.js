@@ -44,7 +44,7 @@ const Nav = ({
 
   return (
     <nav aria-label="Navbar" role="toolbar">
-      <div className="container grid grid-cols-3 p-4 pb-0 mx-auto">
+      <div className="grid grid-cols-3 p-4 pb-0 mx-auto">
         <div>
           {showBackButton ? (
             <Link href={"/"}>

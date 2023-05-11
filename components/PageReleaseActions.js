@@ -8,7 +8,7 @@ import Icon from "./Icon";
 const PageReleaseActions = ({ item }) => {
   return (
     <div className="flex space-x-2 items-center">
-      {item.category.toLowerCase() === "single" ? (
+      {item.category.toLowerCase() === "single" || !item.price ? (
         <Icon id="audio" />
       ) : (
         <Shop item={item} />

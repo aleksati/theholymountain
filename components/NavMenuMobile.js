@@ -42,8 +42,7 @@ const NavMenuMobile = ({ aboutModalProps, contactModalProps }) => {
   return (
     <div
       className="flex flex-grow space-x-4 px-2 items-center place-content-end"
-      ref={menuRef}
-    >
+      ref={menuRef}>
       <ButtonIconAndText
         onClick={() => setMenuIsActive((prevState) => !prevState)}
         iconId={menuIsActive ? "x" : "threedots"}
@@ -61,8 +60,7 @@ const NavMenuMobile = ({ aboutModalProps, contactModalProps }) => {
               modalMaxSize={aboutModalProps.modalMaxSize}
               modalIsShown={aboutIsShown}
               modalTriggerRef={aboutTriggerRef}
-              setModalIsShown={setAboutIsShown}
-            >
+              setModalIsShown={setAboutIsShown}>
               <ModalAbout />
             </Modal>
           ) : null}
@@ -77,8 +75,7 @@ const NavMenuMobile = ({ aboutModalProps, contactModalProps }) => {
               modalMaxSize={contactModalProps.modalMaxSize}
               modalIsShown={contactIsShown}
               modalTriggerRef={contactTriggerRef}
-              setModalIsShown={setContactIsShown}
-            >
+              setModalIsShown={setContactIsShown}>
               <ModalContact />
             </Modal>
           ) : null}

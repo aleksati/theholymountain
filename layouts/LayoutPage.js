@@ -21,12 +21,7 @@ const LayoutPage = ({
   const handleTabClick = (event) => setActiveTabs(event);
 
   return (
-    <div
-      className={`min-h-screen container mx-auto pb-12 ${className}`}
-      id={pageId}
-      ref={ref}
-    >
-      <Meta {...pageMeta} />
+    <>
       <DynNav
         showMediaTabControls={showMediaTabControls}
         showBackButton={showBackButton}
@@ -35,9 +30,15 @@ const LayoutPage = ({
         showMenu={showMenu}
         tabs={navTabs}
       />
-      {children(activeTab)}
-      <DynButtonScrollTo targetId={pageId} parentRef={ref} />
-    </div>
+      <Meta {...pageMeta} />
+      <div
+        className={`min-h-screen container mx-auto pb-12 ${className}`}
+        id={pageId}
+        ref={ref}>
+        {children(activeTab)}
+        <DynButtonScrollTo targetId={pageId} parentRef={ref} />
+      </div>
+    </>
   );
 };
 
