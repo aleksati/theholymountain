@@ -9,8 +9,7 @@ const ModalAbout = ({ label }) => {
   return (
     <div
       className="flex text-size-regular flex-col p-4 space-y-2"
-      aria-label={`${label} dialog`}
-    >
+      aria-label={`${label} dialog`}>
       <Image
         src={currTheme === "dark" ? logoWhite : logoBlack}
         alt="band logo"
@@ -19,9 +18,8 @@ const ModalAbout = ({ label }) => {
       <div>
         <p className="mb-2">
           The Holy Mountain is a groundbreaking avant-garde pop trio from
-          Norway. The band blends accordion, synthesizer, drums, and vocals to
-          create hypnotic, atmospheric compositions that exude a dark, almost
-          mystical quality.
+          Norway, blending accordion, synthesizer, drums, and vocals to create
+          hypnotic compositions with dark and mystical qualities.
         </p>
       </div>
       <div className="text-size-small text-secondary">
