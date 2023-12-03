@@ -17,9 +17,10 @@ const ModalAbout = ({ label }) => {
       />
       <div>
         <p className="mb-2">
-          The Holy Mountain is a groundbreaking avant-garde pop trio from
-          Norway, blending accordion, synthesizer, drums, and vocals to create
-          hypnotic compositions with dark and mystical qualities.
+          The Holy Mountain is a genre-defying and conceptual trio from Norway
+          with music that moves seamlessly between jazz, electronic synth music,
+          alternative pop, and minimalism. The band's sound consists of a unique
+          combination of accordion, vocals, synth and drums.
         </p>
       </div>
       <div className="text-size-small text-secondary">
