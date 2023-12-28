@@ -13,7 +13,8 @@ const ButtonIconAndText = React.forwardRef(
       tooltipText,
       label,
       tabOrder,
-      keepTextOnSmallScreen,
+      iconSize,
+      // keepTextOnSmallScreen,
       className,
       onKeyDown,
     },
@@ -29,9 +30,8 @@ const ButtonIconAndText = React.forwardRef(
         aria-pressed={pressed}
         tabOrder={tabOrder}
         className={className}
-        onKeyDown={onKeyDown}
-      >
-        <Icon id={iconId} iconSize={"text-md md:text-xl"} />
+        onKeyDown={onKeyDown}>
+        <Icon id={iconId} />
         {text ? <>&nbsp;{text}</> : null}
       </Button>
     );

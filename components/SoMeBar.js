@@ -1,6 +1,6 @@
 import Icon from "./Icon";
 
-const SoMeBar = ({ iconSize, exclude = [], className }) => {
+const SoMeBar = ({ exclude = [], className }) => {
   const some = [
     {
       key: "facebook",
@@ -38,9 +38,8 @@ const SoMeBar = ({ iconSize, exclude = [], className }) => {
             href={some.url}
             role="link"
             aria-label={some.key}
-            className="transition duration-200 ease-in-out text-secondary opacity-40 hover:opacity-80"
-          >
-            <Icon id={some.key} iconSize={iconSize} />
+            className="transition duration-200 ease-in-out text-secondary opacity-40 hover:opacity-80">
+            <Icon id={some.key} />
           </a>
         );
       })}

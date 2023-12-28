@@ -1,42 +1,38 @@
-import React, { useState, useRef } from "react";
+import { useIsMounted } from "../hooks/useIsMounted";
+import LayoutPageDesktop from "./LayoutPageDesktop";
+import useWindowSize from "../hooks/useWindowSize";
+import LayoutPageMobile from "./LayoutPageMobile";
 import Meta from "../components/Meta";
-import dynamic from "next/dynamic";
+import { useRef } from "react";
 
-const DynNav = dynamic(() => import("../templates/Nav"));
-const DynButtonScrollTo = dynamic(() => import("../components/ButtonScrollTo"));
+const widthTresh = 768; // tailwind md = 768;
 
-const LayoutPage = ({
-  pageMeta,
-  className,
-  showBackButton = false,
-  showMenu = false,
-  showMediaTabControls = false,
-  pageId = "top",
-  children,
-}) => {
-  const ref = useRef(null);
-  const navTabs = ["music", "video"];
-  const [activeTab, setActiveTabs] = useState("music");
+const LayoutPage = ({ pageId = "top", children, className, pageMeta }) => {
+  const [isMounted, setIsMounted] = useIsMounted();
+  const { width } = useWindowSize();
+  const pageTopRef = useRef();
 
-  const handleTabClick = (event) => setActiveTabs(event);
+  if (!isMounted) return null;
 
   return (
     <>
-      <DynNav
-        showMediaTabControls={showMediaTabControls}
-        showBackButton={showBackButton}
-        onTabClick={handleTabClick}
-        activeTab={activeTab}
-        showMenu={showMenu}
-        tabs={navTabs}
-      />
       <Meta {...pageMeta} />
-      <div
-        className={`min-h-screen container mx-auto pb-12 ${className}`}
-        id={pageId}
-        ref={ref}>
-        {children(activeTab)}
-        <DynButtonScrollTo targetId={pageId} parentRef={ref} />
+      <div className="min-h-screen max-w-6xl flex">
+        {width < widthTresh ? (
+          <LayoutPageMobile
+            pageId={pageId}
+            className={className}
+            ref={pageTopRef}>
+            {children}
+          </LayoutPageMobile>
+        ) : (
+          <LayoutPageDesktop
+            pageId={pageId}
+            className={className}
+            ref={pageTopRef}>
+            {children}
+          </LayoutPageDesktop>
+        )}
       </div>
     </>
   );

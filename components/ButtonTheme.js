@@ -1,19 +1,11 @@
-import { useState, useEffect } from "react";
 import getCurrTheme from "../functions/getCurrTheme";
 import ButtonIconAndText from "./ButtonIconAndText";
 
-const ButtonTheme = ({ tabOrder }) => {
-  const [mounted, setMounted] = useState(false);
+const ButtonTheme = ({ tabOrder, iconSize }) => {
   const { currTheme, setTheme } = getCurrTheme();
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   const handleClick = () =>
     currTheme === "dark" ? setTheme("light") : setTheme("dark");
-
-  if (!mounted) return null;
 
   return (
     <div className="flex items-center justify-center">

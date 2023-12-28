@@ -20,9 +20,10 @@ import { GiMagnifyingGlass } from "react-icons/gi";
 import { AiOutlineHeart, AiOutlineMail } from "react-icons/ai";
 import { MdOutlineReportProblem } from "react-icons/md";
 import { AiOutlineCheck, AiOutlineInfoCircle } from "react-icons/ai";
-import { HiDotsHorizontal } from "react-icons/hi";
+// import { HiDotsHorizontal } from "react-icons/hi";
+import { AiOutlineMenu } from "react-icons/ai";
 
-const defaultSize = "text-md";
+const defaultSize = "text-xl";
 
 const icons = {
   sun: (s) => <BsFillSunFill className={s} />,
@@ -58,9 +59,10 @@ const icons = {
   heart: (s) => <AiOutlineHeart className={s} />,
   issue: (s) => <MdOutlineReportProblem className={s} />,
   check: (s) => <AiOutlineCheck className={s} />,
-  threedots: (s) => (
-    <HiDotsHorizontal className={s} style={{ transform: "rotate(-90deg)" }} />
-  ),
+  // threedots: (s) => (
+  //   <HiDotsHorizontal className={s} style={{ transform: "rotate(-90deg)" }} />
+  // ),
+  threedots: (s) => <AiOutlineMenu className={s} />,
   copy: (s) => <FiCopy className={s} />,
   eth: (s) => <FaEthereum className={s} />,
 };

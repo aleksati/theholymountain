@@ -80,11 +80,10 @@ const LikesCounter = ({ releaseKey }) => {
             // disabled={isLoading || isError}
             aria-label="Likes button"
             className="cursor-pointer hover:scale-105"
-            onClick={handleClick}
-          >
+            onClick={handleClick}>
             <Icon
               id="heart"
-              iconSize={`text-2xl ${btnState ? "text-red-500" : null}`}
+              iconSize={`text-xl ${btnState ? "text-red-500" : null}`}
             />
           </button>
           <p className="m-0 text-size-small">{likesCounter}</p>
