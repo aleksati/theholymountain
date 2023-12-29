@@ -1,25 +1,26 @@
-import connectMongo from "../../functions/connectMongo";
-import LayoutPage from "../../layouts/LayoutPage";
-import MusicData from "../../models/MusicData";
-import GridItemMusic from "../../components/GridItemMusic";
-import Grid from "../../components/Grid";
+import connectMongo from "../functions/connectMongo";
+import LayoutPage from "../layouts/LayoutPage";
+import MusicData from "../models/MusicData";
+import Grid from "../components/Grid";
+import ShopNew from "../components/ShopNew";
 
-const Music = ({ data }) => {
+const shop = ({ data }) => {
   return (
     <LayoutPage
       pageMeta={{
-        title: `The Holy Mountain | music`,
+        title: `The Holy Mountain | shop`,
       }}>
-      <Grid gridCols={2}>
+      <ShopNew musicData={data} />
+      {/* <Grid gridCols={3}>
         {data.map((item) => (
-          <GridItemMusic key={item.key} item={item} />
+          <p>{item.title}</p>
         ))}
-      </Grid>
+      </Grid> */}
     </LayoutPage>
   );
 };
 
-export default Music;
+export default shop;
 
 export const getStaticProps = async () => {
   try {

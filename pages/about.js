@@ -12,5 +12,7 @@ const about = () => {
 export default about;
 
 export const getStaticProps = async () => {
-  return { props: {} };
+  return {
+    props: {},
+  };
 };

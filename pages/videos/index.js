@@ -10,7 +10,7 @@ const Music = ({ data }) => {
       pageMeta={{
         title: `The Holy Mountain | videos`,
       }}>
-      <Grid maxGridCols={1}>
+      <Grid gridCols={1}>
         {data.map((item) => (
           <GridItemVideo key={item.key} item={item} />
         ))}

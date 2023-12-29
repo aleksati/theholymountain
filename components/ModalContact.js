@@ -1,7 +1,7 @@
 import getEnvVar from "../functions/getEnvVar";
 import sendMail from "../functions/sendMail";
 import { useEffect, useState } from "react";
-import Spinner from "./Spinner";
+import Spinner from "./Loading";
 import Button from "./Button";
 
 const ModalContact = () => {
