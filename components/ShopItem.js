@@ -1,14 +1,13 @@
-import Image from "next/image";
+import MyImage from "./MyImage";
 
 const ShopItem = ({ shopItem, onQuantityChange }) => (
   <div className="p-4">
-    <Image
-      blurDataURL={`/img/placeholders/${shopItem.key}-shop.png`}
-      src={`/img/${shopItem.key}-shop.png`}
+    {/* Make into slideshow */}
+    <MyImage
+      src={`${shopItem.key}-shop.png`}
       alt={shopItem.name}
-      placeholder="blur"
-      width={400}
-      height={400}
+      layout="responsive"
+      // isExpandable={true}
     />
     <div className="space-y-1">
       <div>

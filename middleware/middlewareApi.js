@@ -1,4 +1,4 @@
-import { check, oneOf, validationResult } from "express-validator";
+import { check, oneOf, validationResult, body } from "express-validator";
 import nextConnect from "next-connect";
 
 // validates the incoming request before it's procced by the API
@@ -37,4 +37,4 @@ const del = (middleware) => {
   return nextConnect().delete(middleware);
 };
 
-export { patch, put, post, get, del, initValidation, check, oneOf };
+export { patch, put, post, get, del, initValidation, check, oneOf, body };

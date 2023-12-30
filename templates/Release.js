@@ -1,4 +1,4 @@
-import PageReleaseActions from "../components/PageReleaseActions";
+import ReleaseActions from "../components/ReleaseActions";
 import ReleaseAudio from "../components/ReleaseAudio";
 // import Slideshow from "../components/Slideshow";
 import { useEffect } from "react";
@@ -30,7 +30,7 @@ const Release = ({ item }) => {
               {item.category} | {item.year}
               </p>
             </div> */}
-            <PageReleaseActions item={item} />
+            <ReleaseActions item={item} />
             <div className="text-secondary">
               {item.credits.map((credit, index) => (
                 <p key={index}>{credit}</p>

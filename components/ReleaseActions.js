@@ -5,7 +5,7 @@ import EthButton from "./EthButton";
 
 // I have to put Icon/audio thing here, not in Shop, because useState" cannot be called conditionally.
 
-const PageReleaseActions = ({ item }) => {
+const ReleaseActions = ({ item }) => {
   return (
     <div className="flex space-x-2 items-center">
       {/* {item.category.toLowerCase() === "single" || !item.price ? null : (
@@ -18,4 +18,4 @@ const PageReleaseActions = ({ item }) => {
   );
 };
 
-export default PageReleaseActions;
+export default ReleaseActions;

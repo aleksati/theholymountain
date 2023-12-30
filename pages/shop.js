@@ -1,8 +1,7 @@
 import connectMongo from "../functions/connectMongo";
 import LayoutPage from "../layouts/LayoutPage";
 import MusicData from "../models/MusicData";
-import Grid from "../components/Grid";
-import ShopNew from "../components/ShopNew";
+import Shop from "../templates/Shop";
 
 const shop = ({ data }) => {
   return (
@@ -10,12 +9,7 @@ const shop = ({ data }) => {
       pageMeta={{
         title: `The Holy Mountain | shop`,
       }}>
-      <ShopNew musicData={data} />
-      {/* <Grid gridCols={3}>
-        {data.map((item) => (
-          <p>{item.title}</p>
-        ))}
-      </Grid> */}
+      <Shop musicData={data} />
     </LayoutPage>
   );
 };

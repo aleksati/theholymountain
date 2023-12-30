@@ -40,7 +40,7 @@ const ModalImage = ({ onModalClose, children }) => {
         className="fixed inset-0 z-50 flex items-center justify-center p-2 backdrop-brightness-50">
         {/* The Modal Card*/}
         <div
-          className={`max-h-full relative overflow-auto bg-primary-light dark:bg-primary-dark max-w-2xl`}
+          className={`max-h-full relative overflow-auto bg-primary-light dark:bg-primary-dark w-full max-w-2xl`}
           ref={modalRef}>
           {/* The close button at the top right */}
           {children}

@@ -21,7 +21,7 @@ const ShopCheckout = ({ shopData, onResetQuantity }) => {
     try {
       const res = await fetch("/api/shop/checkout", {
         method: "POST",
-        body: JSON.stringify(shopData[0]), //shopitem er en 1 shopData. Kan teste med dette.
+        body: JSON.stringify(shopData),
         headers: { "Content-Type": "application/json" },
       });
 

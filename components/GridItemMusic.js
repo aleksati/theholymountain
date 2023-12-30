@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import Image from "next/image";
+import MyImage from "./MyImage";
 import Link from "next/link";
 
 const GridItemMusic = ({ item }) => {
@@ -20,15 +20,11 @@ const GridItemMusic = ({ item }) => {
           onKeyPress={handleKeyPress}
           role="button"
           tabIndex="0">
-          <Image
-            src={`/img/${item.key}.png`}
+          <MyImage
+            src={`${item.key}.png`}
             alt={`${item.title} album cover`}
-            placeholder="blur"
-            width="100%"
-            height="100%"
             layout="responsive"
-            objectFit="contain"
-            blurDataURL={`/img/placeholders/${item.key}.png`}
+            // isExpandable={true}
           />
         </div>
       </Link>

@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef } from "react";
 import { SITE_DOMAIN } from "../config";
 import ClientOnly from "./ClientOnly";
-import Spinner from "./Spinner";
+import Loading from "./Loading";
 import Error from "./Error";
 import Icon from "./Icon";
 
@@ -73,7 +73,7 @@ const LikesCounter = ({ releaseKey }) => {
       {isError ? (
         <Error />
       ) : isLoading ? (
-        <Spinner />
+        <Loading />
       ) : (
         <>
           <button

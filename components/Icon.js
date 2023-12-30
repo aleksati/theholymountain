@@ -21,12 +21,13 @@ import { AiOutlineHeart, AiOutlineMail } from "react-icons/ai";
 import { MdOutlineReportProblem } from "react-icons/md";
 import { AiOutlineCheck, AiOutlineInfoCircle } from "react-icons/ai";
 // import { HiDotsHorizontal } from "react-icons/hi";
-import { AiOutlineMenu } from "react-icons/ai";
+import { AiOutlineMenu, AiOutlineExpandAlt } from "react-icons/ai";
 
 const defaultSize = "text-xl";
 
 const icons = {
   sun: (s) => <BsFillSunFill className={s} />,
+  expand: (s) => <AiOutlineExpandAlt className={s} />,
   moon: (s) => <BsFillMoonFill className={s} />,
   audio: (s) => <TbWaveSine className={s} />,
   about: (s) => <BsPersonCircle className={s} />,

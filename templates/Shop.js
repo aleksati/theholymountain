@@ -1,13 +1,13 @@
-import { useCallback, useEffect, useState, useRef } from "react";
+import { useCallback, useEffect, useState } from "react";
 import getEnvVar from "../functions/getEnvVar";
 import { loadStripe } from "@stripe/stripe-js";
-import ShopItem from "./ShopItem";
-import Loading from "./Loading";
-import Error from "./Error";
-import Grid from "./Grid";
-import ShopCheckout from "./ShopCheckout";
+import ShopCheckout from "../components/ShopCheckout";
+import ShopItem from "../components/ShopItem";
+import Loading from "../components/Loading";
+import Error from "../components/Error";
+import Grid from "../components/Grid";
 
-const ShopNew = ({ musicData }) => {
+const Shop = ({ musicData }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
   const [shopData, setShopData] = useState([]);
@@ -49,7 +49,7 @@ const ShopNew = ({ musicData }) => {
     getPubKey();
   }, [getPubKey]);
 
-  // when the quantities of the shopItems change, update the main cart state
+  // when the quantities of the shopItems change, update the cart
   const handleQuantityChange = ({ key, newQuantity }) => {
     setShopData((prevShopData) => {
       let idx = prevShopData.findIndex((item) => item.key === key);
@@ -96,4 +96,4 @@ const ShopNew = ({ musicData }) => {
   );
 };
 
-export default ShopNew;
+export default Shop;

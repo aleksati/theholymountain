@@ -8,6 +8,7 @@ import { useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Contact from "./Contact";
+import MyImage from "./MyImage";
 
 const NavVertical = ({ showNavTop, onToggleNavVertical }) => {
   const [ref, isClickOutside] = useClickOutside();
@@ -23,22 +24,23 @@ const NavVertical = ({ showNavTop, onToggleNavVertical }) => {
         showNavTop ? "fixed" : "flex-none"
       } w-64 p-4`}
       ref={ref}>
-      <div className="fixed">
-        <div className="flex flex-col p-4 space-y-4">
-          <div className="w-52">
+      <div className="fixed w-52 mt-4">
+        <div className="flex flex-col p-4 space-y-6">
+          <div className="hover:cursor-pointer">
             <Link href="/">
-              <Image
-                src={currTheme === "dark" ? logoWhite : logoBlack}
+              <MyImage
+                src={currTheme === "dark" ? "logo-white.png" : "logo-black.png"}
+                width="1000"
+                height="465"
+                layout="responsive"
                 alt="band logo"
-                placeholder="blur"
-                className="hover:cursor-pointer"
               />
             </Link>
           </div>
-          <div className="pl-4">
+          <div className="pl-2">
             <NavVerticalTabs />
           </div>
-          <div className="flex pl-2">
+          <div className="flex">
             <ButtonTheme />
             <Contact />
           </div>
