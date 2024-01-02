@@ -1,9 +1,4 @@
-import {
-  initValidation,
-  // check,
-  post,
-  body,
-} from "../../../middleware/middlewareApi";
+import { initValidation, post, body } from "../../../middleware/middlewareApi";
 import { commonApiHandlers } from "../../../functions/commonApiHandlers.js";
 import nextConnect from "next-connect";
 import Stripe from "stripe";
@@ -35,12 +30,13 @@ export default nextConnect()
   .use(post(stripeValidators))
   .post(async (req, res) => {
     // array with multiple shopItems objects
-    const shopData = req.body;
+    const cart = req.body;
     // filter so only items with a quantity is handled
-    const cart = shopData.filter((item) => item.quantity > 0);
+    const cartFiltered = cart.filter((item) => item.quantity > 0);
+
     // transform into Stripe format
     let cartTransformed = [];
-    cart.map((item) => {
+    cartFiltered.map((item) => {
       cartTransformed.push({
         price_data: {
           currency: "nok",
@@ -48,7 +44,7 @@ export default nextConnect()
           tax_behavior: "exclusive",
           product_data: {
             images: [`${SITE_DOMAIN}/img/${item.key}-shop.png`],
-            name: item.name,
+            name: item.title,
             description: item.description,
           },
         },

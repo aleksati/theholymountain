@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 // import isTouchDevice from "../functions/isTouchDevice";
-import ButtonIconAndText from "./ButtonIconAndText";
+import ButtonIcon from "./ButtonIcon";
 
 const ButtonScrollTo = ({ targetId, parentRef }) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -27,11 +27,7 @@ const ButtonScrollTo = ({ targetId, parentRef }) => {
   // isTouch && isVisible
   if (isVisible) {
     return (
-      <ButtonIconAndText
-        iconId="upArrow"
-        onClick={handleClick}
-        label="Back to top"
-      />
+      <ButtonIcon iconId="upArrow" onClick={handleClick} label="Back to top" />
     );
   }
 

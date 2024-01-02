@@ -21,7 +21,7 @@ const NavVerticalTabs = () => {
           <div className={`space-y-2`} key={tab}>
             <div className="flex space-x-1 items-center justify-start">
               {/* få inn noe bedre her. Var MyLink */}
-              <Link href={`/${tab}`}>
+              <Link href={`/${tab}`} tabIndex="-1">
                 <p
                   className={`hover:cursor-pointer ${
                     underline ? "underline" : ""

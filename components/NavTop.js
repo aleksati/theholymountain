@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import ButtonIconAndText from "./ButtonIconAndText";
+import ButtonIcon from "./ButtonIcon";
 import Link from "next/link";
 
 const NavTop = ({ onToggleNavVertical, showNavVertical }) => {
@@ -23,7 +23,7 @@ const NavTop = ({ onToggleNavVertical, showNavVertical }) => {
       </div>
       {/* fixed class, because it messes with the transition from navtop to nav vertical (just a tiny bit) */}
       <div className="fixed top-3 right-4">
-        <ButtonIconAndText
+        <ButtonIcon
           iconId={showNavVertical ? "x" : "threedots"}
           onClick={onToggleNavVertical}
         />

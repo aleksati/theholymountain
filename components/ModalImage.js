@@ -1,7 +1,6 @@
 import ClientOnlyPortal from "./ClientOnlyPortal";
-import React, { useState } from "react";
 import { useRef, useEffect } from "react";
-import ButtonIconAndText from "./ButtonIconAndText";
+import ButtonIcon from "./ButtonIcon";
 import { useIsMounted } from "../hooks/useIsMounted";
 
 const ModalImage = ({ onModalClose, children }) => {
@@ -39,13 +38,15 @@ const ModalImage = ({ onModalClose, children }) => {
         onKeyDown={handleKeyDown}
         className="fixed inset-0 z-50 flex items-center justify-center p-2 backdrop-brightness-50">
         {/* The Modal Card*/}
+        {/* use "relative" below to have the X inside the modal */}
         <div
-          className={`max-h-full relative overflow-auto bg-primary-light dark:bg-primary-dark w-full max-w-2xl`}
+          className={`max-h-full p-2 w-full overflow-auto bg-primary-light dark:bg-primary-dark max-w-2xl`}
           ref={modalRef}>
-          {/* The close button at the top right */}
           {children}
+          {/* hey */}
+          {/* The close button at the top right */}
           <div className="absolute right-0 top-0 p-2">
-            <ButtonIconAndText
+            <ButtonIcon
               aria-label="Close Modal"
               onClick={closeModal}
               iconSize="text-2xl"

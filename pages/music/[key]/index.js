@@ -1,21 +1,51 @@
 import connectMongo from "../../../functions/connectMongo";
+import ReleaseAudio from "../../../components/ReleaseAudio";
+import LikesCounter from "../../../components/LikesCounter";
 import LayoutPage from "../../../layouts/LayoutPage";
 import MusicData from "../../../models/MusicData";
-import Release from "../../../templates/Release";
+import SoMeBar from "../../../components/SoMeBar";
+import { useEffect } from "react";
 
-const MusicItem = ({ item }) => {
+const release = ({ item }) => {
+  // force scroll to top.
+  useEffect(() => {
+    setTimeout(() => {
+      window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+    }, [200]);
+  }, []);
+
   return (
     <LayoutPage
       pageMeta={{
         title: `The Holy Mountain | ${item.title}`,
-        description: item.description,
       }}>
-      <Release item={item} />
+      <div
+        className="flex flex-col p-4 space-y-4"
+        aria-label={`${item.title} page`}>
+        <div>
+          <ReleaseAudio
+            spotifyurl={item.spotifyurl}
+            previewurl={item.previewurl}
+          />
+        </div>
+        <div className="flex items-center space-x-4">
+          <LikesCounter releaseKey={item.key} />
+          <SoMeBar exclude={["spotify"]} someObject={item.some} />
+        </div>
+        <div className="text-secondary">
+          {item.credits.map((credit, index) => (
+            <p key={index}>{credit}</p>
+          ))}
+        </div>
+        <div>
+          <p>{item.description}</p>
+        </div>
+      </div>
     </LayoutPage>
   );
 };
 
-export default MusicItem;
+export default release;
 
 export const getStaticProps = async (context) => {
   try {

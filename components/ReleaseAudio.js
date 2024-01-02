@@ -1,7 +1,7 @@
 import AudioPlayer from "./AudioPlayer";
 
-const ReleaseAudio = ({ item }) => {
-  if (item.spotifyurl) {
+const ReleaseAudio = ({ spotifyurl, previewurl }) => {
+  if (spotifyurl) {
     return (
       <div className="pb-2">
         <iframe
@@ -9,15 +9,15 @@ const ReleaseAudio = ({ item }) => {
           height="460" // 152
           allowtransparency="true"
           className="rounded-xl"
-          src={item.spotifyurl}></iframe>
+          src={spotifyurl}></iframe>
       </div>
     );
   }
 
-  if (item.previewurl) {
+  if (previewurl) {
     return (
       <div className="relative w-full pt-2 pb-2">
-        <AudioPlayer src={item.previewurl} />
+        <AudioPlayer src={previewurl} />
       </div>
     );
   }

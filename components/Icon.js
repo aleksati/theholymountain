@@ -13,13 +13,15 @@ import { RiInstagramFill } from "react-icons/ri";
 import { BsSpotify } from "react-icons/bs";
 import { TbWaveSine } from "react-icons/tb";
 import { GrSoundcloud } from "react-icons/gr";
+import { SiApplemusic } from "react-icons/si";
+import { SiTidal } from "react-icons/si";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { FiPlay, FiCopy } from "react-icons/fi";
 import { AiOutlinePause } from "react-icons/ai";
 import { GiMagnifyingGlass } from "react-icons/gi";
 import { AiOutlineHeart, AiOutlineMail } from "react-icons/ai";
 import { MdOutlineReportProblem } from "react-icons/md";
-import { AiOutlineCheck, AiOutlineInfoCircle } from "react-icons/ai";
+import { AiOutlineCheck } from "react-icons/ai";
 // import { HiDotsHorizontal } from "react-icons/hi";
 import { AiOutlineMenu, AiOutlineExpandAlt } from "react-icons/ai";
 
@@ -52,6 +54,8 @@ const icons = {
   bandcamp: (s) => <FaBandcamp className={s} />,
   youtube: (s) => <AiFillYoutube className={s} />,
   spotify: (s) => <BsSpotify className={s} />,
+  applemusic: (s) => <SiApplemusic className={s} />,
+  tidal: (s) => <SiTidal className={s} />,
   contact: (s) => <AiOutlineMail className={s} />,
   soundcloud: (s) => <GrSoundcloud className={s} />,
   shop: (s) => <AiOutlineShoppingCart className={s} />,

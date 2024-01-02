@@ -4,36 +4,42 @@ import MusicData from "../../models/MusicData";
 import GridItemMusic from "../../components/GridItemMusic";
 import Grid from "../../components/Grid";
 
-const Music = ({ data }) => {
+const music = ({ musicData }) => {
   return (
     <LayoutPage
       pageMeta={{
         title: `The Holy Mountain | music`,
       }}>
       <Grid gridCols={2}>
-        {data.map((item) => (
-          <GridItemMusic key={item.key} item={item} />
+        {musicData.map((release) => (
+          <GridItemMusic
+            key={release.key}
+            releaseKey={release.key}
+            title={release.title}
+            category={release.category}
+            year={release.year}
+          />
         ))}
       </Grid>
     </LayoutPage>
   );
 };
 
-export default Music;
+export default music;
 
 export const getStaticProps = async () => {
   try {
     await connectMongo();
     // get data (objects) in an array
-    const musicData = await MusicData.find();
-    let data = await JSON.parse(JSON.stringify(musicData));
+    const data = await MusicData.find();
+    let musicData = await JSON.parse(JSON.stringify(data));
 
     // sort the data items by year.
-    data = await data.sort((a, b) => Number(b.year) - Number(a.year));
+    musicData = await musicData.sort((a, b) => Number(b.year) - Number(a.year));
 
     return {
       props: {
-        data,
+        musicData,
       },
     };
   } catch (error) {

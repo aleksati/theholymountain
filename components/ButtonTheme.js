@@ -1,5 +1,5 @@
 import getCurrTheme from "../functions/getCurrTheme";
-import ButtonIconAndText from "./ButtonIconAndText";
+import ButtonIcon from "./ButtonIcon";
 
 const ButtonTheme = ({ tabOrder, iconSize }) => {
   const { currTheme, setTheme } = getCurrTheme();
@@ -9,7 +9,7 @@ const ButtonTheme = ({ tabOrder, iconSize }) => {
 
   return (
     <div className="flex items-center justify-center">
-      <ButtonIconAndText
+      <ButtonIcon
         pressed={currTheme === "dark" ? "true" : "false"}
         label="Toggle light or dark mode theme"
         iconId={currTheme === "dark" ? "sun" : "moon"}

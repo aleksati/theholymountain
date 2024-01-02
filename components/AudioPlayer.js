@@ -1,9 +1,8 @@
 import { useRef, useEffect, useState, useCallback } from "react";
 import getClockValue from "../functions/getClockValue";
 import getCurrTheme from "../functions/getCurrTheme";
-// import ButtonIcon from "./ButtonIcon";
-import ButtonScrollTo from "./ButtonScrollTo";
-import ButtonIconAndText from "./ButtonIconAndText";
+// import ButtonScrollTo from "./ButtonScrollTo";
+import ButtonIcon from "./ButtonIcon";
 
 const WaveFormOptions = (ref, opt) => ({
   container: ref,
@@ -88,7 +87,7 @@ const MyAudioPlayer = ({ src, newOptions = {} }) => {
     <div className="flex items-center justify-start py-4 py-6">
       {audioIsMounted ? (
         <div className="flex items-center">
-          <ButtonIconAndText
+          <ButtonIcon
             onClick={handlePlayPause}
             iconId={isPlaying ? "pause" : "play"}
             className="cursor-pointer"

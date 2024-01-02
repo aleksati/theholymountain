@@ -1,36 +1,9 @@
 import Icon from "./Icon";
 
-const SoMeBar = ({ exclude = [], className }) => {
-  const some = [
-    {
-      key: "facebook",
-      url: "https://www.facebook.com/theholymountaintrio",
-    },
-    {
-      key: "instagram",
-      url: "https://www.instagram.com/theholymountaintrio/",
-    },
-    {
-      key: "bandcamp",
-      url: "https://theholymountain.bandcamp.com/",
-    },
-    {
-      key: "youtube",
-      url: "https://www.youtube.com/channel/UCdjPuoIdC6-EDb_tR5h9ayg",
-    },
-    {
-      key: "spotify",
-      url: "https://open.spotify.com/artist/04GXo6z6x1KLMG9weDPayK?si=rzFLNrlkTvml0zaKqo_tuQ",
-    },
-    {
-      key: "soundcloud",
-      url: "https://soundcloud.com/theholymountainduo",
-    },
-  ];
-
+const SoMeBar = ({ exclude = [], someObject }) => {
   return (
-    <div className={`flex flex-row space-x-4 ${className}`}>
-      {some.map((some) => {
+    <div className={`flex flex-row space-x-4`}>
+      {someObject.map((some) => {
         if (exclude.includes(some.key)) return;
         return (
           <a

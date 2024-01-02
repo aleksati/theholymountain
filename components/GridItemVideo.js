@@ -1,18 +1,18 @@
 import VideoPlayer from "./VideoPlayer";
 
-const GridItemVideo = ({ item }) => (
-  <div className="p-2" aria-label={item.title}>
+const GridItemVideo = ({ title, url, category, year }) => (
+  <div className="p-2" aria-label={title}>
     <div
       className={`flex flex-col pb-2 items-center justify-center rounded-md space-y-2`}
-      aria-label={`${item.title} video grid cell`}>
+      aria-label={`${title} video grid cell`}>
       <div className="relative w-full">
-        <VideoPlayer url={item.url} title={item.title} />
+        <VideoPlayer url={url} title={title} />
       </div>
     </div>
     <div className="text-center">
-      <p>{item.title.toUpperCase()}</p>
+      <p>{title.toUpperCase()}</p>
       <p className="text-secondary text-sm">
-        {item.category} | {item.year}
+        {category} | {year}
       </p>
     </div>
   </div>

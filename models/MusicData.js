@@ -7,19 +7,15 @@ const reqString = {
 };
 
 const schema = new Schema({
-  key: reqString,
-  type: reqString,
-  title: reqString,
-  year: reqString,
-  category: reqString,
-  price: String,
   description: reqString,
-  formatText: reqString,
+  category: reqString,
+  title: reqString,
   credits: [String],
-  slideshow: [String],
+  key: reqString,
+  year: reqString,
+  some: [],
   spotifyurl: String,
   previewurl: String,
-  nfturl: String,
   likes: {
     type: [String],
     required: true,

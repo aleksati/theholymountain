@@ -4,36 +4,42 @@ import VideoData from "../../models/VideoData";
 import GridItemVideo from "../../components/GridItemVideo";
 import Grid from "../../components/Grid";
 
-const Music = ({ data }) => {
+const videos = ({ videoData }) => {
   return (
     <LayoutPage
       pageMeta={{
         title: `The Holy Mountain | videos`,
       }}>
       <Grid gridCols={1}>
-        {data.map((item) => (
-          <GridItemVideo key={item.key} item={item} />
+        {videoData.map((release) => (
+          <GridItemVideo
+            key={release.key}
+            title={release.title}
+            url={release.url}
+            category={release.category}
+            year={release.year}
+          />
         ))}
       </Grid>
     </LayoutPage>
   );
 };
 
-export default Music;
+export default videos;
 
 export const getStaticProps = async () => {
   try {
     await connectMongo();
     // get data (objects) in an array
-    const videoData = await VideoData.find();
-    let data = await JSON.parse(JSON.stringify(videoData));
+    const data = await VideoData.find();
+    let videoData = await JSON.parse(JSON.stringify(data));
 
     // sort the data items by year.
-    data = await data.sort((a, b) => Number(b.year) - Number(a.year));
+    videoData = await videoData.sort((a, b) => Number(b.year) - Number(a.year));
 
     return {
       props: {
-        data,
+        videoData,
       },
     };
   } catch (error) {
