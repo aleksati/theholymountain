@@ -4,7 +4,7 @@ import VideoData from "../../models/VideoData";
 import GridItemVideo from "../../components/GridItemVideo";
 import Grid from "../../components/Grid";
 
-const videos = ({ videoData }) => {
+const Videos = ({ videoData }) => {
   return (
     <LayoutPage
       pageMeta={{
@@ -25,7 +25,7 @@ const videos = ({ videoData }) => {
   );
 };
 
-export default videos;
+export default Videos;
 
 export const getStaticProps = async () => {
   try {

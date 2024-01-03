@@ -9,7 +9,7 @@ const pageMeta = {
   title: `The Holy Mountain | gallery`,
 };
 
-const gallery = ({ imgNames }) => {
+const Gallery = ({ imgNames }) => {
   const [modalIsShown, setModalIsShown] = useState(false);
   const [selectedImg, setSelectedImg] = useState();
 
@@ -80,7 +80,7 @@ const gallery = ({ imgNames }) => {
   );
 };
 
-export default gallery;
+export default Gallery;
 
 export const getStaticProps = async () => {
   const imgNames = await getGalleryImages();

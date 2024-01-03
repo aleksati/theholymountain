@@ -4,7 +4,7 @@ import MusicData from "../../models/MusicData";
 import GridItemMusic from "../../components/GridItemMusic";
 import Grid from "../../components/Grid";
 
-const music = ({ musicData }) => {
+const Music = ({ musicData }) => {
   return (
     <LayoutPage
       pageMeta={{
@@ -25,7 +25,7 @@ const music = ({ musicData }) => {
   );
 };
 
-export default music;
+export default Music;
 
 export const getStaticProps = async () => {
   try {

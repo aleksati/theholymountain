@@ -14,7 +14,7 @@ const pageMeta = {
   title: `The Holy Mountain | shop`,
 };
 
-const shop = ({ shopData }) => {
+const Shop = ({ shopData }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
   const [cart, setCart] = useState([]);
@@ -94,7 +94,7 @@ const shop = ({ shopData }) => {
   );
 };
 
-export default shop;
+export default Shop;
 
 export const getStaticProps = async () => {
   try {

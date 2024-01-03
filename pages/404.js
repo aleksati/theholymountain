@@ -2,7 +2,6 @@
 // import ImageFullscreen from "../components/ImageFullscreen";
 import { SITE_DOMAIN } from "../config";
 import Meta from "../components/Meta";
-import Link from "next/link";
 
 // const src = "/img/404.png";
 // const placeholder = "/img/placeholders/404.png";

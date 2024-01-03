@@ -6,7 +6,7 @@ import MusicData from "../../../models/MusicData";
 import SoMeBar from "../../../components/SoMeBar";
 import { useEffect } from "react";
 
-const release = ({ item }) => {
+const Release = ({ item }) => {
   // force scroll to top.
   useEffect(() => {
     setTimeout(() => {
@@ -45,7 +45,7 @@ const release = ({ item }) => {
   );
 };
 
-export default release;
+export default Release;
 
 export const getStaticProps = async (context) => {
   try {
