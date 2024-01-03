@@ -1,10 +1,8 @@
-import successGif from "../public/img/error.gif";
 import ClientOnly from "../components/ClientOnly";
 import LayoutPage from "../layouts/LayoutPage";
-import Spinner from "../components/Spinner";
+import Loading from "../components/Loading";
 import { SITE_DOMAIN } from "../config";
 import { useRouter } from "next/router";
-import Image from "next/image";
 import useSWR from "swr";
 
 // from:
@@ -43,7 +41,7 @@ const Success = () => {
           </div>
         ) : !data ? (
           <div>
-            <Spinner />
+            <Loading />
           </div>
         ) : (
           <div className="space-y-4 justify-center text-center items-center">
@@ -55,9 +53,7 @@ const Success = () => {
             <div>
               <p>You will soon receive a confirmation email with a receipt.</p>
             </div>
-            <div>
-              <Image src={successGif} unoptimized={true} alt="success" />
-            </div>
+            <p>Success!!</p>
           </div>
         )}
         <div></div>
