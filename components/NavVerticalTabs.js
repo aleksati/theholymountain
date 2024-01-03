@@ -18,18 +18,18 @@ const NavVerticalTabs = () => {
       {NAV_TABS.map((tab) => {
         const underline = currRoute === tab;
         return (
-          <div className={`space-y-2`} key={tab}>
-            <div className="flex space-x-1 items-center justify-start">
-              {/* få inn noe bedre her. Var MyLink */}
-              <Link href={`/${tab}`} tabIndex="-1">
-                <p
-                  className={`hover:cursor-pointer ${
-                    underline ? "underline" : ""
-                  }`}>
-                  {tab}
-                </p>
-              </Link>
-            </div>
+          <div
+            key={tab}
+            className="flex space-y-2 space-x-1 items-center justify-start">
+            {/* få inn noe bedre her. Var MyLink */}
+            <Link href={`/${tab}`}>
+              <p
+                className={`hover:cursor-pointer ${
+                  underline ? "underline" : ""
+                }`}>
+                {tab}
+              </p>
+            </Link>
           </div>
         );
       })}

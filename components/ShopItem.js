@@ -5,8 +5,8 @@ const ShopItem = ({ shopItem, onQuantityChange }) => (
   <div className="p-4">
     <MySlideshow
       imgs={[
-        `shop/${shopItem.key}-shop-1.png`,
-        `shop/${shopItem.key}-shop-2.png`,
+        `shop/${shopItem.key}-shop-1.jpg`,
+        `shop/${shopItem.key}-shop-2.jpg`,
       ]}
     />
     {/* <MyImage

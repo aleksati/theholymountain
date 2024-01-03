@@ -18,13 +18,11 @@ const GridItemMusic = ({ releaseKey, title, category, year }) => {
           className="relative w-full pb-2 cursor-pointer"
           aria-label={`${title} release item`}
           onKeyPress={handleKeyPress}
-          role="button"
-          tabIndex="0">
+          role="button">
           <MyImage
-            src={`${releaseKey}.png`}
+            src={`${releaseKey}.jpg`}
             alt={`${title} album cover`}
             layout="responsive"
-            // isExpandable={true}
           />
         </div>
       </Link>

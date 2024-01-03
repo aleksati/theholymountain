@@ -5,15 +5,17 @@ import Icon from "./Icon";
 const ButtonIcon = React.forwardRef((props, ref) => {
   const { onClick, iconId, iconSize, ...aProps } = props;
   return (
-    <div
+    <a
+      role="link"
       ref={ref}
+      key={iconId}
+      onClick={onClick}
+      aria-label={iconId}
       tabIndex="-1"
       className="hover:cursor-pointer px-2 z-20"
-      onClick={onClick}>
-      <a {...aProps}>
-        <Icon id={iconId} iconSize={iconSize} />
-      </a>
-    </div>
+      {...aProps}>
+      <Icon id={iconId} iconSize={iconSize} />
+    </a>
   );
 });
 

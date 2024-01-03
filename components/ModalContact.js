@@ -137,7 +137,9 @@ const ModalContact = () => {
               rows="3"
               placeholder="Elaborate..."
               required></textarea>
-            contactholymountain (at) gmail (dot) com
+            <p className="text-sm text-secondary">
+              contactholymountain (at) gmail (dot) com
+            </p>
           </label>
           {!isSubmit ? (
             isError ? (
@@ -149,11 +151,13 @@ const ModalContact = () => {
               /* </Button> */
               <>
                 {!isLoading ? (
-                  <input
-                    tabIndex="-1"
-                    type="submit"
-                    className="p-2 mx-36 hover:cursor-pointer rounded text-primary-dark bg-button-filter-light"
-                  />
+                  <div className="flex w-full items-center justify-center">
+                    <input
+                      // tabIndex="-1"
+                      type="submit"
+                      className="p-2 w-36 hover:cursor-pointer rounded text-primary-dark bg-button-filter-light"
+                    />
+                  </div>
                 ) : (
                   <Spinner />
                 )}

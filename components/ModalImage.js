@@ -39,18 +39,19 @@ const ModalImage = ({ onModalClose, children }) => {
         className="fixed inset-0 z-50 flex items-center justify-center p-2 backdrop-brightness-50">
         {/* The Modal Card*/}
         {/* use "relative" below to have the X inside the modal */}
+        {/* bg-primary-light dark:bg-primary-dark */}
+        {/* bg-transparent */}
         <div
-          className={`max-h-full p-2 w-full overflow-auto bg-primary-light dark:bg-primary-dark max-w-2xl`}
+          className={`max-h-screen w-full bg-transparent max-w-3xl`}
           ref={modalRef}>
           {children}
-          {/* hey */}
           {/* The close button at the top right */}
-          <div className="absolute right-0 top-0 p-2">
+          <div className="absolute right-4 top-2">
             <ButtonIcon
+              ref={closeBtnRef}
               aria-label="Close Modal"
               onClick={closeModal}
-              iconSize="text-2xl"
-              ref={closeBtnRef}
+              iconSize="text-3xl"
               iconId="x"
             />
           </div>

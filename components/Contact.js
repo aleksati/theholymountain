@@ -7,11 +7,11 @@ const contactModalProps = {
   iconId: "contact",
   // text: "contact",
   // keepTextOnSmallScreen: true,
-  hasTooltip: true,
-  tooltipText: "contact",
-  label: "Contact Us",
-  modalMaxSize: "max-w-md",
-  tabOrder: "5",
+  // hasTooltip: true,
+  // tooltipText: "contact",
+  // label: "Contact Us",
+  // modalMaxSize: "max-w-md",
+  // tabOrder: "5",
 };
 
 const Contact = () => {
@@ -23,7 +23,7 @@ const Contact = () => {
       {contactIsShown ? (
         <Modal
           key="Contact"
-          modalMaxSize={contactModalProps.modalMaxSize}
+          modalMaxSize={"max-w-md"}
           modalIsShown={contactIsShown}
           modalTriggerRef={contactTriggerRef}
           setModalIsShown={setContactIsShown}>

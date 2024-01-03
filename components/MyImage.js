@@ -1,16 +1,18 @@
-import ButtonIcon from "./ButtonIcon";
+// import ButtonIcon from "./ButtonIcon";
 import ModalImage from "./ModalImage";
 import { useState } from "react";
 import Image from "next/image";
+import React from "react";
 
-const MyImage = (props) => {
+const MyImage = React.forwardRef((props, ref) => {
   const { caption, width, height, isExpandable, src, ...imgProps } = props;
   const [modalIsShown, setModalIsShown] = useState(false);
   const handleImgClick = () => setModalIsShown(true);
   const handleModalClose = () => setModalIsShown(false);
 
   const img = `/img/${src}`;
-  const placholder = `/img/placeholders/${src}`;
+  // const placholder = `/img/placeholders/${src}`;
+  // removing placeholder blur because the images are so small.
 
   return (
     <>
@@ -18,9 +20,10 @@ const MyImage = (props) => {
         <div className="relative">
           <Image
             {...imgProps}
+            ref={ref}
             src={img}
-            placeholder="blur"
-            blurDataURL={placholder}
+            // placeholder="blur"
+            // blurDataURL={placholder}
             width={width ? width + "" : "0"}
             height={height ? height : "0"}
             className={`${width ? "" : "w-full"} h-auto m-0 ${
@@ -46,38 +49,19 @@ const MyImage = (props) => {
           <Image
             {...imgProps}
             src={img}
-            placeholder="blur"
-            blurDataURL={placholder}
+            // placeholder="blur"
+            // blurDataURL={placholder}
             width={width ? width + "" : "0"}
             height={height ? height : "0"}
             className={`${width ? "" : "w-full"} h-auto m-0`}
             unoptimized={true} // this is the only way make gifs work with Image component, I found
             quality={100}
           />
-          {/* <Image
-            src={img}
-            alt="modal image"
-            // object-fit="cover"
-            // layout="fill"
-            layout="responsive"
-            object-fit="contain"
-            width="0"
-            height="0"
-            // width="0"
-            // height="0"
-            // sizes="100vw"
-            className="w-full h-auto"
-            placeholder="blur"
-            blurDataURL={placholder}
-            unoptimized={true} // this is the only way make gifs work with Image component, I found
-            // quality={100}
-            // priority
-          /> */}
         </ModalImage>
       )}
     </>
   );
-};
+});
 
 MyImage.displayName = "MyImage";
 

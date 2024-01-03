@@ -1,7 +1,7 @@
 import getCurrTheme from "../functions/getCurrTheme";
 import ButtonIcon from "./ButtonIcon";
 
-const ButtonTheme = ({ tabOrder, iconSize }) => {
+const ButtonTheme = ({ iconSize }) => {
   const { currTheme, setTheme } = getCurrTheme();
 
   const handleClick = () =>
@@ -13,10 +13,10 @@ const ButtonTheme = ({ tabOrder, iconSize }) => {
         pressed={currTheme === "dark" ? "true" : "false"}
         label="Toggle light or dark mode theme"
         iconId={currTheme === "dark" ? "sun" : "moon"}
-        tabOrder={tabOrder}
+        // tabOrder={tabOrder}
         onClick={handleClick}
-        hasTooltip={true}
-        tooltipText="theme"
+        // hasTooltip={true}
+        // tooltipText="theme"
       />
     </div>
   );

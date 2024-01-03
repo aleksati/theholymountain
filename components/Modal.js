@@ -25,10 +25,10 @@ const Modal = ({
   }, [modalIsShown, closeBtnRef]);
 
   // on mount, lock scroll, on unmount unlock scroll
-  useEffect(() => {
-    lockScroll();
-    return () => unlockScroll();
-  }, [lockScroll, unlockScroll]);
+  // useEffect(() => {
+  //   lockScroll();
+  //   return () => unlockScroll();
+  // }, [lockScroll, unlockScroll]);
 
   const closeModal = () => {
     setModalIsShown(false);

@@ -22,10 +22,11 @@ const NavTop = ({ onToggleNavVertical, showNavVertical }) => {
         </Link>
       </div>
       {/* fixed class, because it messes with the transition from navtop to nav vertical (just a tiny bit) */}
-      <div className="fixed top-3 right-4">
+      <div className="fixed -top-2 right-4">
         <ButtonIcon
           iconId={showNavVertical ? "x" : "threedots"}
           onClick={onToggleNavVertical}
+          iconSize="text-2xl"
         />
       </div>
     </nav>

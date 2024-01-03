@@ -27,7 +27,12 @@ const ButtonScrollTo = ({ targetId, parentRef }) => {
   // isTouch && isVisible
   if (isVisible) {
     return (
-      <ButtonIcon iconId="upArrow" onClick={handleClick} label="Back to top" />
+      <ButtonIcon
+        iconId="upArrow"
+        iconSize="text-2xl"
+        onClick={handleClick}
+        label="Back to top"
+      />
     );
   }
 

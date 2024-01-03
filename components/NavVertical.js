@@ -1,12 +1,9 @@
 import { useClickOutside } from "../hooks/useClickOutside";
-import logoWhite from "../public/img/logo-white.png";
-import logoBlack from "../public/img/logo-black.png";
 import getCurrTheme from "../functions/getCurrTheme";
 import NavVerticalTabs from "./NavVerticalTabs";
 import ButtonTheme from "./ButtonTheme";
 import { useEffect } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import Contact from "./Contact";
 import MyImage from "./MyImage";
 
@@ -26,8 +23,8 @@ const NavVertical = ({ showNavTop, onToggleNavVertical }) => {
       ref={ref}>
       <div className="fixed w-52 mt-4">
         <div className="flex flex-col p-4 space-y-6">
-          <div className="hover:cursor-pointer">
-            <Link href="/">
+          <Link href="/">
+            <div className="hover:cursor-pointer">
               <MyImage
                 src={currTheme === "dark" ? "logo-white.png" : "logo-black.png"}
                 width="1000"
@@ -35,8 +32,8 @@ const NavVertical = ({ showNavTop, onToggleNavVertical }) => {
                 layout="responsive"
                 alt="band logo"
               />
-            </Link>
-          </div>
+            </div>
+          </Link>
           <div className="pl-2">
             <NavVerticalTabs />
           </div>

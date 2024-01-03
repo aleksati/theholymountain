@@ -2,7 +2,7 @@ import LayoutPage from "../layouts/LayoutPage";
 import MyImage from "../components/MyImage";
 import SoMeBar from "../components/SoMeBar";
 
-const bandPhoto = "cover.png";
+const bandPhoto = "cover.jpg";
 const someObject = [
   {
     key: "facebook",

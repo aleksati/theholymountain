@@ -8,7 +8,7 @@ const ReleaseAudio = ({ spotifyurl, previewurl }) => {
           width="100%"
           height="460" // 152
           allowtransparency="true"
-          className="rounded-xl"
+          className="rounded-2xl"
           src={spotifyurl}></iframe>
       </div>
     );
