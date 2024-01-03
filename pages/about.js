@@ -56,8 +56,8 @@ const about = () => (
         <p>
           The Holy Mountain is a genre-defying trio from Oslo, Norge that moves
           between jazz, electronic synth music, alternative pop, and minimalism.
-          The band's sound combines accordion, vocals, synth and drums to create
-          unique and conceptual music.
+          The band&apos;s sound combines accordion, vocals, synth and drums to
+          create unique and conceptual music.
         </p>
         <p>
           In 2023, the band released "The Dawns Here Are Quiet," an 8-track
@@ -72,8 +72,9 @@ const about = () => (
         <p>
           Already in early 2024, the trio is ready with their next EP, "They Are
           Asleep", an upbeat breath of fresh air in their musical career. With
-          this release, the band's characteristic melancholic sound is mixed
-          with new sources of inspiration, such as Y2K-techno and synth-pop.
+          this release, the band&apos;s characteristic melancholic sound is
+          mixed with new sources of inspiration, such as Y2K-techno and
+          synth-pop.
         </p>
       </div>
     </div>
