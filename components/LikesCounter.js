@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef } from "react";
 import { SITE_DOMAIN } from "../config";
 import ClientOnly from "./ClientOnly";
-import Spinner from "./Spinner";
+import Loading from "./Loading";
 import Error from "./Error";
 import Icon from "./Icon";
 
@@ -73,18 +73,17 @@ const LikesCounter = ({ releaseKey }) => {
       {isError ? (
         <Error />
       ) : isLoading ? (
-        <Spinner />
+        <Loading />
       ) : (
         <>
           <button
             // disabled={isLoading || isError}
             aria-label="Likes button"
             className="cursor-pointer hover:scale-105"
-            onClick={handleClick}
-          >
+            onClick={handleClick}>
             <Icon
               id="heart"
-              iconSize={`text-2xl ${btnState ? "text-red-500" : null}`}
+              iconSize={`text-xl ${btnState ? "text-red-500" : null}`}
             />
           </button>
           <p className="m-0 text-size-small">{likesCounter}</p>

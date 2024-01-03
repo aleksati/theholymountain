@@ -1,52 +1,89 @@
-import connectMongo from "../functions/connectMongo";
 import LayoutPage from "../layouts/LayoutPage";
-import MusicData from "../models/MusicData";
-import VideoData from "../models/VideoData";
-import PageMedia from "../templates/PageMedia";
+import MyImage from "../components/MyImage";
+import SoMeBar from "../components/SoMeBar";
 
-const pageMeta = {
-  title: "The Holy Mountain",
-  keywords:
-    "band, music, norway, artist, avant-garde, pop, minimalism, dreampop, electropop, akkordeon, accordion, synthesizer, synthwave, drums, roland juno, vocals, The Holy Mountain, The Holy Mountain discography, The Holy Mountain shows, The Holy Mountain albums, The Holy Mountain merch, The Holy Mountain video, The Holy Mountain music, The Holy Mountain band, The Holy Mountain, Accordion band, Accordion trio, trekkspillmusikk",
-  description: "The official website of The Holy Mountain trio",
-  url: "https://www.theholymountain.net",
-};
+const bandPhoto = "cover.jpg";
+const someObject = [
+  {
+    key: "facebook",
+    url: "https://www.facebook.com/theholymountaintrio",
+  },
+  {
+    key: "instagram",
+    url: "https://www.instagram.com/theholymountaintrio/",
+  },
+  {
+    key: "youtube",
+    url: "https://www.youtube.com/channel/UCdjPuoIdC6-EDb_tR5h9ayg",
+  },
+  {
+    key: "spotify",
+    url: "https://open.spotify.com/artist/04GXo6z6x1KLMG9weDPayK?si=rzFLNrlkTvml0zaKqo_tuQ",
+  },
+  {
+    key: "tidal",
+    url: "https://tidal.com/browse/artist/39079821",
+  },
+  {
+    key: "applemusic",
+    url: "https://music.apple.com/us/artist/the-holy-mountain/1685003735",
+  },
+  {
+    key: "soundcloud",
+    url: "https://soundcloud.com/theholymountainduo",
+  },
+];
 
-const Home = ({ data }) => {
-  return (
-    <LayoutPage showMediaTabControls={true} showMenu={true} pageMeta={pageMeta}>
-      {(activeTab) => <PageMedia data={data} tab={activeTab} />}
-    </LayoutPage>
-  );
-};
+const home = () => (
+  <LayoutPage pageMeta={{ title: "The Holy Mountain" }}>
+    <div className="flex flex-col space-y-4 p-4">
+      <MyImage
+        src={bandPhoto}
+        width="1000"
+        height="667"
+        layout="responsive"
+        // objectFit="contain"
+      />
+      <div>
+        <SoMeBar someObject={someObject} />
+      </div>
+      <div className="text-secondary">
+        <p>Catharina Janner Røed - Vocals </p>
+        <p>Andreas Angell - Accordion / Songwriter</p>
+        <p>Aleksander Tidemann - Drums / Synthesizer</p>
+      </div>
+      <div className="space-y-4">
+        <p>
+          The Holy Mountain is a genre-defying trio from Oslo, Norge that moves
+          between jazz, electronic synth music, alternative pop, and minimalism.
+          The band's sound combines accordion, vocals, synth and drums to create
+          unique and conceptual music.
+        </p>
+        <p>
+          In 2023, the band released "The Dawns Here Are Quiet," an 8-track
+          studio album blending experimental jazz and alternative pop inspired
+          by the poetry of Arseny Tarkovsky and Nordic cinema. 3 years prior, in
+          2020, The Holy Mountain released "Ending it All Tonight", a
+          full-fledged electronic studio album with 10 tracks inspired by
+          synthwave, vaporwave, and 80s aesthetics. The bands instrumental
+          debut, "Toad of Light", surfaced in 2018 and was a testament to sci-fi
+          film music and the psychedelic movement in 70s pop culture.
+        </p>
+        <p>
+          Already in early 2024, the trio is ready with their next EP, "They Are
+          Asleep", an upbeat breath of fresh air in their musical career. With
+          this release, the band's characteristic melancholic sound is mixed
+          with new sources of inspiration, such as Y2K-techno and synth-pop.
+        </p>
+      </div>
+    </div>
+  </LayoutPage>
+);
 
-export default Home;
+export default home;
 
 export const getStaticProps = async () => {
-  try {
-    await connectMongo();
-    // get data (objects) in an array
-    const musicData = await MusicData.find();
-    const videoData = await VideoData.find();
-
-    let filteredMusicData = await JSON.parse(JSON.stringify(musicData));
-    let filteredVideoData = await JSON.parse(JSON.stringify(videoData));
-
-    // concat into one array
-    let data = filteredMusicData.concat(filteredVideoData);
-
-    // sort the data items by year.
-    data = await data.sort((a, b) => Number(b.year) - Number(a.year));
-
-    return {
-      props: {
-        data,
-      },
-    };
-  } catch (error) {
-    console.log(error);
-    return {
-      notFound: true,
-    };
-  }
+  return {
+    props: {},
+  };
 };

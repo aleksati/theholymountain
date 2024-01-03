@@ -1,7 +1,7 @@
 import getEnvVar from "../functions/getEnvVar";
 import sendMail from "../functions/sendMail";
 import { useEffect, useState } from "react";
-import Spinner from "./Spinner";
+import Spinner from "./Loading";
 import Button from "./Button";
 
 const ModalContact = () => {
@@ -68,10 +68,10 @@ const ModalContact = () => {
         onSubmit={(e) => handleSubmit(e)}
         className="flex flex-col"
         aria-label="Contact form">
-        <h1 className="overflow-hidden font-normal text-center text-clip text-size-header">
+        <h1 className="overflow-hidden text-center text-clip text-size-header">
           CONTACT
         </h1>
-        <div className="grid grid-cols-1 gap-6 mt-4 text-size-regular">
+        <div className="grid grid-cols-1 gap-6 mt-4">
           <label className="block">
             <span className="text-primary-light dark:text-primary-dark">
               Name
@@ -137,6 +137,9 @@ const ModalContact = () => {
               rows="3"
               placeholder="Elaborate..."
               required></textarea>
+            <p className="text-sm text-secondary">
+              contactholymountain (at) gmail (dot) com
+            </p>
           </label>
           {!isSubmit ? (
             isError ? (
@@ -148,11 +151,13 @@ const ModalContact = () => {
               /* </Button> */
               <>
                 {!isLoading ? (
-                  <input
-                    tabIndex="-1"
-                    type="submit"
-                    className="p-2 mx-36 hover:cursor-pointer rounded text-primary-dark bg-button-filter-light"
-                  />
+                  <div className="flex w-full items-center justify-center">
+                    <input
+                      // tabIndex="-1"
+                      type="submit"
+                      className="p-2 w-36 hover:cursor-pointer rounded text-primary-dark bg-button-filter-light"
+                    />
+                  </div>
                 ) : (
                   <Spinner />
                 )}

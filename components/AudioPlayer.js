@@ -1,38 +1,38 @@
+import { useRef, useEffect, useState, useCallback } from "react";
 import getClockValue from "../functions/getClockValue";
-import { useRef, useEffect, useState } from "react";
-import Spinner from "./Spinner";
-import Button from "./Button";
-import Icon from "./Icon";
+import getCurrTheme from "../functions/getCurrTheme";
+// import ButtonScrollTo from "./ButtonScrollTo";
+import ButtonIcon from "./ButtonIcon";
 
-const WaveFormOptions = (ref) => ({
+const WaveFormOptions = (ref, opt) => ({
   container: ref,
-  waveColor: "rgb(33, 31, 36)", // "#211F24",
-  progressColor: "rgb(239, 68, 68)", // "#300415",
-  cursorColor: "rgb(239, 68, 68)", // "#300415",
-  cursorWidth: 1,
-  barWidth: 4,
-  barRadius: 3,
+  // waveColor: "rgb(0,0,0)", // "#211F24",
+  // progressColor: "rgb(0,0,0)", // "#300415",
+  // cursorColor: "rgb(20,0,0)", // "#300415",
+  cursorWidth: 2,
+  //   barWidth: 1,
+  //   barRadius: 5,
   responsive: true,
-  height: 100,
+  height: 80,
   partialRender: false, //true
   hideScrollbar: true,
-  normalize: true,
+  // normalize: true,
+  splitChannels: false,
+  ...opt,
 });
 
-// const url = "./audio/celest.mp3";
-
-const AudioPlayer = ({ src }) => {
+const MyAudioPlayer = ({ src, newOptions = {} }) => {
   const containerRef = useRef(null);
   const waveFormRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [audioIsMounted, setAudioIsMounted] = useState(false);
-  // const [stateTheme, setStateTheme] = useState(null);
-  // const { currTheme } = getCurrTheme();
+
+  const { currTheme } = getCurrTheme();
 
   const create = async () => {
     try {
       const WaveSurfer = (await import("wavesurfer.js")).default;
-      const options = WaveFormOptions(containerRef.current);
+      const options = WaveFormOptions(containerRef.current, newOptions);
       waveFormRef.current = WaveSurfer.create(options);
       waveFormRef.current.load(src);
 
@@ -60,56 +60,48 @@ const AudioPlayer = ({ src }) => {
     };
   }, []);
 
-  // we need a seperate variable for the theme here because,
-  // we dont want it set the waveColors etc, every time we reload.
-  // instead, only when the theme actually changes.
-  // useEffect(() => {
-  //   if (currTheme === stateTheme) return;
-  //   setStateTheme(currTheme);
-  // }, [currTheme, stateTheme]);
+  // change the color of the waveform based on the current theme
+  const setAudioColor = useCallback(() => {
+    if (audioIsMounted && waveFormRef.current) {
+      waveFormRef.current.setProgressColor(
+        currTheme === "light" ? "#000" : "#fff"
+      );
+      waveFormRef.current.setWaveColor(currTheme === "light" ? "#000" : "#fff");
+      waveFormRef.current.setCursorColor(
+        currTheme === "light" ? "#000" : "#fff"
+      );
+    }
+  }, [waveFormRef, audioIsMounted, currTheme]);
 
-  // set waveform colors based on theme
-  //   useEffect(() => {
-  //     if (audioIsMounted && stateTheme && waveFormRef.current) {
-  //       if (stateTheme === "dark") {
-  //         waveFormRef.current.setProgressColor("rgb(50, 141, 120)");
-  //         waveFormRef.current.setWaveColor("rgb(255, 255, 255)");
-  //         waveFormRef.current.setCursorColor("rgb(50, 141, 120)");
-  //       }
-  //       if (stateTheme === "light") {
-  //         waveFormRef.current.setProgressColor("rgb(239, 68, 68)");
-  //         waveFormRef.current.setWaveColor("rgb(33, 31, 36)");
-  //         waveFormRef.current.setCursorColor("rgb(239, 68, 68)");
-  //       }
-  //     }
-  //   }, [stateTheme, audioIsMounted, waveFormRef]);
+  useEffect(() => {
+    setAudioColor();
+  }, [setAudioColor]);
 
+  // update play state when pause/play
   const handlePlayPause = () => {
     setIsPlaying((prevstate) => !prevstate);
     waveFormRef.current.playPause();
   };
 
   return (
-    <div className="flex items-center justify-start space-x-6">
+    <div className="flex items-center justify-start py-4 py-6">
       {audioIsMounted ? (
-        <div className="flex items-center justify-start space-x-2">
-          <Button onClick={handlePlayPause}>
-            <Icon id={isPlaying ? "pause" : "play"} />
-          </Button>
-          <div className="w-8 text-size-small">
-            <p id="audiotime">00:00</p>
-          </div>
+        <div className="flex items-center">
+          <ButtonIcon
+            onClick={handlePlayPause}
+            iconId={isPlaying ? "pause" : "play"}
+            className="cursor-pointer"
+          />
+          <p id="audiotime">00:00</p>
         </div>
       ) : (
-        <div className="flex text-xs items-center space-x-2">
-          <Spinner />
-        </div>
+        <p className="w-2/3">Loading audio...</p>
       )}
-      <div className="relative w-2/4">
-        <div id="waveform" ref={containerRef} />
+      <div className="relative w-full">
+        <div className="px-2" id="waveform" ref={containerRef} />
       </div>
     </div>
   );
 };
 
-export default AudioPlayer;
+export default MyAudioPlayer;

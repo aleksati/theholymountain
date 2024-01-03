@@ -1,4 +1,4 @@
-import { initValidation, check, post } from "../../../middleware/middlewareApi";
+import { initValidation, post, body } from "../../../middleware/middlewareApi";
 import { commonApiHandlers } from "../../../functions/commonApiHandlers.js";
 import nextConnect from "next-connect";
 import Stripe from "stripe";
@@ -10,33 +10,11 @@ import {
 } from "../../../config";
 
 const stripeValidators = initValidation([
-  check("key")
-    .exists()
-    .withMessage("Key is missing")
+  body()
+    .isArray()
+    .withMessage("Checkout body must be array")
     .notEmpty()
-    .withMessage("Key is empty"),
-  check("name")
-    .exists()
-    .withMessage("Name is missing")
-    .notEmpty()
-    .withMessage("Name is empty"),
-  check("quantity")
-    .exists()
-    .withMessage("Quantity is missing")
-    .notEmpty()
-    .withMessage("Quantity is empty")
-    .isInt({ min: 0 })
-    .withMessage("Quantity must be number over 0."),
-  check("price")
-    .exists()
-    .withMessage("Price is missing")
-    .notEmpty()
-    .withMessage("Price is empty"),
-  check("description")
-    .exists()
-    .withMessage("Description is missing")
-    .notEmpty()
-    .withMessage("Description is empty"),
+    .withMessage("Checkout body cannot be empty"),
 ]);
 
 const stripe = new Stripe(
@@ -45,26 +23,37 @@ const stripe = new Stripe(
     : process.env.STRIPE_SECRET_KEY
 );
 
+const logoImg = SITE_DOMAIN + "/img/logo-black.png";
+
 export default nextConnect()
   .use(commonApiHandlers)
   .use(post(stripeValidators))
   .post(async (req, res) => {
-    const shopItem = req.body;
-    const imgPath = SITE_DOMAIN + "/img/" + shopItem.key + "-shop.png";
+    // array with multiple shopItems objects
+    const cart = req.body;
+    // filter so only items with a quantity is handled
+    const cartFiltered = cart.filter((item) => item.quantity > 0);
 
-    const transformedShopItem = {
-      price_data: {
-        currency: "nok",
-        unit_amount: shopItem.price * 100,
-        tax_behavior: "exclusive",
-        product_data: {
-          images: [imgPath],
-          name: shopItem.name,
-          description: shopItem.description,
+    // transform into Stripe format
+    let cartTransformed = [];
+    cartFiltered.map((item) => {
+      cartTransformed.push({
+        price_data: {
+          currency: "nok",
+          unit_amount: item.price * 100,
+          tax_behavior: "exclusive",
+          product_data: {
+            images: [`${SITE_DOMAIN}/img/${item.key}-shop.png`],
+            name: item.title,
+            description: item.description,
+          },
         },
-      },
-      quantity: shopItem.quantity,
-    };
+        quantity: item.quantity,
+      });
+    });
+
+    if (!cartTransformed.length)
+      throw Error("The checkout cart has no items with quantity.");
 
     // try {
     const session = await stripe.checkout.sessions.create({
@@ -117,12 +106,12 @@ export default nextConnect()
           },
         },
       ],
-      line_items: [transformedShopItem],
+      line_items: cartTransformed,
       mode: "payment",
       success_url: SITE_DOMAIN + "/success?session_id={CHECKOUT_SESSION_ID}",
       cancel_url: req.headers.origin,
       metadata: {
-        images: imgPath,
+        images: logoImg,
       },
       automatic_tax: { enabled: true },
     });

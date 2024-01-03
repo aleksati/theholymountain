@@ -27,7 +27,7 @@ const Success = () => {
   );
 
   return (
-    <LayoutPage showMediaTabControls={true} showMenu={true} pageMeta={pageMeta}>
+    <LayoutPage pageMeta={pageMeta}>
       <ClientOnly className="grid grid-cols-1 min-h-screen p-4 gap-4 text-center">
         <div></div>
         {error ? (

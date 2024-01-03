@@ -2,6 +2,7 @@
 
 const nextConfig = {
   reactStrictMode: false, // false because stict mode now render every onMount useEffect twice for some reason.. This messes up my AudioPlayer
+  swcMinify: true,
   images: {
     domains: [
       "theholymountain.net",
@@ -9,17 +10,18 @@ const nextConfig = {
       "m.theholymountain.net",
     ],
   },
-  // env: {
-  //   stripe_publishable_key: process.env.stripe_publishable_key,
-  // },
-  //   async rewrites() {
-  //     return [
-  //       {
-  //         source: "/api/:path*",
-  //         destination: "http://localhost:4000/:path*",
-  //       },
-  //     ];
-  //   },
+
+  // I do this to use "fs" in getStaticProps
+  webpack(config, { nextRuntime }) {
+    // as of Next.js latest versions, the nextRuntime is preferred over `isServer`, because of edge-runtime
+    if (typeof nextRuntime === "undefined") {
+      config.resolve.fallback = {
+        ...config.resolve.fallback,
+        fs: false,
+      };
+    }
+    return config;
+  },
 };
 
 module.exports = nextConfig;
