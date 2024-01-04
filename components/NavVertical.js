@@ -4,7 +4,7 @@ import NavVerticalTabs from "./NavVerticalTabs";
 import ButtonTheme from "./ButtonTheme";
 import { useEffect } from "react";
 import Link from "next/link";
-import Contact from "./Contact";
+// import Contact from "./Contact";
 import MyImage from "./MyImage";
 
 const NavVertical = ({ showNavTop, onToggleNavVertical }) => {
@@ -21,8 +21,8 @@ const NavVertical = ({ showNavTop, onToggleNavVertical }) => {
         showNavTop ? "fixed" : "flex-none"
       } w-64 p-4`}
       ref={ref}>
-      <div className="fixed w-52 mt-4">
-        <div className="flex flex-col p-4 space-y-6">
+      <div className="fixed w-52 mt-2">
+        <div className="flex flex-col p-4 space-y-4">
           <Link href="/">
             <div className="hover:cursor-pointer">
               <MyImage
@@ -34,13 +34,8 @@ const NavVertical = ({ showNavTop, onToggleNavVertical }) => {
               />
             </div>
           </Link>
-          <div className="pl-2">
-            <NavVerticalTabs />
-          </div>
-          <div className="flex">
-            <ButtonTheme />
-            <Contact />
-          </div>
+          <NavVerticalTabs />
+          <ButtonTheme />
         </div>
       </div>
     </div>

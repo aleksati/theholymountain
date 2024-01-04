@@ -53,7 +53,6 @@ const Success = () => {
             <div>
               <p>You will soon receive a confirmation email with a receipt.</p>
             </div>
-            <p>Success!!</p>
           </div>
         )}
         <div></div>

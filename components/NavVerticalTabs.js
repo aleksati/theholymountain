@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import Link from "next/link";
 
-const NAV_TABS = ["about", "music", "videos", "shop", "gallery"];
+const NAV_TABS = ["about", "music", "videos", "shop", "gallery", "contact"];
 
 const NavVerticalTabs = () => {
   // get the current route after /pages and remove the first "/" with slice
@@ -24,8 +24,8 @@ const NavVerticalTabs = () => {
             {/* få inn noe bedre her. Var MyLink */}
             <Link href={`/${tab}`}>
               <p
-                className={`hover:cursor-pointer ${
-                  underline ? "underline" : ""
+                className={`hover:cursor-pointer border-primary-light dark:border-primary-dark ${
+                  underline ? "border-b-2" : ""
                 }`}>
                 {tab}
               </p>

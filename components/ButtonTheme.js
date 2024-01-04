@@ -8,7 +8,7 @@ const ButtonTheme = ({ iconSize }) => {
     currTheme === "dark" ? setTheme("light") : setTheme("dark");
 
   return (
-    <div className="flex items-center justify-center">
+    <div className="flex -ml-2">
       <ButtonIcon
         pressed={currTheme === "dark" ? "true" : "false"}
         label="Toggle light or dark mode theme"
