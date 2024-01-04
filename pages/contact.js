@@ -155,9 +155,9 @@ const Contact = () => {
               /* </Button> */
               <>
                 {!isLoading ? (
-                  <div className="flex w-full">
+                  <div className="flex w-full place-content-center">
                     <input
-                      // tabIndex="-1"
+                      tabIndex="-1"
                       type="submit"
                       className="p-2 w-36 hover:cursor-pointer rounded text-primary-dark bg-button-filter-light"
                     />
