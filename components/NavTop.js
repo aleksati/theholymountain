@@ -17,8 +17,10 @@ const NavTop = ({ onToggleNavVertical, showNavVertical }) => {
       role="toolbar">
       <div className="flex p-4 items-center space-x-1">
         {/* This is the path link at the top */}
-        <Link href={`/${currRoute}`} className="hover:cursor-pointer font-bold">
-          <p>{currRoute}</p>
+        <Link href={`/${currRoute}`} className="hover:cursor-pointer">
+          <p>
+            <b>{currRoute}</b>
+          </p>
         </Link>
       </div>
       {/* fixed class, because it messes with the transition from navtop to nav vertical (just a tiny bit) */}
