@@ -19,11 +19,12 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 import { FiPlay, FiCopy } from "react-icons/fi";
 import { AiOutlinePause } from "react-icons/ai";
 import { GiMagnifyingGlass } from "react-icons/gi";
-import { AiOutlineHeart, AiOutlineMail } from "react-icons/ai";
+// import { AiOutlineHeart, AiOutlineMail } from "react-icons/ai";
 import { MdOutlineReportProblem } from "react-icons/md";
 import { AiOutlineCheck } from "react-icons/ai";
 // import { HiDotsHorizontal } from "react-icons/hi";
 import { AiOutlineMenu, AiOutlineExpandAlt } from "react-icons/ai";
+import { FaHeart } from "react-icons/fa";
 
 const defaultSize = "text-xl";
 
@@ -61,7 +62,7 @@ const icons = {
   shop: (s) => <AiOutlineShoppingCart className={s} />,
   play: (s) => <FiPlay className={s} />,
   pause: (s) => <AiOutlinePause className={s} />,
-  heart: (s) => <AiOutlineHeart className={s} />,
+  heart: (s) => <FaHeart className={s} />,
   issue: (s) => <MdOutlineReportProblem className={s} />,
   check: (s) => <AiOutlineCheck className={s} />,
   // threedots: (s) => (

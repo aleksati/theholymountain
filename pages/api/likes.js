@@ -27,6 +27,7 @@ export default nextConnect()
   .use(commonApiHandlers)
   .use(post(postValidator))
   .use(patch(patchValidator))
+  // get likes
   .post(async (req, res) => {
     // Should optimally be a "get" method with params
     const { key } = req.body;
@@ -49,6 +50,7 @@ export default nextConnect()
       },
     });
   })
+  // update likes
   .patch(async (req, res) => {
     const { key, state } = req.body;
     const clientIP = getClientIP(req);
