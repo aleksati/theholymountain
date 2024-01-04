@@ -4,7 +4,7 @@ import {
   MdOutlineArrowBackIosNew,
 } from "react-icons/md";
 import { BsFillSunFill, BsFillMoonFill, BsPersonCircle } from "react-icons/bs";
-import { RiQuestionMark } from "react-icons/ri";
+// import { RiQuestionMark } from "react-icons/ri";
 import { RiCloseLine } from "react-icons/ri";
 import { FaBandcamp, FaEthereum } from "react-icons/fa";
 import { BsFacebook } from "react-icons/bs";
@@ -19,7 +19,7 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 import { FiPlay, FiCopy } from "react-icons/fi";
 import { AiOutlinePause } from "react-icons/ai";
 import { GiMagnifyingGlass } from "react-icons/gi";
-// import { AiOutlineHeart, AiOutlineMail } from "react-icons/ai";
+import { AiOutlineHeart, AiOutlineMail } from "react-icons/ai";
 import { MdOutlineReportProblem } from "react-icons/md";
 import { AiOutlineCheck } from "react-icons/ai";
 // import { HiDotsHorizontal } from "react-icons/hi";
