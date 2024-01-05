@@ -58,30 +58,31 @@ const About = () => (
         create unique and conceptual music.
       </p>
       <p>
-        The Holy Mountain&apos;s debut album, <i>Toad of Light</i>, surfaced on
-        Shhpuma Clean Feed Records in 2018. With accordion, synth and drums, the
-        instrumental album was a testament to sci-fi film music and the
-        psychedelic movement in 70s pop culture, a conceptual header that would
-        follow the band into the future. Two years later, the duo became a trio
-        and ventured deeper into the void with <i>Ending it All Tonight</i>, a
-        fully-fledged electronic synth album inspired by synthwave, vaporwave,
-        and 80s aesthetics.
+        After a four-track EP/demo in 2015, The Holy Mountain&apos;s debut
+        studio album, <i>Toad of Light</i>, surfaced on Shhpuma Clean Feed
+        Records in 2018, featuring accordion, synth and drums. The four-part
+        instrumental release was a testament to dystopian sci-fi visions and
+        cult-aesthetics, themes that would follow the band further into the
+        future. Two years later, the duo became a trio and ventured deeper into
+        the void with <i>Ending it All Tonight</i>, a fully-fledged electronic
+        synth album inspired by synthwave, vaporwave, and dystopian 80s
+        aesthetics.
       </p>
       <p>
-        But the band&apos;s next official release would department from the
-        previous and see the trio explore new musical grounds.{" "}
+        But the band&apos;s next studio album would department from the
+        previous, and see the trio explore new musical grounds.{" "}
         <i>The Dawns Here Are Quiet</i> (2023) saw the band return to their
-        original instrumentation of accordion, synth, drums and vocals. The
-        eight-track studio album combines experimental and contemporary jazz
-        with alternative and melancholic pop, inspired by the poetry of Arseny
-        Tarkovsky and Nordic cinema.
+        original instrumentation, with added vocals, and combine experimental
+        and contemporary jazz with alternative and melancholic pop. This
+        eight-track studio album has inspirational ties to the poetry of Arseny
+        Tarkovsky, nordic jazz and art cinema.
       </p>
       <p>
         Already in early 2024, the trio is ready with their next EP,
         <i>They Are Asleep</i>, an upbeat breath of fresh air in their musical
         career. With this release, the band&apos;s characteristic melancholic
-        sound is mixed with new sources of inspiration, such as Y2K-techno and
-        synth-pop.
+        sound is mixed with new sources of inspiration, such as techno, sci-fi
+        horror and synth-pop.
       </p>
     </div>
   </div>
