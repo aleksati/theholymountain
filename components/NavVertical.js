@@ -21,8 +21,8 @@ const NavVertical = ({ showNavTop, onToggleNavVertical }) => {
         showNavTop ? "fixed" : "flex-none"
       } w-64 p-4`}
       ref={ref}>
-      <div className="fixed w-52 mt-2">
-        <div className="flex flex-col p-4 space-y-4">
+      <div className="fixed w-48 mt-6">
+        <div className="flex flex-col space-y-4">
           <Link href="/">
             <div className="hover:cursor-pointer">
               <MyImage
