@@ -1,4 +1,3 @@
-import ButtonScrollTo from "../components/ButtonScrollTo";
 import { forwardRef, useEffect, useState } from "react";
 import NavVertical from "../components/NavVertical";
 import NavTop from "../components/NavTop";
@@ -29,9 +28,6 @@ const LayoutPageMobile = forwardRef(({ pageId, children, className }, ref) => {
         id={pageId}
         ref={ref}>
         {children}
-      </div>
-      <div className="fixed right-4 bottom-4">
-        <ButtonScrollTo targetId={pageId} parentRef={ref} />
       </div>
     </>
   );
