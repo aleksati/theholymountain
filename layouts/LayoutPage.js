@@ -36,7 +36,7 @@ const LayoutPage = ({ pageId = "top", children, className, pageMeta }) => {
         )}
         <div className="absolute right-10">
           <div className="fixed bottom-4">
-            <ButtonScrollTo targetId={pageId} parentRef={pageTopRef} />
+            <ButtonScrollTo targetId={pageId} pageTopRef={pageTopRef} />
           </div>
         </div>
       </div>
