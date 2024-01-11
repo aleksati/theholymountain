@@ -79,7 +79,7 @@ const About = () => (
       </p>
       <p>
         Already in early 2024, the trio is ready with their next EP,
-        <i>They Are Asleep</i>, an upbeat breath of fresh air in their musical
+        <i> They Are Asleep</i>, an upbeat breath of fresh air in their musical
         career. With this release, the band&apos;s characteristic melancholic
         sound is mixed with new sources of inspiration, such as techno, sci-fi
         horror and synth-pop.
