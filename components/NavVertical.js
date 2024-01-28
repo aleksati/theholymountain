@@ -20,18 +20,31 @@ const NavVertical = ({ showNavTop, onToggleNavVertical }) => {
       className={`z-50 min-h-screen border-r border-secondary bg-primary-light dark:bg-primary-dark dark:border-secondary-dark space-y-12 ${
         showNavTop ? "fixed" : "flex-none"
       } w-64 p-4`}
-      ref={ref}>
-      <div className="fixed w-48 mt-6">
-        <div className="flex flex-col space-y-4">
+      ref={ref}
+    >
+      <div className="fixed w-48 mt-2 md:mt-6">
+        <div className="flex flex-col space-y-6">
           <Link href="/">
             <div className="hover:cursor-pointer">
-              <MyImage
-                src={currTheme === "dark" ? "logo-white.png" : "logo-black.png"}
-                width="1000"
-                height="465"
-                layout="responsive"
-                alt="band logo"
-              />
+              {currTheme === "dark" ? (
+                <MyImage
+                  src={"logo-white.png"}
+                  width="600"
+                  height="279"
+                  layout="responsive"
+                  alt="band logo"
+                  priority={true}
+                />
+              ) : (
+                <MyImage
+                  src={"logo-black.png"}
+                  width="600"
+                  height="279"
+                  layout="responsive"
+                  alt="band logo"
+                  priority={true}
+                />
+              )}
             </div>
           </Link>
           <NavVerticalTabs />

@@ -43,18 +43,21 @@ const ShopCheckout = ({ cart, onResetQuantity }) => {
         <div
           className="p-4 my-2 space-y-2 bg-primary-light dark:bg-primary-dark
     border justify-center border-secondary-skin-light dark:border-secondary-skin-dark
-    ">
+    "
+        >
           <p>Total: {total} kr</p>
           <div className="flex space-x-2">
             <button
-              className={`p-2 w-32 disabled:cursor-not-allowed rounded flex items-center text-primary-dark bg-button-filter-light w-1/2 justify-center`}
+              className={`p-2 disabled:cursor-not-allowed rounded flex items-center border hover:border-secondary hover:dark:border-secondary transistion ease-in-out duration-200 border-secondary-skin-light dark:border-secondary-skin-dark w-1/2 justify-center`}
               disabled={total === 0 || isError || isLoading}
-              onClick={createCheckoutSession}>
+              onClick={createCheckoutSession}
+            >
               {isError ? "ERROR" : isLoading ? "Redirecting..." : "To checkout"}
             </button>
             <button
-              className={`p-2 w-32 disabled:cursor-not-allowed rounded flex items-center text-primary-dark bg-blue-400 justify-center w-1/2`}
-              onClick={onResetQuantity}>
+              className={`p-2 disabled:cursor-not-allowed rounded flex items-center border hover:border-secondary hover:dark:border-secondary transistion ease-in-out duration-200 border-secondary-skin-light dark:border-secondary-skin-dark justify-center w-1/2`}
+              onClick={onResetQuantity}
+            >
               Clear items
             </button>
           </div>

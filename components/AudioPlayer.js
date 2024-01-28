@@ -84,18 +84,20 @@ const MyAudioPlayer = ({ src, newOptions = {} }) => {
   };
 
   return (
-    <div className="flex items-center justify-start py-4 py-6">
+    <div className="flex items-center justify-start py-6">
       {audioIsMounted ? (
-        <div className="flex items-center">
+        <div className="flex space-x-2 items-center">
           <ButtonIcon
             onClick={handlePlayPause}
             iconId={isPlaying ? "pause" : "play"}
             className="cursor-pointer"
           />
-          <p id="audiotime">00:00</p>
+          <p className="text-secondary" id="audiotime">
+            00:00
+          </p>
         </div>
       ) : (
-        <p className="w-2/3">Loading audio...</p>
+        <p className="w-2/3">Loading...</p>
       )}
       <div className="relative w-full">
         <div className="px-2" id="waveform" ref={containerRef} />
