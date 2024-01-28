@@ -1,7 +1,7 @@
 import MyImage from "../components/MyImage";
 import SoMeBar from "../components/SoMeBar";
 
-const bandPhoto = "/gallery/3-4.jpg";
+const bandPhoto = "/gallery/5-1.jpg";
 const someObject = [
   {
     key: "facebook",
