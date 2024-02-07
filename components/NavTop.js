@@ -14,7 +14,8 @@ const NavTop = ({ onToggleNavVertical, showNavVertical }) => {
     <nav
       className="z-50 fixed w-full bg-primary-light dark:bg-primary-dark"
       aria-label="Navbar"
-      role="toolbar">
+      role="toolbar"
+    >
       <div className="flex p-4 items-center space-x-1">
         {/* This is the path link at the top */}
         <Link href={`/${currRoute}`} className="hover:cursor-pointer">
@@ -24,7 +25,7 @@ const NavTop = ({ onToggleNavVertical, showNavVertical }) => {
         </Link>
       </div>
       {/* fixed class, because it messes with the transition from navtop to nav vertical (just a tiny bit) */}
-      <div className="fixed -top-2 right-4">
+      <div className="fixed top-4 right-4">
         <ButtonIcon
           iconId={showNavVertical ? "x" : "threedots"}
           onClick={onToggleNavVertical}

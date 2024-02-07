@@ -22,13 +22,13 @@ const NavVertical = ({ showNavTop, onToggleNavVertical }) => {
       } w-64 p-4`}
       ref={ref}
     >
-      <div className="fixed w-48 mt-2 md:mt-6">
+      <div className="fixed w-56 mt-2 md:mt-6">
         <div className="flex flex-col space-y-6">
           <Link href="/">
-            <div className="hover:cursor-pointer">
+            <div className="px-4 hover:cursor-pointer">
               {currTheme === "dark" ? (
                 <MyImage
-                  src={"logo-white.png"}
+                  src="logo-white.png"
                   width="600"
                   height="279"
                   layout="responsive"
@@ -37,7 +37,7 @@ const NavVertical = ({ showNavTop, onToggleNavVertical }) => {
                 />
               ) : (
                 <MyImage
-                  src={"logo-black.png"}
+                  src="logo-black.png"
                   width="600"
                   height="279"
                   layout="responsive"
@@ -47,8 +47,12 @@ const NavVertical = ({ showNavTop, onToggleNavVertical }) => {
               )}
             </div>
           </Link>
-          <NavVerticalTabs />
-          <ButtonTheme />
+          <div className="pl-4">
+            <NavVerticalTabs />
+          </div>
+          <div className="pl-4">
+            <ButtonTheme />
+          </div>
         </div>
       </div>
     </div>

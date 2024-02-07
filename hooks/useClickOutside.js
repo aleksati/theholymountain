@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef, useCallback } from "react";
 import { useIsMounted } from "./useIsMounted";
 
 export const useClickOutside = () => {
@@ -11,10 +11,10 @@ export const useClickOutside = () => {
   const ref = useRef(null);
 
   // if the ref.current matches the e.target
-  const handleClick = (e) => {
+  const handleClick = useCallback((e) => {
     const item = e.target;
 
-    // I have to explicitly make sure that the vertical navbare does
+    // I have to explicitly make sure that thPe vertical navbare does
     // NOT close when hitting the theme button on mobile view. For
     // this to work, I added id="button-theme" to the theme button
     // <Icon/> component.
@@ -26,16 +26,16 @@ export const useClickOutside = () => {
       return;
     }
     setIsClickOutside(true);
-  };
+  }, []);
 
   useEffect(() => {
     if (ref.current && isMounted) {
-      window.addEventListener("click", handleClick);
+      window.addEventListener("click", handleClick, { passive: true });
       return () => {
         window.removeEventListener("click", handleClick);
       };
     }
-  }, [ref, setIsClickOutside, isMounted]);
+  }, [ref, isMounted, handleClick]);
 
   return [ref, isClickOutside];
 };

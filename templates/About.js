@@ -4,18 +4,6 @@ import SoMeBar from "../components/SoMeBar";
 const bandPhoto = "/gallery/5-1.jpg";
 const someObject = [
   {
-    key: "facebook",
-    url: "https://www.facebook.com/theholymountaintrio",
-  },
-  {
-    key: "instagram",
-    url: "https://www.instagram.com/theholymountaintrio/",
-  },
-  {
-    key: "youtube",
-    url: "https://www.youtube.com/channel/UCdjPuoIdC6-EDb_tR5h9ayg",
-  },
-  {
     key: "spotify",
     url: "https://open.spotify.com/artist/04GXo6z6x1KLMG9weDPayK?si=rzFLNrlkTvml0zaKqo_tuQ",
   },
@@ -26,6 +14,18 @@ const someObject = [
   {
     key: "applemusic",
     url: "https://music.apple.com/us/artist/the-holy-mountain/1685003735",
+  },
+  {
+    key: "facebook",
+    url: "https://www.facebook.com/theholymountaintrio",
+  },
+  {
+    key: "instagram",
+    url: "https://www.instagram.com/theholymountaintrio/",
+  },
+  {
+    key: "youtube",
+    url: "https://www.youtube.com/channel/UCdjPuoIdC6-EDb_tR5h9ayg",
   },
   {
     key: "soundcloud",

@@ -8,17 +8,18 @@ const ButtonTheme = ({ iconSize }) => {
     currTheme === "dark" ? setTheme("light") : setTheme("dark");
 
   return (
-    <div className="flex -ml-2">
-      <ButtonIcon
-        pressed={currTheme === "dark" ? "true" : "false"}
-        label="Toggle light or dark mode theme"
-        iconId={currTheme === "dark" ? "sun" : "moon"}
-        // tabOrder={tabOrder}
-        onClick={handleClick}
-        // hasTooltip={true}
-        // tooltipText="theme"
-      />
-    </div>
+    // <div className="flex -ml-2">
+    <ButtonIcon
+      pressed={currTheme === "dark" ? "true" : "false"}
+      label="Toggle light or dark mode theme"
+      iconId={currTheme === "dark" ? "sun" : "moon"}
+      // tabOrder={tabOrder}
+      onClick={handleClick}
+      id="button-theme"
+      // hasTooltip={true}
+      // tooltipText="theme"
+    />
+    // </div>
   );
 };
 
