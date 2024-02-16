@@ -30,7 +30,7 @@ const Release = ({ item }) => {
         </div>
         <div className="flex items-center space-x-4">
           <LikesCounter releaseKey={item.key} />
-          <SoMeBar exclude={["spotify"]} someObject={item.some} />
+          <SoMeBar someObject={item.some} />
         </div>
         <div className="text-secondary">
           {item.credits.map((credit, index) => (
