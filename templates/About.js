@@ -52,10 +52,9 @@ const About = () => (
     </div>
     <div className="space-y-4">
       <p>
-        The Holy Mountain is a genre-defying trio from Oslo, Norway, that moves
-        between jazz, electronic synth music, alternative pop, and minimalism.
-        The band&apos;s sound combines accordion, vocals, synth and drums to
-        create unique and conceptual music.
+        The Holy Mountain is a genre-defying dark synthpop trio from Oslo,
+        Norway. The band&apos;s sound combines accordion, vocals, synth and
+        drums to create unique and conceptual musical worlds.
       </p>
       <p>
         After a four-track EP/demo in 2015, The Holy Mountain&apos;s debut
@@ -70,19 +69,19 @@ const About = () => (
       </p>
       <p>
         But the band&apos;s next studio album would department from the
-        previous, and see the trio explore new musical grounds.{" "}
-        <i>The Dawns Here Are Quiet</i> (2023) saw the band return to their
-        original instrumentation, with added vocals, and combine experimental
-        and contemporary jazz with alternative and melancholic pop. This
-        eight-track studio album has inspirational ties to the poetry of Arseny
-        Tarkovsky, nordic jazz and art cinema.
+        previous, and see the trio push new musical grounds.{" "}
+        <i>The Dawns Here Are Quiet</i> (2023) is more reminiscent of Nordic
+        jazz than anything else, with clear aesthetic inspirations from art
+        cinema directors like Tarkovsky and Bergman. The release features eight
+        tracks with the band's original instrumentation (accordion, drums and
+        vocal), with added vocals.
       </p>
       <p>
         Already in early 2024, the trio is ready with their next EP,
         <i> They Are Asleep</i>, an upbeat breath of fresh air in their musical
         career. With this release, the band&apos;s characteristic melancholic
         sound is mixed with new sources of inspiration, such as techno, sci-fi
-        horror and synth-pop.
+        horror and synthpop.
       </p>
     </div>
   </div>
