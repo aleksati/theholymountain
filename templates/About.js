@@ -81,7 +81,7 @@ const About = () => (
         <i> They Are Asleep</i>, an upbeat breath of fresh air in their musical
         career. With this release, the band&apos;s characteristic melancholic
         sound is mixed with new sources of inspiration, such as techno, sci-fi
-        horror and synthpop.
+        horror and synth-pop.
       </p>
     </div>
   </div>
