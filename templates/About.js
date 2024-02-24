@@ -52,9 +52,9 @@ const About = () => (
     </div>
     <div className="space-y-4">
       <p>
-        The Holy Mountain is a genre-defying dark synthpop trio from Oslo,
-        Norway. The band&apos;s sound combines accordion, vocals, synth and
-        drums to create unique and conceptual musical worlds.
+        The Holy Mountain is a dark synth-pop trio from Oslo, Norway. The
+        band&apos;s sound combines accordion, vocals, synth and drums to create
+        unique and conceptual musical worlds.
       </p>
       <p>
         After a four-track EP/demo in 2015, The Holy Mountain&apos;s debut
