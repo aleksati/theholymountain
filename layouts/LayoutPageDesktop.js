@@ -5,9 +5,10 @@ const LayoutPageDesktop = forwardRef(({ pageId, children, className }, ref) => (
   <>
     <NavVertical showNavTop={false} />
     <div
-      className={`container pb-4 mx-auto flex-1 overflow-hidden px-4 pt-6 ${className}`}
+      className={`container pb-4 mx-auto flex-1 overflow-hidden pt-6 ${className}`}
       id={pageId}
-      ref={ref}>
+      ref={ref}
+    >
       {children}
     </div>
   </>

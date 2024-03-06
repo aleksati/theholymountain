@@ -24,9 +24,10 @@ const LayoutPageMobile = forwardRef(({ pageId, children, className }, ref) => {
       <div
         className={`container pb-4 ${
           showNavVertical && "blur-sm"
-        } mx-auto flex-1 overflow-hidden px-4 pt-20 ${className}`}
+        } mx-auto flex-1 overflow-hidden pt-20 ${className}`}
         id={pageId}
-        ref={ref}>
+        ref={ref}
+      >
         {children}
       </div>
     </>

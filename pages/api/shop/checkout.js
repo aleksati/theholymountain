@@ -43,7 +43,7 @@ export default nextConnect()
           unit_amount: item.price * 100,
           tax_behavior: "exclusive",
           product_data: {
-            images: [`${SITE_DOMAIN}/img/${item.key}-shop.png`],
+            images: [`${SITE_DOMAIN}/img/shop/${item.key}-shop-1.png`],
             name: item.title,
             description: item.description,
           },
@@ -109,7 +109,7 @@ export default nextConnect()
       line_items: cartTransformed,
       mode: "payment",
       success_url: SITE_DOMAIN + "/success?session_id={CHECKOUT_SESSION_ID}",
-      cancel_url: req.headers.origin,
+      cancel_url: SITE_DOMAIN + "/shop", //req.headers.origin,
       metadata: {
         images: logoImg,
       },

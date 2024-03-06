@@ -4,9 +4,9 @@ export const SITE_DOMAIN = dev
   ? "http://localhost:3000"
   : "https://www.theholymountain.net";
 
-// Used in /api/createStripeSession.js
-export const SHIPPING_DOM_PRICE = 50; // nok
-export const SHIPPING_WO_PRICE = 100; // nok
+// Used in pages/api/checkout.js
+export const SHIPPING_DOM_PRICE = 100; // nok
+export const SHIPPING_WO_PRICE = 200; // nok
 export const SHIPPING_COUNTRIES = [
   "AC",
   "AD",

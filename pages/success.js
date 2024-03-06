@@ -26,37 +26,21 @@ const Success = () => {
 
   return (
     <LayoutPage pageMeta={pageMeta}>
-      <ClientOnly className="grid grid-cols-1 min-h-screen p-4 gap-4 text-center">
-        <div></div>
-        {error ? (
-          <div>
-            <div>
-              <h1 className="text-size-header md:text-size-header-big leading-8 font-bold">
-                Oh, no!
-              </h1>
-            </div>
-            <div>
-              <p>Something went wrong..</p>
-            </div>
-          </div>
-        ) : !data ? (
-          <div>
-            <Loading />
-          </div>
-        ) : (
-          <div className="space-y-4 justify-center text-center items-center">
-            <div>
-              <h1 className="text-size-header md:text-size-header-big leading-8 font-bold">
-                Thank you for your order!
-              </h1>
-            </div>
-            <div>
-              <p>You will soon receive a confirmation email with a receipt.</p>
-            </div>
-          </div>
-        )}
-        <div></div>
-      </ClientOnly>
+      {error ? (
+        <div className="pt-4">
+          <p>Oh, no!</p>
+          <p>Something went wrong..</p>
+        </div>
+      ) : !data ? (
+        <div className="pt-4">
+          <Loading />
+        </div>
+      ) : (
+        <div>
+          <p className="pt-4">Thank you for your order!</p>
+          <p>You will soon receive a confirmation email with a receipt.</p>
+        </div>
+      )}
     </LayoutPage>
   );
 };

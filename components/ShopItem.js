@@ -17,12 +17,12 @@ const ShopItem = ({ shopItem, onQuantityChange }) => (
     /> */}
     <div className="space-y-2">
       <div>
-        <p>{shopItem.price} kr</p>
         <p>{shopItem.title}</p>
-        <p className="text-sm text-secondary">{shopItem.description}</p>
+        <p className="text-sm">{shopItem.description}</p>
+        <p>{shopItem.price} kr</p>
       </div>
       <div className="space-y-1">
-        <p className="text-sm text-secondary">Add to cart</p>
+        <p className="text-sm text-secondary">Add to cart:</p>
         <div className="flex space-x-1">
           <button
             className={`px-4 items-center border justify-center hover:border-secondary hover:dark:border-secondary transistion ease-in-out duration-200 border-secondary-skin-light dark:border-secondary-skin-dark`}
@@ -34,7 +34,8 @@ const ShopItem = ({ shopItem, onQuantityChange }) => (
                     ? Number(shopItem.quantity) - 1
                     : 0,
               });
-            }}>
+            }}
+          >
             -
           </button>
           <input
@@ -56,7 +57,8 @@ const ShopItem = ({ shopItem, onQuantityChange }) => (
                 key: shopItem.key,
                 newQuantity: Number(shopItem.quantity) + 1,
               });
-            }}>
+            }}
+          >
             +
           </button>
         </div>
