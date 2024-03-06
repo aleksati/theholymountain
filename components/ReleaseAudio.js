@@ -5,12 +5,11 @@ const ReleaseAudio = ({ spotifyurl, previewurl }) => {
     return (
       <div className="pb-2">
         <iframe
-          width="100%"
-          height="460" // 152
+          width="700"
+          height="420" // 152
           allowtransparency="true"
-          className="rounded-2xl"
-          src={spotifyurl}
-        ></iframe>
+          className="bg-primary-light dark:bg-primary-dark"
+          src={spotifyurl}></iframe>
       </div>
     );
   }

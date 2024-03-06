@@ -24,7 +24,7 @@ const NavVertical = ({ showNavTop, onToggleNavVertical }) => {
       <div className="fixed w-52 mt-2 md:mt-6">
         <div className="flex flex-col space-y-6">
           <Link href="/">
-            <div className="px-4 hover:cursor-pointer">
+            <div className="px-6 hover:cursor-pointer">
               <MyImage
                 src={currTheme === "dark" ? "logo-white.png" : "logo-black.png"}
                 width="600"
@@ -35,10 +35,10 @@ const NavVertical = ({ showNavTop, onToggleNavVertical }) => {
               />
             </div>
           </Link>
-          <div className="pl-4">
+          <div className="pl-6">
             <NavVerticalTabs />
           </div>
-          <div className="pl-4">
+          <div className="pl-6">
             <ButtonTheme />
           </div>
         </div>

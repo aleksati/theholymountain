@@ -4,10 +4,6 @@ import SoMeBar from "../components/SoMeBar";
 const bandPhoto = "/gallery/5-1.jpg";
 const someObject = [
   {
-    key: "bandcamp",
-    url: "https://theholymountain.bandcamp.com/",
-  },
-  {
     key: "spotify",
     url: "https://open.spotify.com/artist/04GXo6z6x1KLMG9weDPayK?si=rzFLNrlkTvml0zaKqo_tuQ",
   },
@@ -26,6 +22,10 @@ const someObject = [
   {
     key: "instagram",
     url: "https://www.instagram.com/theholymountaintrio/",
+  },
+  {
+    key: "bandcamp",
+    url: "https://theholymountain.bandcamp.com/",
   },
   {
     key: "youtube",
