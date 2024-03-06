@@ -9,7 +9,8 @@ const ReleaseAudio = ({ spotifyurl, previewurl }) => {
           height="460" // 152
           allowtransparency="true"
           className="rounded-2xl"
-          src={spotifyurl}></iframe>
+          src={spotifyurl}
+        ></iframe>
       </div>
     );
   }

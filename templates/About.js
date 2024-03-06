@@ -4,16 +4,20 @@ import SoMeBar from "../components/SoMeBar";
 const bandPhoto = "/gallery/5-1.jpg";
 const someObject = [
   {
+    key: "bandcamp",
+    url: "https://theholymountain.bandcamp.com/",
+  },
+  {
     key: "spotify",
     url: "https://open.spotify.com/artist/04GXo6z6x1KLMG9weDPayK?si=rzFLNrlkTvml0zaKqo_tuQ",
   },
   {
-    key: "tidal",
-    url: "https://tidal.com/browse/artist/39079821",
-  },
-  {
     key: "applemusic",
     url: "https://music.apple.com/us/artist/the-holy-mountain/1685003735",
+  },
+  {
+    key: "tidal",
+    url: "https://tidal.com/browse/artist/39079821",
   },
   {
     key: "facebook",
@@ -26,10 +30,6 @@ const someObject = [
   {
     key: "youtube",
     url: "https://www.youtube.com/channel/UCdjPuoIdC6-EDb_tR5h9ayg",
-  },
-  {
-    key: "soundcloud",
-    url: "https://soundcloud.com/theholymountainduo",
   },
 ];
 
@@ -52,8 +52,8 @@ const About = () => (
     </div>
     <div className="space-y-4">
       <p>
-        The Holy Mountain is a dark synth-pop trio from Norway, that combines
-        accordion, vocals, synth and drums to create a unique sound.
+        The Holy Mountain is a dark synth-pop trio from Norway with accordion,
+        vocals, synth and drums.
       </p>
       <p>
         After a four-track EP/demo in 2015, The Holy Mountain&apos;s debut
