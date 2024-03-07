@@ -77,9 +77,9 @@ const About = () => (
         original instrumentation of accordion, drums and synth, now with added
         vocals. Sonically, TDHAQ features eight tracks more reminiscent of
         Nordic jazz and indie-pop than anything else, with a vibe that&apos;s
-        mellow and melancholic yet intense and uplifting at the same time. To
-        date, TDHAQ stands as the most critically acclaimed and successful album
-        in the band&apos;s history.
+        mellow and melancholic yet intense and uplifting. To date, TDHAQ is the
+        most critically acclaimed and successful album in the band&apos;s
+        history.
       </p>
       <p>
         Already in early 2024, the trio is ready with their next EP, an upbeat
@@ -87,11 +87,11 @@ const About = () => (
         all about having a party in hell, with lyrical themes about collective
         ignorance, death, and the decay of nature, and music reminiscent of Y2K
         techno, synth-pop and sci-fi horror. The EP features the same
-        instrumentation as TDHAQ, but with a sound more raw, uncompromised and
-        rock-n-roll than ever before. <i>They Are Asleep</i> represents a
-        synthesis in the band&apos;s history; a combination of all the best The
-        Holy Mountain has had to offer. So join us where tensions are high,
-        where darkness means light, and where the light is dark.
+        instrumentation as TDHAQ but with a sound more raw, uncompromised and
+        rock-n-roll than ever. <i>They Are Asleep</i> represents a synthesis in
+        the band&apos;s history; a combination of all the best The Holy Mountain
+        has had to offer. So join us where tensions are high, where darkness
+        means light, and where the light is dark.
       </p>
       {/* With the release, the band their highest acclaim yet  */}
       {/* with a distinct visual profile inspired by the art cinema of directors like Tarkovsky and Bergman. */}
