@@ -3,13 +3,13 @@ import AudioPlayer from "./AudioPlayer";
 const ReleaseAudio = ({ spotifyurl, previewurl }) => {
   if (spotifyurl) {
     return (
-      <div className="pb-2">
+      <div className="pb-2 max-w-2xl">
         <iframe
-          width="700"
+          width="100%" // 700
           height="420" // 152
-          allowtransparency="true"
-          className="bg-primary-light dark:bg-primary-dark"
-          src={spotifyurl}></iframe>
+          // className="bg-primary-light dark:bg-primary-dark"
+          src={spotifyurl}
+        ></iframe>
       </div>
     );
   }
