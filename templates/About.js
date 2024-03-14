@@ -90,8 +90,8 @@ const About = () => (
         instrumentation as TDHAQ but with a sound more raw, uncompromised and
         rock-n-roll than ever. <i>They Are Asleep</i> represents a synthesis in
         the band&apos;s history; a combination of all the best The Holy Mountain
-        has had to offer. So join us where tensions are high, where darkness
-        means light, and where the light is dark.
+        has had to offer. So join us where tensions are high and the darkness is
+        bright.
       </p>
       {/* With the release, the band their highest acclaim yet  */}
       {/* with a distinct visual profile inspired by the art cinema of directors like Tarkovsky and Bergman. */}
