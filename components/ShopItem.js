@@ -5,6 +5,7 @@ import MySlideshow from "./MySlideshow";
 const ShopItem = ({ shopItem, onQuantityChange, onSizeChange }) => (
   <div className="m-2 p-2 border border-secondary-skin-light dark:border-secondary-skin-dark">
     <MySlideshow
+      priority={true}
       imgs={[
         `shop/${shopItem.key}-shop-1.png`,
         `shop/${shopItem.key}-shop-2.png`,
