@@ -42,6 +42,11 @@ const shopPostValidator = initValidation([
     .withMessage("Description is empty")
     .isLength({ min: 3 })
     .withMessage("Description must be over 3 characters"),
+  check("price")
+    .exists()
+    .withMessage("Price is missing")
+    .notEmpty()
+    .withMessage("Price is empty"),
 ]);
 
 const shopDeleteValidator = initValidation([
@@ -67,6 +72,10 @@ const shopPutValidator = initValidation([
     check("year").exists().withMessage("Year is missing"),
     check("description").exists().withMessage("Description is missing"),
     check("price").exists().withMessage("Price is missing"),
+    check("shopQuantity").exists().withMessage("shopQuantity is missing"),
+    check("UserQuantity").exists().withMessage("userQuantity is missing"),
+    check("shopSizes").exists().withMessage("shopSizes is missing"),
+    check("userSize").exists().withMessage("userSize is missing"),
   ]),
 ]);
 

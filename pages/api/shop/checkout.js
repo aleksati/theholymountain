@@ -32,7 +32,7 @@ export default nextConnect()
     // array with multiple shopItems objects
     const cart = req.body;
     // filter so only items with a quantity is handled
-    const cartFiltered = cart.filter((item) => item.quantity > 0);
+    const cartFiltered = cart.filter((item) => item.userQuantity > 0);
 
     // transform into Stripe format
     let cartTransformed = [];
@@ -45,10 +45,11 @@ export default nextConnect()
           product_data: {
             images: [`${SITE_DOMAIN}/img/shop/${item.key}-shop-1.png`],
             name: item.title,
-            description: item.description,
+            description:
+              item.description + (item.userSize ? " " + item.userSize : ""),
           },
         },
-        quantity: item.quantity,
+        quantity: item.userQuantity,
       });
     });
 

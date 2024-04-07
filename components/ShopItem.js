@@ -1,12 +1,13 @@
+import Dropdown from "./Dropdown";
 import MySlideshow from "./MySlideshow";
 // import MyImage from "./MyImage";
 
-const ShopItem = ({ shopItem, onQuantityChange }) => (
-  <div className="p-4">
+const ShopItem = ({ shopItem, onQuantityChange, onSizeChange }) => (
+  <div className="m-2 p-2 border border-secondary-skin-light dark:border-secondary-skin-dark">
     <MySlideshow
       imgs={[
-        `shop/${shopItem.key}-shop-1.jpg`,
-        `shop/${shopItem.key}-shop-2.jpg`,
+        `shop/${shopItem.key}-shop-1.png`,
+        `shop/${shopItem.key}-shop-2.png`,
       ]}
     />
     {/* <MyImage
@@ -15,10 +16,20 @@ const ShopItem = ({ shopItem, onQuantityChange }) => (
       layout="responsive"
       // isExpandable={true}
     /> */}
-    <div className="space-y-2">
+    <div className="space-y-2 pt-2">
       <div>
-        <p>{shopItem.title}</p>
-        <p className="text-sm">{shopItem.description}</p>
+        <p className="">{shopItem.title.toUpperCase()}</p>
+        <div className="flex items-center space-x-2">
+          <p className="text-sm">{shopItem.description}</p>
+          {shopItem.shopSizes ? (
+            <Dropdown
+              items={shopItem.shopSizes}
+              onSelected={onSizeChange}
+              itemKey={shopItem.key}
+              type="Size"
+            />
+          ) : null}
+        </div>
         <p>{shopItem.price} kr</p>
       </div>
       <div className="space-y-1">
@@ -29,24 +40,23 @@ const ShopItem = ({ shopItem, onQuantityChange }) => (
             onClick={() => {
               onQuantityChange({
                 key: shopItem.key,
-                newQuantity:
-                  Number(shopItem.quantity) > 0
-                    ? Number(shopItem.quantity) - 1
+                newUserQuantity:
+                  Number(shopItem.userQuantity) > 0
+                    ? Number(shopItem.userQuantity) - 1
                     : 0,
               });
-            }}
-          >
+            }}>
             -
           </button>
           <input
             min="0"
             type="number"
             className="w-12 p-2 text-center dark:bg-primary-dark bg-primary-light text-primary-light dark:text-primary-dark border-secondary-skin-light dark:border-secondary-skin-dark"
-            value={Number(shopItem.quantity)}
+            value={Number(shopItem.userQuantity)}
             onChange={(event) =>
               onQuantityChange({
                 key: shopItem.key,
-                newQuantity: event.target.value,
+                newUserQuantity: event.target.value,
               })
             }
           />
@@ -55,10 +65,9 @@ const ShopItem = ({ shopItem, onQuantityChange }) => (
             onClick={() => {
               onQuantityChange({
                 key: shopItem.key,
-                newQuantity: Number(shopItem.quantity) + 1,
+                newUserQuantity: Number(shopItem.userQuantity) + 1,
               });
-            }}
-          >
+            }}>
             +
           </button>
         </div>

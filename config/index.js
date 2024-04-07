@@ -5,8 +5,8 @@ export const SITE_DOMAIN = dev
   : "https://www.theholymountain.net";
 
 // Used in pages/api/checkout.js
-export const SHIPPING_DOM_PRICE = 100; // nok
-export const SHIPPING_WO_PRICE = 200; // nok
+export const SHIPPING_DOM_PRICE = 120; // nok
+export const SHIPPING_WO_PRICE = 250; // nok
 export const SHIPPING_COUNTRIES = [
   "AC",
   "AD",

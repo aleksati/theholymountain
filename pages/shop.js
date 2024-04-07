@@ -44,10 +44,18 @@ const Shop = ({ shopData }) => {
   }, [getPubKey]);
 
   // when the quantities of the shopItems change, update the cart
-  const handleQuantityChange = ({ key, newQuantity }) => {
+  const handleQuantityChange = ({ key, newUserQuantity }) => {
     setCart((prevCart) => {
       let idx = prevCart.findIndex((item) => item.key === key);
-      prevCart[idx].quantity = newQuantity;
+      prevCart[idx].userQuantity = newUserQuantity;
+      return [...prevCart];
+    });
+  };
+
+  const handleSizeChange = ({ key, size }) => {
+    setCart((prevCart) => {
+      let idx = prevCart.findIndex((item) => item.key === key);
+      prevCart[idx].userSize = size;
       return [...prevCart];
     });
   };
@@ -55,7 +63,7 @@ const Shop = ({ shopData }) => {
   // reset all quantities
   const handleResetQuantity = () => {
     setCart((prevCart) => {
-      prevCart.forEach((item) => (item.quantity = 0));
+      prevCart.forEach((item) => (item.userQuantity = 0));
       return [...prevCart];
     });
   };
@@ -86,6 +94,7 @@ const Shop = ({ shopData }) => {
             key={item.key}
             shopItem={item}
             onQuantityChange={handleQuantityChange}
+            onSizeChange={handleSizeChange}
           />
         ))}
       </Grid>

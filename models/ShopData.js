@@ -9,9 +9,12 @@ const schema = new Schema({
   key: reqString,
   title: reqString,
   year: reqString,
-  price: String,
+  price: reqString,
   description: reqString,
-  quantity: Number,
+  shopQuantity: Number,
+  userQuantity: Number,
+  // shopSizes: [], if these are enabled, they are applied to all the items..
+  // userSize: String,
 });
 
 const ShopData = models.shopdata || model("shopdata", schema);
