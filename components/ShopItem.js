@@ -19,7 +19,7 @@ const ShopItem = ({ shopItem, onQuantityChange, onSizeChange }) => (
     <div className="space-y-2 pt-2">
       <div>
         <p className="">{shopItem.title.toUpperCase()}</p>
-        <div className="flex items-center space-x-2">
+        <div className="flex items-center space-x-3">
           <p className="text-sm">{shopItem.description}</p>
           {shopItem.shopSizes ? (
             <Dropdown

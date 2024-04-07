@@ -26,11 +26,11 @@ export const Dropdown = ({ items, onSelected, itemKey, type }) => {
     <div className="text-sm z-60" ref={dropdownRef}>
       <div
         onClick={handleMenuClick}
-        className="hover:cursor-pointer w-24 p-1 flex text-secondary items-center justify-between border border-secondary-skin-light dark:border-secondary-skin-dark">
+        className="hover:cursor-pointer w-32 p-1 hover:border-secondary hover:dark:border-secondary transistion ease-in-out duration-200 flex items-center justify-between border border-secondary-skin-light dark:border-secondary-skin-dark">
         {/* filler below */}
         <div></div>
         <div>
-          <p>{useSelected || type}</p>
+          <p>{useSelected ? "Size " + useSelected : type}</p>
         </div>
         <div className="mt-1 mr-1">
           <Icon id="downArrow" iconSize="text-sm" />
@@ -40,11 +40,11 @@ export const Dropdown = ({ items, onSelected, itemKey, type }) => {
         id="dropdown"
         className={`${
           isActive ? "absolute" : "hidden"
-        } border border-secondary-skin-light dark:border-secondary-skin-dark mt-1 w-24 bg-primary-light dark:bg-primary-dark`}>
+        } w-32 bg-primary-light dark:bg-primary-dark`}>
         <ul>
           {items.map((item) => (
             <li
-              className="hover:cursor-pointer border-b border-secondary-skin-light dark:border-secondary-skin-dark p-1 text-center"
+              className="hover:cursor-pointer border border-secondary-skin-light dark:border-secondary-skin-dark p-1 mt-1 text-center hover:border-secondary hover:dark:border-secondary transistion ease-in-out duration-200"
               onClick={handleItemClick}
               key={item}>
               {item}

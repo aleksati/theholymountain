@@ -42,7 +42,7 @@ const ShopCheckout = ({ cart, onResetQuantity }) => {
       {/* w-72 */}
       <div className="fixed bottom-0 left-2 w-60 z-50">
         <div className="p-4 my-2 space-y-2 bg-primary-light dark:bg-primary-dark border justify-center border-secondary-skin-light dark:border-secondary-skin-dark">
-          <p className="font-bold">Total: {total} kr</p>
+          <p>Total {total} kr</p>
           <div className="flex space-x-2">
             <button
               className={`p-2 disabled:cursor-not-allowed rounded flex items-center border hover:border-secondary hover:dark:border-secondary transistion ease-in-out duration-200 border-secondary-skin-light dark:border-secondary-skin-dark w-1/2 justify-center`}
