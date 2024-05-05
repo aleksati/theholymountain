@@ -23,16 +23,14 @@ const LayoutPage = ({ pageId = "top", children, className, pageMeta }) => {
           <LayoutPageMobile
             pageId={pageId}
             className={className}
-            ref={pageTopRef}
-          >
+            ref={pageTopRef}>
             {children}
           </LayoutPageMobile>
         ) : (
           <LayoutPageDesktop
             pageId={pageId}
             className={className}
-            ref={pageTopRef}
-          >
+            ref={pageTopRef}>
             {children}
           </LayoutPageDesktop>
         )}
