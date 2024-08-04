@@ -21,7 +21,7 @@ const ShopItem = ({ shopItem, onQuantityChange, onSizeChange }) => (
       <div>
         <p className="">{shopItem.title.toUpperCase()}</p>
         <div className="flex items-center space-x-3">
-          <p className="text-sm">{shopItem.description}</p>
+          <p className="text-base">{shopItem.description}</p>
           {shopItem.shopSizes ? (
             <Dropdown
               items={shopItem.shopSizes}
@@ -34,7 +34,7 @@ const ShopItem = ({ shopItem, onQuantityChange, onSizeChange }) => (
         <p>{shopItem.price} kr</p>
       </div>
       <div className="space-y-1">
-        <p className="text-sm text-secondary">Add to cart:</p>
+        <p className="text-base text-secondary">Add to cart:</p>
         <div className="flex space-x-1">
           <button
             className={`px-4 items-center border justify-center hover:border-secondary hover:dark:border-secondary transistion ease-in-out duration-200 border-secondary-skin-light dark:border-secondary-skin-dark`}

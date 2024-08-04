@@ -12,9 +12,8 @@ const SoMeBar = ({ exclude = [], someObject }) => {
             key={some.key}
             href={some.url}
             aria-label={some.key}
-            className="transition duration-200 ease-in-out text-secondary opacity-40 hover:opacity-80"
-          >
-            <Icon id={some.key} iconSize="text-2xl" />
+            className="transition duration-200 ease-in-out text-secondary opacity-40 hover:opacity-80">
+            <Icon id={some.key} iconSize="text-3xl" />
           </a>
         );
       })}

@@ -11,6 +11,7 @@ A website and landing page to promote my band. A Nextjs website built with React
 - Google analytics
 - Theme selector
 - REST API
+- and much more..
 
 and more..
 

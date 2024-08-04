@@ -10,7 +10,7 @@ const NavVerticalTabs = () => {
   let firstRoute = route.split("[")[0].split("/")[0];
 
   // default to about
-  const currRoute = firstRoute.length ? firstRoute : "about";
+  const currRoute = firstRoute.length ? firstRoute : "";
 
   return (
     <div className="space-y-4">

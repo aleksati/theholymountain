@@ -20,8 +20,7 @@ const NavVertical = ({ showNavTop, onToggleNavVertical }) => {
       className={`z-50 min-h-screen border-r border-secondary bg-primary-light dark:bg-primary-dark dark:border-secondary-dark space-y-12 ${
         showNavTop ? "fixed" : "flex-none"
       } w-64 p-4`}
-      ref={ref}
-    >
+      ref={ref}>
       <div className="fixed w-52 mt-2 md:mt-4">
         <div className="flex flex-col space-y-6">
           <Link href="/">

@@ -31,7 +31,7 @@ module.exports = {
         "size-header-big": ["3.75rem"], // text-6xl
         "size-header": ["2.25rem"], // text-4xl
         "size-title": ["1.875rem"], // text-3xl
-        "size-regular": ["1.125rem"], //text-lg
+        "size-regular": ["2rem"], //text-lg
         "size-small": ["1rem"], // text-xs
       }, // https://tailwindcss.com/docs/font-size
       backgroundColor: {

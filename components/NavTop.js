@@ -8,17 +8,18 @@ const NavTop = ({ onToggleNavVertical, showNavVertical }) => {
   // remove /[post] stuff on nested rutes, and remaining "/" at the end
   let firstRoute = route.split("[")[0].split("/")[0];
   // default to about
-  const currRoute = firstRoute.length ? firstRoute : "about";
+  const currRoute = firstRoute.length ? firstRoute : "The Holy Mountain";
 
   return (
     <nav
       className="z-50 fixed w-full bg-primary-light dark:bg-primary-dark"
       aria-label="Navbar"
-      role="toolbar"
-    >
+      role="toolbar">
       <div className="flex p-4 items-center space-x-1">
         {/* This is the path link at the top */}
-        <Link href={`/${currRoute}`} className="hover:cursor-pointer">
+        <Link
+          href={`/${currRoute === "The Holy Mountain" ? "" : currRoute}`}
+          className="hover:cursor-pointer">
           <p>
             <b>{currRoute}</b>
           </p>

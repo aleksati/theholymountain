@@ -1,9 +1,9 @@
 import LayoutPage from "../layouts/LayoutPage";
-import About from "../templates/About";
+import Landing from "../templates/Landing";
 
 const Home = () => (
   <LayoutPage pageMeta={{ title: "The Holy Mountain" }}>
-    <About />
+    <Landing />
   </LayoutPage>
 );
 
