@@ -28,7 +28,7 @@ const GridItemMusic = ({ releaseKey, title, category, year }) => {
       </Link>
       <div className="text-center">
         <p>{title.toUpperCase()}</p>
-        <p className="text-secondary text-base">
+        <p className="text-secondary text-sm">
           {category} | {year}
         </p>
       </div>

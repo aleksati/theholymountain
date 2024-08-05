@@ -24,9 +24,7 @@ module.exports = {
       },
     },
     extend: {
-      fontFamily: {
-        source: ['"Jost"', "sans-serif"],
-      },
+      // fontFamily: {
       fontSize: {
         "size-header-big": ["3.75rem"], // text-6xl
         "size-header": ["2.25rem"], // text-4xl
