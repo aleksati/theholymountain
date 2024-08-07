@@ -1,5 +1,6 @@
 import { useRouter } from "next/router";
 import ButtonIcon from "./ButtonIcon";
+import MyImage from "./MyImage";
 import Link from "next/link";
 
 const NavTop = ({ onToggleNavVertical, showNavVertical }) => {
@@ -8,7 +9,7 @@ const NavTop = ({ onToggleNavVertical, showNavVertical }) => {
   // remove /[post] stuff on nested rutes, and remaining "/" at the end
   let firstRoute = route.split("[")[0].split("/")[0];
   // default to about
-  const currRoute = firstRoute.length ? firstRoute : "The Holy Mountain";
+  const currRoute = firstRoute.length ? firstRoute : "";
 
   return (
     <nav
@@ -17,10 +18,21 @@ const NavTop = ({ onToggleNavVertical, showNavVertical }) => {
       role="toolbar">
       <div className="flex p-4 items-center space-x-1">
         {/* This is the path link at the top */}
-        <Link
-          href={`/${currRoute === "The Holy Mountain" ? "" : currRoute}`}
-          className="hover:cursor-pointer">
-          <p>{currRoute.toUpperCase()}</p>
+        <Link href={`/${currRoute}`} className="hover:cursor-pointer">
+          {currRoute ? (
+            <p>{currRoute.toUpperCase()}</p>
+          ) : (
+            <div className="-mb-4">
+              <MyImage
+                src="logo-white.png"
+                width="48"
+                height="40"
+                // layout="responsive"
+                alt="band logo"
+                priority={true}
+              />
+            </div>
+          )}
         </Link>
       </div>
       {/* fixed class, because it messes with the transition from navtop to nav vertical (just a tiny bit) */}
