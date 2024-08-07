@@ -1,7 +1,7 @@
 import { useClickOutside } from "../hooks/useClickOutside";
 import getCurrTheme from "../functions/getCurrTheme";
 import NavVerticalTabs from "./NavVerticalTabs";
-import ButtonTheme from "./ButtonTheme";
+// import ButtonTheme from "./ButtonTheme";
 import { useEffect } from "react";
 import Link from "next/link";
 // import Contact from "./Contact";
@@ -38,9 +38,9 @@ const NavVertical = ({ showNavTop, onToggleNavVertical }) => {
           <div className="pl-6">
             <NavVerticalTabs />
           </div>
-          <div className="pl-6">
+          {/* <div className="pl-6">
             <ButtonTheme />
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

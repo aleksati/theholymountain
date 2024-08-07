@@ -32,13 +32,13 @@ const Release = ({ item }) => {
           <LikesCounter releaseKey={item.key} />
           <SoMeBar someObject={item.some} />
         </div>
-        <div className="text-secondary">
+        <div>
+          <p>{item.description}</p>
+        </div>
+        <div className="">
           {item.credits.map((credit, index) => (
             <p key={index}>{credit}</p>
           ))}
-        </div>
-        <div>
-          <p>{item.description}</p>
         </div>
       </div>
     </LayoutPage>

@@ -12,7 +12,7 @@ const NavTop = ({ onToggleNavVertical, showNavVertical }) => {
 
   return (
     <nav
-      className="z-50 fixed w-full bg-primary-light dark:bg-primary-dark"
+      className="z-50 fixed w-full bg-primary-dark"
       aria-label="Navbar"
       role="toolbar">
       <div className="flex p-4 items-center space-x-1">
@@ -20,9 +20,7 @@ const NavTop = ({ onToggleNavVertical, showNavVertical }) => {
         <Link
           href={`/${currRoute === "The Holy Mountain" ? "" : currRoute}`}
           className="hover:cursor-pointer">
-          <p>
-            <b>{currRoute}</b>
-          </p>
+          <p>{currRoute.toUpperCase()}</p>
         </Link>
       </div>
       {/* fixed class, because it messes with the transition from navtop to nav vertical (just a tiny bit) */}
