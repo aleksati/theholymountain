@@ -49,8 +49,8 @@ export const Pressekit = ({ className }) => {
         <div className="border border-secondary-skin-dark p-4 space-y-4">
           <h1 className="text-4xl font-bold">Bio</h1>
           <p>
-            The Holy Mountain er en unik, grensesprengende og kritikerrost
-            synth-pop trio fra Oslo. Med sin filmatiske, mørke og konseptuelle
+            The Holy Mountain er en sjangeroverskridende og kritikerrost
+            synth-pop trio fra Oslo. Med sin filmatisk mørke og konseptuelle
             stil og uvanlig besetning blir bandet omtalt som en krysning mellom
             TV-serien Twin Peaks og det amerikanske synth-pop bandet Beach House
             (US), med tydelig røtter i den klassiske minimalismen.
@@ -58,7 +58,7 @@ export const Pressekit = ({ className }) => {
           <div>
             <p>Andreas Angell - Akkordeon og Låtskriver</p>
             <p>Aleksander Tidemann - Trommer og Synthesizer</p>
-            <p>Catharina Janner Røed - Vokal </p>
+            <p>Catharina Janner Røed - Vokal</p>
           </div>
         </div>
         <div className="border border-secondary-skin-dark p-4 space-y-4">

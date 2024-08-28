@@ -52,7 +52,7 @@ const Landing = () => (
         trio from Norway. With their conceptually unique style and taste for the
         dark and transcendental, the band is described as a cross between the TV
         series Twin Peaks and the American synth-pop act Beach House (US), with
-        clear roots in classical minimalism.
+        clear roots from classical minimalist traditions.
       </p>
       <div>
         <p>Andreas Angell - Accordion and Songwriter</p>
