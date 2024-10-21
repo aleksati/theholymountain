@@ -87,7 +87,8 @@ export const Pressekit = ({ className }) => {
                 height="360" // 152
                 src={
                   "https://open.spotify.com/embed/album/0JExCWKqyzrifd7TX4m13J?utm_source=generator&theme=0"
-                }></iframe>
+                }
+              ></iframe>
             </div>
           </div>
         </div>
@@ -100,7 +101,8 @@ export const Pressekit = ({ className }) => {
               "https://www.youtube.com/embed/gAo2EbLAy7A?si=xfUBKsEpwb9tvUKN"
             }
             loading="lazy"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          ></iframe>
         </div>
         <div className="border border-secondary-skin-dark p-4 space-y-4">
           <h1 className="text-4xl font-bold">Anmeldelser 2024</h1>
@@ -114,7 +116,8 @@ export const Pressekit = ({ className }) => {
               -{" "}
               <a
                 className="text-blue-400"
-                href="https://plasticmag.co.uk/2024/04/interview-the-holy-mountain-releases-new-ep/0">
+                href="https://plasticmag.co.uk/2024/04/interview-the-holy-mountain-releases-new-ep/0"
+              >
                 Plastic Mag (UK)
               </a>
             </div>
@@ -128,7 +131,8 @@ export const Pressekit = ({ className }) => {
               -{" "}
               <a
                 className="text-blue-400"
-                href="https://eternal-terror.com/2024/04/19/the-holy-mountain-slipper-nytt-ep">
+                href="https://eternal-terror.com/2024/04/19/the-holy-mountain-slipper-nytt-ep"
+              >
                 Eternal Terror (SVE)
               </a>
             </div>
@@ -141,7 +145,8 @@ export const Pressekit = ({ className }) => {
               -{" "}
               <a
                 className="text-blue-400"
-                href="https://cultartes.com/the-holy-mountain-digs-into-your-subconscious-with-its-synth-pop-perfection/">
+                href="https://cultartes.com/the-holy-mountain-digs-into-your-subconscious-with-its-synth-pop-perfection/"
+              >
                 Cultartes (ROM)
               </a>
             </div>
@@ -154,7 +159,8 @@ export const Pressekit = ({ className }) => {
               -{" "}
               <a
                 className="text-blue-400"
-                href="https://www.universitas.no/synth-pop-uten-spenning/376230">
+                href="https://www.universitas.no/synth-pop-uten-spenning/376230"
+              >
                 Universitas (NO)
               </a>
             </div>
@@ -169,7 +175,8 @@ export const Pressekit = ({ className }) => {
               - Ekslusivt intervju med{" "}
               <a
                 className="text-blue-400"
-                href="https://plasticmag.co.uk/2024/04/interview-the-holy-mountain-releases-new-ep/0">
+                href="https://plasticmag.co.uk/2024/04/interview-the-holy-mountain-releases-new-ep/0"
+              >
                 Illustrate Mag (UK)
               </a>{" "}
             </div>
@@ -181,7 +188,8 @@ export const Pressekit = ({ className }) => {
             Last ned bilder i høy kvalitet fra{" "}
             <a
               className="text-blue-400"
-              href="https://www.dropbox.com/scl/fo/ikw02oapink8o5abulppx/AFfisoRggw-EsBhWipuZSX8?rlkey=5lc51mocoum0bh2o49lk4wc2i&st=6nrs13tg&dl=0">
+              href="https://www.dropbox.com/scl/fo/ikw02oapink8o5abulppx/AFfisoRggw-EsBhWipuZSX8?rlkey=5lc51mocoum0bh2o49lk4wc2i&st=6nrs13tg&dl=0"
+            >
               vår Dropbox
             </a>
             .
@@ -202,6 +210,13 @@ export const Pressekit = ({ className }) => {
               isExpandable={true}
             />
             <MyImage
+              key={"gallery/3-1-12.jpg"}
+              src={"gallery/3-1-12.jpg"}
+              layout="responsive"
+              objectFit="contain"
+              isExpandable={true}
+            />
+            <MyImage
               key={"gallery/3-5.jpg"}
               src={"gallery/3-5.jpg"}
               layout="responsive"
@@ -209,8 +224,22 @@ export const Pressekit = ({ className }) => {
               isExpandable={true}
             />
             <MyImage
+              key={"gallery/3-1.jpg"}
+              src={"gallery/3-1.jpg"}
+              layout="responsive"
+              objectFit="contain"
+              isExpandable={true}
+            />
+            <MyImage
               key={"gallery/3-4.jpg"}
               src={"gallery/3-4.jpg"}
+              layout="responsive"
+              objectFit="contain"
+              isExpandable={true}
+            />
+            <MyImage
+              key={"gallery/2-4.jpg"}
+              src={"gallery/2-4.jpg"}
               layout="responsive"
               objectFit="contain"
               isExpandable={true}
