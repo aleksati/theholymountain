@@ -74,7 +74,8 @@ const Gallery = ({ imgNames }) => {
         )}
       </Grid>
       <p className="text-sm text-secondary">
-        Images by Katinka Hustad, Christian Lycke and Martin Marki
+        Images by Katinka Hustad (except 1-4.jpg by Christian Lycke and 1-2.jpg
+        and 1-1.jpg by Martin Marki)
       </p>
     </LayoutPage>
   );

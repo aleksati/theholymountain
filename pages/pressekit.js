@@ -38,7 +38,8 @@ export const Pressekit = ({ className }) => {
     <div className="bg-primary-dark text-primary-dark pb-4">
       <div className="container pb-4 mx-auto pt-6 space-y-6 px-2">
         <MyImage
-          src={"/pressekit/3 foto katinka hustad ny.jpg"}
+          // src={"/pressekit/3 foto katinka hustad ny.jpg"}
+          src={"/gallery/3-4-1.jpg"}
           width="1000"
           height="667"
           layout="responsive"
