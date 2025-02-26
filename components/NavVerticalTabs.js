@@ -23,10 +23,13 @@ const NavVerticalTabs = () => {
             className="flex space-y-2 space-x-1 items-center justify-start">
             {/* få inn noe bedre her. Var MyLink */}
             <Link href={`/${tab}`}>
-              <p className={`hover:cursor-pointer border-primary-dark`}>
-                {underline ? tab.toUpperCase() : tab}
+              <p
+                className={`${
+                  underline ? "border-b-2" : ""
+                } hover:cursor-pointer border-primary-dark`}>
+                {/* {underline ? tab : tab} */}
+                {tab}
               </p>
-              {/* was underline ? border-b-2 */}
             </Link>
           </div>
         );

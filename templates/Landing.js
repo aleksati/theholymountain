@@ -1,3 +1,4 @@
+import ReleaseAudio from "../components/ReleaseAudio";
 import MyImage from "../components/MyImage";
 import SoMeBar from "../components/SoMeBar";
 
@@ -60,8 +61,16 @@ const Landing = () => (
         <p>Catharina Janner Røed - Vocals </p>
       </div>
     </div>
+    <div className="max-w-2xl pb-4">
+      <h1 className="text-2xl py-2 font-bold">Latest Release</h1>
+      <iframe
+        width="100%"
+        height="120"
+        src={
+          "https://bandcamp.com/EmbeddedPlayer/track=3652677752/size=large/bgcol=333333/linkcol=0f91ff/tracklist=false/artwork=small/transparent=true/"
+        }></iframe>
+    </div>
   </div>
-  // </div>
 );
 
 export default Landing;

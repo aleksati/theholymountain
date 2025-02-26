@@ -20,7 +20,7 @@ const NavTop = ({ onToggleNavVertical, showNavVertical }) => {
         {/* This is the path link at the top */}
         <Link href={`/${currRoute}`} className="hover:cursor-pointer">
           {currRoute ? (
-            <p>{currRoute.toUpperCase()}</p>
+            <p>{currRoute}</p>
           ) : (
             <div className="-mb-4">
               <MyImage
