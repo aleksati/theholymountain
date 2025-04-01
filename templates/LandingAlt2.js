@@ -155,16 +155,17 @@ const LandingAlt2 = () => (
           }
         ></iframe>
       </div>
-            <div className="border border-secondary-skin-dark p-4 space-y-4">
+      <div className="border border-secondary-skin-dark p-4 space-y-4">
         {/* <h1 className="text-4xl font-bold">Ny Musikk</h1> */}
         <p>
-          In 2024, we released our new EP, <b>They Are Asleep</b>. With lyrical themes about the decay of
-          nature and music reminiscent of Y2K techno, synth-pop and sci-fi
-          horror, They Are Asleep is all about having a party in hell.
+          In 2024, we released our new EP, <b>They Are Asleep</b>. With lyrical
+          themes about the decay of nature and music reminiscent of Y2K techno,
+          synth-pop and sci-fi horror, They Are Asleep is all about having a
+          party in hell.
         </p>
         <p>
-          The EP has already made international waves with good
-          reviews, thousands of monthly listeners and online streams.
+          The EP has already made international waves with good reviews,
+          thousands of monthly listeners and online streams.
         </p>
         <div>
           <p>Mikset av Marcus Forsgren (Jaga Jazzist)</p>

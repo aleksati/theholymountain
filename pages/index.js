@@ -1,5 +1,5 @@
 import LayoutPage from "../layouts/LayoutPage";
-import LandingAlt from "../templates/LandingAlt";
+// import LandingAlt from "../templates/LandingAlt";
 import LandingAlt2 from "../templates/LandingAlt2";
 
 const Home = () => (
