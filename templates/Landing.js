@@ -1,6 +1,7 @@
 import ReleaseAudio from "../components/ReleaseAudio";
 import MyImage from "../components/MyImage";
 import SoMeBar from "../components/SoMeBar";
+import VideoPlayer from "../components/VideoPlayer"
 
 const bandPhoto = "/gallery/3-5.jpg";
 const someObject = [
@@ -37,6 +38,8 @@ const someObject = [
 const Landing = () => (
   <div className="pb-4 space-y-6 p-4">
     {/* <div className="container pb-4 mx-auto pt-6 space-y-6 px-2"> */}
+    <h1 className="text-6xl font-bold">THEY ARE ASLEEP</h1>
+    <VideoPlayer url="https://www.youtube.com/embed/gAo2EbLAy7A?si=D6xrM8y3QL7_gDDX" />
     <MyImage
       src={"/gallery/3-5.jpg"}
       width="1000"
@@ -47,7 +50,6 @@ const Landing = () => (
       <SoMeBar someObject={someObject} />
     </div>
     <div className="border-secondary-skin-dark space-y-4">
-      {/* <h1 className="text-4xl font-bold">Bio</h1> */}
       <p>
         The Holy Mountain is a genre-defying and critically acclaimed synth-pop
         trio from Norway. With their conceptually unique style and taste for the
@@ -61,7 +63,7 @@ const Landing = () => (
         <p>Catharina Janner Røed - Vocals </p>
       </div>
     </div>
-    <div className="max-w-2xl pb-4">
+    {/* <div className="max-w-2xl pb-4">
       <h1 className="text-2xl py-2 font-bold">Latest</h1>
       <iframe
         width="100%"
@@ -69,7 +71,7 @@ const Landing = () => (
         src={
           "https://bandcamp.com/EmbeddedPlayer/track=2424592500/size=large/bgcol=333333/linkcol=0f91ff/tracklist=false/artwork=small/transparent=true/"
         }></iframe>
-    </div>
+    </div> */}
   </div>
 );
 

@@ -35,64 +35,8 @@ const someObject = [
 export const Pressekit = ({ className }) => {
   //   return <div className="min-h-screen max-w-6xl flex relative"></div>;
   return (
-    <div className="bg-primary-dark text-primary-dark pb-4">
+    <div className="bg-primary-dark text-primary-dark pb-4 text-xl">
       <div className="container pb-4 mx-auto pt-6 space-y-6 px-2">
-        <MyImage
-          // src={"/pressekit/3 foto katinka hustad ny.jpg"}
-          src={"/gallery/3-4-1.jpg"}
-          width="1000"
-          height="667"
-          layout="responsive"
-        />
-        <div className="flex space-x-2">
-          <SoMeBar someObject={someObject} />
-        </div>
-        <div className="border border-secondary-skin-dark p-4 space-y-4">
-          <h1 className="text-4xl font-bold">Bio</h1>
-          <p>
-            The Holy Mountain er en sjangeroverskridende og kritikerrost
-            synth-pop trio fra Oslo. Med sin filmatisk mørke og konseptuelle
-            stil og uvanlig besetning blir bandet omtalt som en krysning mellom
-            TV-serien Twin Peaks og det amerikanske synth-pop bandet Beach House
-            (US), med tydelig røtter i den klassiske minimalismen.
-          </p>
-          <div>
-            <p>Andreas Angell - Akkordeon og Låtskriver</p>
-            <p>Aleksander Tidemann - Trommer og Synthesizer</p>
-            <p>Catharina Janner Røed - Vokal</p>
-          </div>
-        </div>
-        <div className="border border-secondary-skin-dark p-4 space-y-4">
-          <div className="grid grid-rows-1 grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="space-y-4">
-              <h1 className="text-4xl font-bold">Ny Musikk</h1>
-              <p>
-                I april 2024 slapp vi vår nyeste EP, kalt <i>They Are Asleep</i>
-                . Med tekster om naturens undergang og fengende musikk inspirert
-                av Y2K techno, synth-pop og sci-fi horror, er They Are Asleep en
-                fest i helvete.
-              </p>
-              <p>
-                Allerede har utgivelsen skapt stor internasjonal oppmerksomhet
-                med gode anmeldelser og oppimot ti tusen lytt på Spotify med to
-                tusen stabile månedlige lyttere.
-              </p>
-              <div>
-                <p>Mikset av Marcus Forsgren (Jaga Jazzist)</p>
-                <p>Mastret av Espen Høydalsvik (Oslo FUZZ)</p>
-              </div>
-            </div>
-            <div>
-              <iframe
-                width="100%" // 700
-                height="360" // 152
-                src={
-                  "https://open.spotify.com/embed/album/0JExCWKqyzrifd7TX4m13J?utm_source=generator&theme=0"
-                }
-              ></iframe>
-            </div>
-          </div>
-        </div>
         <div className="p-2">
           <iframe
             width="100%"
@@ -106,8 +50,8 @@ export const Pressekit = ({ className }) => {
           ></iframe>
         </div>
         <div className="border border-secondary-skin-dark p-4 space-y-4">
-          <h1 className="text-4xl font-bold">Anmeldelser 2024</h1>
-          <div className="grid grid-rows-1 grid-cols-2 md:grid-cols-3 gap-2 text-sm">
+          {/* <h1 className="text-4xl font-bold">Anmeldelser 2024</h1> */}
+          <div className="grid grid-rows-1 grid-cols-1 md:grid-cols-2 gap-2 text-lg">
             <div className="backdrop-brightness-150 p-2">
               <p className="italic p-2">
                 «dark yet catchy synth pop, an immersive release that transports
@@ -183,22 +127,62 @@ export const Pressekit = ({ className }) => {
             </div>
           </div>
         </div>
+          <MyImage
+            // src={"/pressekit/3 foto katinka hustad ny.jpg"}
+            src={"/gallery/3-5.jpg"}
+            width="1000"
+            height="714"
+            layout="responsive"
+          />
         <div className="border border-secondary-skin-dark p-4 space-y-4">
-          <h1 className="text-4xl font-bold">Pressebilder</h1>
+          {/* <h1 className="text-4xl font-bold">Bio</h1> */}
           <p>
-            Last ned bilder i høy kvalitet fra{" "}
-            <a
-              className="text-blue-400"
-              href="https://www.dropbox.com/scl/fo/ikw02oapink8o5abulppx/AFfisoRggw-EsBhWipuZSX8?rlkey=5lc51mocoum0bh2o49lk4wc2i&st=6nrs13tg&dl=0"
-            >
-              vår Dropbox
-            </a>
-            .
+            The Holy Mountain er en sjangeroverskridende og kritikerrost
+            synth-pop trio fra Oslo. Med sin filmatisk mørke og konseptuelle
+            stil og uvanlig besetning blir bandet omtalt som en krysning mellom
+            TV-serien Twin Peaks og det amerikanske synth-pop bandet Beach House
+            (US), med tydelig røtter i den klassiske minimalismen.
           </p>
+          <div>
+            <p>Andreas Angell - Akkordeon og Låtskriver</p>
+            <p>Aleksander Tidemann - Trommer og Synthesizer</p>
+            <p>Catharina Janner Røed - Vokal</p>
+          </div>
+        </div>
+        <div>
+          <iframe
+            width="100%" // 700
+            height="420" // 152
+            className="rounded-2xl"
+            src={
+              "https://open.spotify.com/embed/album/0JExCWKqyzrifd7TX4m13J?utm_source=generator&theme=0"
+            }
+          ></iframe>
+        </div>
+        <div className="border border-secondary-skin-dark p-4 space-y-4">
+          {/* <h1 className="text-4xl font-bold">Ny Musikk</h1> */}
+          <p>
+            I april 2024 slapp vi vår nyeste EP, kalt <b>They Are Asleep</b>.
+            Med tekster om naturens undergang og fengende musikk inspirert av
+            Y2K techno, synth-pop og sci-fi horror, er They Are Asleep en fest i
+            helvete.
+          </p>
+          <p>
+            Allerede har utgivelsen skapt stor internasjonal oppmerksomhet med
+            gode anmeldelser og oppimot ti tusen lytt på Spotify med to tusen
+            stabile månedlige lyttere.
+          </p>
+          <div>
+            <p>Mikset av Marcus Forsgren (Jaga Jazzist)</p>
+            <p>Mastret av Espen Høydalsvik (Oslo FUZZ)</p>
+          </div>
+        </div>
+        <div className="border border-secondary-skin-dark p-4 space-y-4">
+          {/* <h1 className="text-4xl font-bold">Pressebilder</h1> */}
           <div className=" grid grid-rows-1 grid-cols-2 md:grid-cols-3 gap-2">
             <MyImage
-              key={"gallery/5-1.jpg"}
-              src={"gallery/5-1.jpg"}
+              key={"gallery/4-1.jpg"}
+              src={"gallery/4-1.jpg"}
               layout="responsive"
               objectFit="contain"
               isExpandable={true}
@@ -211,8 +195,8 @@ export const Pressekit = ({ className }) => {
               isExpandable={true}
             />
             <MyImage
-              key={"gallery/3-1-12.jpg"}
-              src={"gallery/3-1-12.jpg"}
+              key={"gallery/2-7.jpg"}
+              src={"gallery/2-7.jpg"}
               layout="responsive"
               objectFit="contain"
               isExpandable={true}
@@ -225,6 +209,13 @@ export const Pressekit = ({ className }) => {
               isExpandable={true}
             />
             <MyImage
+              key={"gallery/3-3.jpg"}
+              src={"gallery/3-3.jpg"}
+              layout="responsive"
+              objectFit="contain"
+              isExpandable={true}
+            />
+            <MyImage
               key={"gallery/3-1.jpg"}
               src={"gallery/3-1.jpg"}
               layout="responsive"
@@ -232,8 +223,8 @@ export const Pressekit = ({ className }) => {
               isExpandable={true}
             />
             <MyImage
-              key={"gallery/3-4.jpg"}
-              src={"gallery/3-4.jpg"}
+              key={"gallery/5-1.jpg"}
+              src={"gallery/5-1.jpg"}
               layout="responsive"
               objectFit="contain"
               isExpandable={true}
@@ -246,13 +237,6 @@ export const Pressekit = ({ className }) => {
               isExpandable={true}
             />
             <MyImage
-              key={"logo-white.png"}
-              src={"logo-white.png"}
-              layout="responsive"
-              objectFit="contain"
-              isExpandable={true}
-            />
-            <MyImage
               key={"gallery/3-7.jpg"}
               src={"gallery/3-7.jpg"}
               layout="responsive"
@@ -260,6 +244,22 @@ export const Pressekit = ({ className }) => {
               isExpandable={true}
             />
           </div>
+          <p>
+            Last ned bilder i høy kvalitet fra{" "}
+            <a
+              className="text-blue-400"
+              href="https://www.dropbox.com/scl/fo/ikw02oapink8o5abulppx/AFfisoRggw-EsBhWipuZSX8?rlkey=5lc51mocoum0bh2o49lk4wc2i&st=6nrs13tg&dl=0"
+            >
+              vår Dropbox
+            </a>
+            .
+          </p>
+        </div>
+        <div className="p-4 space-y-4">
+          {/* <h1 className="text-4xl font-bold">Sosiale Medier</h1> */}
+          {/* <div className="flex space-x-2"> */}
+          <SoMeBar someObject={someObject} />
+          {/* </div> */}
         </div>
       </div>
     </div>

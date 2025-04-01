@@ -87,10 +87,10 @@ const LikesCounter = ({ releaseKey }) => {
             onClick={handleClick}>
             <Icon
               id="heart"
-              iconSize={`text-xl ${btnState ? "text-red-500" : null}`}
+              iconSize={`text-2xl ${btnState ? "text-red-500" : null}`}
             />
           </button>
-          <p className="m-0 text-size-small">{likesCounter}</p>
+          <p className="m-0 text-xl">{likesCounter}</p>
         </>
       )}
     </ClientOnly>

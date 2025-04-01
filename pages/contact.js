@@ -70,7 +70,7 @@ const Contact = () => {
     <LayoutPage pageMeta={pageMeta}>
       <form
         onSubmit={(e) => handleSubmit(e)}
-        className="flex flex-col w-full p-4"
+        className="flex flex-col w-full p-4 text-xl"
         aria-label="Contact form">
         {/* <h1 className="overflow-hidden text-clip text-size-header py-">
           CONTACT

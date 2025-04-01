@@ -6,18 +6,10 @@ const ReleaseAudio = ({ spotifyurl, previewurl }) => {
       <div className="pb-2 max-w-2xl">
         <iframe
           width="100%" // 700
-          height="420" // 152
+          height="320" // 152
           // className="bg-primary-light dark:bg-primary-dark"
           src={spotifyurl}
         ></iframe>
-      </div>
-    );
-  }
-
-  if (previewurl) {
-    return (
-      <div className="relative w-full pt-2 pb-2">
-        <AudioPlayer src={previewurl} />
       </div>
     );
   }

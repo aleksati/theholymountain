@@ -9,9 +9,9 @@ const GridItemVideo = ({ title, url, category, year }) => (
         <VideoPlayer url={url} title={title} />
       </div>
     </div>
-    <div className="text-center">
+    <div className="text-center text-xl">
       <p>{title.toUpperCase()}</p>
-      <p className="text-secondary text-base">
+      <p className="text-secondary text-regular">
         {category} | {year}
       </p>
     </div>

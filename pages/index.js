@@ -1,9 +1,10 @@
 import LayoutPage from "../layouts/LayoutPage";
-import Landing from "../templates/Landing";
+import LandingAlt from "../templates/LandingAlt";
+import LandingAlt2 from "../templates/LandingAlt2";
 
 const Home = () => (
   <LayoutPage pageMeta={{ title: "The Holy Mountain" }}>
-    <Landing />
+    <LandingAlt2 />
   </LayoutPage>
 );
 

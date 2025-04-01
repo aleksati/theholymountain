@@ -26,7 +26,7 @@ const NavVerticalTabs = () => {
               <p
                 className={`${
                   underline ? "border-b-2" : ""
-                } hover:cursor-pointer border-primary-dark`}>
+                } hover:cursor-pointer border-primary-dark text-lg`}>
                 {/* {underline ? tab : tab} */}
                 {tab}
               </p>

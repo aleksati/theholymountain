@@ -68,7 +68,7 @@ const ModalContact = () => {
         onSubmit={(e) => handleSubmit(e)}
         className="flex flex-col"
         aria-label="Contact form">
-        <h1 className="overflow-hidden text-center text-clip text-size-header">
+        <h1 className="overflow-hidden text-center text-clip text-size-header text-xl">
           CONTACT
         </h1>
         <div className="grid grid-cols-1 gap-6 mt-4">
