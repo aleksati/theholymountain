@@ -23,7 +23,7 @@ export const Dropdown = ({ items, onSelected, itemKey, type }) => {
   };
 
   return (
-    <div className="text-sm z-60" ref={dropdownRef}>
+    <div className="text-lg z-60" ref={dropdownRef}>
       <div
         onClick={handleMenuClick}
         className="hover:cursor-pointer w-32 p-1 hover:border-secondary hover:dark:border-secondary transistion ease-in-out duration-200 flex items-center justify-between border border-secondary-skin-light dark:border-secondary-skin-dark">

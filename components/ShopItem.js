@@ -17,11 +17,11 @@ const ShopItem = ({ shopItem, onQuantityChange, onSizeChange }) => (
       layout="responsive"
       // isExpandable={true}
     /> */}
-    <div className="space-y-2 pt-2">
+    <div className="space-y-2 pt-2 text-xl">
       <div>
-        <p className="">{shopItem.title.toUpperCase()}</p>
+        <p>{shopItem.title.toUpperCase()}</p>
         <div className="flex items-center space-x-3">
-          <p className="text-sm">{shopItem.description}</p>
+          <p className="text-lg">{shopItem.description}</p>
           {shopItem.shopSizes ? (
             <Dropdown
               items={shopItem.shopSizes}
@@ -34,7 +34,7 @@ const ShopItem = ({ shopItem, onQuantityChange, onSizeChange }) => (
         <p>{shopItem.price} kr</p>
       </div>
       <div className="space-y-1">
-        <p className="text-sm text-secondary">Add to cart:</p>
+        <p className="text-xl text-secondary">Add to cart:</p>
         <div className="flex space-x-1">
           <button
             className={`px-4 items-center border justify-center hover:border-secondary hover:dark:border-secondary transistion ease-in-out duration-200 border-secondary-skin-light dark:border-secondary-skin-dark`}
@@ -52,7 +52,7 @@ const ShopItem = ({ shopItem, onQuantityChange, onSizeChange }) => (
           <input
             min="0"
             type="number"
-            className="w-12 p-2 text-center dark:bg-primary-dark bg-primary-light text-primary-light dark:text-primary-dark border-secondary-skin-light dark:border-secondary-skin-dark"
+            className="w-12 text-xl p-2 text-center dark:bg-primary-dark bg-primary-light text-primary-light dark:text-primary-dark border-secondary-skin-light dark:border-secondary-skin-dark"
             value={Number(shopItem.userQuantity)}
             onChange={(event) =>
               onQuantityChange({

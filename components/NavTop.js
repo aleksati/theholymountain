@@ -13,7 +13,7 @@ const NavTop = ({ onToggleNavVertical, showNavVertical }) => {
 
   return (
     <nav
-      className="z-50 fixed w-full bg-primary-dark"
+      className="z-50 fixed w-full bg-primary-dark text-lg"
       aria-label="Navbar"
       role="toolbar">
       <div className="flex p-4 items-center space-x-1">
