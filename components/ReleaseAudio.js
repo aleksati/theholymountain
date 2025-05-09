@@ -1,9 +1,9 @@
-import AudioPlayer from "./AudioPlayer";
+// import AudioPlayer from "./AudioPlayer";
 
 const ReleaseAudio = ({ spotifyurl, previewurl }) => {
   if (spotifyurl) {
     return (
-      <div className="pb-2 max-w-2xl">
+      <div className="pb-2 max-w-2xl w-full">
         <iframe
           width="100%" // 700
           height="320" // 152

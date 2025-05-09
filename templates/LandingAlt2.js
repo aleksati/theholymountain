@@ -240,10 +240,9 @@ const LandingAlt2 = () => (
         />
       </div>
     </div>
-    <div className="p-4 space-y-4">
-      {/* <h1 className="text-4xl font-bold">Sosiale Medier</h1> */}
+    {/* <div className="p-4 space-y-4">
       <SoMeBar someObject={someObject} />
-    </div>
+    </div> */}
   </div>
 );
 

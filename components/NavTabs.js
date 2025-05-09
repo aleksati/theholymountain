@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const NAV_TABS = ["music", "videos", "shop", "gallery", "contact"];
 
-const NavVerticalTabs = () => {
+const NavTabs = () => {
   // get the current route after /pages and remove the first "/" with slice
   const route = useRouter().pathname.slice(1);
   // remove /[post] stuff on nested rutes, and remaining "/" at the end
@@ -20,13 +20,13 @@ const NavVerticalTabs = () => {
         return (
           <div
             key={tab}
-            className="flex space-y-2 space-x-1 items-center justify-start">
+            className="flex space-y-2 -ml-4 space-x-1 items-center justify-start">
             {/* få inn noe bedre her. Var MyLink */}
             <Link href={`/${tab}`}>
               <p
                 className={`${
                   underline ? "border-b-2" : ""
-                } hover:cursor-pointer border-primary-dark text-lg`}>
+                } hover:cursor-pointer border-primary-dark text-2xl`}>
                 {/* {underline ? tab : tab} */}
                 {tab}
               </p>
@@ -38,4 +38,4 @@ const NavVerticalTabs = () => {
   );
 };
 
-export default NavVerticalTabs;
+export default NavTabs;
