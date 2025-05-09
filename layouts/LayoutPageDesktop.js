@@ -1,4 +1,4 @@
-import NavVertical from "../components/NavVertical";
+import NavVertical from "../components/Nav";
 import { forwardRef } from "react";
 
 const LayoutPageDesktop = forwardRef(({ pageId, children, className }, ref) => (

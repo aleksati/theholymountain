@@ -40,7 +40,7 @@ const ShopCheckout = ({ cart, onResetQuantity }) => {
       {/* filler! under the shop items */}
       {/* <div className="h-24"></div> */}
       {/* w-72 */}
-      <div className="fixed bottom-0 left-2 w-60 z-50 text-xl">
+      <div className="fixed bottom-0 left-2 w-60 z-50 text-lg md:text-lg">
         <div className="p-4 my-2 space-y-2 bg-primary-light dark:bg-primary-dark border justify-center brightness-125 border-secondary-skin-light dark:border-secondary-skin-dark">
           <p>Total {total} kr</p>
           <div className="flex space-x-2">

@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./pages/**/*.{html,js,jsx,tsx}",
+    "./pages/**/**/*.{html,js,jsx,tsx}",
     "./components/**/*.{html,js,jsx,tsx}",
     "./templates/**/*.{html,js,jsx,tsx}",
     "./hooks/**/*.{html,js,jsx,tsx}",
@@ -13,7 +13,7 @@ module.exports = {
       screens: {
         sm: "640px",
         md: "768px",
-        // lg: "1024px",
+        lg: "920px", //var 1024
         // xl: "768px",
         // md: "768px",
         // lg: "1024px",

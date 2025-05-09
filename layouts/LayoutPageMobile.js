@@ -1,33 +1,55 @@
 import { forwardRef, useEffect, useState } from "react";
-import NavVertical from "../components/NavVertical";
-import NavTop from "../components/NavTop";
-// import { useRouter } from "next/router";
+import ButtonIcon from "../components/ButtonIcon";
+// import NavTop from "../components/NavTop";
+import MyImage from "../components/MyImage";
+import Nav from "../components/Nav";
+import Link from "next/link";
 
 const LayoutPageMobile = forwardRef(({ pageId, children, className }, ref) => {
-  const [showNavVertical, setShowNavVertical] = useState(false);
+  const [showNav, setShowNav] = useState(false);
 
-  const handleToggleNavVertical = () =>
-    setShowNavVertical((prevState) => !prevState);
+  const handleToggleNav = () =>
+    setShowNav((prevState) => !prevState);
 
   return (
     <>
-      <NavTop
+      {/* <NavTop
         onToggleNavVertical={handleToggleNavVertical}
         showNavVertical={showNavVertical}
-      />
-      {showNavVertical ? (
-        <NavVertical
+      /> */}
+      <div className="z-50 fixed top-4 right-4">
+        <ButtonIcon
+          iconId={showNav ? "x" : "threedots"}
+          onClick={handleToggleNav}
+          iconSize="text-3xl md:text-4xl"
+        />
+      </div>
+      {showNav ? (
+        <Nav
           showNavTop={true}
-          onToggleNavVertical={handleToggleNavVertical}
+          onToggleNavVertical={handleToggleNav}
         />
       ) : null}
       <div
         className={`container pb-4 ${
-          showNavVertical && "blur-sm"
-        } mx-auto flex-1 overflow-hidden pt-20 ${className}`}
+          showNav && "blur-sm"
+        } mx-auto flex-1 overflow-hidden pt-6 ${className}`}
         id={pageId}
-        ref={ref}
-      >
+        ref={ref}>
+        <div className="flex justify-center pb-6">
+          <Link href="/">
+            <div className="px-6 w-80 hover:cursor-pointer">
+              <MyImage
+                src={"logo-white.png"}
+                width="600"
+                height="466"
+                layout="responsive"
+                alt="band logo"
+                priority={true}
+              />
+            </div>
+          </Link>
+        </div>
         {children}
       </div>
     </>
