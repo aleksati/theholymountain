@@ -31,12 +31,12 @@ const Release = ({ item }) => {
         <div>
           <p>{item.description}</p>
         </div>
-        <div className="flex flex-col items-center justify-center">
+        <div className="flex flex-col items-start md:items-center justify-center">
           {item.credits.map((credit, index) => (
             <p key={index}>{credit}</p>
           ))}
         </div>
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-start md:items-center">
           <div className="flex space-x-4">
           <LikesCounter releaseKey={item.key} />
           <SoMeBar someObject={item.some} />
