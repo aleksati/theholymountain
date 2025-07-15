@@ -1,36 +1,36 @@
 import MyImage from "../components/MyImage";
-import SoMeBar from "../components/SoMeBar";
+// import SoMeBar from "../components/SoMeBar";
 
-const someObject = [
-  {
-    key: "spotify",
-    url: "https://open.spotify.com/artist/04GXo6z6x1KLMG9weDPayK?si=rzFLNrlkTvml0zaKqo_tuQ",
-  },
-  {
-    key: "applemusic",
-    url: "https://music.apple.com/us/artist/the-holy-mountain/1685003735",
-  },
-  {
-    key: "tidal",
-    url: "https://tidal.com/browse/artist/39079821",
-  },
-  {
-    key: "facebook",
-    url: "https://www.facebook.com/theholymountaintrio",
-  },
-  {
-    key: "instagram",
-    url: "https://www.instagram.com/theholymountaintrio/",
-  },
-  {
-    key: "bandcamp",
-    url: "https://theholymountain.bandcamp.com/",
-  },
-  {
-    key: "youtube",
-    url: "https://www.youtube.com/channel/UCdjPuoIdC6-EDb_tR5h9ayg",
-  },
-];
+// const someObject = [
+//   {
+//     key: "spotify",
+//     url: "https://open.spotify.com/artist/04GXo6z6x1KLMG9weDPayK?si=rzFLNrlkTvml0zaKqo_tuQ",
+//   },
+//   {
+//     key: "applemusic",
+//     url: "https://music.apple.com/us/artist/the-holy-mountain/1685003735",
+//   },
+//   {
+//     key: "tidal",
+//     url: "https://tidal.com/browse/artist/39079821",
+//   },
+//   {
+//     key: "facebook",
+//     url: "https://www.facebook.com/theholymountaintrio",
+//   },
+//   {
+//     key: "instagram",
+//     url: "https://www.instagram.com/theholymountaintrio/",
+//   },
+//   {
+//     key: "bandcamp",
+//     url: "https://theholymountain.bandcamp.com/",
+//   },
+//   {
+//     key: "youtube",
+//     url: "https://www.youtube.com/channel/UCdjPuoIdC6-EDb_tR5h9ayg",
+//   },
+// ];
 
 const LandingAlt2 = () => (
   <div className="bg-primary-dark mx-auto pt-4 text-primary-dark pb-4 p-4 space-y-6 text-xl">
@@ -57,12 +57,12 @@ const LandingAlt2 = () => (
         height="420" // 152
         src="https://bandcamp.com/EmbeddedPlayer/album=2789406497/size=large/bgcol=333333/linkcol=0f91ff/artwork=small/transparent=true/"></iframe> */}
     </div>
-    <div className="border border-secondary-skin-dark p-4 space-y-4">
+    <div className="p-2 space-y-4">
       {/* <h1 className="text-4xl font-bold">Anmeldelser 2024</h1> */}
-      <div className="grid grid-rows-1 grid-cols-1 md:grid-cols-2 gap-2">
+      <div className="grid text-lg md:text-xl grid-rows-1 grid-cols-1 md:grid-cols-2 gap-2">
         <div className="backdrop-brightness-150 p-2">
           <p className="italic p-2">
-            «dark yet catchy synth pop, an immersive release that transports
+            «Dark yet catchy synth pop, an immersive release that transports
             listeners to a world where the line between heaven and hell is
             blurred.”
           </p>
@@ -137,7 +137,7 @@ const LandingAlt2 = () => (
       layout="responsive"
     />
     <div className="border border-secondary-skin-dark p-4 space-y-4">
-      {/* <h1 className="text-4xl font-bold">Bio</h1> */}
+      <h1 className="text-4xl font-bold">Bio</h1>
       <p>
         The Holy Mountain is a genre-defying synth-pop trio from Norway. With
         their conceptually unique style and a taste for the dark and
@@ -162,8 +162,9 @@ const LandingAlt2 = () => (
         <p>Catharina Janner Røed - Vocals </p>
       </div>
     </div>
-    <div className="border border-secondary-skin-dark p-4 space-y-4">
+    <div className="p-2">
       {/* <h1 className="text-4xl font-bold">Pressebilder</h1> */}
+      {/* border border-secondary-skin-dark  */}
       {/* <p>
           Last ned bilder i høy kvalitet fra{" "}
           <a
