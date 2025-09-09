@@ -55,8 +55,9 @@ const About = () => (
         The Holy Mountain is a dark synth-pop trio from Norway with accordion,
         vocals, synth and drums. Since 2015, the band has produced an impressive
         discography of critically acclaimed, unique and genre-defying music with
-        a taste for the dark and transcendental. Together with their immersive
-        audio-visual live shows and distinct visual style, The Holy Mountain is
+        a taste for the dark and transcendental. 
+        
+        Together with their immersive live shows and distinct visual style, The Holy Mountain is
         a force to be reckoned with in the international alternative and indie
         music scene.
       </p>
