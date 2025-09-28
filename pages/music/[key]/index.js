@@ -18,28 +18,28 @@ const Release = ({ item }) => {
     <LayoutPage
       pageMeta={{
         title: `The Holy Mountain | ${item.title}`,
-      }}>
-      <div
-        className="flex flex-col p-4 space-y-6 text-xl"
-        aria-label={`${item.title} page`}>
-        <div className="flex justify-center">
+      }}
+    >
+      <div className="flex flex-col items-center">
+        <div
+          className="flex flex-col max-w-2xl p-4 space-y-4 text-xl"
+          aria-label={`${item.title} page`}
+        >
           <ReleaseAudio
             spotifyurl={item.spotifyurl}
             previewurl={item.previewurl}
           />
-        </div>
-        <div>
-          <p>{item.description}</p>
-        </div>
-        <div className="flex flex-col items-start md:items-center justify-center">
-          {item.credits.map((credit, index) => (
-            <p key={index}>{credit}</p>
-          ))}
-        </div>
-        <div className="flex flex-col items-start md:items-center">
           <div className="flex space-x-4">
-          <LikesCounter releaseKey={item.key} />
-          <SoMeBar someObject={item.some} />
+            <LikesCounter releaseKey={item.key} />
+            <SoMeBar someObject={item.some} />
+          </div>
+          <div>
+            <p>{item.description}</p>
+          </div>
+          <div>
+            {item.credits.map((credit, index) => (
+              <p key={index}>{credit}</p>
+            ))}
           </div>
         </div>
       </div>

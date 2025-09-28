@@ -9,17 +9,21 @@ const Music = ({ musicData }) => {
     <LayoutPage
       pageMeta={{
         title: `The Holy Mountain | music`,
-      }}>
+      }}
+    >
       <Grid gridCols={2}>
-        {musicData.map((release) => (
-          <GridItemMusic
-            key={release.key}
-            releaseKey={release.key}
-            title={release.title}
-            category={release.category}
-            year={release.year}
-          />
-        ))}
+        {musicData.map((release) => {
+          if (release.category == "single") return;
+          return (
+            <GridItemMusic
+              key={release.key}
+              releaseKey={release.key}
+              title={release.title}
+              category={release.category}
+              year={release.year}
+            />
+          );
+        })}
       </Grid>
     </LayoutPage>
   );

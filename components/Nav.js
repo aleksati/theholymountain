@@ -59,8 +59,8 @@ const Nav = ({ showNavTop, onToggleNavVertical }) => {
           <div className="px-6 w-80 hover:cursor-pointer pt-2">
             <MyImage
               src={currTheme === "dark" ? "logo-white.png" : "logo-black.png"}
-              width="600"
-              height="466"
+              width="900"
+              height="511"
               layout="responsive"
               alt="band logo"
               priority={true}

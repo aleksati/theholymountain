@@ -41,8 +41,8 @@ const LayoutPageMobile = forwardRef(({ pageId, children, className }, ref) => {
             <div className="px-6 w-80 hover:cursor-pointer">
               <MyImage
                 src={"logo-white.png"}
-                width="600"
-                height="466"
+                width="900"
+                height="511"
                 layout="responsive"
                 alt="band logo"
                 priority={true}
