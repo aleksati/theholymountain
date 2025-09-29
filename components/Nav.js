@@ -35,7 +35,7 @@ const someObject = [
   },
   {
     key: "youtube",
-    url: "https://www.youtube.com/channel/UCdjPuoIdC6-EDb_tR5h9ayg",
+    url: "https://www.youtube.com/@theholymountaintrio",
   },
 ];
 
