@@ -35,7 +35,14 @@ import MyImage from "../components/MyImage";
 const LandingAlt2 = () => (
   <div className="bg-primary-dark mx-auto pt-4 text-primary-dark pb-4 p-4 space-y-6 text-xl">
     {/* <div className="container pb-4 mx-auto pt-6 space-y-6 px-2"> */}
-    <div>
+    <div className="flex flex-col space-y-4">
+      <iframe
+        width="100%"
+        alt={`Consumer Confidence is Back video`}
+        height="440"
+        src="https://www.youtube.com/embed/ZWsFN8QLsRg?si=yslIuTScwW8Q3Adm"
+        loading="lazy"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
       <iframe
         width="100%"
         alt={`Searing Light YouTube video`}
@@ -49,9 +56,9 @@ const LandingAlt2 = () => (
         width="100%" // 700
         height="420" // 152
         className="rounded-2xl"
-        src={"https://open.spotify.com/embed/album/0JExCWKqyzrifd7TX4m13J?utm_source=generator&theme=0"}
-        >
-        </iframe>
+        src={
+          "https://open.spotify.com/embed/album/0JExCWKqyzrifd7TX4m13J?utm_source=generator&theme=0"
+        }></iframe>
       {/* <iframe
         width="100%" // 700
         height="420" // 152
@@ -136,25 +143,24 @@ const LandingAlt2 = () => (
       height="714"
       layout="responsive"
     />
-    <div className="border border-secondary-skin-dark p-4 space-y-4">
-      <h1 className="text-4xl font-bold">Bio</h1>
+    <div className="border text-lg md:text-xl border-secondary-skin-dark p-4 space-y-4">
+      {/* <h1 className="text-4xl font-bold">Bio</h1> */}
       <p>
-        The Holy Mountain is a genre-defying trio from Norway. With
-        their conceptually unique style of pop and a taste for the dark and
+        The Holy Mountain is a genre-defying trio from Norway. With their
+        conceptually unique style of pop and a taste for the dark and
         transcendental, the band is often described as a mix of the American TV
-        series Twin Peaks and synth-pop act Beach House (US), with
-        roots in the classical minimalist tradition.
+        series Twin Peaks and synth-pop act Beach House (US), with roots in the
+        classical minimalist tradition.
       </p>
       <p>
-        In 2024, the band released their latest EP, <b>They Are Asleep</b>.
-        With lyrical themes about the decay of nature and music reminiscent of
-        Y2K techno, synth-pop and sci-fi horror, They Are Asleep is all about
-        having a party in hell.
+        In 2024, the band released their latest EP, <b>They Are Asleep</b>. With
+        lyrical themes about the decay of nature and music reminiscent of Y2K
+        techno, synth-pop and sci-fi horror, They Are Asleep is all about having
+        a party in hell.
       </p>
       <p>
-        The EP has been critically acclaimed, with excellent
-        international reviews, thousands of monthly listeners and frequent radio
-        listings.
+        The EP has been critically acclaimed, with excellent international
+        reviews, thousands of monthly listeners and frequent radio listings.
       </p>
       <div>
         <p>Andreas Angell - Accordion and Songwriter</p>
@@ -162,7 +168,7 @@ const LandingAlt2 = () => (
         <p>Catharina Janner Røed - Vocals </p>
       </div>
     </div>
-    <div className="p-2">
+    <div className="py-2">
       {/* <h1 className="text-4xl font-bold">Pressebilder</h1> */}
       {/* border border-secondary-skin-dark  */}
       {/* <p>
