@@ -1,4 +1,4 @@
-import { forwardRef, useEffect, useState } from "react";
+import { forwardRef, useState } from "react";
 import ButtonIcon from "../components/ButtonIcon";
 // import NavTop from "../components/NavTop";
 import MyImage from "../components/MyImage";
