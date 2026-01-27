@@ -6,6 +6,7 @@ import MusicData from "../../../models/MusicData";
 import SoMeBar from "../../../components/SoMeBar";
 import { useEffect } from "react";
 import Icon from "../../../components/Icon";
+import Link from "next/link";
 
 const Release = ({ item }) => {
   // force scroll to top.
@@ -42,12 +43,14 @@ const Release = ({ item }) => {
               <p key={index}>{credit}</p>
             ))}
           </div>
-          <a role="link" href="/music">
-            <div className="flex space-x-1 items-center text-regular text-secondary">
-              <Icon id="prevArrow" iconSize="text-sm" />
-              <p>Back to music</p>
-            </div>
-          </a>
+          <div>
+            <Link href="/music">
+              <div className="flex space-x-1 items-center text-regular text-secondary hover:cursor-pointer">
+                <Icon id="prevArrow" iconSize="text-sm" />
+                <p>Back to music</p>
+              </div>
+            </Link>
+          </div>
         </div>
       </div>
     </LayoutPage>
@@ -72,7 +75,7 @@ export const getStaticProps = async (context) => {
   } catch (error) {
     console.log(
       "Error while fetching static MusicData collection from db: ",
-      error.message
+      error.message,
     );
     // should not be needed because of the "fallback: false" mode
     return {

@@ -20,7 +20,7 @@ const NavTabs = () => {
         return (
           <div
             key={tab}
-            className="flex space-y-2 -ml-4 space-x-1 items-center justify-start">
+            className="flex space-y-2 -ml-4 space-x-1 items-center justify-center">
             {/* få inn noe bedre her. Var MyLink */}
             <Link href={`/${tab}`}>
               <p

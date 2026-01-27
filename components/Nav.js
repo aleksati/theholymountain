@@ -67,7 +67,7 @@ const Nav = ({ showNavTop, onToggleNavVertical }) => {
             />
           </div>
         </Link>
-        <div className="pl-6">
+        <div className="pl-2">
           <NavTabs />
         </div>
         <SoMeBar someObject={someObject} />
