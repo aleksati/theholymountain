@@ -144,10 +144,10 @@ const LandingAlt2 = () => (
       layout="responsive"
     />
     <div className="border text-lg md:text-xl border-secondary-skin-dark p-4 space-y-4">
-      {/* <h1 className="text-4xl font-bold">Bio</h1> */}
+      <h1 className="text-4xl font-bold">Bio</h1>
       <p>
         The Holy Mountain is a genre-defying trio from Norway. With their
-        conceptually unique style of pop and a taste for the dark and
+        conceptually unique style of pop, and a taste for the dark and
         transcendental, the band is often described as a mix of the American TV
         series Twin Peaks and synth-pop act Beach House (US), with roots in the
         classical minimalist tradition.

@@ -5,6 +5,7 @@ import LayoutPage from "../../../layouts/LayoutPage";
 import MusicData from "../../../models/MusicData";
 import SoMeBar from "../../../components/SoMeBar";
 import { useEffect } from "react";
+import Icon from "../../../components/Icon";
 
 const Release = ({ item }) => {
   // force scroll to top.
@@ -41,6 +42,12 @@ const Release = ({ item }) => {
               <p key={index}>{credit}</p>
             ))}
           </div>
+          <a role="link" href="/music">
+            <div className="flex space-x-1 items-center text-regular text-secondary">
+              <Icon id="prevArrow" iconSize="text-sm" />
+              <p>Back to music</p>
+            </div>
+          </a>
         </div>
       </div>
     </LayoutPage>

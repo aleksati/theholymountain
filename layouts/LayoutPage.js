@@ -1,16 +1,16 @@
 import ButtonScrollTo from "../components/ButtonScrollTo";
 import { useIsMounted } from "../hooks/useIsMounted";
-import LayoutPageDesktop from "./LayoutPageDesktop";
-import useWindowSize from "../hooks/useWindowSize";
+// import LayoutPageDesktop from "./LayoutPageDesktop";
+// import useWindowSize from "../hooks/useWindowSize";
 import LayoutPageMobile from "./LayoutPageMobile";
 import Meta from "../components/Meta";
 import { useRef } from "react";
 
-const widthTresh = 920; // tailwind md = 768;
+// const widthTresh = 920; // tailwind md = 768;
 
 const LayoutPage = ({ pageId = "top", children, className, pageMeta }) => {
   const [isMounted, setIsMounted] = useIsMounted();
-  const { width } = useWindowSize();
+  // const { width } = useWindowSize();
   const pageTopRef = useRef();
 
   if (!isMounted) return null;
