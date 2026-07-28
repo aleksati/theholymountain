@@ -20,14 +20,10 @@ const Release = ({ item }) => {
     <LayoutPage
       pageMeta={{
         title: `The Holy Mountain | ${item.title}`,
-      }}
-    >
+      }}>
       <div className="flex flex-col items-center">
-        <div
-          className="flex flex-col max-w-2xl p-4 space-y-4 text-xl"
-          aria-label={`${item.title} page`}
-        >
-                    <div>
+        <div className="flex flex-col max-w-2xl p-4 space-y-4 text-xl" aria-label={`${item.title} page`}>
+          <div>
             <Link href="/music">
               <div className="flex space-x-1 items-center text-regular text-secondary hover:cursor-pointer">
                 <Icon id="prevArrow" iconSize="text-sm" />
@@ -35,10 +31,7 @@ const Release = ({ item }) => {
               </div>
             </Link>
           </div>
-          <ReleaseAudio
-            spotifyurl={item.spotifyurl}
-            previewurl={item.previewurl}
-          />
+          <ReleaseAudio spotifyurl={item.spotifyurl} previewurl={item.previewurl} />
           <div className="flex space-x-4">
             <LikesCounter releaseKey={item.key} />
             <SoMeBar someObject={item.some} />
@@ -73,10 +66,7 @@ export const getStaticProps = async (context) => {
       },
     };
   } catch (error) {
-    console.log(
-      "Error while fetching static MusicData collection from db: ",
-      error.message,
-    );
+    console.log("Error while fetching static MusicData collection from db: ", error.message);
     // should not be needed because of the "fallback: false" mode
     return {
       notFound: true,

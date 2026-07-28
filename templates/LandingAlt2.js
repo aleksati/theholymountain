@@ -138,7 +138,7 @@ const LandingAlt2 = () => (
         The Holy Mountain is a genre-bending and critically acclaimed indie band from Oslo, Norway. The group's
         signature sound combines accordion, synth, vocals, and drums to create dark and hypnotic worlds. Places where
         Philip Glass' minimalist arrangements meet the dreamy synth-pop of Beach House (US), framed by the cult film
-        aestethics of filmmakers such as David Lynch, John Carpenter, and Ingmar Bergman. Think a red sunset at a dark
+        aestethics of filmmakers like David Lynch, John Carpenter, and Ingmar Bergman. Think of a red sunset at a dark
         disco.
       </p>
       <p>
