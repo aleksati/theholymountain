@@ -56,9 +56,7 @@ const LandingAlt2 = () => (
         width="100%" // 700
         height="420" // 152
         className="rounded-2xl"
-        src={
-          "https://open.spotify.com/embed/album/0JExCWKqyzrifd7TX4m13J?utm_source=generator&theme=0"
-        }></iframe>
+        src={"https://open.spotify.com/embed/album/0JExCWKqyzrifd7TX4m13J?utm_source=generator&theme=0"}></iframe>
       {/* <iframe
         width="100%" // 700
         height="420" // 152
@@ -69,9 +67,8 @@ const LandingAlt2 = () => (
       <div className="grid text-lg md:text-xl grid-rows-1 grid-cols-1 md:grid-cols-2 gap-2">
         <div className="backdrop-brightness-150 p-2">
           <p className="italic p-2">
-            «Dark yet catchy synth pop, an immersive release that transports
-            listeners to a world where the line between heaven and hell is
-            blurred.”
+            «Dark yet catchy synth pop, an immersive release that transports listeners to a world where the line between
+            heaven and hell is blurred.”
           </p>
           -{" "}
           <a
@@ -82,23 +79,19 @@ const LandingAlt2 = () => (
         </div>
         <div className="backdrop-brightness-150 p-2">
           <p className="italic p-2">
-            «På They Are Asleep hører vi kritikerroste låter omtalt av
-            amerikanske Melomani som “synth-pop brilliance” og av britiske
-            Plastic Magazine som “a superb showcase of the trio’s creativity and
-            ability to craft hook-filled music”.
+            «På They Are Asleep hører vi kritikerroste låter omtalt av amerikanske Melomani som “synth-pop brilliance”
+            og av britiske Plastic Magazine som “a superb showcase of the trio’s creativity and ability to craft
+            hook-filled music”.
           </p>
           -{" "}
-          <a
-            className="text-blue-400"
-            href="https://eternal-terror.com/2024/04/19/the-holy-mountain-slipper-nytt-ep">
+          <a className="text-blue-400" href="https://eternal-terror.com/2024/04/19/the-holy-mountain-slipper-nytt-ep">
             Eternal Terror (SVE)
           </a>
         </div>
         <div className="backdrop-brightness-150 p-2">
           <p className="italic p-2">
-            «Fans of dark, experimental music can sink their teeth into the
-            intimate, atmospheric music here, while synth-pop music fans will
-            find a new favorite band in The Holy Mountain»
+            «Fans of dark, experimental music can sink their teeth into the intimate, atmospheric music here, while
+            synth-pop music fans will find a new favorite band in The Holy Mountain»
           </p>
           -{" "}
           <a
@@ -109,23 +102,19 @@ const LandingAlt2 = () => (
         </div>
         <div className="backdrop-brightness-150 p-2">
           <p className="italic p-2">
-            «Det er lekent. Men det er fortsatt mystisk og det høres ut som en
-            rød solnedgang inne på en mørk discofest. Hvis det er en lyd.»
+            «Det er lekent. Men det er fortsatt mystisk og det høres ut som en rød solnedgang inne på en mørk discofest.
+            Hvis det er en lyd.»
           </p>
           -{" "}
-          <a
-            className="text-blue-400"
-            href="https://www.universitas.no/synth-pop-uten-spenning/376230">
+          <a className="text-blue-400" href="https://www.universitas.no/synth-pop-uten-spenning/376230">
             Universitas (NO)
           </a>
         </div>
         <div className="backdrop-brightness-150 p-2">
           <p className="italic p-2">
             {" "}
-            Although walking in the light can be both overwhelming and
-            inspiring, it can also entail death. “Searing Light” exists in this
-            tense area where light might imply darkness and darkness can signify
-            light.
+            Although walking in the light can be both overwhelming and inspiring, it can also entail death. “Searing
+            Light” exists in this tense area where light might imply darkness and darkness can signify light.
           </p>
           - Exclusive interview with{" "}
           <a
@@ -146,23 +135,18 @@ const LandingAlt2 = () => (
     <div className="border text-lg md:text-xl border-secondary-skin-dark p-4 space-y-4">
       <h1 className="text-4xl font-bold">Bio</h1>
       <p>
-        The Holy Mountain is a genre-defying trio from Norway. With their
-        conceptually unique style of pop, and a taste for the dark and
-        transcendental, the band is often described as a mix of the American TV
-        series Twin Peaks and synth-pop act Beach House (US), with roots in the
-        classical minimalist tradition.
+        The Holy Mountain is a genre-bending and critically acclaimed indie band from Oslo, Norway. The group's
+        signature sound combines accordion, synth, vocals, and drums to create dark and hypnotic worlds. Places where
+        Philip Glass' minimalist arrangements meet the dreamy synth-pop of Beach House (US), framed by the cult film
+        aestethics of filmmakers such as David Lynch, John Carpenter, and Ingmar Bergman. Think a red sunset at a dark
+        disco.
       </p>
       <p>
-        In 2024, the band released their latest EP, <b>They Are Asleep</b>. With
-        lyrical themes about the decay of nature and music reminiscent of Y2K
-        techno, synth-pop and sci-fi horror, They Are Asleep is all about having
-        a party in hell.
-      </p>
-      <p>
-        The EP has been critically acclaimed, with excellent international
-        reviews, thousands of monthly listeners and frequent radio listings.
+        Since 2015, The Holy Mountain has built a large and varied discography, including electronic and acoustic
+        albums, EPs, singles, and several original film soundtracks.
       </p>
       <div>
+        <p>The Holy Mountain are:</p>
         <p>Andreas Angell - Accordion and Songwriter</p>
         <p>Aleksander Tidemann - Drums and Synthesizer</p>
         <p>Catharina Janner Røed - Vocals </p>

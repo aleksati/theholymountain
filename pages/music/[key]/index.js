@@ -27,6 +27,14 @@ const Release = ({ item }) => {
           className="flex flex-col max-w-2xl p-4 space-y-4 text-xl"
           aria-label={`${item.title} page`}
         >
+                    <div>
+            <Link href="/music">
+              <div className="flex space-x-1 items-center text-regular text-secondary hover:cursor-pointer">
+                <Icon id="prevArrow" iconSize="text-sm" />
+                <p>Back to music</p>
+              </div>
+            </Link>
+          </div>
           <ReleaseAudio
             spotifyurl={item.spotifyurl}
             previewurl={item.previewurl}
@@ -42,14 +50,6 @@ const Release = ({ item }) => {
             {item.credits.map((credit, index) => (
               <p key={index}>{credit}</p>
             ))}
-          </div>
-          <div>
-            <Link href="/music">
-              <div className="flex space-x-1 items-center text-regular text-secondary hover:cursor-pointer">
-                <Icon id="prevArrow" iconSize="text-sm" />
-                <p>Back to music</p>
-              </div>
-            </Link>
           </div>
         </div>
       </div>
