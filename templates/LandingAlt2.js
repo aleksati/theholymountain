@@ -36,13 +36,13 @@ const LandingAlt2 = () => (
   <div className="bg-primary-dark mx-auto pt-4 text-primary-dark pb-4 p-4 space-y-6 text-xl">
     {/* <div className="container pb-4 mx-auto pt-6 space-y-6 px-2"> */}
     <div className="flex flex-col space-y-4">
-      <iframe
+      {/* <iframe
         width="100%"
         alt={`Consumer Confidence is Back video`}
         height="440"
         src="https://www.youtube.com/embed/ZWsFN8QLsRg?si=yslIuTScwW8Q3Adm"
         loading="lazy"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe> */}
       <iframe
         width="100%"
         alt={`Searing Light YouTube video`}
@@ -137,7 +137,7 @@ const LandingAlt2 = () => (
       <p>
         The Holy Mountain is a genre-bending and critically acclaimed indie band from Oslo, Norway. The group's
         signature sound combines accordion, synth, vocals, and drums to create dark and hypnotic worlds. Places where
-        Philip Glass' minimalist arrangements meet the dreamy synth-pop of Beach House (US), framed by the cult film
+        Philip Glass' minimalist arrangements meet the dreamy synth-pop of Beach House (US), framed by cult film
         aestethics of filmmakers like David Lynch, John Carpenter, and Ingmar Bergman. Think of a red sunset at a dark
         disco.
       </p>
