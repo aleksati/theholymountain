@@ -135,7 +135,7 @@ const LandingAlt2 = () => (
     <div className="border text-lg md:text-xl border-secondary-skin-dark p-4 space-y-4">
       <h1 className="text-4xl font-bold">Bio</h1>
       <p>
-        The Holy Mountain is a critically acclaimed and genre-defying indie group from Oslo, Norway. The band's
+        The Holy Mountain is a critically acclaimed and genre-defying indie band from Oslo, Norway. The group's
         signature sound combines accordion, synth, vocals, and drums to create neon-colored and hypnotic worlds. Places where
         Philip Glass' minimalist arrangements meet the dreamy synth-pop of Beach House (US), framed by cult film
         aestethics of filmmakers like David Lynch, John Carpenter, and Ingmar Bergman. Think of a red sunset at a dark
