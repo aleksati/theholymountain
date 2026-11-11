@@ -5,7 +5,7 @@ import NavTabs from "./NavTabs";
 import { useEffect } from "react";
 import Link from "next/link";
 // import Contact from "./Contact";
-import MyImage from "./MyImage";
+import Logo from "./Logo";
 import SoMeBar from "./SoMeBar";
 
 const someObject = [
@@ -57,14 +57,7 @@ const Nav = ({ showNavTop, onToggleNavVertical }) => {
       <div className="flex flex-col space-y-6 items-center justify-center">
         <Link href="/">
           <div className="px-6 w-80 hover:cursor-pointer pt-2">
-            <MyImage
-              src={currTheme === "dark" ? "logo-white.png" : "logo-black.png"}
-              width="900"
-              height="511"
-              layout="responsive"
-              alt="band logo"
-              priority={true}
-            />
+            <Logo variant={"white"} />
           </div>
         </Link>
         <div className="pl-2">

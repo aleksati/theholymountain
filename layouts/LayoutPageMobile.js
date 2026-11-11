@@ -1,7 +1,7 @@
 import { forwardRef, useState } from "react";
 import ButtonIcon from "../components/ButtonIcon";
 // import NavTop from "../components/NavTop";
-import MyImage from "../components/MyImage";
+import Logo from "../components/Logo";
 import Nav from "../components/Nav";
 import Link from "next/link";
 
@@ -39,14 +39,7 @@ const LayoutPageMobile = forwardRef(({ pageId, children, className }, ref) => {
         <div className="flex justify-center pb-6">
           <Link href="/">
             <div className="px-6 w-80 hover:cursor-pointer">
-              <MyImage
-                src={"logo-white.png"}
-                width="900"
-                height="511"
-                layout="responsive"
-                alt="band logo"
-                priority={true}
-              />
+              <Logo variant="white" />
             </div>
           </Link>
         </div>

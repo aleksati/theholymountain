@@ -66,7 +66,7 @@ const LandingAlt2 = () => (
       {/* <h1 className="text-4xl font-bold">Anmeldelser 2024</h1> */}
       <div className="grid text-lg md:text-xl grid-rows-1 grid-cols-1 md:grid-cols-2 gap-2">
         <div className="backdrop-brightness-150 p-2">
-          <p className="italic p-2">
+          <p className="p-2">
             «Dark yet catchy synth pop, an immersive release that transports listeners to a world where the line between
             heaven and hell is blurred.”
           </p>
@@ -78,9 +78,9 @@ const LandingAlt2 = () => (
           </a>
         </div>
         <div className="backdrop-brightness-150 p-2">
-          <p className="italic p-2">
+          <p className="p-2">
             «På They Are Asleep hører vi kritikerroste låter omtalt av amerikanske Melomani som “synth-pop brilliance”
-            og av britiske Plastic Magazine som “a superb showcase of the trio’s creativity and ability to craft
+            og av britiske Plastic Magazine som “a superb showcase of the trio's creativity and ability to craft
             hook-filled music”.
           </p>
           -{" "}
@@ -89,7 +89,7 @@ const LandingAlt2 = () => (
           </a>
         </div>
         <div className="backdrop-brightness-150 p-2">
-          <p className="italic p-2">
+          <p className="p-2">
             «Fans of dark, experimental music can sink their teeth into the intimate, atmospheric music here, while
             synth-pop music fans will find a new favorite band in The Holy Mountain»
           </p>
@@ -101,7 +101,7 @@ const LandingAlt2 = () => (
           </a>
         </div>
         <div className="backdrop-brightness-150 p-2">
-          <p className="italic p-2">
+          <p className="p-2">
             «Det er lekent. Men det er fortsatt mystisk og det høres ut som en rød solnedgang inne på en mørk discofest.
             Hvis det er en lyd.»
           </p>
@@ -111,10 +111,10 @@ const LandingAlt2 = () => (
           </a>
         </div>
         <div className="backdrop-brightness-150 p-2">
-          <p className="italic p-2">
+          <p className="p-2">
             {" "}
-            Although walking in the light can be both overwhelming and inspiring, it can also entail death. “Searing
-            Light” exists in this tense area where light might imply darkness and darkness can signify light.
+            «Although walking in the light can be both overwhelming and inspiring, it can also entail death. “Searing
+            Light” exists in this tense area where light might imply darkness and darkness can signify light.»
           </p>
           - Exclusive interview with{" "}
           <a
@@ -187,29 +187,15 @@ const LandingAlt2 = () => (
           isExpandable={true}
         />
         <MyImage
+          key={"gallery/4-1.jpg"}
+          src={"gallery/4-1.jpg"}
+          layout="responsive"
+          objectFit="contain"
+          isExpandable={true}
+        />
+        <MyImage
           key={"gallery/3-3.jpg"}
           src={"gallery/3-3.jpg"}
-          layout="responsive"
-          objectFit="contain"
-          isExpandable={true}
-        />
-        <MyImage
-          key={"gallery/3-1.jpg"}
-          src={"gallery/3-1.jpg"}
-          layout="responsive"
-          objectFit="contain"
-          isExpandable={true}
-        />
-        <MyImage
-          key={"gallery/5-1.jpg"}
-          src={"gallery/5-1.jpg"}
-          layout="responsive"
-          objectFit="contain"
-          isExpandable={true}
-        />
-        <MyImage
-          key={"gallery/2-4.jpg"}
-          src={"gallery/2-4.jpg"}
           layout="responsive"
           objectFit="contain"
           isExpandable={true}
@@ -222,8 +208,22 @@ const LandingAlt2 = () => (
           isExpandable={true}
         />
         <MyImage
-          key={"gallery/4-1.jpg"}
-          src={"gallery/4-1.jpg"}
+          key={"gallery/2-4.jpg"}
+          src={"gallery/2-4.jpg"}
+          layout="responsive"
+          objectFit="contain"
+          isExpandable={true}
+        />
+        <MyImage
+          key={"gallery/5-1.jpg"}
+          src={"gallery/5-1.jpg"}
+          layout="responsive"
+          objectFit="contain"
+          isExpandable={true}
+        />
+        <MyImage
+          key={"gallery/2-1.jpg"}
+          src={"gallery/2-1.jpg"}
           layout="responsive"
           objectFit="contain"
           isExpandable={true}
