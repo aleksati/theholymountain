@@ -65,7 +65,7 @@ const LandingAlt2 = () => (
     <div className="p-2 space-y-4">
       {/* <h1 className="text-4xl font-bold">Anmeldelser 2024</h1> */}
       <div className="grid text-lg md:text-xl grid-rows-1 grid-cols-1 md:grid-cols-2 gap-2">
-        <div className="backdrop-brightness-150 p-2">
+        <div className="bg-secondary-dark p-2">
           <p className="p-2">
             «Dark yet catchy synth pop, an immersive release that transports listeners to a world where the line between
             heaven and hell is blurred.”
@@ -77,7 +77,7 @@ const LandingAlt2 = () => (
             Plastic Mag (UK)
           </a>
         </div>
-        <div className="backdrop-brightness-150 p-2">
+        <div className="bg-secondary-dark p-2">
           <p className="p-2">
             «På They Are Asleep hører vi kritikerroste låter omtalt av amerikanske Melomani som “synth-pop brilliance”
             og av britiske Plastic Magazine som “a superb showcase of the trio's creativity and ability to craft
@@ -88,7 +88,7 @@ const LandingAlt2 = () => (
             Eternal Terror (SVE)
           </a>
         </div>
-        <div className="backdrop-brightness-150 p-2">
+        <div className="bg-secondary-dark p-2">
           <p className="p-2">
             «Fans of dark, experimental music can sink their teeth into the intimate, atmospheric music here, while
             synth-pop music fans will find a new favorite band in The Holy Mountain»
@@ -100,7 +100,7 @@ const LandingAlt2 = () => (
             Cultartes (ROM)
           </a>
         </div>
-        <div className="backdrop-brightness-150 p-2">
+        <div className="bg-secondary-dark p-2">
           <p className="p-2">
             «Det er lekent. Men det er fortsatt mystisk og det høres ut som en rød solnedgang inne på en mørk discofest.
             Hvis det er en lyd.»
@@ -110,7 +110,7 @@ const LandingAlt2 = () => (
             Universitas (NO)
           </a>
         </div>
-        <div className="backdrop-brightness-150 p-2">
+        <div className="bg-secondary-dark p-2">
           <p className="p-2">
             {" "}
             «Although walking in the light can be both overwhelming and inspiring, it can also entail death. “Searing
@@ -133,7 +133,7 @@ const LandingAlt2 = () => (
       layout="responsive"
     />
     <div className="border text-lg md:text-xl border-secondary-skin-dark p-4 space-y-4">
-      <h1 className="text-4xl font-bold">Bio</h1>
+      <h1 className="text-5xl">ABOUT</h1>
       <p>
         The Holy Mountain is a critically acclaimed and genre-defying indie band from Oslo, Norway. The trio's
         signature sound combines accordion, synth, vocals, and drums to create dark and hypnotic worlds. Places where
