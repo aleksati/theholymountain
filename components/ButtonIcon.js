@@ -6,12 +6,9 @@ const ButtonIcon = React.forwardRef((props, ref) => {
   const { onClick, iconId, iconSize, ...aProps } = props;
   return (
     <button
-      role="link"
-      // key={iconId}
-      // aria-label={iconId}
       className="hover:cursor-pointer p-1 z-20"
       onClick={onClick}
-      tabIndex="-1"
+      type="button"
       ref={ref}
       {...aProps}
     >

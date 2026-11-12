@@ -1,38 +1,35 @@
-import { useClickOutside } from "../hooks/useClickOutside";
-import getCurrTheme from "../functions/getCurrTheme";
 import NavTabs from "./NavTabs";
-// import ButtonTheme from "./ButtonTheme";
-import { useEffect } from "react";
-import Link from "next/link";
-// import Contact from "./Contact";
-import Logo from "./Logo";
-import SoMeBar from "./SoMeBar";
 
-const Nav = ({ showNavTop, onToggleNavVertical }) => {
-  const [ref, isClickOutside] = useClickOutside();
-  const { currTheme } = getCurrTheme();
-
-  useEffect(() => {
-    if (isClickOutside && showNavTop) onToggleNavVertical();
-  }, [isClickOutside, onToggleNavVertical, showNavTop]);
+const Nav = ({ showNavTop = false, onToggleNavVertical }) => {
+  if (!onToggleNavVertical) {
+    return (
+      <nav className="z-40 min-h-screen bg-primary-light dark:bg-primary-dark p-4">
+        <NavTabs />
+      </nav>
+    );
+  }
 
   return (
     <div
-      className={`z-40 min-h-screen bg-primary-light dark:bg-primary-dark dark:border-secondary-dark space-y-12 ${
-        showNavTop ? "fixed" : "flex-none"
-      } w-full p-4`}
-      ref={ref}>
-      {/* <div className="fixed w-52 mt-2 md:mt-4"> */}
-      <div className="flex flex-col space-y-6 items-center justify-center">
-        <Link href="/">
-          <div className="px-6 w-80 hover:cursor-pointer pt-2">
-            <Logo variant={"white"} />
-          </div>
-        </Link>
-        <div className="pl-2">
-          <NavTabs />
-        </div>
-      </div>
+      className={`fixed inset-0 z-40 transition-opacity duration-300 ${
+        showNavTop ? "visible opacity-100" : "invisible opacity-0 delay-300"
+      }`}
+      aria-hidden={!showNavTop}>
+      <button
+        type="button"
+        className="absolute inset-0 cursor-default bg-black/50"
+        aria-label="Close navigation"
+        tabIndex={showNavTop ? 0 : -1}
+        onClick={onToggleNavVertical}
+      />
+      <nav
+        id="primary-navigation"
+        aria-label="Primary navigation"
+        className={`absolute inset-y-0 left-0 w-80 max-w-[85vw] transform bg-primary-dark px-8 pt-28 text-primary-dark shadow-xl transition-transform duration-300 ease-in-out ${
+          showNavTop ? "translate-x-0" : "-translate-x-full"
+        }`}>
+        <NavTabs onNavigate={onToggleNavVertical} />
+      </nav>
     </div>
   );
 };
