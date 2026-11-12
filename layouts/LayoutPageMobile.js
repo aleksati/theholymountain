@@ -21,7 +21,7 @@ const LayoutPageMobile = forwardRef(({ pageId, children, className }, ref) => {
         <ButtonIcon
           iconId={showNav ? "x" : "threedots"}
           onClick={handleToggleNav}
-          iconSize="text-3xl md:text-4xl"
+          iconSize="text-2xl md:text-3xl"
         />
       </div>
       {showNav ? (
@@ -31,14 +31,14 @@ const LayoutPageMobile = forwardRef(({ pageId, children, className }, ref) => {
         />
       ) : null}
       <div
-        className={`container pb-4 ${
+        className={`container pb-8 px-6 sm:px-0 ${
           showNav && "blur-sm"
-        } mx-auto flex-1 overflow-hidden pt-6 ${className}`}
+        } mx-auto flex-1 overflow-hidden pt-0 ${className}`}
         id={pageId}
         ref={ref}>
-        <div className="flex justify-center pb-6">
+        <div className="flex justify-center pb-8">
           <Link href="/">
-            <div className="px-6 w-80 hover:cursor-pointer">
+            <div className="px-20 md:px-8 w-80 hover:cursor-pointer">
               <Logo variant="white" />
             </div>
           </Link>

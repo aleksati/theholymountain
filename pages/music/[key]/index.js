@@ -1,14 +1,72 @@
 import connectMongo from "../../../functions/connectMongo";
-import ReleaseAudio from "../../../components/ReleaseAudio";
-import LikesCounter from "../../../components/LikesCounter";
 import LayoutPage from "../../../layouts/LayoutPage";
 import MusicData from "../../../models/MusicData";
 import SoMeBar from "../../../components/SoMeBar";
 import { useEffect } from "react";
 import Icon from "../../../components/Icon";
-import Link from "next/link";
+import MyImage from "../../../components/MyImage";
+import Button from "../../../components/Button";
+import VideoPlayer from "../../../components/VideoPlayer";
 
-const Release = ({ item }) => {
+const title = "THEY ARE ASLEEP";
+const year = "2024";
+const category = "Album";
+const description =
+  "They Are Asleep is all about having a party in hell, with lyrical themes about collective ignorance, death, and the decay of nature, and music reminiscent of Y2K techno, synth-pop and sci-fi horror. Join us where tensions are high and the darkness is bright. The release features logo design by Bjørn Erik Nyhuus, a cover image from Katinka Hustad and a music video by Johannes Frank Fuglehaug.";
+const tracklist = [
+  {
+    track: "Never Know",
+    number: "01.",
+    length: "03:45",
+  },
+  {
+    track: "Searing Light",
+    number: "02.",
+    length: "03:52",
+  },
+  {
+    track: "Remains Unsaid",
+    number: "03.",
+    length: "04:39",
+  },
+  {
+    track: "The Third Place",
+    number: "04.",
+    length: "03:59",
+  },
+  {
+    track: "Nature. A Sermon",
+    number: "05.",
+    length: "03:23",
+  },
+];
+const credits = [
+  "Produced by The Holy Mountain",
+  "Recorded and Mixed by Marcus Forsgren",
+  "Mastered by Espen Høydalsvik",
+];
+const someObject = [
+  {
+    key: "spotify",
+    url: "https://open.spotify.com/album/0JExCWKqyzrifd7TX4m13J?si=HJRvUhK1QkCL0OaiPkkPnA",
+  },
+  {
+    key: "tidal",
+    url: "https://tidal.com/browse/album/351455415",
+  },
+  {
+    key: "applemusic",
+    url: "https://music.apple.com/us/album/they-are-asleep-ep/1735525786",
+  },
+  {
+    key: "bandcamp",
+    url: "https://theholymountain.bandcamp.com/album/they-are-asleep",
+  },
+];
+const videoUrl = "https://www.youtube.com/embed/ZWsFN8QLsRg?si=lLXH4t_6_yTliipk";
+
+
+const Release = () => {
   // force scroll to top.
   useEffect(() => {
     setTimeout(() => {
@@ -19,60 +77,189 @@ const Release = ({ item }) => {
   return (
     <LayoutPage
       pageMeta={{
-        title: `The Holy Mountain | ${item.title}`,
+        title: `The Holy Mountain | ${title}`,
       }}>
-      <div className="flex flex-col items-center">
-        <div className="flex flex-col max-w-2xl p-4 space-y-4 text-xl" aria-label={`${item.title} page`}>
-          <div>
-            <Link href="/music">
-              <div className="flex space-x-1 items-center text-regular text-secondary hover:cursor-pointer">
-                <Icon id="prevArrow" iconSize="text-sm" />
-                <p>Back to music</p>
+      <div className="flex flex-col space-y-12 md:space-y-20">
+        <div className="relative grid grid-cols-2 gap-6 items-center">
+          <div className="relative col-span-2 md:col-span-1 md:static">
+            <Button
+              className="absolute left-4 top-1/2 z-10 -translate-y-1/2 md:left-0"
+              tooltipMessage="Previous image"
+              props={{ disabled: true }}>
+              <Icon id="prevArrow" iconSize="text-lg" />
+            </Button>
+            <MyImage alt="" src="theyareasleep.jpg" layout="responsive" padding={false} />
+            <Button
+              className="absolute right-4 top-1/2 z-10 -translate-y-1/2 md:right-0"
+              tooltipMessage="Next image"
+              props={{ disabled: true }}>
+              <Icon id="nextArrow" iconSize="text-lg" />
+            </Button>
+          </div>
+          <div className="col-span-2 md:col-span-1">
+            <div className="flex flex-col space-y-4 justify-center md:items-center">
+              <h1 className="text-size-header md:text-size-header-big leading-none text-center">{title}</h1>
+              <h3 className="text-size-regular text-center">{category} • {year}</h3>
+              <div className="flex space-x-2 self-center">
+                <SoMeBar someObject={someObject} />
               </div>
-            </Link>
+            </div>
           </div>
-          <ReleaseAudio spotifyurl={item.spotifyurl} previewurl={item.previewurl} />
-          <div className="flex space-x-4">
-            <LikesCounter releaseKey={item.key} />
-            <SoMeBar someObject={item.some} />
-          </div>
-          <div>
-            <p>{item.description}</p>
-          </div>
-          <div>
-            {item.credits.map((credit, index) => (
-              <p key={index}>{credit}</p>
+        </div>
+        <div className="flex flex-col space-y-4">
+          <h1 className="text-size-header md:text-size-header-big leading-none">TRACKLIST</h1>
+          <ol className="text-size-title space-y-4">
+            {tracklist.map((track) => (
+              <li
+                key={track.number}
+                className="flex items-center border-b border-secondary-skin-dark pb-2 text-size-regular">
+                <span className="text-secondary pr-2">{track.number}</span>
+                <span>{track.track}</span>
+                <span className="ml-auto pl-4">{track.length}</span>
+              </li>
+            ))}
+          </ol>
+        </div>
+        <div className="flex flex-col space-y-4">
+          <h1 className="text-size-header md:text-size-header-big leading-none">CREDITS</h1>
+          <p className="text-size-regular">{description}</p>
+          <div className="text-size-regular space-y-1">
+            {credits.map((credit) => (
+              <p key={credit}>{credit}</p>
             ))}
           </div>
         </div>
+        <div className="flex flex-col space-y-4">
+          <h1 className="text-size-header md:text-size-header-big leading-none">VIDEOS</h1>
+          <VideoPlayer
+            url={videoUrl}
+            title={title}
+          />
+        </div>
+        <div className="flex flex-col space-y-4">
+          <h1 className="text-size-header md:text-size-header-big leading-none">REVIEWS</h1>
+          <div className="grid text-size-regular grid-rows-1 grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="bg-secondary-dark p-2">
+              <p className="p-2">
+                «Dark yet catchy synth pop, an immersive release that transports listeners to a world where the line
+                between heaven and hell is blurred.”
+              </p>
+              -{" "}
+              <a
+                className="text-blue-400"
+                href="https://plasticmag.co.uk/2024/04/interview-the-holy-mountain-releases-new-ep/0">
+                Plastic Mag (UK)
+              </a>
+            </div>
+            <div className="bg-secondary-dark p-2">
+              <p className="p-2">
+                «På They Are Asleep hører vi kritikerroste låter omtalt av amerikanske Melomani som “synth-pop
+                brilliance” og av britiske Plastic Magazine som “a superb showcase of the trio's creativity and ability
+                to craft hook-filled music”.
+              </p>
+              -{" "}
+              <a
+                className="text-blue-400"
+                href="https://eternal-terror.com/2024/04/19/the-holy-mountain-slipper-nytt-ep">
+                Eternal Terror (SVE)
+              </a>
+            </div>
+            {/* <div className="bg-secondary-dark p-2">
+              <p className="p-2">
+                «Fans of dark, experimental music can sink their teeth into the intimate, atmospheric music here, while
+                synth-pop music fans will find a new favorite band in The Holy Mountain»
+              </p>
+              -{" "}
+              <a
+                className="text-blue-400"
+                href="https://cultartes.com/the-holy-mountain-digs-into-your-subconscious-with-its-synth-pop-perfection/">
+                Cultartes (ROM)
+              </a>
+            </div> */}
+            <div className="bg-secondary-dark p-2">
+              <p className="p-2">
+                «Det er lekent. Men det er fortsatt mystisk og det høres ut som en rød solnedgang inne på en mørk
+                discofest. Hvis det er en lyd.»
+              </p>
+              -{" "}
+              <a className="text-blue-400" href="https://www.universitas.no/synth-pop-uten-spenning/376230">
+                Universitas (NO)
+              </a>
+            </div>
+            <div className="bg-secondary-dark p-2">
+              <p className="p-2">
+                {" "}
+                «Although walking in the light can be both overwhelming and inspiring, it can also entail death.
+                “Searing Light” exists in this tense area where light might imply darkness and darkness can signify
+                light.»
+              </p>
+              - Exclusive interview with{" "}
+              <a
+                className="text-blue-400"
+                href="https://plasticmag.co.uk/2024/04/interview-the-holy-mountain-releases-new-ep/0">
+                Illustrate Mag (UK)
+              </a>{" "}
+            </div>
+          </div>
+        </div>
+        <div>
+          <h1 className="text-size-header md:text-size-header-big leading-none">GALLERY</h1>
+          <div className=" grid grid-rows-1 grid-cols-2 md:grid-cols-3 gap-2">
+            <MyImage
+              key={"pressekit/4 foto katinka hustad album cover versjon.jpg"}
+              src={"pressekit/4 foto katinka hustad album cover versjon.jpg"}
+              layout="responsive"
+              objectFit="contain"
+              isExpandable={true}
+            />
+            <MyImage
+              key={"gallery/3-1.jpg"}
+              src={"gallery/3-1.jpg"}
+              layout="responsive"
+              objectFit="contain"
+              isExpandable={true}
+            />
+            <MyImage
+              key={"gallery/3-1-11.jpg"}
+              src={"gallery/3-1-11.jpg"}
+              layout="responsive"
+              objectFit="contain"
+              isExpandable={true}
+            />
+            <MyImage
+              src={"gallery/3-7.jpg"}
+              key={"gallery/3-7.jpg"}
+              layout="responsive"
+              objectFit="contain"
+              isExpandable={true}
+            />
+            <MyImage
+              key={"gallery/3-1-12.jpg"}
+              src={"gallery/3-1-12.jpg"}
+              layout="responsive"
+              objectFit="contain"
+              isExpandable={true}
+            />
+            <MyImage
+              key={"gallery/3-1-13.jpg"}
+              src={"gallery/3-1-13.jpg"}
+              layout="responsive"
+              objectFit="contain"
+              isExpandable={true}
+            />
+          </div>
+        </div>
       </div>
+
     </LayoutPage>
   );
 };
 
 export default Release;
 
-export const getStaticProps = async (context) => {
-  try {
-    await connectMongo();
-
-    const url = context.params.key;
-    let res = await MusicData.findOne({ key: url });
-    let item = await JSON.parse(JSON.stringify(res));
-
-    return {
-      props: {
-        item,
-      },
-    };
-  } catch (error) {
-    console.log("Error while fetching static MusicData collection from db: ", error.message);
-    // should not be needed because of the "fallback: false" mode
-    return {
-      notFound: true,
-    };
-  }
-};
+export const getStaticProps = async () => ({
+  props: {},
+});
 
 // in this context, must return an object with format:
 // {paths : {params: {key: "ending", key: "toadof..", key: "finite.." "etc"}}}

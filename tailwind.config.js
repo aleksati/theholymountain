@@ -27,10 +27,10 @@ module.exports = {
       // fontFamily: {
       fontSize: {
         "size-header-big": ["3.75rem"], // text-6xl
-        "size-header": ["2.25rem"], // text-4xl
-        "size-title": ["1.875rem"], // text-3xl
-        "size-regular": ["2rem"], //text-lg
-        "size-small": ["1rem"], // text-xs
+        "size-header": ["2.5rem"], // text-4xl (var 2.25)
+        "size-title": ["1.5rem"], // text-2xl
+        "size-regular": ["1.25rem"], //text-xl
+        "size-small": ["0.875rem"], // text-small
       }, // https://tailwindcss.com/docs/font-size
       backgroundColor: {
         "primary-light": "#fff",

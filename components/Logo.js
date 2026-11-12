@@ -1,7 +1,7 @@
 import MyImage from "./MyImage";
 
 const logos = {
-  white: { src: "logo uten the white 2MM w grow 16 w sparkle.png", width: "1200", height: "558" },
+  white: { src: "logo uten the white 2MM w grow 32 w sparkle.png", width: "1200", height: "558" },
   dark: { src: "logo-black.png", width: "900", height: "511" },
 };
 

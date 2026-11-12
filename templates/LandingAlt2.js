@@ -152,18 +152,6 @@ const LandingAlt2 = () => (
       </div>
     </div>
     <div className="py-2">
-      {/* <h1 className="text-4xl font-bold">Pressebilder</h1> */}
-      {/* border border-secondary-skin-dark  */}
-      {/* <p>
-          Last ned bilder i høy kvalitet fra{" "}
-          <a
-            className="text-blue-400"
-            href="https://www.dropbox.com/scl/fo/ikw02oapink8o5abulppx/AFfisoRggw-EsBhWipuZSX8?rlkey=5lc51mocoum0bh2o49lk4wc2i&st=6nrs13tg&dl=0"
-          >
-            vår Dropbox
-          </a>
-          .
-        </p> */}
       <div className=" grid grid-rows-1 grid-cols-2 md:grid-cols-3 gap-2">
         <MyImage
           key={"pressekit/4 foto katinka hustad album cover versjon.jpg"}

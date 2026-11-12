@@ -8,37 +8,6 @@ import Link from "next/link";
 import Logo from "./Logo";
 import SoMeBar from "./SoMeBar";
 
-const someObject = [
-  {
-    key: "spotify",
-    url: "https://open.spotify.com/artist/04GXo6z6x1KLMG9weDPayK?si=rzFLNrlkTvml0zaKqo_tuQ",
-  },
-  {
-    key: "applemusic",
-    url: "https://music.apple.com/us/artist/the-holy-mountain/1685003735",
-  },
-  {
-    key: "tidal",
-    url: "https://tidal.com/browse/artist/39079821",
-  },
-  {
-    key: "facebook",
-    url: "https://www.facebook.com/theholymountaintrio",
-  },
-  {
-    key: "instagram",
-    url: "https://www.instagram.com/theholymountaintrio/",
-  },
-  {
-    key: "bandcamp",
-    url: "https://theholymountain.bandcamp.com/",
-  },
-  {
-    key: "youtube",
-    url: "https://www.youtube.com/@theholymountaintrio",
-  },
-];
-
 const Nav = ({ showNavTop, onToggleNavVertical }) => {
   const [ref, isClickOutside] = useClickOutside();
   const { currTheme } = getCurrTheme();
@@ -63,7 +32,6 @@ const Nav = ({ showNavTop, onToggleNavVertical }) => {
         <div className="pl-2">
           <NavTabs />
         </div>
-        <SoMeBar someObject={someObject} />
       </div>
     </div>
   );
