@@ -1,14 +1,7 @@
-import NavTabs from "./NavTabs";
+import Link from "next/link";
+import { NAV_ITEMS } from "../config";
 
 const Nav = ({ showNavTop = false, onToggleNavVertical }) => {
-  if (!onToggleNavVertical) {
-    return (
-      <nav className="z-40 min-h-screen bg-primary-light dark:bg-primary-dark p-4">
-        <NavTabs />
-      </nav>
-    );
-  }
-
   return (
     <div
       className={`fixed inset-0 z-40 transition-opacity duration-300 ${
@@ -25,10 +18,41 @@ const Nav = ({ showNavTop = false, onToggleNavVertical }) => {
       <nav
         id="primary-navigation"
         aria-label="Primary navigation"
-        className={`absolute inset-y-0 left-0 w-80 max-w-[85vw] transform bg-primary-dark px-8 pt-28 text-primary-dark shadow-xl transition-transform duration-300 ease-in-out ${
+        className={`absolute inset-y-0 left-0 w-200 max-w-[85vw] transform bg-primary-dark px-8 pt-28 text-primary-dark shadow-xl transition-transform duration-300 ease-in-out ${
           showNavTop ? "translate-x-0" : "-translate-x-full"
         }`}>
-        <NavTabs onNavigate={onToggleNavVertical} />
+        <div className="flex flex-col items-start space-y-4 md:space-y-8">
+          {NAV_ITEMS.map(({ title, href, children }) => (
+            <div key={title}>
+              {href ? (
+                <Link href={href}>
+                  <a
+                    onClick={onToggleNavVertical}
+                    className="font-bold text-primary-dark hover:opacity-70 text-size-title md:text-size-header">
+                    {title.toUpperCase()}
+                  </a>
+                </Link>
+              ) : (
+                <span className="font-bold text-primary-dark text-size-title md:text-size-header">
+                  {title.toUpperCase()}
+                </span>
+              )}
+              {children && (
+                <div className="ml-4 mt-2 flex flex-col space-y-4">
+                  {children.map((child) => (
+                    <Link href={child.href} key={child.href}>
+                      <a
+                        onClick={onToggleNavVertical}
+                        className="font-bold text-primary-dark hover:opacity-70 text-size-regular md:text-size-title">
+                        {child.title.toUpperCase()}
+                      </a>
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
       </nav>
     </div>
   );

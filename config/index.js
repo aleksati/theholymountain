@@ -246,3 +246,17 @@ export const SHIPPING_COUNTRIES = [
   "ZW",
   "ZZ",
 ];
+
+export const NAV_ITEMS = [
+  { title: "About", href: "/about" },
+  {
+    title: "Music",
+    children: [
+      { title: "Ending It All Tonight (Remix)", href: "/music/endingitalltonightremix" },
+      { title: "They Are Asleep", href: "/music/theyareasleep" },
+      { title: "The Dawn Here Are Quiet", href: "/music/thedawnsherearequiet" },
+    ],
+  },
+  { title: "Shop", href: "/shop" },
+  { title: "Contact", href: "/contact" },
+];

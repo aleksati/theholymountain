@@ -26,11 +26,16 @@ module.exports = {
     extend: {
       // fontFamily: {
       fontSize: {
-        "size-header-big": ["3.75rem"], // text-6xl
-        "size-header": ["2.5rem"], // text-4xl (var 2.25)
-        "size-title": ["1.5rem"], // text-2xl
-        "size-regular": ["1.25rem"], //text-xl
-        "size-small": ["0.875rem"], // text-small
+        "size-header-big": ["3.25rem"],
+        "size-header": ["2.25rem"],
+        "size-title": ["1.375rem"],
+        "size-regular": ["1.125rem"],
+        "size-small": ["0.8125rem"],
+        // "size-header-big": ["3.75rem"], // text-6xl
+        // "size-header": ["2.5rem"], // text-4xl (var 2.25)
+        // "size-title": ["1.5rem"], // text-2xl
+        // "size-regular": ["1.25rem"], //text-xl
+        // "size-small": ["0.875rem"], // text-small
       }, // https://tailwindcss.com/docs/font-size
       backgroundColor: {
         "primary-light": "#fff",

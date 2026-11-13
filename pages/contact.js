@@ -68,6 +68,7 @@ const Contact = () => {
 
   return (
     <LayoutPage pageMeta={pageMeta}>
+      <h1 className="text-size-header md:text-size-header-big leading-none">CONTACT</h1>
       <form
         onSubmit={(e) => handleSubmit(e)}
         className="flex flex-col w-full p-4 text-xl"

@@ -1,12 +1,11 @@
-import connectMongo from "../../../functions/connectMongo";
 import LayoutPage from "../../../layouts/LayoutPage";
-import MusicData from "../../../models/MusicData";
 import SoMeBar from "../../../components/SoMeBar";
 import { useEffect } from "react";
-import Icon from "../../../components/Icon";
 import MyImage from "../../../components/MyImage";
-import Button from "../../../components/Button";
 import VideoPlayer from "../../../components/VideoPlayer";
+import TextCard from "../../../components/TextCard";
+import GalleryGrid from "../../../components/GalleryGrid.js";
+import MusicReleaseArrows from "../../../components/MusicReleaseArrows";
 
 const title = "THEY ARE ASLEEP";
 const year = "2024";
@@ -64,9 +63,9 @@ const someObject = [
   },
 ];
 const videoUrl = "https://www.youtube.com/embed/ZWsFN8QLsRg?si=lLXH4t_6_yTliipk";
+const imgNames = ["3-1-15.jpg", "3-1.jpg", "3-1-11.jpg", "3-7.jpg", "3-1-12.jpg", "3-1-13.jpg"];
 
-
-const Release = () => {
+const Music = () => {
   // force scroll to top.
   useEffect(() => {
     setTimeout(() => {
@@ -79,27 +78,18 @@ const Release = () => {
       pageMeta={{
         title: `The Holy Mountain | ${title}`,
       }}>
-      <div className="flex flex-col space-y-12 md:space-y-20">
+      <div className="flex flex-col space-y-12 md:space-y-16">
         <div className="relative grid grid-cols-2 gap-6 items-center">
           <div className="relative col-span-2 md:col-span-1 md:static">
-            <Button
-              className="absolute left-4 top-1/2 z-10 -translate-y-1/2 md:left-0"
-              tooltipMessage="Previous image"
-              props={{ disabled: true }}>
-              <Icon id="prevArrow" iconSize="text-lg" />
-            </Button>
-            <MyImage alt="" src="theyareasleep.jpg" layout="responsive" padding={false} />
-            <Button
-              className="absolute right-4 top-1/2 z-10 -translate-y-1/2 md:right-0"
-              tooltipMessage="Next image"
-              props={{ disabled: true }}>
-              <Icon id="nextArrow" iconSize="text-lg" />
-            </Button>
+            <MusicReleaseArrows />
+            <MyImage alt="" src="theyareasleep.jpg" layout="responsive" />
           </div>
           <div className="col-span-2 md:col-span-1">
             <div className="flex flex-col space-y-4 justify-center md:items-center">
               <h1 className="text-size-header md:text-size-header-big leading-none text-center">{title}</h1>
-              <h3 className="text-size-regular text-center">{category} • {year}</h3>
+              <h3 className="text-size-regular text-center">
+                {category} • {year}
+              </h3>
               <div className="flex space-x-2 self-center">
                 <SoMeBar someObject={someObject} />
               </div>
@@ -120,26 +110,25 @@ const Release = () => {
             ))}
           </ol>
         </div>
-        <div className="flex flex-col space-y-4">
-          <h1 className="text-size-header md:text-size-header-big leading-none">CREDITS</h1>
-          <p className="text-size-regular">{description}</p>
-          <div className="text-size-regular space-y-1">
-            {credits.map((credit) => (
-              <p key={credit}>{credit}</p>
-            ))}
+        <TextCard>
+          <div className="flex flex-col space-y-4">
+            <h2 className="text-size-title md:text-size-header leading-none">CREDITS</h2>
+            <p className="text-size-regular">{description}</p>
+            <div className="text-size-regular space-y-1">
+              {credits.map((credit) => (
+                <p key={credit}>{credit}</p>
+              ))}
+            </div>
           </div>
-        </div>
+        </TextCard>
         <div className="flex flex-col space-y-4">
           <h1 className="text-size-header md:text-size-header-big leading-none">VIDEOS</h1>
-          <VideoPlayer
-            url={videoUrl}
-            title={title}
-          />
+          <VideoPlayer url={videoUrl} title={title} />
         </div>
         <div className="flex flex-col space-y-4">
           <h1 className="text-size-header md:text-size-header-big leading-none">REVIEWS</h1>
           <div className="grid text-size-regular grid-rows-1 grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="bg-secondary-dark p-2">
+            <TextCard>
               <p className="p-2">
                 «Dark yet catchy synth pop, an immersive release that transports listeners to a world where the line
                 between heaven and hell is blurred.”
@@ -150,12 +139,12 @@ const Release = () => {
                 href="https://plasticmag.co.uk/2024/04/interview-the-holy-mountain-releases-new-ep/0">
                 Plastic Mag (UK)
               </a>
-            </div>
-            <div className="bg-secondary-dark p-2">
+            </TextCard>
+            <TextCard>
               <p className="p-2">
                 «På They Are Asleep hører vi kritikerroste låter omtalt av amerikanske Melomani som “synth-pop
-                brilliance” og av britiske Plastic Magazine som “a superb showcase of the trio's creativity and ability
-                to craft hook-filled music”.
+                brilliance” og av britiske Plastic Magazine som “a superb showcase of the trio&apos;s creativity and
+                ability to craft hook-filled music”.
               </p>
               -{" "}
               <a
@@ -163,7 +152,7 @@ const Release = () => {
                 href="https://eternal-terror.com/2024/04/19/the-holy-mountain-slipper-nytt-ep">
                 Eternal Terror (SVE)
               </a>
-            </div>
+            </TextCard>
             {/* <div className="bg-secondary-dark p-2">
               <p className="p-2">
                 «Fans of dark, experimental music can sink their teeth into the intimate, atmospheric music here, while
@@ -176,7 +165,7 @@ const Release = () => {
                 Cultartes (ROM)
               </a>
             </div> */}
-            <div className="bg-secondary-dark p-2">
+            <TextCard>
               <p className="p-2">
                 «Det er lekent. Men det er fortsatt mystisk og det høres ut som en rød solnedgang inne på en mørk
                 discofest. Hvis det er en lyd.»
@@ -185,8 +174,8 @@ const Release = () => {
               <a className="text-blue-400" href="https://www.universitas.no/synth-pop-uten-spenning/376230">
                 Universitas (NO)
               </a>
-            </div>
-            <div className="bg-secondary-dark p-2">
+            </TextCard>
+            <TextCard>
               <p className="p-2">
                 {" "}
                 «Although walking in the light can be both overwhelming and inspiring, it can also entail death.
@@ -199,15 +188,16 @@ const Release = () => {
                 href="https://plasticmag.co.uk/2024/04/interview-the-holy-mountain-releases-new-ep/0">
                 Illustrate Mag (UK)
               </a>{" "}
-            </div>
+            </TextCard>
           </div>
         </div>
         <div>
           <h1 className="text-size-header md:text-size-header-big leading-none">GALLERY</h1>
-          <div className=" grid grid-rows-1 grid-cols-2 md:grid-cols-3 gap-2">
+          <GalleryGrid imgNames={imgNames} />
+          {/* <Grid>
             <MyImage
-              key={"pressekit/4 foto katinka hustad album cover versjon.jpg"}
-              src={"pressekit/4 foto katinka hustad album cover versjon.jpg"}
+              key={"gallery/3-1-15.jpg"}
+              src={"gallery/3-1-15.jpg"}
               layout="responsive"
               objectFit="contain"
               isExpandable={true}
@@ -247,32 +237,16 @@ const Release = () => {
               objectFit="contain"
               isExpandable={true}
             />
-          </div>
+          </Grid> */}
+          <p>Foto by Katinka Hustad</p>
         </div>
       </div>
-
     </LayoutPage>
   );
 };
 
-export default Release;
+export default Music;
 
 export const getStaticProps = async () => ({
   props: {},
 });
-
-// in this context, must return an object with format:
-// {paths : {params: {key: "ending", key: "toadof..", key: "finite.." "etc"}}}
-export const getStaticPaths = async () => {
-  await connectMongo();
-  let res = await MusicData.find();
-  let items = await JSON.parse(JSON.stringify(res));
-  let keys = items.map((item) => item.key);
-
-  let paths = keys.map((key) => ({ params: { key } }));
-
-  return {
-    paths,
-    fallback: false,
-  };
-};

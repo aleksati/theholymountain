@@ -55,7 +55,7 @@ const Gallery = ({ imgNames }) => {
 
   return (
     <LayoutPage pageMeta={pageMeta}>
-      <Grid gridCols={3}>
+      <Grid>
         {imgNames.map((img) => (
           <MyImageGallery
             key={img}
