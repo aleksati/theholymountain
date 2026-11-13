@@ -1,10 +1,10 @@
 // import React from "react";
 
-const Grid = ({ children }) => {
+const Grid = ({ children, className = "" }) => {
   // if (gridCols === 3)
     return (
       <div
-        className="p-2 grid grid-rows-1 grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+        className={`p-2 grid grid-rows-1 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 ${className}`}
         aria-label="Media page grid">
         {children}
       </div>

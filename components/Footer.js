@@ -35,7 +35,7 @@ export default function Footer() {
   return (
     <footer className="flex flex-col items-center bg-primary-dark gap-2 border-t border-secondary-skin-dark pt-4 pb-4 text-secondary">
       <SoMeBar someObject={someObject} iconSize="text-xl" />
-      <p className="text-size-small">Underworld Productions</p>
+      <p className="text-size-small">© Underworld Productions</p>
     </footer>
   );
 }

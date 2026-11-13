@@ -1,8 +1,6 @@
 const dev = process.env.NODE_ENV !== "production";
 
-export const SITE_DOMAIN = dev
-  ? "http://localhost:3000"
-  : "https://www.theholymountain.net";
+export const SITE_DOMAIN = dev ? "http://localhost:3000" : "https://www.theholymountain.net";
 
 // Used in pages/api/checkout.js
 export const SHIPPING_DOM_PRICE = 120; // nok
@@ -263,4 +261,64 @@ export const NAV_ITEMS = [
   },
   { title: "Shop", href: "/shop" },
   { title: "Gallery", href: "/gallery" },
+];
+
+export const SHOP_ITEMS = [
+  {
+    _id: "6612c87e47adc47104706944",
+    key: "theytote",
+    title: "They Are Asleep Totebag",
+    year: "2024",
+    price: "150",
+    shopQuantity: 50,
+    userQuantity: 0,
+  },
+  {
+    _id: "6612870eb802ac20f7a959f9",
+    key: "theyshirt",
+    title: "They Are Asleep T-shirt",
+    year: "2024",
+    price: "249",
+    shopQuantity: 50,
+    shopSizes: ["SM", "MD", "LG"],
+    userQuantity: 0,
+    userSize: "",
+  },
+  {
+    _id: "65931bbe9f4bd7582a7cea8a",
+    description: '12" Vinyl',
+    key: "toadoflightlp",
+    title: "Toad of Light LP",
+    price: "200",
+    year: "2018",
+    shopQuantity: 200,
+    userQuantity: 0,
+  },
+  {
+    _id: "65931f8bd884f4981aa7ab25",
+    key: "theholymountaincd",
+    title: "The Holy Mountain CD",
+    year: "2015",
+    price: "100",
+    shopQuantity: 100,
+    userQuantity: 0,
+  },
+  {
+    _id: "65931f74d884f4981aa7ab23",
+    key: "finitecassette",
+    title: "FINITE Cassette",
+    year: "2016",
+    price: "100",
+    shopQuantity: 100,
+    userQuantity: 0,
+  },
+  {
+    _id: "65931efbd884f4981aa7ab1f",
+    key: "endingitalltonightcassette",
+    title: "Ending it all Tonight Cassette",
+    year: "2020",
+    price: "100",
+    shopQuantity: 200,
+    userQuantity: 0,
+  },
 ];

@@ -102,9 +102,9 @@ export default nextConnect()
   })
   .post(async (req, res) => {
     await connectMongo();
-    const musicData = await ShopData.create(req.body);
+    const shopData = await ShopData.create(req.body);
 
-    res.status(201).json(musicData);
+    res.status(201).json(shopData);
   })
   .delete(async (req, res) => {
     await connectMongo();
