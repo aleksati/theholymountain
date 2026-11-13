@@ -7,6 +7,7 @@ import ButtonScrollTo from "../components/ButtonScrollTo";
 import { useIsMounted } from "../hooks/useIsMounted";
 import Meta from "../components/Meta";
 import Icon from "../components/Icon";
+import Cart from "../components/Cart";
 
 const LayoutPage = ({ pageId = "top", children, className = "", pageMeta }) => {
   const [showNav, setShowNav] = useState(false);
@@ -29,7 +30,7 @@ const LayoutPage = ({ pageId = "top", children, className = "", pageMeta }) => {
             <ButtonIcon
               iconId={showNav ? "x" : "threedots"}
               onClick={handleToggleNav}
-              iconSize="text-2xl md:text-3xl"
+              iconSize="text-xl md:text-xl"
               aria-label={showNav ? "Close navigation" : "Open navigation"}
               aria-expanded={showNav}
               aria-controls="primary-navigation"
@@ -37,7 +38,7 @@ const LayoutPage = ({ pageId = "top", children, className = "", pageMeta }) => {
             {/* mail icon */}
             <Link href="/contact">
               <a aria-label="Contact" title="Contact" className="p-1 hover:opacity-70">
-                <Icon id="contact" iconSize="text-2xl md:text-3xl" />
+                <Icon id="contact" iconSize="text-xl md:text-xl" />
               </a>
             </Link>
           </div>
@@ -46,6 +47,9 @@ const LayoutPage = ({ pageId = "top", children, className = "", pageMeta }) => {
               <Logo variant="white" />
             </a>
           </Link>
+          <div className="relative z-20 ml-auto">
+            <Cart />
+          </div>
         </header>
         <Nav showNavTop={showNav} onToggleNavVertical={handleToggleNav} />
         <div

@@ -120,6 +120,14 @@ const Music = () => {
           <h1 className="text-size-header md:text-size-header-big leading-none">VIDEOS</h1>
           <VideoPlayer url={videoUrl} title={title} />
         </div>
+                <div>
+          <h1 className="text-size-header md:text-size-header-big leading-none">SHOP</h1>
+          <Grid className="mt-2 gap-y-4">
+            {shopItems.map((shopItem) => (
+              <ShopCard key={shopItem.key} shopItem={shopItem} />
+            ))}
+          </Grid>
+        </div>
         <div className="flex flex-col space-y-4">
           <h1 className="text-size-header md:text-size-header-big leading-none">REVIEWS</h1>
           <div className="grid text-size-regular grid-rows-1 grid-cols-1 md:grid-cols-2 gap-4">
@@ -185,14 +193,6 @@ const Music = () => {
               </a>{" "}
             </TextCard>
           </div>
-        </div>
-        <div>
-          <h1 className="text-size-header md:text-size-header-big leading-none">SHOP</h1>
-          <Grid className="mt-2 gap-y-4">
-            {shopItems.map((shopItem) => (
-              <ShopCard key={shopItem.key} shopItem={shopItem} />
-            ))}
-          </Grid>
         </div>
         <div>
           <h1 className="text-size-header md:text-size-header-big leading-none">GALLERY</h1>

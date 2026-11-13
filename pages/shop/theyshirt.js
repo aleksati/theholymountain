@@ -4,6 +4,7 @@ import LayoutPage from "../../layouts/LayoutPage";
 import MyImage from "../../components/MyImage";
 import TextCard from "../../components/TextCard";
 import { SHOP_ITEMS } from "../../config";
+import { useCart } from "../../context/CartContext";
 
 const shopItem = SHOP_ITEMS.find(({ key }) => key === "theyshirt");
 
@@ -11,7 +12,16 @@ const Theyshirt = ({ shopItem }) => {
   const imageNames = [1, 2].map((imageNumber) => `${shopItem.key}-shop-${imageNumber}.png`);
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const [selectedSize, setSelectedSize] = useState(shopItem.shopSizes[0]);
+  const { cart, setItemQuantity } = useCart();
   const selectedImage = imageNames[selectedImageIndex];
+  const cartItem = cart.find((item) => item.key === shopItem.key);
+
+  const handleAddToCart = () => {
+    setItemQuantity(
+      { ...shopItem, userSize: selectedSize },
+      (cartItem?.quantity || 0) + 1
+    );
+  };
 
   return (
     <LayoutPage pageMeta={{ title: `The Holy Mountain | ${shopItem.title}` }}>
@@ -72,6 +82,7 @@ const Theyshirt = ({ shopItem }) => {
               </div>
               <button
                 type="button"
+                onClick={handleAddToCart}
                 className="rounded-full bg-red-600 px-8 py-3 font-bold tracking-widest text-white transition-colors duration-300 hover:bg-red-700">
                 ADD TO CART
               </button>

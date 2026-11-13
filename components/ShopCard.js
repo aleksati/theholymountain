@@ -4,7 +4,7 @@ import TextCard from "./TextCard";
 
 export default function ShopCard({ shopItem }) {
   return (
-    <Link href={`/shopNew/${shopItem.key}`}>
+    <Link href={`/shop/${shopItem.key}`}>
       <article className="mx-2 h-full overflow-hidden rounded-md border border-secondary-skin-dark hover:border-secondary hover:dark:border-secondary transition-colors duration-300 ease-in-out hover:cursor-pointer">
         <TextCard>
           <div className="space-y-3">

@@ -18,13 +18,15 @@ const MusicReleaseArrows = () => {
   return (
     <>
       <Button
-        className="absolute left-4 top-1/2 z-10 -translate-y-1/2 md:left-0"
+        colorStyle="border-secondary-skin-dark hover:border-secondary-skin-light"
+        className="!bg-primary-dark absolute left-4 top-1/2 z-10 -translate-y-1/2 md:left-0"
         tooltipMessage="Previous release"
         onClick={() => router.push(previousRelease.href)}>
         <Icon id="prevArrow" iconSize="text-lg" />
       </Button>
       <Button
-        className="absolute right-4 top-1/2 z-10 -translate-y-1/2 md:right-0"
+        colorStyle="border-secondary-skin-dark hover:border-secondary-skin-light"
+        className="!bg-primary-dark absolute right-4 top-1/2 z-10 -translate-y-1/2 md:right-0"
         tooltipMessage="Next release"
         onClick={() => router.push(nextRelease.href)}>
         <Icon id="nextArrow" iconSize="text-lg" />

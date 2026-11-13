@@ -1,10 +1,11 @@
 import Link from "next/link";
 import { NAV_ITEMS } from "../config";
+import ButtonIcon from "./ButtonIcon";
 
 const Nav = ({ showNavTop = false, onToggleNavVertical }) => {
   return (
     <div
-      className={`fixed inset-0 z-40 transition-opacity duration-300 ${
+      className={`fixed inset-0 z-[60] transition-opacity duration-300 ${
         showNavTop ? "visible opacity-100" : "invisible opacity-0 delay-300"
       }`}
       aria-hidden={!showNavTop}>
@@ -21,6 +22,13 @@ const Nav = ({ showNavTop = false, onToggleNavVertical }) => {
         className={`absolute inset-y-0 left-0 w-200 max-w-[85vw] transform bg-primary-dark px-8 pt-28 text-primary-dark shadow-xl transition-transform duration-300 ease-in-out ${
           showNavTop ? "translate-x-0" : "-translate-x-full"
         }`}>
+        <ButtonIcon
+          iconId="x"
+          onClick={onToggleNavVertical}
+          iconSize="text-xl md:text-xl"
+          aria-label="Close navigation"
+          className="absolute left-5 top-5 p-1"
+        />
         <div className="flex flex-col items-start space-y-8 md:space-y-8">
           {NAV_ITEMS.map(({ title, href, children }) => (
             <div key={title}>
