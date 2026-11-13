@@ -11,7 +11,7 @@ export default function ShopNew() {
   return (
     <LayoutPage pageMeta={pageMeta}>
       <h1 className="text-size-header md:text-size-header-big leading-none">SHOP</h1>
-      <Grid className="gap-y-4">
+      <Grid className="mt-2 gap-y-4">
         {SHOP_ITEMS.map((shopItem) => (
           <ShopCard key={shopItem.key} shopItem={shopItem} />
         ))}

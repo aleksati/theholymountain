@@ -2,7 +2,6 @@ import LayoutPage from "../../../layouts/LayoutPage";
 import SoMeBar from "../../../components/SoMeBar";
 import MyImage from "../../../components/MyImage";
 import VideoPlayer from "../../../components/VideoPlayer";
-import TextCard from "../../../components/TextCard";
 import MusicReleaseArrows from "../../../components/MusicReleaseArrows";
 import GalleryGrid from "../../../components/GalleryGrid";
 
@@ -136,17 +135,15 @@ const Music = () => {
             ))}
           </ol>
         </div>
-        <TextCard>
-          <div className="flex flex-col space-y-4">
-            <h2 className="text-size-title md:text-size-header leading-none">CREDITS</h2>
-            <p className="text-size-regular">{description}</p>
-            <div className="text-size-regular space-y-1">
-              {credits.map((credit) => (
-                <p key={credit}>{credit}</p>
-              ))}
-            </div>
+        <div className="flex flex-col space-y-4 rounded-md border border-secondary-skin-dark p-4">
+          <h2 className="text-size-title md:text-size-header leading-none">CREDITS</h2>
+          <p className="text-size-regular">{description}</p>
+          <div className="text-size-regular space-y-1">
+            {credits.map((credit) => (
+              <p key={credit}>{credit}</p>
+            ))}
           </div>
-        </TextCard>
+        </div>
         <div className="flex flex-col space-y-4">
           <h1 className="text-size-header md:text-size-header-big leading-none">VIDEOS</h1>
           <div className="flex flex-col space-y-8">

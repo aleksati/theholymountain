@@ -5,6 +5,9 @@ import VideoPlayer from "../../../components/VideoPlayer";
 import TextCard from "../../../components/TextCard";
 import GalleryGrid from "../../../components/GalleryGrid.js";
 import MusicReleaseArrows from "../../../components/MusicReleaseArrows";
+import Grid from "../../../components/Grid.js";
+import ShopCard from "../../../components/ShopCard.js";
+import { SHOP_ITEMS } from "../../../config/index.js";
 
 const title = "THEY ARE ASLEEP";
 const year = "2024";
@@ -62,7 +65,9 @@ const someObject = [
   },
 ];
 const videoUrl = "https://www.youtube.com/embed/ZWsFN8QLsRg?si=lLXH4t_6_yTliipk";
+const shopItems = SHOP_ITEMS.filter(({ key }) => ["theyshirt", "theytote"].includes(key));
 const imgNames = ["3-1-15.jpg", "3-1.jpg", "3-1-11.jpg", "3-7.jpg", "3-1-12.jpg", "3-1-13.jpg"];
+
 
 const Music = () => {
   return (
@@ -102,8 +107,7 @@ const Music = () => {
             ))}
           </ol>
         </div>
-        <TextCard>
-          <div className="flex flex-col space-y-4">
+          <div className="flex flex-col space-y-4 rounded-md border border-secondary-skin-dark p-4">
             <h2 className="text-size-title md:text-size-header leading-none">CREDITS</h2>
             <p className="text-size-regular">{description}</p>
             <div className="text-size-regular space-y-1">
@@ -112,7 +116,6 @@ const Music = () => {
               ))}
             </div>
           </div>
-        </TextCard>
         <div className="flex flex-col space-y-4">
           <h1 className="text-size-header md:text-size-header-big leading-none">VIDEOS</h1>
           <VideoPlayer url={videoUrl} title={title} />
@@ -184,52 +187,16 @@ const Music = () => {
           </div>
         </div>
         <div>
+          <h1 className="text-size-header md:text-size-header-big leading-none">SHOP</h1>
+          <Grid className="mt-2 gap-y-4">
+            {shopItems.map((shopItem) => (
+              <ShopCard key={shopItem.key} shopItem={shopItem} />
+            ))}
+          </Grid>
+        </div>
+        <div>
           <h1 className="text-size-header md:text-size-header-big leading-none">GALLERY</h1>
           <GalleryGrid imgNames={imgNames} />
-          {/* <Grid>
-            <MyImage
-              key={"gallery/3-1-15.jpg"}
-              src={"gallery/3-1-15.jpg"}
-              layout="responsive"
-              objectFit="contain"
-              isExpandable={true}
-            />
-            <MyImage
-              key={"gallery/3-1.jpg"}
-              src={"gallery/3-1.jpg"}
-              layout="responsive"
-              objectFit="contain"
-              isExpandable={true}
-            />
-            <MyImage
-              key={"gallery/3-1-11.jpg"}
-              src={"gallery/3-1-11.jpg"}
-              layout="responsive"
-              objectFit="contain"
-              isExpandable={true}
-            />
-            <MyImage
-              src={"gallery/3-7.jpg"}
-              key={"gallery/3-7.jpg"}
-              layout="responsive"
-              objectFit="contain"
-              isExpandable={true}
-            />
-            <MyImage
-              key={"gallery/3-1-12.jpg"}
-              src={"gallery/3-1-12.jpg"}
-              layout="responsive"
-              objectFit="contain"
-              isExpandable={true}
-            />
-            <MyImage
-              key={"gallery/3-1-13.jpg"}
-              src={"gallery/3-1-13.jpg"}
-              layout="responsive"
-              objectFit="contain"
-              isExpandable={true}
-            />
-          </Grid> */}
           <p>Foto by Katinka Hustad</p>
         </div>
       </div>
