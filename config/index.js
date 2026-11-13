@@ -250,11 +250,15 @@ export const SHIPPING_COUNTRIES = [
 export const NAV_ITEMS = [
   { title: "About", href: "/about" },
   {
-    title: "Music",
+    title: "Discography",
     children: [
       { title: "Ending It All Tonight (Remix)", href: "/music/endingitalltonightremix" },
       { title: "They Are Asleep", href: "/music/theyareasleep" },
       { title: "The Dawn Here Are Quiet", href: "/music/thedawnsherearequiet" },
+      { title: "Ending It All Tonight", href: "/music/endingitalltonight" },
+      { title: "Toad of Light", href: "/music/toadoflight" },
+      { title: "FINITE", href: "/music/finite" },
+      { title: "The Holy Mountain (2024 Mix)", href: "/music/theholymountain" },
     ],
   },
   { title: "Shop", href: "/shop" },

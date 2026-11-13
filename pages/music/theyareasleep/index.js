@@ -1,6 +1,5 @@
 import LayoutPage from "../../../layouts/LayoutPage";
 import SoMeBar from "../../../components/SoMeBar";
-import { useEffect } from "react";
 import MyImage from "../../../components/MyImage";
 import VideoPlayer from "../../../components/VideoPlayer";
 import TextCard from "../../../components/TextCard";
@@ -41,8 +40,8 @@ const tracklist = [
 ];
 const credits = [
   "Produced by The Holy Mountain",
-  "Recorded and Mixed by Marcus Forsgren",
-  "Mastered by Espen Høydalsvik",
+  "Recorded and Mixed by Marcus Forsgren at Paradiso Studios, Oslo",
+  "Mastered by Espen Høydalsvik at Oslo Fuzz",
 ];
 const someObject = [
   {
@@ -66,13 +65,6 @@ const videoUrl = "https://www.youtube.com/embed/ZWsFN8QLsRg?si=lLXH4t_6_yTliipk"
 const imgNames = ["3-1-15.jpg", "3-1.jpg", "3-1-11.jpg", "3-7.jpg", "3-1-12.jpg", "3-1-13.jpg"];
 
 const Music = () => {
-  // force scroll to top.
-  useEffect(() => {
-    setTimeout(() => {
-      window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-    }, [200]);
-  }, []);
-
   return (
     <LayoutPage
       pageMeta={{
@@ -88,7 +80,7 @@ const Music = () => {
             <div className="flex flex-col space-y-4 justify-center md:items-center">
               <h1 className="text-size-header md:text-size-header-big leading-none text-center">{title}</h1>
               <h3 className="text-size-regular text-center">
-                {category} • {year}
+                The Holy Mountain • {category} • {year}
               </h3>
               <div className="flex space-x-2 self-center">
                 <SoMeBar someObject={someObject} />

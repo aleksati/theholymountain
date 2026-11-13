@@ -3,7 +3,8 @@ import { NAV_ITEMS } from "../config";
 import Button from "./Button";
 import Icon from "./Icon";
 
-const musicPages = NAV_ITEMS.find(({ title }) => title === "Music")?.children || [];
+const musicPages =
+  NAV_ITEMS.find(({ children }) => children?.some(({ href }) => href.startsWith("/music/")))?.children || [];
 
 const MusicReleaseArrows = () => {
   const router = useRouter();
