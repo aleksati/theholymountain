@@ -21,19 +21,19 @@ const Nav = ({ showNavTop = false, onToggleNavVertical }) => {
         className={`absolute inset-y-0 left-0 w-200 max-w-[85vw] transform bg-primary-dark px-8 pt-28 text-primary-dark shadow-xl transition-transform duration-300 ease-in-out ${
           showNavTop ? "translate-x-0" : "-translate-x-full"
         }`}>
-        <div className="flex flex-col items-start space-y-4 md:space-y-8">
+        <div className="flex flex-col items-start space-y-8 md:space-y-8">
           {NAV_ITEMS.map(({ title, href, children }) => (
             <div key={title}>
               {href ? (
                 <Link href={href}>
                   <a
                     onClick={onToggleNavVertical}
-                    className="font-bold text-primary-dark hover:opacity-70 text-size-title md:text-size-header">
+                    className="font-bold text-primary-dark hover:opacity-70 text-size-header md:text-size-header">
                     {title.toUpperCase()}
                   </a>
                 </Link>
               ) : (
-                <span className="font-bold text-primary-dark text-size-title md:text-size-header">
+                <span className="font-bold text-primary-dark text-size-header md:text-size-header">
                   {title.toUpperCase()}
                 </span>
               )}
@@ -43,7 +43,7 @@ const Nav = ({ showNavTop = false, onToggleNavVertical }) => {
                     <Link href={child.href} key={child.href}>
                       <a
                         onClick={onToggleNavVertical}
-                        className="font-bold text-primary-dark hover:opacity-70 text-size-regular md:text-size-title">
+                        className="font-bold text-primary-dark hover:opacity-70 text-size-title md:text-size-title">
                         {child.title.toUpperCase()}
                       </a>
                     </Link>

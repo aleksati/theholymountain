@@ -55,6 +55,7 @@ const Gallery = ({ imgNames }) => {
 
   return (
     <LayoutPage pageMeta={pageMeta}>
+       <h1 className="text-size-header md:text-size-header-big leading-none">GALLERY</h1>
       <Grid>
         {imgNames.map((img) => (
           <MyImageGallery

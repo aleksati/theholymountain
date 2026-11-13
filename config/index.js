@@ -262,5 +262,5 @@ export const NAV_ITEMS = [
     ],
   },
   { title: "Shop", href: "/shop" },
-  { title: "Contact", href: "/contact" },
+  { title: "Gallery", href: "/gallery" },
 ];

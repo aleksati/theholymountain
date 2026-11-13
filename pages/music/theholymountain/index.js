@@ -56,7 +56,7 @@ const someObject = [
     url: "https://theholymountain.bandcamp.com/album/the-holy-mountain-2024-mix",
   },
 ];
-const imgNames = ["1-1.jpg", "1-2.jpg", "1-3.jpg", "1-5.jpg", "1-6.jpg"];
+const imgNames = [ "1-2.jpg", "1-1.jpg", "1-3.jpg", "1-5.jpg", "1-6.jpg"];
 
 const Music = () => {
   return (
