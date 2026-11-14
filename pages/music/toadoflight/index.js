@@ -9,7 +9,7 @@ const title = "TOAD OF LIGHT";
 const year = "2018";
 const category = "Album";
 const description =
-  "Toad of Light is our debut studio album, inspired by dystopian sci-fi visions and cult aesthetics. The release features cover design by the legendary comic book artist Philippe Druillet, and a unique music video by Norwegian filmmaker Marius Rolfsvåg. Available on 12-inch vinyl from our online store.";
+  "Toad of Light is our debut studio album, released on Shhpuma records in 2018 on LP and digital. The release is inspired by dystopian sci-fi visions and cult aesthetics, with cover design by the legendary comic book artist Philippe Druillet, and a unique music video by Norwegian filmmaker Marius Rolfsvåg. Available on 12-inch vinyl from our online store.";
 const tracklist = [
   {
     track: "Adoration of the Moon",

@@ -68,7 +68,6 @@ const videoUrl = "https://www.youtube.com/embed/ZWsFN8QLsRg?si=lLXH4t_6_yTliipk"
 const shopItems = SHOP_ITEMS.filter(({ key }) => ["theyshirt", "theytote"].includes(key));
 const imgNames = ["3-1-15.jpg", "3-1.jpg", "3-1-11.jpg", "3-7.jpg", "3-1-12.jpg", "3-1-13.jpg"];
 
-
 const Music = () => {
   return (
     <LayoutPage
@@ -107,20 +106,20 @@ const Music = () => {
             ))}
           </ol>
         </div>
-          <div className="flex flex-col space-y-4 rounded-md border border-secondary-skin-dark p-4">
-            <h2 className="text-size-title md:text-size-header leading-none">CREDITS</h2>
-            <p className="text-size-regular">{description}</p>
-            <div className="text-size-regular space-y-1">
-              {credits.map((credit) => (
-                <p key={credit}>{credit}</p>
-              ))}
-            </div>
+        <div className="flex flex-col space-y-4 rounded-md border border-secondary-skin-dark p-4">
+          <h2 className="text-size-title md:text-size-header leading-none">CREDITS</h2>
+          <p className="text-size-regular">{description}</p>
+          <div className="text-size-regular space-y-1">
+            {credits.map((credit) => (
+              <p key={credit}>{credit}</p>
+            ))}
           </div>
+        </div>
         <div className="flex flex-col space-y-4">
           <h1 className="text-size-header md:text-size-header-big leading-none">VIDEOS</h1>
           <VideoPlayer url={videoUrl} title={title} />
         </div>
-                <div>
+        <div>
           <h1 className="text-size-header md:text-size-header-big leading-none">SHOP</h1>
           <Grid className="mt-2 gap-y-4">
             {shopItems.map((shopItem) => (

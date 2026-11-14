@@ -17,10 +17,7 @@ const Theyshirt = ({ shopItem }) => {
   const cartItem = cart.find((item) => item.key === shopItem.key);
 
   const handleAddToCart = () => {
-    setItemQuantity(
-      { ...shopItem, userSize: selectedSize },
-      (cartItem?.quantity || 0) + 1
-    );
+    setItemQuantity({ ...shopItem, userSize: selectedSize }, (cartItem?.quantity || 0) + 1);
   };
 
   return (
@@ -49,13 +46,7 @@ const Theyshirt = ({ shopItem }) => {
                       ? "border-secondary"
                       : "border-secondary-skin-dark hover:border-secondary"
                   }`}>
-                  <Image
-                    src={`/img/shop/${imageName}`}
-                    alt=""
-                    layout="fill"
-                    objectFit="contain"
-                    unoptimized
-                  />
+                  <Image src={`/img/shop/${imageName}`} alt="" layout="fill" objectFit="contain" unoptimized />
                 </button>
               ))}
             </div>
@@ -64,6 +55,8 @@ const Theyshirt = ({ shopItem }) => {
             <div className="flex flex-col items-center space-y-6 text-center">
               <h1 className="text-size-header md:text-size-header-big leading-none uppercase">{shopItem.title}</h1>
               <p className="text-size-title">kr {shopItem.price}</p>
+              <p className="text-size-small">Organic cotton tee</p>
+
               <div className="flex flex-wrap justify-center gap-2">
                 {shopItem.shopSizes.map((size) => (
                   <button
@@ -72,9 +65,7 @@ const Theyshirt = ({ shopItem }) => {
                     aria-pressed={selectedSize === size}
                     onClick={() => setSelectedSize(size)}
                     className={`min-w-14 rounded-md border px-4 py-2 text-size-small transition-colors duration-300 ${
-                      selectedSize === size
-                        ? "border-secondary"
-                        : "border-secondary-skin-dark hover:border-secondary"
+                      selectedSize === size ? "border-secondary" : "border-secondary-skin-dark hover:border-secondary"
                     }`}>
                     {size}
                   </button>

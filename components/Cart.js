@@ -40,10 +40,22 @@ const Cart = () => {
         body: JSON.stringify(checkoutCart),
         headers: { "Content-Type": "application/json" },
       });
-      const checkout = await response.json();
+      const responseBody = await response.text();
+      let checkout = {};
+
+      try {
+        checkout = responseBody ? JSON.parse(responseBody) : {};
+      } catch {
+        checkout = {};
+      }
 
       if (!response.ok) {
-        throw new Error(checkout.message || checkout.error || "Checkout could not be started.");
+        throw new Error(
+          checkout.message ||
+            checkout.error ||
+            responseBody ||
+            "Checkout could not be started."
+        );
       }
       if (!checkout.url) {
         throw new Error("Checkout did not return a Stripe URL.");
