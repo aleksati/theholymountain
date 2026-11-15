@@ -48,7 +48,7 @@ export default function GalleryGrid({ imgNames }) {
     // I dont use Placeholder "blur" because the images are very small by themselves
 
   return (
-    <Grid>
+    <Grid smallScreenColumns={2}>
       {imgNames.map((img) => (
         <MyImageGallery key={img} src={img} layout="responsive" objectFit="contain" onImgClick={handleImgClick} />
       ))}

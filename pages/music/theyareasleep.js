@@ -75,18 +75,20 @@ const Music = () => {
         title: `The Holy Mountain | ${title}`,
       }}>
       <div className="flex flex-col space-y-12 md:space-y-16">
-        <div className="relative grid grid-cols-2 gap-6 items-center">
-          <div className="relative col-span-2 md:col-span-1 md:static">
+        <div className="relative flex min-h-[calc(100dvh-10rem)] flex-col gap-6 md:min-h-0 md:grid md:grid-cols-2 md:items-stretch">
+          <div className="relative md:static">
             <MusicReleaseArrows />
             <MyImage alt="" src="theyareasleep.jpg" layout="responsive" />
           </div>
-          <div className="col-span-2 md:col-span-1">
-            <div className="flex flex-col space-y-4 justify-center md:items-center">
-              <h1 className="text-size-header md:text-size-header-big leading-none text-center">{title}</h1>
-              <h3 className="text-size-regular text-center">
-                The Holy Mountain • {category} • {year}
-              </h3>
-              <div className="flex space-x-2 self-center">
+          <div className="flex flex-1 flex-col">
+            <div className="grid flex-1 grid-rows-[1fr_auto] md:flex md:flex-col md:justify-center">
+              <div className="flex flex-col justify-center space-y-4 md:items-center">
+                <h1 className="text-size-header md:text-size-header-big leading-none text-center">{title}</h1>
+                <h3 className="text-size-regular text-center">
+                  The Holy Mountain • {year} • {category}
+                </h3>
+              </div>
+              <div className="mx-auto flex space-x-2 pt-6">
                 <SoMeBar someObject={someObject} />
               </div>
             </div>
@@ -94,7 +96,7 @@ const Music = () => {
         </div>
         <div className="flex flex-col space-y-4">
           <h1 className="text-size-header md:text-size-header-big leading-none">TRACKLIST</h1>
-          <ol className="text-size-title space-y-4">
+          <ol className="text-size-title space-y-4 pt-6">
             {tracklist.map((track) => (
               <li
                 key={track.number}
@@ -107,7 +109,7 @@ const Music = () => {
           </ol>
         </div>
         <div className="flex flex-col space-y-4 rounded-md border border-secondary-skin-dark p-4">
-          <h2 className="text-size-title md:text-size-header leading-none">CREDITS</h2>
+          <h2 className="text-size-header md:text-size-header leading-none">CREDITS</h2>
           <p className="text-size-regular">{description}</p>
           <div className="text-size-regular space-y-1">
             {credits.map((credit) => (
@@ -117,7 +119,7 @@ const Music = () => {
         </div>
         <div>
           <h1 className="text-size-header md:text-size-header-big leading-none">SHOP</h1>
-          <Grid className="mt-2 gap-y-4">
+          <Grid smallScreenColumns={2} className="mt-2 gap-y-4">
             {shopItems.map((shopItem) => (
               <ShopCard key={shopItem.key} shopItem={shopItem} />
             ))}
@@ -129,9 +131,9 @@ const Music = () => {
         </div>
         <div className="flex flex-col space-y-4">
           <h1 className="text-size-header md:text-size-header-big leading-none">REVIEWS</h1>
-          <div className="grid text-size-regular grid-rows-1 grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="grid text-size-small md:text-size-regular grid-rows-1 grid-cols-2 md:grid-cols-2 gap-4">
             <TextCard>
-              <p className="p-2">
+              <p className="">
                 «Dark yet catchy synth pop, an immersive release that transports listeners to a world where the line
                 between heaven and hell is blurred.”
               </p>
@@ -143,7 +145,7 @@ const Music = () => {
               </a>
             </TextCard>
             <TextCard>
-              <p className="p-2">
+              <p>
                 «På They Are Asleep hører vi kritikerroste låter omtalt av amerikanske Melomani som “synth-pop
                 brilliance” og av britiske Plastic Magazine som “a superb showcase of the trio&apos;s creativity and
                 ability to craft hook-filled music”.
@@ -168,7 +170,7 @@ const Music = () => {
               </a>
             </div> */}
             <TextCard>
-              <p className="p-2">
+              <p>
                 «Det er lekent. Men det er fortsatt mystisk og det høres ut som en rød solnedgang inne på en mørk
                 discofest. Hvis det er en lyd.»
               </p>
@@ -178,7 +180,7 @@ const Music = () => {
               </a>
             </TextCard>
             <TextCard>
-              <p className="p-2">
+              <p>
                 {" "}
                 «Although walking in the light can be both overwhelming and inspiring, it can also entail death.
                 “Searing Light” exists in this tense area where light might imply darkness and darkness can signify
@@ -196,7 +198,7 @@ const Music = () => {
         <div>
           <h1 className="text-size-header md:text-size-header-big leading-none">GALLERY</h1>
           <GalleryGrid imgNames={imgNames} />
-          <p>Foto by Katinka Hustad</p>
+          <p>Photos by Katinka Hustad</p>
         </div>
       </div>
     </LayoutPage>

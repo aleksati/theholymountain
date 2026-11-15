@@ -252,7 +252,7 @@ export const NAV_ITEMS = [
     children: [
       { title: "Ending It All Tonight (Remix)", href: "/music/endingitalltonightremix" },
       { title: "They Are Asleep", href: "/music/theyareasleep" },
-      { title: "The Dawn Here Are Quiet", href: "/music/thedawnsherearequiet" },
+      { title: "The Dawns Here Are Quiet", href: "/music/thedawnsherearequiet" },
       { title: "Ending It All Tonight", href: "/music/endingitalltonight" },
       { title: "Toad of Light", href: "/music/toadoflight" },
       { title: "FINITE", href: "/music/finite" },

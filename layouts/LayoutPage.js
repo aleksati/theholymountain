@@ -29,13 +29,14 @@ const LayoutPage = ({ pageId = "top", children, className = "", pageMeta, contai
     <>
       <Meta {...pageMeta} />
       <div className="min-h-screen flex relative">
-        <header className="fixed left-3 right-3 top-3 z-50 flex h-[3.75rem] items-center rounded-3xl border border-secondary-skin-dark bg-secondary-dark/50 px-4 text-primary-dark shadow-md backdrop-blur-sm md:left-6 md:right-6 md:h-[4.75rem] md:px-6">
+        <header className="fixed mx-3 left-3 right-3 top-4 z-50 flex h-[5rem] items-center rounded-3xl border border-secondary-skin-dark bg-[#2D2626]/60 px-4 text-primary-dark shadow-md backdrop-blur-2xl md:left-6 md:right-6 md:h-[4.75rem] md:px-6">
           <div className="relative z-20 flex items-center gap-2">
             {/* Menu Icon */}
             <ButtonIcon
               iconId={showNav ? "x" : "threedots"}
               onClick={handleToggleNav}
               iconSize="text-xl md:text-xl"
+              className="hover:cursor-pointer p-1 pl-0.5 z-20"
               aria-label={showNav ? "Close navigation" : "Open navigation"}
               aria-expanded={showNav}
               aria-controls="primary-navigation"
@@ -48,7 +49,7 @@ const LayoutPage = ({ pageId = "top", children, className = "", pageMeta, contai
             </Link>
           </div>
           <Link href="/">
-            <a className="absolute left-1/2 top-1/2 w-40 -translate-x-1/2 -translate-y-1/2 md:w-52 pt-2">
+            <a className="absolute left-1/2 top-1/2 w-36 -translate-x-1/2 -translate-y-1/2 md:w-52 pt-2">
               <Logo variant="white" />
             </a>
           </Link>
@@ -60,7 +61,7 @@ const LayoutPage = ({ pageId = "top", children, className = "", pageMeta, contai
         <div
           className={`container ${CONTAINER_SIZE_CLASSES[containerSize]} pb-8 px-6 sm:px-0 ${
             showNav && "blur-sm"
-          } mx-auto flex-1 overflow-hidden pt-24 md:pt-28 ${className}`}
+          } mx-auto flex-1 overflow-hidden pt-28 ${className}`}
           id={pageId}
           ref={pageTopRef}>
           {children}

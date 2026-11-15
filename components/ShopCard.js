@@ -18,7 +18,7 @@ export default function ShopCard({ shopItem }) {
             />
             <div className="flex flex-col items-center space-y-0 text-center">
               <p className="text-size-title font-bold leading-tight uppercase">{shopItem.title}</p>
-              <p className="text-size-regular">kr {shopItem.price}</p>
+              <p className="text-size-small md:text-size-regular">kr {shopItem.price}</p>
             </div>
           </div>
         </TextCard>

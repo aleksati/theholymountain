@@ -86,18 +86,20 @@ const Music = () => {
         title: `The Holy Mountain | ${title}`,
       }}>
       <div className="flex flex-col space-y-12 md:space-y-14">
-        <div className="relative grid grid-cols-2 gap-6 items-center">
-          <div className="relative col-span-2 md:col-span-1 md:static rounded-md border border-secondary-skin-dark">
+        <div className="relative flex min-h-[calc(100dvh-10rem)] flex-col gap-6 md:min-h-0 md:grid md:grid-cols-2 md:items-stretch">
+          <div className="relative rounded-md border border-secondary-skin-dark md:static">
             <MusicReleaseArrows />
             <MyImage alt={`${title} cover`} src="finite.jpg" layout="responsive" />
           </div>
-          <div className="col-span-2 md:col-span-1">
-            <div className="flex flex-col space-y-4 justify-center md:items-center">
-              <h1 className="text-size-header md:text-size-header-big leading-none text-center">{title}</h1>
-              <h3 className="text-size-regular text-center">
-                The Holy Mountain • {category} • {year}
-              </h3>
-              <div className="flex space-x-2 self-center">
+          <div className="flex flex-1 flex-col">
+            <div className="grid flex-1 grid-rows-[1fr_auto] md:flex md:flex-col md:justify-center">
+              <div className="flex flex-col justify-center space-y-4 md:items-center">
+                <h1 className="text-size-header md:text-size-header-big leading-none text-center">{title}</h1>
+                <h3 className="text-size-regular text-center">
+                  The Holy Mountain • {year} • {category}
+                </h3>
+              </div>
+              <div className="mx-auto flex space-x-2 pt-6">
                 <SoMeBar someObject={someObject} />
               </div>
             </div>
@@ -105,7 +107,7 @@ const Music = () => {
         </div>
         <div className="flex flex-col space-y-4">
           <h1 className="text-size-header md:text-size-header-big leading-none">TRACKLIST</h1>
-          <ol className="text-size-title space-y-4">
+          <ol className="text-size-title space-y-4 pt-6">
             {tracklist.map((track) => (
               <li
                 key={track.number}
@@ -118,7 +120,7 @@ const Music = () => {
           </ol>
         </div>
         <div className="flex flex-col space-y-4 rounded-md border border-secondary-skin-dark p-4">
-          <h2 className="text-size-title md:text-size-header leading-none">CREDITS</h2>
+          <h2 className="text-size-header md:text-size-header leading-none">CREDITS</h2>
           <p className="text-size-regular">{description}</p>
           <div className="text-size-regular space-y-1">
             {credits.map((credit) => (
