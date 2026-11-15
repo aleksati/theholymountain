@@ -76,9 +76,9 @@ const Contact = () => {
         {/* <h1 className="overflow-hidden text-clip text-size-header py-">
           CONTACT
         </h1> */}
-        <div className="grid grid-cols-1 gap-6">
+        <div className="grid grid-cols-1 gap-4">
           <label className="block">
-            <span className="text-primary-light dark:text-primary-dark">
+            <span className="dark:text-primary-dark">
               Name
             </span>
             <input
@@ -95,7 +95,7 @@ const Contact = () => {
             />
           </label>
           <label className="block">
-            <span className="text-primary-light dark:text-primary-dark">
+            <span className="text-primary-dark">
               E-mail
             </span>
             <input
@@ -112,7 +112,7 @@ const Contact = () => {
             />
           </label>
           <label className="block">
-            <span className="text-primary-light dark:text-primary-dark">
+            <span className="text-primary-dark">
               Subject
             </span>
             <input
@@ -128,7 +128,7 @@ const Contact = () => {
             />
           </label>
           <label className="block">
-            <span className="text-primary-light dark:text-primary-dark">
+            <span className="text-primary-dark">
               Message
             </span>
             <textarea
