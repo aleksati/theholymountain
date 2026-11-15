@@ -8,7 +8,8 @@ const title = "ENDING IT ALL TONIGHT (REMIX)";
 const year = "2025";
 const category = "EP";
 const description =
-  "Ending it all Tonight Remix is a special release including five remixes from our 2019 electronic album ENDING IT ALL TONIGHT. The tracks are remixed and given new life by us, and includes a new original music video for the track Consumer Confidence is Back.";
+"A special release including five remixes from our 2019 electronic album ENDING IT ALL TONIGHT, remixed and given new life by us. The release also features man original music video for the track 'Consumer Confidence is Back'.";
+
 const tracklist = [
   {
     track: "Consumer Confidence is Back (2025 Remix)",
