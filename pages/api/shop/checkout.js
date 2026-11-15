@@ -35,9 +35,12 @@ export default nextConnect()
     const cartFiltered = cart.filter((item) => item.userQuantity > 0);
 
     // transform into Stripe format
-    let cartTransformed = [];
-    cartFiltered.map((item) => {
-      cartTransformed.push({
+    const cartTransformed = cartFiltered.map((item) => {
+      const description = [item.description, item.userSize]
+        .filter(Boolean)
+        .join(" ");
+
+      return {
         price_data: {
           currency: "nok",
           unit_amount: item.price * 100,
@@ -45,19 +48,17 @@ export default nextConnect()
           product_data: {
             images: [`${SITE_DOMAIN}/img/shop/${item.key}-shop-1.png`],
             name: item.title,
-            description:
-              item.description + (item.userSize ? " " + item.userSize : ""),
+            ...(description ? { description } : {}),
           },
         },
         quantity: item.userQuantity,
-      });
+      };
     });
 
     if (!cartTransformed.length)
       throw Error("The checkout cart has no items with quantity.");
 
-    // try {
-    const session = await stripe.checkout.sessions.create({
+    const sessionOptions = {
       payment_method_types: ["card"],
       shipping_address_collection: { allowed_countries: SHIPPING_COUNTRIES },
       shipping_options: [
@@ -115,11 +116,16 @@ export default nextConnect()
         images: logoImg,
       },
       automatic_tax: { enabled: true },
-    });
+    };
+
+    let session;
+    try {
+      session = await stripe.checkout.sessions.create(sessionOptions);
+    } catch (error) {
+      console.error("Unable to create Stripe checkout session.", error);
+      res.status(502).json({ error: "Unable to create checkout session." });
+      return;
+    }
 
     res.status(200).json({ url: session.url });
-    // } catch (error) {
-    //   console.log(error);
-    //   res.status(error.statusCode).json(error);
-    // }
   });

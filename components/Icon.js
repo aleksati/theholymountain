@@ -59,7 +59,7 @@ const icons = {
   tidal: (s) => <SiTidal className={s} />,
   contact: (s) => <AiOutlineMail className={s} />,
   soundcloud: (s) => <GrSoundcloud className={s} />,
-  shop: (s) => <AiOutlineShoppingCart className={s} />,
+  cart: (s) => <AiOutlineShoppingCart className={s} />,
   play: (s) => <FiPlay className={s} />,
   pause: (s) => <AiOutlinePause className={s} />,
   heart: (s) => <FaHeart className={s} />,

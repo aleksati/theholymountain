@@ -1,9 +1,9 @@
 // import ButtonIcon from "./ButtonIcon";
 import Icon from "./Icon";
 
-const SoMeBar = ({ exclude = [], someObject }) => {
+const SoMeBar = ({ exclude = [], someObject, iconSize = "text-4xl md:text-4xl" }) => {
   return (
-    <div className={`flex flex-row space-x-4`}>
+    <div className={`flex flex-row space-x-3`}>
       {someObject.map((some) => {
         if (exclude.includes(some.key)) return;
         return (
@@ -14,7 +14,7 @@ const SoMeBar = ({ exclude = [], someObject }) => {
             aria-label={some.key}
             className="transition duration-200 ease-in-out text-primary-dark opacity-60 hover:opacity-80">
               {/* className="transition duration-200 ease-in-out text-secondary opacity-40 hover:opacity-80"> */}
-            <Icon id={some.key} iconSize="text-3xl md:text-4xl" />
+            <Icon id={some.key} iconSize={iconSize} />
           </a>
         );
       })}

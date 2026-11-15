@@ -68,9 +68,10 @@ const Contact = () => {
 
   return (
     <LayoutPage pageMeta={pageMeta}>
+      <h1 className="text-size-header md:text-size-header-big leading-none">CONTACT</h1>
       <form
         onSubmit={(e) => handleSubmit(e)}
-        className="flex flex-col w-full p-4 text-xl"
+        className="mx-auto flex w-full flex-col p-4 text-xl"
         aria-label="Contact form">
         {/* <h1 className="overflow-hidden text-clip text-size-header py-">
           CONTACT

@@ -36,3 +36,7 @@ npm i
 npm run build
 npm run start
 ```
+
+# Internal and further dev
+
+The site info is hosted through individual sites or in the src/config/index.js file (Nav items, shop items, etc.)

@@ -1,4 +1,5 @@
 import GoogleAnalytics from "../components/GoogleAnalytics";
+import Footer from "../components/Footer";
 
 const LayoutApp = ({ children }) => {
   return (
@@ -7,6 +8,7 @@ const LayoutApp = ({ children }) => {
       <main className="flex-grow text-base text-primary-dark bg-primary-dark">
         {children}
       </main>
+      <Footer />
     </>
   );
 };

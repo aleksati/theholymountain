@@ -14,23 +14,21 @@ module.exports = {
         sm: "640px",
         md: "768px",
         lg: "1024px", //var 1024 920
-        // xl: "768px",
-        // md: "768px",
-        // lg: "1024px",
-        // xl: "1280px",
-        // md: "768px",
-        // lg: "768px",
-        // xl: "768px",
       },
     },
     extend: {
       // fontFamily: {
       fontSize: {
-        "size-header-big": ["3.75rem"], // text-6xl
-        "size-header": ["2.25rem"], // text-4xl
-        "size-title": ["1.875rem"], // text-3xl
-        "size-regular": ["2rem"], //text-lg
-        "size-small": ["1rem"], // text-xs
+        "size-header-big": ["3.25rem"],
+        "size-header": ["2.25rem"],
+        "size-title": ["1.375rem"],
+        "size-regular": ["1.125rem"],
+        "size-small": ["0.8125rem"],
+        // "size-header-big": ["3.75rem"], // text-6xl
+        // "size-header": ["2.5rem"], // text-4xl (var 2.25)
+        // "size-title": ["1.5rem"], // text-2xl
+        // "size-regular": ["1.25rem"], //text-xl
+        // "size-small": ["0.875rem"], // text-small
       }, // https://tailwindcss.com/docs/font-size
       backgroundColor: {
         "primary-light": "#fff",

@@ -42,7 +42,7 @@ const ModalImage = ({ onModalClose, children }) => {
         {/* bg-primary-light dark:bg-primary-dark */}
         {/* bg-transparent */}
         <div
-          className={`max-h-screen w-full bg-transparent max-w-3xl`}
+          className="max-h-screen w-full max-w-3xl bg-transparent lg:max-w-5xl 2xl:max-w-6xl"
           ref={modalRef}>
           {children}
           {/* The close button at the top right */}
@@ -53,6 +53,7 @@ const ModalImage = ({ onModalClose, children }) => {
               onClick={closeModal}
               iconSize="text-3xl"
               iconId="x"
+              className="text-white"
             />
           </div>
         </div>

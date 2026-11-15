@@ -6,16 +6,16 @@ const ModalImageGallery = ({ onModalClose, src, onKeyDown }) => {
   return (
     <div onKeyDown={onKeyDown}>
       <ModalImage onModalClose={onModalClose}>
-        <Image
-          src={src}
-          width={"0"}
-          height={"0"}
-          layout="responsive"
-          objectFit="contain"
-          className={`w-full h-auto m-0`}
-          unoptimized={true} // this is the only way make gifs work with Image component, I found
-          quality={100}
-        />
+        <div className="relative h-[calc(100dvh-1rem)] w-full">
+          <Image
+            src={src}
+            alt=""
+            layout="fill"
+            objectFit="contain"
+            unoptimized={true} // this is the only way make gifs work with Image component, I found
+            quality={100}
+          />
+        </div>
       </ModalImage>
     </div>
   );
