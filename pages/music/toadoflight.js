@@ -88,7 +88,7 @@ const Music = () => {
               <div className="flex flex-col justify-center space-y-4 md:items-center">
                 <h1 className="text-size-header md:text-size-header-big leading-none text-center">{title}</h1>
                 <h3 className="text-size-regular text-center">
-                  The Holy Mountain • {category} • {year}
+                  The Holy Mountain • {year} • {category}
                 </h3>
               </div>
               <div className="mx-auto flex space-x-2 pt-6">
