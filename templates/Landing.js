@@ -41,7 +41,7 @@ const Landing = () => (
         <div className="flex flex-col space-y-6">
           <div>
             <p className="text-size-title md:text-size-header font-bold leading-tight">ENDING IT ALL TONIGHT (REMIX)</p>
-            <p className="text-size-large text-size-title leading-tight">EP 2025</p>
+            <p className="text-size-regular MDtext-size-title leading-tight">EP 2025</p>
           </div>
           <p className="text-size-regular">
             A special EP release including five remixes from our 2019 electronic album ENDING IT ALL TONIGHT, remixed

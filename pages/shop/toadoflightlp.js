@@ -55,21 +55,21 @@ const ToadOfLightLP = ({ shopItem }) => {
               <h1 className="text-size-header md:text-size-header-big leading-none uppercase">{shopItem.title}</h1>
               <p className="text-size-title">kr {shopItem.price}</p>
               <p className="text-size-regular">
-                Limited edition 12&quot; Vinyl with cover art by legendary comic book artist Phillippe Druillet, and
+                Limited edition 12&quot; Vinyl with cover art by legendary comic book artist Phillippe Druillet and
                 cover design by Travassos at Shhpuma records.
               </p>
-              <ul className="space-y-1 text-size-regular">
-                <li>A1 - Adoration of the Moon</li>
-                <li>A2 - They Live</li>
-                <li>B1 - Celestial City</li>
-                <li>B2 - Night Toads Palace</li>
-              </ul>
               <button
                 type="button"
                 onClick={handleAddToCart}
                 className="rounded-full bg-red-600 px-8 py-3 font-bold tracking-widest text-white transition-colors duration-300 hover:bg-red-700">
                 ADD TO CART
               </button>
+              <ul className="space-y-1 text-size-regular text-secondary-skin-light">
+                <li>A1 - Adoration of the Moon</li>
+                <li>A2 - They Live</li>
+                <li>B1 - Celestial City</li>
+                <li>B2 - Night Toads Palace</li>
+              </ul>
             </div>
           </TextCard>
         </div>

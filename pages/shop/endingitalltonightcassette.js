@@ -45,13 +45,7 @@ const EndingItAllTonightCassette = ({ shopItem }) => {
                       ? "border-secondary"
                       : "border-secondary-skin-dark hover:border-secondary"
                   }`}>
-                  <Image
-                    src={`/img/shop/${imageName}`}
-                    alt=""
-                    layout="fill"
-                    objectFit="contain"
-                    unoptimized
-                  />
+                  <Image src={`/img/shop/${imageName}`} alt="" layout="fill" objectFit="contain" unoptimized />
                 </button>
               ))}
             </div>
@@ -69,6 +63,18 @@ const EndingItAllTonightCassette = ({ shopItem }) => {
                 className="rounded-full bg-red-600 px-8 py-3 font-bold tracking-widest text-white transition-colors duration-300 hover:bg-red-700">
                 ADD TO CART
               </button>
+              <ul className="space-y-1 text-size-regular text-secondary-skin-light">
+                <li>A1 - 98 Startup</li>
+                <li>A2 - Night Striker</li>
+                <li>A3 - Who Goes There?</li>
+                <li>A4 - California 1986</li>
+                <li>A5 - Dark Longing (Op.48)</li>
+                <li>B1 - Tokyo 1994</li>
+                <li>B2 - And Hank Mardukas</li>
+                <li>B3 - Sydney 2002</li>
+                <li>B4 - Preludium - Before the Storm (BWV 543)</li>
+                <li>B5 - Consumer Confidence is Back</li>
+              </ul>
             </div>
           </TextCard>
         </div>

@@ -16,7 +16,7 @@ const about = () => (
       <div className="space-y-4 text-size-regular text-center">
         <h1 className="text-size-header md:text-size-header-big leading-none">ABOUT</h1>
         <p>
-          The Holy Mountain is a critically acclaimed and genre-defying indie band from Oslo, Norway. The trio's
+          The Holy Mountain is a critically acclaimed and genre-defying indie band based in the cold Norway. The trio's
           signature sound combines accordion, synth, vocals, and drums to create dark and hypnotic worlds. Places where
           Philip Glass' minimalist arrangements meet the dreamy synth-pop of Beach House (US), framed by the cult film
           aestethics of filmmakers like David Lynch, John Carpenter, and Ingmar Bergman. Think of a red sunset at a dark
