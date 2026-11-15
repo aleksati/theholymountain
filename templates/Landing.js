@@ -34,7 +34,7 @@ const Landing = () => (
                 <h1 className="text-size-header md:text-size-header-big leading-none">
                   ENDING IT ALL TONIGHT (REMIX)
                 </h1>
-                <h3 className="text-size-regular">EP • 2025</h3>
+                <h3 className="text-size-regular">The Holy Mountain • 2025 • EP</h3>
               </div>
               <div className="space-y-4">
                 <p className="text-size-regular">
