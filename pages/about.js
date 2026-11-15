@@ -2,7 +2,7 @@ import LayoutPage from "../layouts/LayoutPage";
 import MyImage from "../components/MyImage";
 
 const about = () => (
-  <LayoutPage pageMeta={{ title: "The Holy Mountain" }}>
+  <LayoutPage pageMeta={{ title: "The Holy Mountain | about" }}>
     <div className="flex flex-col space-y-4">
       <div className="overflow-hidden rounded-md border border-secondary-skin-dark">
         <MyImage

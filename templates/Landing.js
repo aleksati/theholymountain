@@ -43,6 +43,7 @@ const Landing = () => (
             <p className="text-size-title md:text-size-header font-bold leading-tight">ENDING IT ALL TONIGHT (REMIX)</p>
             <p className="text-size-regular MDtext-size-title leading-tight">EP 2025</p>
           </div>
+          <SoMeBar someObject={someObject} iconSize="text-3xl md:text-4xl" />
           <p className="text-size-regular">
             A special EP release including five remixes from our 2019 electronic album ENDING IT ALL TONIGHT, remixed
             and given new life by us.
@@ -51,7 +52,6 @@ const Landing = () => (
             The release also features an original music video for the track "Consumer Confidence is Back".
           </p>
           <p className="text-size-regular">Avaliable on all streaming platforms.</p>
-          <SoMeBar someObject={someObject} iconSize="text-3xl md:text-4xl" />
         </div>
       </div>
     </div>
@@ -72,7 +72,7 @@ const Landing = () => (
         ))}
       </Grid>
     </div>
-        <div>
+    <div>
       <h1 className="text-size-header md:text-size-header-big leading-none">RELEASES</h1>
       <Grid className="mt-2 gap-y-4">
         {releases.map((shopItem) => (
@@ -80,7 +80,6 @@ const Landing = () => (
         ))}
       </Grid>
     </div>
-
   </div>
 );
 
