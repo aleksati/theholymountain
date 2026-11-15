@@ -53,6 +53,10 @@ const someObject = [
   {
     key: "applemusic",
     url:"https://music.apple.com/us/album/ending-it-all-tonight-remix-2025-remix-ep/1841643188"
+  },
+    {
+    key: "tidal",
+    url: "https://tidal.com/album/462198538/u"
   }
 ];
 const videoUrl = "https://www.youtube.com/embed/ZWsFN8QLsRg?si=yslIuTScwW8Q3Adm";
