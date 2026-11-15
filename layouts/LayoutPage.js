@@ -9,7 +9,12 @@ import Meta from "../components/Meta";
 import Icon from "../components/Icon";
 import Cart from "../components/Cart";
 
-const LayoutPage = ({ pageId = "top", children, className = "", pageMeta }) => {
+const CONTAINER_SIZE_CLASSES = {
+  lg: "",
+  xl: "xl:max-w-screen-xl",
+};
+
+const LayoutPage = ({ pageId = "top", children, className = "", pageMeta, containerSize = "lg" }) => {
   const [showNav, setShowNav] = useState(false);
   const [isMounted] = useIsMounted();
   const pageTopRef = useRef();
@@ -53,7 +58,7 @@ const LayoutPage = ({ pageId = "top", children, className = "", pageMeta }) => {
         </header>
         <Nav showNavTop={showNav} onToggleNavVertical={handleToggleNav} />
         <div
-          className={`container pb-8 px-6 sm:px-0 ${
+          className={`container ${CONTAINER_SIZE_CLASSES[containerSize]} pb-8 px-6 sm:px-0 ${
             showNav && "blur-sm"
           } mx-auto flex-1 overflow-hidden pt-24 md:pt-28 ${className}`}
           id={pageId}

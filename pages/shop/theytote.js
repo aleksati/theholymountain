@@ -20,7 +20,7 @@ const Theytote = ({ shopItem }) => {
   };
 
   return (
-    <LayoutPage pageMeta={{ title: `The Holy Mountain | ${shopItem.title}` }}>
+    <LayoutPage pageMeta={{ title: `The Holy Mountain | ${shopItem.title}` }} containerSize="xl">
       <div className="flex flex-col space-y-12 md:space-y-14">
         <div className="grid grid-cols-1 items-center gap-6 md:grid-cols-2 md:gap-8">
           <div className="flex flex-col space-y-4">
@@ -60,7 +60,7 @@ const Theytote = ({ shopItem }) => {
             <div className="flex flex-col items-center space-y-6 text-center">
               <h1 className="text-size-header md:text-size-header-big leading-none uppercase">{shopItem.title}</h1>
               <p className="text-size-title">kr {shopItem.price}</p>
-              <p className="text-size-small">Silk print</p>
+              <p className="text-size-regular">Silk print</p>
               <button
                 type="button"
                 onClick={handleAddToCart}

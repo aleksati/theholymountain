@@ -4,6 +4,9 @@ import MyImage from "../../../components/MyImage";
 import VideoPlayer from "../../../components/VideoPlayer";
 import MusicReleaseArrows from "../../../components/MusicReleaseArrows";
 import GalleryGrid from "../../../components/GalleryGrid";
+import Grid from "../../../components/Grid.js";
+import ShopCard from "../../../components/ShopCard.js";
+import { SHOP_ITEMS } from "../../../config/index.js";
 
 const title = "TOAD OF LIGHT";
 const year = "2018";
@@ -66,6 +69,7 @@ const videos = [
   },
 ];
 const imgNames = ["2-3.jpg", "2-4.jpg", "2-5.jpg", "2-6.JPG", "2-1.jpg", "2-7.jpg", "2-8.jpg", "2-9.jpg"];
+const shopItems = SHOP_ITEMS.filter(({ key }) => key === "toadoflightlp");
 
 const Music = () => {
   return (
@@ -113,6 +117,14 @@ const Music = () => {
               <p key={credit}>{credit}</p>
             ))}
           </div>
+        </div>
+        <div>
+          <h1 className="text-size-header md:text-size-header-big leading-none">SHOP</h1>
+          <Grid className="mt-2 gap-y-4">
+            {shopItems.map((shopItem) => (
+              <ShopCard key={shopItem.key} shopItem={shopItem} />
+            ))}
+          </Grid>
         </div>
         <div className="flex flex-col space-y-4">
           <h1 className="text-size-header md:text-size-header-big leading-none">VIDEOS</h1>

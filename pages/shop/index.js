@@ -9,7 +9,7 @@ const pageMeta = {
 
 export default function ShopNew() {
   return (
-    <LayoutPage pageMeta={pageMeta}>
+    <LayoutPage pageMeta={pageMeta} containerSize="xl">
       <h1 className="text-size-header md:text-size-header-big leading-none">SHOP</h1>
       <Grid className="mt-2 gap-y-4">
         {SHOP_ITEMS.map((shopItem) => (

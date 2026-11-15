@@ -4,6 +4,9 @@ import MyImage from "../../../components/MyImage";
 import VideoPlayer from "../../../components/VideoPlayer";
 import MusicReleaseArrows from "../../../components/MusicReleaseArrows";
 import GalleryGrid from "../../../components/GalleryGrid";
+import Grid from "../../../components/Grid.js";
+import ShopCard from "../../../components/ShopCard.js";
+import { SHOP_ITEMS } from "../../../config/index.js";
 
 const title = "ENDING IT ALL TONIGHT";
 const year = "2020";
@@ -96,6 +99,7 @@ const videos = [
   }
 ];
 const imgNames = ["3-5.jpg", "3-2.jpg", "3-4.jpg", "3-4-1.jpg", "3-3.jpg", "3-1-10.jpg", "5-1.jpg"];
+const shopItems = SHOP_ITEMS.filter(({ key }) => key === "endingitalltonightcassette");
 
 const Music = () => {
   return (
@@ -143,6 +147,14 @@ const Music = () => {
               <p key={credit}>{credit}</p>
             ))}
           </div>
+        </div>
+        <div>
+          <h1 className="text-size-header md:text-size-header-big leading-none">SHOP</h1>
+          <Grid className="mt-2 gap-y-4">
+            {shopItems.map((shopItem) => (
+              <ShopCard key={shopItem.key} shopItem={shopItem} />
+            ))}
+          </Grid>
         </div>
         <div className="flex flex-col space-y-4">
           <h1 className="text-size-header md:text-size-header-big leading-none">VIDEOS</h1>

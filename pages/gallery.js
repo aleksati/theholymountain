@@ -7,7 +7,7 @@ const pageMeta = {
 };
 
 const Gallery = ({ imgNames }) => (
-    <LayoutPage pageMeta={pageMeta}>
+    <LayoutPage pageMeta={pageMeta} containerSize="xl">
        <h1 className="text-size-header md:text-size-header-big leading-none">GALLERY</h1>
       <GalleryGrid imgNames={imgNames}/>
       <p>

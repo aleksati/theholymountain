@@ -295,6 +295,15 @@ export const SHOP_ITEMS = [
     userQuantity: 0,
   },
   {
+    _id: "65931efbd884f4981aa7ab1f",
+    key: "endingitalltonightcassette",
+    title: "Ending it all Tonight Cassette",
+    year: "2020",
+    price: "100",
+    shopQuantity: 200,
+    userQuantity: 0,
+  },
+  {
     _id: "65931f8bd884f4981aa7ab25",
     key: "theholymountaincd",
     title: "The Holy Mountain CD",
@@ -310,15 +319,6 @@ export const SHOP_ITEMS = [
     year: "2016",
     price: "100",
     shopQuantity: 100,
-    userQuantity: 0,
-  },
-  {
-    _id: "65931efbd884f4981aa7ab1f",
-    key: "endingitalltonightcassette",
-    title: "Ending it all Tonight Cassette",
-    year: "2020",
-    price: "100",
-    shopQuantity: 200,
     userQuantity: 0,
   },
 ];
