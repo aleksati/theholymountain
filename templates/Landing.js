@@ -39,9 +39,9 @@ const Landing = () => (
       <div className="grid grid-cols-1 items-center gap-6 md:grid-cols-2 md:gap-8">
         <MyImage alt="Ending It All Tonight (Remix) cover" src="endingitalltonight-remix.jpg" layout="responsive" />
         <div className="flex flex-col space-y-6">
-          <div>
+          <div className="space-y-2">
             <p className="text-size-title md:text-size-header font-bold leading-tight">ENDING IT ALL TONIGHT (REMIX)</p>
-            <p className="text-size-regular MDtext-size-title leading-tight">EP 2025</p>
+            <p className="text-size-regular md:text-size-title leading-none">EP 2025</p>
           </div>
           <SoMeBar someObject={someObject} iconSize="text-3xl md:text-4xl" />
           <p className="text-size-regular">
