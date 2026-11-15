@@ -1,105 +1,75 @@
-import LayoutPage from "../../../layouts/LayoutPage";
-import SoMeBar from "../../../components/SoMeBar";
-import MyImage from "../../../components/MyImage";
-import VideoPlayer from "../../../components/VideoPlayer";
-import MusicReleaseArrows from "../../../components/MusicReleaseArrows";
-import GalleryGrid from "../../../components/GalleryGrid";
-import Grid from "../../../components/Grid.js";
-import ShopCard from "../../../components/ShopCard.js";
-import { SHOP_ITEMS } from "../../../config/index.js";
+import LayoutPage from "../../layouts/LayoutPage.js";
+import SoMeBar from "../../components/SoMeBar.js";
+import MyImage from "../../components/MyImage.js";
+import VideoPlayer from "../../components/VideoPlayer.js";
+import MusicReleaseArrows from "../../components/MusicReleaseArrows.js";
+import GalleryGrid from "../../components/GalleryGrid.js";
+import Grid from "../../components/Grid.js";
+import ShopCard from "../../components/ShopCard.js";
+import { SHOP_ITEMS } from "../../config/index.js";
 
-const title = "ENDING IT ALL TONIGHT";
-const year = "2020";
+const title = "TOAD OF LIGHT";
+const year = "2018";
 const category = "Album";
 const description =
-  "Ending It All Tonight is a ten-part electronic album for synthesizers, drum machines and vocals, inspired by the joys and horrors of 80s pop culture. The release includes covers of Bach, Schumann, and Windows 98 with original artwork by AV Craig Gafoor. Available on limited edition cassettes from our online store.";
+  "Toad of Light is our debut studio album, released on Shhpuma records in 2018 on LP and digital. The release is inspired by dystopian sci-fi visions and cult aesthetics, with cover design by the legendary comic book artist Philippe Druillet, and a unique music video by Norwegian filmmaker Marius Rolfsvåg. Available on 12-inch vinyl from our online store.";
 const tracklist = [
   {
-    track: "98 Startup",
+    track: "Adoration of the Moon",
     number: "01.",
-    length: "02:15",
+    length: "10:54",
   },
   {
-    track: "Night Striker",
+    track: "They Live",
     number: "02.",
-    length: "04:48",
+    length: "07:39",
   },
   {
-    track: "Who Goes There?",
+    track: "Celestial City",
     number: "03.",
-    length: "06:53",
+    length: "07:24",
   },
   {
-    track: "California 1986",
+    track: "Night Toad Palace",
     number: "04.",
-    length: "03:02",
-  },
-  {
-    track: "Dark Longing (Op.48)",
-    number: "05.",
-    length: "02:59",
-  },
-  {
-    track: "Tokyo 1994",
-    number: "06.",
-    length: "02:12",
-  },
-  {
-    track: "And Hank Mardukas",
-    number: "07.",
-    length: "05:31",
-  },
-  {
-    track: "Sydney 2002",
-    number: "08.",
-    length: "02:02",
-  },
-  {
-    track: "Preludium - Before the Storm (BWV 543)",
-    number: "09.",
-    length: "03:52",
-  },
-  {
-    track: "Consumer Confidence is Back",
-    number: "10.",
-    length: "05:50",
+    length: "13:20",
   },
 ];
-const credits = ["Produced by The Holy Mountain", "Mastered by Frode Berg"];
+const credits = [
+  "Produced by The Holy Mountain",
+  "Recorded and Mixed by Dag Erik Johansen at Athletic Sound Studios, Halden",
+  "Mastered by Alex Wharton at Abbey Road Studios, London",
+];
 const someObject = [
   {
     key: "spotify",
-    url: "https://open.spotify.com/album/7GtTvKVuS2bz64tQ9qg0De",
+    url: "https://open.spotify.com/album/37bf6gSuQLwPUveg4acX3A",
   },
   {
     key: "tidal",
     url: "https://tidal.com/browse/album/323623936",
   },
   {
-    key: "eth",
-    url: "https://opensea.io/collection/endingitalltonight",
-  },
-  {
     key: "applemusic",
-    url: "https://music.apple.com/us/album/ending-it-all-tonight/1713207423",
+    url: "https://music.apple.com/us/album/toad-of-light/1723828718",
   },
   {
     key: "bandcamp",
-    url: "https://theholymountain.bandcamp.com/album/ending-it-all-tonight",
+    url: "https://theholymountain.bandcamp.com/album/toad-of-light",
   },
 ];
 const videos = [
   {
-    title: "Tokyo 1994 (2025 Remix) (Official Music Video)",
-    url: "https://www.youtube.com/embed/wAosHFd2l7Y?si=M9zOVXcwmPgFWUvp",
+    title: "They Live",
+    url: "https://www.youtube.com/embed/7qeJYBkaC6E",
   },
   {
-    title: "And Hank Mardukas (2025 Remix) (Official Music Video)",
-    url: "https://www.youtube.com/embed/DMdIHFqXRBY?si=4PLnRVrH0F0ZmsC6",
-  }
+    title: "Celestial City",
+    url: "https://www.youtube.com/embed/EcDxWOoWMzk",
+  },
 ];
-const imgNames = ["3-5.jpg", "3-2.jpg", "3-4.jpg", "3-4-1.jpg", "3-3.jpg", "3-1-10.jpg", "5-1.jpg"];
-const shopItems = SHOP_ITEMS.filter(({ key }) => key === "endingitalltonightcassette");
+const imgNames = ["2-3.jpg", "2-4.jpg", "2-5.jpg", "2-6.JPG", "2-1.jpg", "2-7.jpg", "2-8.jpg", "2-9.jpg"];
+const shopItems = SHOP_ITEMS.filter(({ key }) => key === "toadoflightlp");
 
 const Music = () => {
   return (
@@ -111,7 +81,7 @@ const Music = () => {
         <div className="relative grid grid-cols-2 gap-6 items-center">
           <div className="relative col-span-2 md:col-span-1 md:static">
             <MusicReleaseArrows />
-            <MyImage alt={`${title} album cover`} src="endingitalltonight.jpg" layout="responsive" />
+            <MyImage alt={`${title} album cover`} src="toadoflight.jpg" layout="responsive" />
           </div>
           <div className="col-span-2 md:col-span-1">
             <div className="flex flex-col space-y-4 justify-center md:items-center">

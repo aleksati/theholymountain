@@ -1,8 +1,8 @@
-import LayoutPage from "../../../layouts/LayoutPage";
-import SoMeBar from "../../../components/SoMeBar";
-import MyImage from "../../../components/MyImage";
-import VideoPlayer from "../../../components/VideoPlayer";
-import MusicReleaseArrows from "../../../components/MusicReleaseArrows";
+import LayoutPage from "../../layouts/LayoutPage";
+import SoMeBar from "../../components/SoMeBar";
+import MyImage from "../../components/MyImage";
+import VideoPlayer from "../../components/VideoPlayer";
+import MusicReleaseArrows from "../../components/MusicReleaseArrows";
 
 const title = "ENDING IT ALL TONIGHT (REMIX)";
 const year = "2025";

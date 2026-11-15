@@ -1,13 +1,13 @@
-import LayoutPage from "../../../layouts/LayoutPage";
-import SoMeBar from "../../../components/SoMeBar";
-import MyImage from "../../../components/MyImage";
-import VideoPlayer from "../../../components/VideoPlayer";
-import TextCard from "../../../components/TextCard";
-import GalleryGrid from "../../../components/GalleryGrid.js";
-import MusicReleaseArrows from "../../../components/MusicReleaseArrows";
-import Grid from "../../../components/Grid.js";
-import ShopCard from "../../../components/ShopCard.js";
-import { SHOP_ITEMS } from "../../../config/index.js";
+import LayoutPage from "../../layouts/LayoutPage.js";
+import SoMeBar from "../../components/SoMeBar.js";
+import MyImage from "../../components/MyImage.js";
+import VideoPlayer from "../../components/VideoPlayer.js";
+import TextCard from "../../components/TextCard.js";
+import GalleryGrid from "../../components/GalleryGrid.js";
+import MusicReleaseArrows from "../../components/MusicReleaseArrows.js";
+import Grid from "../../components/Grid.js";
+import ShopCard from "../../components/ShopCard.js";
+import { SHOP_ITEMS } from "../../config/index.js";
 
 const title = "THEY ARE ASLEEP";
 const year = "2024";

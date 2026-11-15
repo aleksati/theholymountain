@@ -1,14 +1,17 @@
-import LayoutPage from "../../../layouts/LayoutPage";
-import SoMeBar from "../../../components/SoMeBar";
-import MyImage from "../../../components/MyImage";
-import MusicReleaseArrows from "../../../components/MusicReleaseArrows";
-import GalleryGrid from "../../../components/GalleryGrid";
+import LayoutPage from "../../layouts/LayoutPage";
+import SoMeBar from "../../components/SoMeBar";
+import MyImage from "../../components/MyImage";
+import MusicReleaseArrows from "../../components/MusicReleaseArrows";
+import GalleryGrid from "../../components/GalleryGrid";
+import Grid from "../../components/Grid";
+import ShopCard from "../../components/ShopCard";
+import { SHOP_ITEMS } from "../../config";
 
 const title = "THE HOLY MOUNTAIN (2024 MIX)";
 const year = "2015";
 const category = "EP";
 const description =
-  "The Holy Mountain is a journey through the underworld and towards the light. Our debut four-track EP features original artwork by Martin Marki and cover art by Bjørn Erik Nyhuus.";
+  "The Holy Mountain is a journey through the underworld and towards the light. Our debut four-track EP features original artwork by Martin Marki and cover design by Bjørn Erik Nyhuus.";
 const tracklist = [
   {
     track: "Eudaimonia (2024 Mix)",
@@ -33,7 +36,7 @@ const tracklist = [
 ];
 const credits = [
   "Produced by The Holy Mountain",
-  "Recorded by Emil Kraugerud",
+  "Recorded by Emil Kraugerud at IMV, Oslo",
   "Mixed by Marcus Forsgren at Paradiso Studios, Oslo",
   "Mastered by Espen Høydalsvik at Oslo Fuzz",
 ];
@@ -56,6 +59,7 @@ const someObject = [
   },
 ];
 const imgNames = [ "1-2.jpg", "1-1.jpg", "1-3.jpg", "1-5.jpg", "1-6.jpg"];
+const shopItems = SHOP_ITEMS.filter(({ key }) => key === "theholymountaincd");
 
 const Music = () => {
   return (
@@ -103,6 +107,14 @@ const Music = () => {
               <p key={credit}>{credit}</p>
             ))}
           </div>
+        </div>
+        <div>
+          <h1 className="text-size-header md:text-size-header-big leading-none">SHOP</h1>
+          <Grid className="mt-2 gap-y-4">
+            {shopItems.map((shopItem) => (
+              <ShopCard key={shopItem.key} shopItem={shopItem} />
+            ))}
+          </Grid>
         </div>
         <div>
           <h1 className="text-size-header md:text-size-header-big leading-none">GALLERY</h1>

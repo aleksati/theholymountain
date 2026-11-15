@@ -1,8 +1,11 @@
-import LayoutPage from "../../../layouts/LayoutPage";
-import SoMeBar from "../../../components/SoMeBar";
-import MyImage from "../../../components/MyImage";
-import VideoPlayer from "../../../components/VideoPlayer";
-import MusicReleaseArrows from "../../../components/MusicReleaseArrows";
+import LayoutPage from "../../layouts/LayoutPage";
+import SoMeBar from "../../components/SoMeBar";
+import MyImage from "../../components/MyImage";
+import VideoPlayer from "../../components/VideoPlayer";
+import MusicReleaseArrows from "../../components/MusicReleaseArrows";
+import Grid from "../../components/Grid";
+import ShopCard from "../../components/ShopCard";
+import { SHOP_ITEMS } from "../../config";
 
 const title = "FINITE";
 const year = "2016";
@@ -74,6 +77,7 @@ const videos = [
     url: "https://www.youtube.com/embed/2XQz9M5yqac?si=yByn-vu38l9P6kdI",
   },
 ];
+const shopItems = SHOP_ITEMS.filter(({ key }) => key === "finitecassette");
 
 const Music = () => {
   return (
@@ -121,6 +125,14 @@ const Music = () => {
               <p key={credit}>{credit}</p>
             ))}
           </div>
+        </div>
+        <div>
+          <h1 className="text-size-header md:text-size-header-big leading-none">SHOP</h1>
+          <Grid className="mt-2 gap-y-4">
+            {shopItems.map((shopItem) => (
+              <ShopCard key={shopItem.key} shopItem={shopItem} />
+            ))}
+          </Grid>
         </div>
         <div className="flex flex-col space-y-4">
           <h1 className="text-size-header md:text-size-header-big leading-none">VIDEOS</h1>

@@ -53,6 +53,7 @@ const ModalImage = ({ onModalClose, children }) => {
               onClick={closeModal}
               iconSize="text-3xl"
               iconId="x"
+              className="text-white"
             />
           </div>
         </div>

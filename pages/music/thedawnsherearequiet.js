@@ -1,9 +1,9 @@
-import LayoutPage from "../../../layouts/LayoutPage";
-import SoMeBar from "../../../components/SoMeBar";
-import MyImage from "../../../components/MyImage";
-import VideoPlayer from "../../../components/VideoPlayer";
-import GalleryGrid from "../../../components/GalleryGrid";
-import MusicReleaseArrows from "../../../components/MusicReleaseArrows";
+import LayoutPage from "../../layouts/LayoutPage";
+import SoMeBar from "../../components/SoMeBar";
+import MyImage from "../../components/MyImage";
+import VideoPlayer from "../../components/VideoPlayer";
+import GalleryGrid from "../../components/GalleryGrid";
+import MusicReleaseArrows from "../../components/MusicReleaseArrows";
 
 const title = "THE DAWNS HERE ARE QUIET";
 const year = "2023";
