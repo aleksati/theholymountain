@@ -35,7 +35,7 @@ const Landing = () => (
           <div className="grid flex-1 grid-rows-[1fr_auto] md:flex md:flex-col md:justify-center">
             <div className="flex flex-col justify-center space-y-6 md:items-center">
               <div className="space-y-2">
-                <h1 className="text-size-header md:text-size-header-big leading-none">
+                <h1 className="text-size-header lg:text-size-header-big leading-none">
                   ENDING IT ALL TONIGHT (REMIX)
                 </h1>
                 <p className="text-size-title">New EP by The Holy Mountain</p>
