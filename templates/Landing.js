@@ -29,7 +29,7 @@ const releases = SHOP_ITEMS.filter(({ key }) => key != "theytote" && key !== "th
 
 const Landing = () => (
   <div className="flex flex-col pt-0 md:pt-6 space-y-12 md:space-y-14">
-    <div className="flex min-h-[calc(100dvh-10rem)] flex-col gap-6 md:min-h-0 md:grid md:grid-cols-2 md:items-stretch md:gap-8">
+    <div className="flex min-h-[calc(100svh-10rem)] flex-col gap-6 md:min-h-0 md:grid md:grid-cols-2 md:items-stretch md:gap-8">
         <MyImage alt="Ending It All Tonight (Remix) cover" src="endingitalltonight-remix.jpg" layout="responsive" />
         <div className="flex flex-1 flex-col">
           <div className="grid flex-1 grid-rows-[1fr_auto] md:flex md:flex-col md:justify-center">
@@ -38,15 +38,17 @@ const Landing = () => (
                 <h1 className="text-size-header md:text-size-header-big leading-none">
                   ENDING IT ALL TONIGHT (REMIX)
                 </h1>
-                <h3 className="text-size-regular">The Holy Mountain • 2025 • EP</h3>
+                <p className="text-size-title">New EP by The Holy Mountain</p>
               </div>
               <div className="space-y-4">
                 <p className="text-size-regular">
-                  A special EP release including five remixes from our 2019 electronic album ENDING IT ALL TONIGHT,
-                  remixed and given new life by us.
+                  Ending It All Tonight Remix is a special EP release including five remixes from our 2019 electronic album ENDING IT ALL TONIGHT. All tracks are re-worked and given new life by us.
                 </p>
                 <p className="text-size-regular">
-                  The release also features an original music video for the track &quot;Consumer Confidence is Back&quot;. Avaliable on all streaming platforms.
+                  The release also features a new music video for the track &quot;Consumer Confidence is Back&quot;.
+                </p>
+                <p>
+                  Avaliable on all streaming platforms.
                 </p>
               </div>
             </div>

@@ -12,7 +12,7 @@ const title = "ENDING IT ALL TONIGHT";
 const year = "2020";
 const category = "Album";
 const description =
-  "Ending It All Tonight is a ten-part electronic album for synthesizers, drum machines and vocals, inspired by the joys and horrors of 80s pop culture. The release includes covers of Bach, Schumann, and Windows 98 with original artwork by AV Craig Gafoor. Available on limited edition cassettes from our online store.";
+  "Ending It All Tonight is a ten-part electronic album for synthesizers, drum machines and vocals, inspired by the joys and horrors of 80s pop culture. The release includes covers of Bach, Schumann, and Windows 98 with original artwork by AV Craig Gafoor. Available on limited edition cassettes from our online store with unique cover design by Bjørn Erik Nyhuus.";
 const tracklist = [
   {
     track: "98 Startup",
@@ -108,7 +108,7 @@ const Music = () => {
         title: `The Holy Mountain | ${title}`,
       }}>
       <div className="flex flex-col space-y-12 md:space-y-14">
-        <div className="relative flex min-h-[calc(100dvh-10rem)] flex-col gap-6 md:min-h-0 md:grid md:grid-cols-2 md:items-stretch">
+        <div className="relative flex min-h-[calc(100svh-10rem)] flex-col gap-6 md:min-h-0 md:grid md:grid-cols-2 md:items-stretch">
           <div className="relative md:static">
             <MusicReleaseArrows />
             <MyImage alt={`${title} album cover`} src="endingitalltonight.jpg" layout="responsive" />
@@ -150,14 +150,6 @@ const Music = () => {
             ))}
           </div>
         </div>
-        <div>
-          <h1 className="text-size-header md:text-size-header-big leading-none">SHOP</h1>
-          <Grid className="mt-2 gap-y-4">
-            {shopItems.map((shopItem) => (
-              <ShopCard key={shopItem.key} shopItem={shopItem} />
-            ))}
-          </Grid>
-        </div>
         <div className="flex flex-col space-y-4">
           <h1 className="text-size-header md:text-size-header-big leading-none">VIDEOS</h1>
           <div className="flex flex-col space-y-8">
@@ -165,6 +157,14 @@ const Music = () => {
               <VideoPlayer key={title} url={url} title={title} />
             ))}
           </div>
+        </div>
+        <div>
+          <h1 className="text-size-header md:text-size-header-big leading-none">SHOP</h1>
+          <Grid className="mt-2 gap-y-4">
+            {shopItems.map((shopItem) => (
+              <ShopCard key={shopItem.key} shopItem={shopItem} />
+            ))}
+          </Grid>
         </div>
         <div>
           <h1 className="text-size-header md:text-size-header-big leading-none">GALLERY</h1>

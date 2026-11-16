@@ -9,7 +9,7 @@ const title = "THE DAWNS HERE ARE QUIET";
 const year = "2023";
 const category = "Album";
 const description =
-  "The Dawns Here Are Quiet is our second studio album, inspired by the poetry of Arseny Tarkovsky and nordic cinema. The release features original artwork by Katinka Hustad, cover design by Bjørn Erik Nyhus, and a unique music video by norwegian filmmaker Marius Rolfsvåg.";
+  "The Dawns Here Are Quiet is our second studio album, inspired by the poetry of Arseny Tarkovsky and nordic cinema. The release features original artwork by Katinka Hustad, cover art design by Bjørn Erik Nyhuus, and a unique music video by norwegian filmmaker Marius Rolfsvåg.";
 const tracklist = [
   {
     track: "Awake",
@@ -86,7 +86,7 @@ const Music = () => {
         title: `The Holy Mountain | ${title}`,
       }}>
       <div className="flex flex-col space-y-12 md:space-y-16">
-        <div className="relative flex min-h-[calc(100dvh-10rem)] flex-col gap-6 md:min-h-0 md:grid md:grid-cols-2 md:items-stretch">
+        <div className="relative flex min-h-[calc(100svh-10rem)] flex-col gap-6 md:min-h-0 md:grid md:grid-cols-2 md:items-stretch">
           <div className="relative md:static">
             <MusicReleaseArrows />
             <MyImage
@@ -132,10 +132,10 @@ const Music = () => {
             ))}
           </div>
         </div>
-          <div className="flex flex-col space-y-4">
-            <h1 className="text-size-header md:text-size-header-big leading-none">VIDEOS</h1>
-            <VideoPlayer url={videoUrl} title="So I Shot Up, Adagio" />
-          </div>
+        <div className="flex flex-col space-y-4">
+          <h1 className="text-size-header md:text-size-header-big leading-none">VIDEOS</h1>
+          <VideoPlayer url={videoUrl} title="So I Shot Up, Adagio" />
+        </div>
         <div>
           <h1 className="text-size-header md:text-size-header-big leading-none">GALLERY</h1>
           <GalleryGrid imgNames={imgNames}/>

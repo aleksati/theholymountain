@@ -22,7 +22,7 @@ module.exports = {
         "size-header-big": ["3.25rem"],
         "size-header": ["2.25rem"],
         "size-title": ["1.375rem"],
-        "size-regular": ["1.125rem"],
+        "size-regular": ["1rem"], // var 1.125
         "size-small": ["0.8125rem"],
         // "size-header-big": ["3.75rem"], // text-6xl
         // "size-header": ["2.5rem"], // text-4xl (var 2.25)

@@ -71,12 +71,12 @@ const Contact = () => {
       <h1 className="text-size-header md:text-size-header-big leading-none">CONTACT</h1>
       <form
         onSubmit={(e) => handleSubmit(e)}
-        className="mx-auto flex w-full flex-col p-4 text-xl"
+        className="mx-auto flex w-full flex-col p-4 text-size-regular"
         aria-label="Contact form">
         {/* <h1 className="overflow-hidden text-clip text-size-header py-">
           CONTACT
         </h1> */}
-        <div className="grid grid-cols-1 gap-4">
+        <div className="grid grid-cols-1 gap-4 text-size-regular">
           <label className="block">
             <span className="dark:text-primary-dark">
               Name

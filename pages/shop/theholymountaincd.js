@@ -55,7 +55,7 @@ const TheHolyMountainCD = ({ shopItem }) => {
               <h1 className="text-size-header md:text-size-header-big leading-none uppercase">{shopItem.title}</h1>
               <p className="text-size-title">kr {shopItem.price}</p>
               <p className="text-size-regular">
-                Limited edition CD with the original mix of The Holy Mountain EP from 2015. Features original cover art by Martin Marki and cover design by Bjørn Erik Nyhus
+                Limited edition CD with the original mix of The Holy Mountain EP from 2015. Features original cover art by Martin Marki and cover design by Bjørn Erik Nyhuus
               </p>
               <button
                 type="button"

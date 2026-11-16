@@ -8,7 +8,7 @@ const title = "ENDING IT ALL TONIGHT (REMIX)";
 const year = "2025";
 const category = "EP";
 const description =
-"A special release including five remixes from our 2019 electronic album ENDING IT ALL TONIGHT, remixed and given new life by us. The release also features man original music video for the track 'Consumer Confidence is Back'.";
+  "Ending It All Tonight Remix is a special EP release including five remixes from our 2019 electronic album ENDING IT ALL TONIGHT. All tracks are re-worked and given new life by us. The release also features a new music video for the track 'Consumer Confidence is Back'.";
 
 const tracklist = [
   {
@@ -37,10 +37,7 @@ const tracklist = [
     length: "04:31",
   },
 ];
-const credits = [
-  "Produced by The Holy Mountain",
-  "Mastered by Espen Høydalsvik at Oslo Fuzz",
-];
+const credits = ["Produced by The Holy Mountain", "Mastered by Espen Høydalsvik at Oslo Fuzz"];
 const someObject = [
   {
     key: "spotify",
@@ -52,15 +49,14 @@ const someObject = [
   },
   {
     key: "applemusic",
-    url:"https://music.apple.com/us/album/ending-it-all-tonight-remix-2025-remix-ep/1841643188"
+    url: "https://music.apple.com/us/album/ending-it-all-tonight-remix-2025-remix-ep/1841643188",
   },
-    {
+  {
     key: "tidal",
-    url: "https://tidal.com/album/462198538/u"
-  }
+    url: "https://tidal.com/album/462198538/u",
+  },
 ];
 const videoUrl = "https://www.youtube.com/embed/ZWsFN8QLsRg?si=yslIuTScwW8Q3Adm";
-
 
 const Music = () => {
   return (
@@ -69,14 +65,10 @@ const Music = () => {
         title: `The Holy Mountain | ${title}`,
       }}>
       <div className="flex flex-col space-y-12 md:space-y-14">
-        <div className="relative flex min-h-[calc(100dvh-10rem)] flex-col gap-6 md:min-h-0 md:grid md:grid-cols-2 md:items-stretch">
+        <div className="relative flex min-h-[calc(100svh-10rem)] flex-col gap-6 md:min-h-0 md:grid md:grid-cols-2 md:items-stretch">
           <div className="relative md:static">
             <MusicReleaseArrows />
-            <MyImage
-              alt={`${title} album cover`}
-              src="endingitalltonight-remix.jpg"
-              layout="responsive"
-            />
+            <MyImage alt={`${title} album cover`} src="endingitalltonight-remix.jpg" layout="responsive" />
           </div>
           <div className="flex flex-1 flex-col">
             <div className="grid flex-1 grid-rows-[1fr_auto] md:flex md:flex-col md:justify-center">
@@ -115,10 +107,10 @@ const Music = () => {
             ))}
           </div>
         </div>
-          <div className="flex flex-col space-y-4">
-            <h1 className="text-size-header md:text-size-header-big leading-none">VIDEOS</h1>
-            <VideoPlayer url={videoUrl} title="Consumer Confidence is Back (2025 Remix) (Official Music Video)" />
-          </div>
+        <div className="flex flex-col space-y-4">
+          <h1 className="text-size-header md:text-size-header-big leading-none">VIDEOS</h1>
+          <VideoPlayer url={videoUrl} title="Consumer Confidence is Back (2025 Remix) (Official Music Video)" />
+        </div>
       </div>
     </LayoutPage>
   );

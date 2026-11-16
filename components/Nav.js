@@ -46,7 +46,7 @@ const Nav = ({ showNavTop = false, onToggleNavVertical }) => {
                 </span>
               )}
               {children && (
-                <div className="ml-4 mt-2 flex flex-col space-y-2">
+                <div className="ml-4 mt-2 flex flex-col space-y-2 md:space-y-4">
                   {children.map((child) => (
                     <Link href={child.href} key={child.href}>
                       <a

@@ -64,7 +64,7 @@ const someObject = [
     url: "https://theholymountain.bandcamp.com/album/they-are-asleep",
   },
 ];
-const videoUrl = "https://www.youtube.com/embed/ZWsFN8QLsRg?si=lLXH4t_6_yTliipk";
+const videoUrl = "https://www.youtube.com/embed/gAo2EbLAy7A?si=xfUBKsEpwb9tvUKN";
 const shopItems = SHOP_ITEMS.filter(({ key }) => ["theyshirt", "theytote"].includes(key));
 const imgNames = ["3-1-15.jpg", "3-1.jpg", "3-1-11.jpg", "3-7.jpg", "3-1-12.jpg", "3-1-13.jpg"];
 
@@ -75,7 +75,7 @@ const Music = () => {
         title: `The Holy Mountain | ${title}`,
       }}>
       <div className="flex flex-col space-y-12 md:space-y-16">
-        <div className="relative flex min-h-[calc(100dvh-10rem)] flex-col gap-6 md:min-h-0 md:grid md:grid-cols-2 md:items-stretch">
+        <div className="relative flex min-h-[calc(100svh-10rem)] flex-col gap-6 md:min-h-0 md:grid md:grid-cols-2 md:items-stretch">
           <div className="relative md:static">
             <MusicReleaseArrows />
             <MyImage alt="" src="theyareasleep.jpg" layout="responsive" />
@@ -117,6 +117,10 @@ const Music = () => {
             ))}
           </div>
         </div>
+        <div className="flex flex-col space-y-4">
+          <h1 className="text-size-header md:text-size-header-big leading-none">VIDEOS</h1>
+          <VideoPlayer url={videoUrl} title={title} />
+        </div>
         <div>
           <h1 className="text-size-header md:text-size-header-big leading-none">SHOP</h1>
           <Grid smallScreenColumns={2} className="mt-2 gap-y-4">
@@ -126,12 +130,8 @@ const Music = () => {
           </Grid>
         </div>
         <div className="flex flex-col space-y-4">
-          <h1 className="text-size-header md:text-size-header-big leading-none">VIDEOS</h1>
-          <VideoPlayer url={videoUrl} title={title} />
-        </div>
-        <div className="flex flex-col space-y-4">
           <h1 className="text-size-header md:text-size-header-big leading-none">REVIEWS</h1>
-          <div className="grid text-size-small md:text-size-regular grid-rows-1 grid-cols-2 md:grid-cols-2 gap-4">
+          <div className="grid text-size-small md:text-size-regular grid-rows-1 grid-cols-1 md:grid-cols-2 gap-4">
             <TextCard>
               <p className="">
                 «Dark yet catchy synth pop, an immersive release that transports listeners to a world where the line

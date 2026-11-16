@@ -1,8 +1,10 @@
 import LayoutPage from "../layouts/LayoutPage";
 import Landing from "../templates/Landing";
 
+//  containerSize="xl"
+
 const Home = () => (
-  <LayoutPage containerSize="xl" pageMeta={{ title: "The Holy Mountain" }}>
+  <LayoutPage pageMeta={{ title: "The Holy Mountain" }}>
     <Landing />
   </LayoutPage>
 );

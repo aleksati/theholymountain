@@ -19,17 +19,17 @@ const MusicReleaseArrows = () => {
     <>
       <Button
         colorStyle="border-secondary-skin-dark hover:border-secondary-skin-light"
-        className="!bg-primary-dark !p-2 absolute left-2 top-1/2 z-10 -translate-y-1/2 md:left-0"
+        className="!bg-primary-dark/50 !p-2 absolute left-2 top-1/2 z-10 -translate-y-1/2 md:left-0"
         tooltipMessage="Previous release"
         onClick={() => router.push(previousRelease.href)}>
-        <Icon id="prevArrow" iconSize="text-base" />
+        <Icon id="prevArrow" iconSize="text-base md:text-size-title" />
       </Button>
       <Button
         colorStyle="border-secondary-skin-dark hover:border-secondary-skin-light"
-        className="!bg-primary-dark !p-2 absolute right-2 top-1/2 z-10 -translate-y-1/2 md:right-0"
+        className="!bg-primary-dark/50 !p-2 absolute right-2 top-1/2 z-10 -translate-y-1/2 md:right-0"
         tooltipMessage="Next release"
         onClick={() => router.push(nextRelease.href)}>
-        <Icon id="nextArrow" iconSize="text-base" />
+        <Icon id="nextArrow" iconSize="text-base md:text-size-title" />
       </Button>
     </>
   );
