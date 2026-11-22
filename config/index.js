@@ -255,8 +255,8 @@ export const NAV_ITEMS = [
       { title: "The Dawns Here Are Quiet", href: "/music/thedawnsherearequiet" },
       { title: "Ending It All Tonight", href: "/music/endingitalltonight" },
       { title: "Toad of Light", href: "/music/toadoflight" },
-      { title: "FINITE", href: "/music/finite" },
-      { title: "The Holy Mountain (2024 Mix)", href: "/music/theholymountain" },
+      { title: "FINITE (OST)", href: "/music/finite" },
+      { title: "The Holy Mountain", href: "/music/theholymountain" },
     ],
   },
   { title: "Shop", href: "/shop" },
@@ -492,9 +492,9 @@ export const RELEASE_ITEMS = {
   },
   finite: {
     coverImage: "finite.jpg",
-    title: "FINITE",
+    title: "FINITE (Original Movie Soundtrack)",
     year: "2016",
-    category: "Soundtrack",
+    category: "Album",
     description:
       "FINITE is a short film by director Marius Rolfsvåg about loneliness in a post-apocalyptic, dystopian future. The movie won Best Sound at Amandus 2017 and was nominated for Best New Nordic Voice at the 2016 Nordisk Panorama Film Festival. The soundtrack features ten original compositions for accordion, synthesizers and electronics. Available on limited-edition cassettes from our online store.",
     tracklist: [
