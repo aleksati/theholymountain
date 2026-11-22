@@ -3,7 +3,7 @@ import Icon from "./Icon";
 
 const SoMeBar = ({ exclude = [], someObject, iconSize = "text-4xl md:text-4xl" }) => {
   return (
-    <div className="somebar-glow flex flex-row space-x-4">
+    <div className="somebar-glow flex flex-row space-x-3">
       {someObject.map((some) => {
         if (exclude.includes(some.key)) return;
         return (

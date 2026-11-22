@@ -29,7 +29,7 @@ const LayoutPage = ({ pageId = "top", children, className = "", pageMeta, contai
     <>
       <Meta {...pageMeta} />
       <div className="min-h-screen flex relative">
-        <header className="fixed mx-3 left-3 right-3 top-4 z-50 flex h-[5rem] items-center rounded-3xl border border-secondary-skin-light/20 bg-[#ffff]/20 px-4 text-primary-dark shadow-md backdrop-blur-2xl md:left-6 md:right-6 md:h-[4.75rem] md:px-6">
+        <header className="fixed mx-3 left-3 right-3 top-4 z-50 flex h-[4rem] items-center rounded-3xl border border-secondary-skin-light/20 bg-[#ffff]/10 px-4 text-primary-dark shadow-md backdrop-blur-2xl md:left-6 md:right-6 md:h-[4.75rem] md:px-6">
           <div className="relative z-20 flex items-center gap-2">
             {/* Menu Icon */}
             <ButtonIcon

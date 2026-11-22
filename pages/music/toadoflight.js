@@ -6,70 +6,10 @@ import MusicReleaseArrows from "../../components/MusicReleaseArrows.js";
 import GalleryGrid from "../../components/GalleryGrid.js";
 import Grid from "../../components/Grid.js";
 import ShopCard from "../../components/ShopCard.js";
-import { SHOP_ITEMS } from "../../config/index.js";
+import { RELEASE_ITEMS } from "../../config/index.js";
 
-const title = "TOAD OF LIGHT";
-const year = "2018";
-const category = "Album";
-const description =
-  "Toad of Light is our debut studio album, released on Shhpuma records in 2018 on LP and digital. The release is inspired by dystopian sci-fi visions and cult aesthetics, with cover design by the legendary comic book artist Philippe Druillet, and a unique music video by Norwegian filmmaker Marius Rolfsvåg. Available on 12-inch vinyl from our online store.";
-const tracklist = [
-  {
-    track: "Adoration of the Moon",
-    number: "01.",
-    length: "10:54",
-  },
-  {
-    track: "They Live",
-    number: "02.",
-    length: "07:39",
-  },
-  {
-    track: "Celestial City",
-    number: "03.",
-    length: "07:24",
-  },
-  {
-    track: "Night Toad Palace",
-    number: "04.",
-    length: "13:20",
-  },
-];
-const credits = [
-  "Produced by The Holy Mountain",
-  "Recorded and Mixed by Dag Erik Johansen at Athletic Sound Studios, Halden",
-  "Mastered by Alex Wharton at Abbey Road Studios, London",
-];
-const someObject = [
-  {
-    key: "spotify",
-    url: "https://open.spotify.com/album/37bf6gSuQLwPUveg4acX3A",
-  },
-  {
-    key: "tidal",
-    url: "https://tidal.com/browse/album/323623936",
-  },
-  {
-    key: "applemusic",
-    url: "https://music.apple.com/us/album/toad-of-light/1723828718",
-  },
-  {
-    key: "bandcamp",
-    url: "https://theholymountain.bandcamp.com/album/toad-of-light",
-  },
-];
-const videos = [
-  {
-    title: "They Live",
-    url: "https://www.youtube.com/embed/7qeJYBkaC6E",
-  },
-  {
-    title: "Celestial City",
-    url: "https://www.youtube.com/embed/EcDxWOoWMzk",
-  },
-];
-const imgNames = ["2-3.jpg", "2-4.jpg", "2-5.jpg", "2-6.JPG", "2-1.jpg", "2-7.jpg", "2-8.jpg", "2-9.jpg"];
-const shopItems = SHOP_ITEMS.filter(({ key }) => key === "toadoflightlp");
+const { title, year, category, description, tracklist, credits, someObject, videos, imgNames, shopItems } =
+  RELEASE_ITEMS.toadoflight;
 
 const Music = () => {
   return (

@@ -1,8 +1,9 @@
 import MyImage from "../components/MyImage";
 import SoMeBar from "../components/SoMeBar";
-import { SHOP_ITEMS } from "../config";
+import { RELEASE_ITEMS, SHOP_ITEMS } from "../config";
 import Grid from "../components/Grid";
 import ShopCard from "../components/ShopCard";
+import ReleaseCard from "../components/ReleaseCard";
 
 const someObject = [
   {
@@ -19,44 +20,36 @@ const someObject = [
   },
   {
     key: "tidal",
-    url: "https://tidal.com/album/462198538/u"
-  }
+    url: "https://tidal.com/album/462198538/u",
+  },
 ];
-
-const theymerch = SHOP_ITEMS.filter(({ key }) => key === "theytote" || key === "theyshirt");
-
-const releases = SHOP_ITEMS.filter(({ key }) => key != "theytote" && key !== "theyshirt");
 
 const Landing = () => (
   <div className="flex flex-col pt-0 md:pt-6 space-y-12 md:space-y-14">
     <div className="flex min-h-[calc(100svh-10rem)] flex-col gap-6 md:min-h-0 md:grid md:grid-cols-2 md:items-stretch md:gap-8">
-        <MyImage alt="Ending It All Tonight (Remix) cover" src="endingitalltonight-remix.jpg" layout="responsive" />
-        <div className="flex flex-1 flex-col">
-          <div className="grid flex-1 grid-rows-[1fr_auto] md:flex md:flex-col md:justify-center">
-            <div className="flex flex-col justify-center space-y-6 md:items-center">
-              <div className="space-y-2">
-                <h1 className="text-size-header lg:text-size-header-big leading-none">
-                  ENDING IT ALL TONIGHT (REMIX)
-                </h1>
-                <p className="text-size-title">New EP by The Holy Mountain</p>
-              </div>
-              <div className="space-y-4">
-                <p className="text-size-regular">
-                  Ending It All Tonight Remix is a special EP release including five remixes from our 2019 electronic album ENDING IT ALL TONIGHT. All tracks are re-worked and given new life by us.
-                </p>
-                <p className="text-size-regular">
-                  The release also features a new music video for the track &quot;Consumer Confidence is Back&quot;.
-                </p>
-                <p>
-                  Avaliable on all streaming platforms.
-                </p>
-              </div>
+      <MyImage alt="Ending It All Tonight (Remix) cover" src="endingitalltonight-remix.jpg" layout="responsive" />
+      <div className="flex flex-1 flex-col">
+        <div className="grid flex-1 grid-rows-[1fr_auto] md:flex md:flex-col md:justify-center">
+          <div className="flex flex-col justify-center space-y-6 md:items-center">
+            <div className="space-y-2">
+              <h1 className="text-size-header lg:text-size-header-big leading-none">ENDING IT ALL TONIGHT (REMIX)</h1>
+              <p className="text-size-title">New EP by The Holy Mountain</p>
             </div>
-            <div className="pt-6">
-              <SoMeBar someObject={someObject} iconSize="text-3xl md:text-4xl" />
+            <div className="space-y-4">
+              <p className="text-size-regular">
+                Ending It All Tonight Remix is a special EP release including five remixes from our 2019 electronic
+                album ENDING IT ALL TONIGHT. All tracks are re-worked and given new life by us.
+              </p>
+              <p className="text-size-regular">
+                The release also features a new music video for the track &quot;Consumer Confidence is Back&quot;.
+              </p>
             </div>
           </div>
+          <div className="pt-6">
+            <SoMeBar someObject={someObject} iconSize="text-3xl md:text-4xl" />
+          </div>
         </div>
+      </div>
     </div>
     <div>
       <iframe
@@ -68,13 +61,22 @@ const Landing = () => (
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
     </div>
     <div className="space-y-4">
-      <h1 className="text-size-header md:text-size-header-big leading-none">THEY ARE ASLEEP MERCH</h1>
+      <h1 className="text-size-header md:text-size-header-big leading-none">DISCOGRAPHY</h1>
+      <Grid smallScreenColumns={1} className="mt-2 gap-y-4">
+        {Object.entries(RELEASE_ITEMS).map(([releaseKey, release]) => (
+          <ReleaseCard key={releaseKey} releaseKey={releaseKey} release={release} />
+        ))}
+      </Grid>
+    </div>
+    <div className="space-y-4">
+      <h1 className="text-size-header md:text-size-header-big leading-none">MERCH</h1>
       <Grid smallScreenColumns={2} className="mt-2 gap-y-4">
-        {theymerch.map((shopItem) => (
+        {SHOP_ITEMS.filter(({ key }) => ["theytote", "theyshirt"].includes(key)).map((shopItem) => (
           <ShopCard key={shopItem.key} shopItem={shopItem} />
         ))}
       </Grid>
-      <div>
+    </div>
+            <div>
       <iframe
         width="100%"
         alt={`Searing Light YouTube video`}
@@ -83,15 +85,14 @@ const Landing = () => (
         loading="lazy"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
     </div>
-    </div>
-    <div>
+    {/* <div>
       <h1 className="text-size-header md:text-size-header-big leading-none">RELEASES</h1>
       <Grid smallScreenColumns={2} className="mt-2 gap-y-4">
         {releases.map((shopItem) => (
           <ShopCard key={shopItem.key} shopItem={shopItem} />
         ))}
       </Grid>
-    </div>
+    </div> */}
   </div>
 );
 

@@ -5,79 +5,10 @@ import VideoPlayer from "../../components/VideoPlayer";
 import MusicReleaseArrows from "../../components/MusicReleaseArrows";
 import Grid from "../../components/Grid";
 import ShopCard from "../../components/ShopCard";
-import { SHOP_ITEMS } from "../../config";
+import { RELEASE_ITEMS } from "../../config/index.js";
 
-const title = "FINITE";
-const year = "2016";
-const category = "Soundtrack";
-const description =
-  "FINITE is a short film by director Marius Rolfsvåg about loneliness in a post-apocalyptic, dystopian future. The movie won Best Sound at Amandus 2017 and was nominated for Best New Nordic Voice at the 2016 Nordisk Panorama Film Festival. The soundtrack features ten original compositions for accordion, synthesizers and electronics. Available on limited-edition cassettes from our online store.";
-const tracklist = [
-  {
-    track: "I",
-    number: "01.",
-    length: "02:18",
-  },
-  {
-    track: "II",
-    number: "02.",
-    length: "02:12",
-  },
-  {
-    track: "III",
-    number: "03.",
-    length: "02:27",
-  },
-  {
-    track: "IV",
-    number: "04.",
-    length: "03:24",
-  },
-  {
-    track: "V",
-    number: "05.",
-    length: "02:23",
-  },
-  {
-    track: "VI (Ich ruf zu dir)",
-    number: "06.",
-    length: "04:07",
-  },
-  {
-    track: "VII",
-    number: "07.",
-    length: "03:18",
-  },
-  {
-    track: "VIII",
-    number: "08.",
-    length: "01:42",
-  },
-  {
-    track: "IX",
-    number: "09.",
-    length: "03:05",
-  },
-  {
-    track: "X",
-    number: "10.",
-    length: "03:12",
-  },
-];
-const credits = ["Produced by The Holy Mountain"];
-const someObject = [
-  {
-    key: "bandcamp",
-    url: "https://theholymountain.bandcamp.com/album/finite",
-  },
-];
-const videos = [
-  {
-    title: "FINITE",
-    url: "https://www.youtube.com/embed/2XQz9M5yqac?si=yByn-vu38l9P6kdI",
-  },
-];
-const shopItems = SHOP_ITEMS.filter(({ key }) => key === "finitecassette");
+const { title, year, category, description, tracklist, credits, someObject, videos, shopItems } =
+  RELEASE_ITEMS.finite;
 
 const Music = () => {
   return (

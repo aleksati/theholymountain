@@ -3,60 +3,10 @@ import SoMeBar from "../../components/SoMeBar";
 import MyImage from "../../components/MyImage";
 import VideoPlayer from "../../components/VideoPlayer";
 import MusicReleaseArrows from "../../components/MusicReleaseArrows";
+import { RELEASE_ITEMS } from "../../config/index.js";
 
-const title = "ENDING IT ALL TONIGHT (REMIX)";
-const year = "2025";
-const category = "EP";
-const description =
-  "Ending It All Tonight Remix is a special EP release including five remixes from our 2019 electronic album ENDING IT ALL TONIGHT. All tracks are re-worked and given new life by us. The release also features a new music video for the track 'Consumer Confidence is Back'.";
-
-const tracklist = [
-  {
-    track: "Consumer Confidence is Back (2025 Remix)",
-    number: "01.",
-    length: "04:29",
-  },
-  {
-    track: "Who Goes There (2025 Remix)",
-    number: "02.",
-    length: "05:37",
-  },
-  {
-    track: "And Hank Mardukas (2025 Remix)",
-    number: "03.",
-    length: "05:08",
-  },
-  {
-    track: "Tokyo 1994 (2025 Remix)",
-    number: "04.",
-    length: "02:28",
-  },
-  {
-    track: "Night Striker (2025 Remix)",
-    number: "05.",
-    length: "04:31",
-  },
-];
-const credits = ["Produced by The Holy Mountain", "Mastered by Espen Høydalsvik at Oslo Fuzz"];
-const someObject = [
-  {
-    key: "spotify",
-    url: "spotify:album:1uxHx2u7rCbMeabx4sbmKv",
-  },
-  {
-    key: "bandcamp",
-    url: "https://theholymountain.bandcamp.com/album/ending-it-all-tonight-remix",
-  },
-  {
-    key: "applemusic",
-    url: "https://music.apple.com/us/album/ending-it-all-tonight-remix-2025-remix-ep/1841643188",
-  },
-  {
-    key: "tidal",
-    url: "https://tidal.com/album/462198538/u",
-  },
-];
-const videoUrl = "https://www.youtube.com/embed/ZWsFN8QLsRg?si=yslIuTScwW8Q3Adm";
+const { title, year, category, description, tracklist, credits, someObject, videoUrl, videoTitle } =
+  RELEASE_ITEMS.endingitalltonightremix;
 
 const Music = () => {
   return (
@@ -109,7 +59,7 @@ const Music = () => {
         </div>
         <div className="flex flex-col space-y-4">
           <h1 className="text-size-header md:text-size-header-big leading-none">VIDEOS</h1>
-          <VideoPlayer url={videoUrl} title="Consumer Confidence is Back (2025 Remix) (Official Music Video)" />
+          <VideoPlayer url={videoUrl} title={videoTitle} />
         </div>
       </div>
     </LayoutPage>

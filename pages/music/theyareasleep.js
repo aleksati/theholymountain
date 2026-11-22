@@ -7,66 +7,10 @@ import GalleryGrid from "../../components/GalleryGrid.js";
 import MusicReleaseArrows from "../../components/MusicReleaseArrows.js";
 import Grid from "../../components/Grid.js";
 import ShopCard from "../../components/ShopCard.js";
-import { SHOP_ITEMS } from "../../config/index.js";
+import { RELEASE_ITEMS } from "../../config/index.js";
 
-const title = "THEY ARE ASLEEP";
-const year = "2024";
-const category = "Album";
-const description =
-  "They Are Asleep is all about having a party in hell, with lyrical themes about collective ignorance, death, and the decay of nature, and music reminiscent of Y2K techno, synth-pop and sci-fi horror. Join us where tensions are high and the darkness is bright. The release features logo design by Bjørn Erik Nyhuus, a cover image from Katinka Hustad and a music video by Johannes Frank Fuglehaug.";
-const tracklist = [
-  {
-    track: "Never Know",
-    number: "01.",
-    length: "03:45",
-  },
-  {
-    track: "Searing Light",
-    number: "02.",
-    length: "03:52",
-  },
-  {
-    track: "Remains Unsaid",
-    number: "03.",
-    length: "04:39",
-  },
-  {
-    track: "The Third Place",
-    number: "04.",
-    length: "03:59",
-  },
-  {
-    track: "Nature. A Sermon",
-    number: "05.",
-    length: "03:23",
-  },
-];
-const credits = [
-  "Produced by The Holy Mountain",
-  "Recorded and Mixed by Marcus Forsgren at Paradiso Studios, Oslo",
-  "Mastered by Espen Høydalsvik at Oslo Fuzz",
-];
-const someObject = [
-  {
-    key: "spotify",
-    url: "https://open.spotify.com/album/0JExCWKqyzrifd7TX4m13J?si=HJRvUhK1QkCL0OaiPkkPnA",
-  },
-  {
-    key: "tidal",
-    url: "https://tidal.com/browse/album/351455415",
-  },
-  {
-    key: "applemusic",
-    url: "https://music.apple.com/us/album/they-are-asleep-ep/1735525786",
-  },
-  {
-    key: "bandcamp",
-    url: "https://theholymountain.bandcamp.com/album/they-are-asleep",
-  },
-];
-const videoUrl = "https://www.youtube.com/embed/gAo2EbLAy7A?si=xfUBKsEpwb9tvUKN";
-const shopItems = SHOP_ITEMS.filter(({ key }) => ["theyshirt", "theytote"].includes(key));
-const imgNames = ["3-1-15.jpg", "3-1.jpg", "3-1-11.jpg", "3-7.jpg", "3-1-12.jpg", "3-1-13.jpg"];
+const { title, year, category, description, tracklist, credits, someObject, videoUrl, shopItems, imgNames } =
+  RELEASE_ITEMS.theyareasleep;
 
 const Music = () => {
   return (

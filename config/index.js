@@ -322,3 +322,232 @@ export const SHOP_ITEMS = [
     userQuantity: 0,
   },
 ];
+
+export const RELEASE_ITEMS = {
+  endingitalltonightremix: {
+    coverImage: "endingitalltonight-remix.jpg",
+    title: "ENDING IT ALL TONIGHT (REMIX)",
+    year: "2025",
+    category: "EP",
+    description:
+      "Ending It All Tonight Remix is a special EP release including five remixes from our 2019 electronic album ENDING IT ALL TONIGHT. All tracks are re-worked and given new life by us, and features an original music video for the track 'Consumer Confidence is Back'.",
+    tracklist: [
+      { track: "Consumer Confidence is Back (2025 Remix)", number: "01.", length: "04:29" },
+      { track: "Who Goes There (2025 Remix)", number: "02.", length: "05:37" },
+      { track: "And Hank Mardukas (2025 Remix)", number: "03.", length: "05:08" },
+      { track: "Tokyo 1994 (2025 Remix)", number: "04.", length: "02:28" },
+      { track: "Night Striker (2025 Remix)", number: "05.", length: "04:31" },
+    ],
+    credits: ["Produced by The Holy Mountain", "Mastered by Espen Høydalsvik at Oslo Fuzz"],
+    someObject: [
+      { key: "spotify", url: "spotify:album:1uxHx2u7rCbMeabx4sbmKv" },
+      { key: "bandcamp", url: "https://theholymountain.bandcamp.com/album/ending-it-all-tonight-remix" },
+      {
+        key: "applemusic",
+        url: "https://music.apple.com/us/album/ending-it-all-tonight-remix-2025-remix-ep/1841643188",
+      },
+      { key: "tidal", url: "https://tidal.com/album/462198538/u" },
+    ],
+    videoUrl: "https://www.youtube.com/embed/ZWsFN8QLsRg?si=yslIuTScwW8Q3Adm",
+    videoTitle: "Consumer Confidence is Back (2025 Remix) (Official Music Video)",
+  },
+
+  theyareasleep: {
+    coverImage: "theyareasleep.jpg",
+    title: "THEY ARE ASLEEP",
+    year: "2024",
+    category: "EP",
+    description:
+      "They Are Asleep is all about having a party in hell, with lyrical themes about collective ignorance, death, and the decay of nature, and music reminiscent of Y2K techno, synth-pop and sci-fi horror. Join us where tensions are high and the darkness is bright. The release features logo design by Bjørn Erik Nyhuus, a cover image from Katinka Hustad and a music video by Johannes Frank Fuglehaug.",
+    tracklist: [
+      { track: "Never Know", number: "01.", length: "03:45" },
+      { track: "Searing Light", number: "02.", length: "03:52" },
+      { track: "Remains Unsaid", number: "03.", length: "04:39" },
+      { track: "The Third Place", number: "04.", length: "03:59" },
+      { track: "Nature. A Sermon", number: "05.", length: "03:23" },
+    ],
+    credits: [
+      "Produced by The Holy Mountain",
+      "Recorded and Mixed by Marcus Forsgren at Paradiso Studios, Oslo",
+      "Mastered by Espen Høydalsvik at Oslo Fuzz",
+    ],
+    someObject: [
+      {
+        key: "spotify",
+        url: "https://open.spotify.com/album/0JExCWKqyzrifd7TX4m13J?si=HJRvUhK1QkCL0OaiPkkPnA",
+      },
+      { key: "tidal", url: "https://tidal.com/browse/album/351455415" },
+      { key: "applemusic", url: "https://music.apple.com/us/album/they-are-asleep-ep/1735525786" },
+      { key: "bandcamp", url: "https://theholymountain.bandcamp.com/album/they-are-asleep" },
+    ],
+    videoUrl: "https://www.youtube.com/embed/gAo2EbLAy7A?si=xfUBKsEpwb9tvUKN",
+    shopItems: SHOP_ITEMS.filter(({ key }) => ["theyshirt", "theytote"].includes(key)),
+    imgNames: ["3-1-15.jpg", "3-1.jpg", "3-1-11.jpg", "3-7.jpg", "3-1-12.jpg", "3-1-13.jpg"],
+  },
+
+  thedawnsherearequiet: {
+    coverImage: "thedawnsherearequiet.jpg",
+    title: "THE DAWNS HERE ARE QUIET",
+    year: "2023",
+    category: "Album",
+    description:
+      "The Dawns Here Are Quiet is our second studio album, inspired by the poetry of Arseny Tarkovsky and nordic cinema. The release features original artwork by Katinka Hustad, cover art design by Bjørn Erik Nyhuus, and a unique music video by norwegian filmmaker Marius Rolfsvåg.",
+    tracklist: [
+      { track: "Awake", number: "01.", length: "05:26" },
+      { track: "The Voice Is Calling Us", number: "02.", length: "03:25" },
+      { track: "Estranged From Itself", number: "03.", length: "04:47" },
+      { track: "There Is No Need To Fear The End", number: "04.", length: "05:36" },
+      { track: "My Sight Now Blurs", number: "05.", length: "06:23" },
+      { track: "Now Summer Is Gone", number: "06.", length: "03:48" },
+      { track: "So I Shot Up, Adagio", number: "07.", length: "01:40" },
+      { track: "The Dawns Here Are Quiet", number: "08.", length: "04:47" },
+    ],
+    credits: [
+      "Produced by The Holy Mountain",
+      "Mixed and Mastered by Peter Michelsen at Norwegian Sound, Mjøndalen",
+      "Recorded by Dag E. Johansen, Audun Strype and David Michelsen",
+    ],
+    someObject: [
+      { key: "spotify", url: "https://open.spotify.com/album/0Q1Z858XIAoJxgoR6T0y5O" },
+      { key: "tidal", url: "https://tidal.com/album/379885188" },
+      { key: "applemusic", url: "https://music.apple.com/us/album/the-dawns-here-are-quiet/1761780905" },
+      { key: "bandcamp", url: "https://theholymountain.bandcamp.com/album/the-dawns-here-are-quiet" },
+    ],
+    videoUrl: "https://www.youtube.com/embed/QjaI0S1u_xo",
+    videoTitle: "So I Shot Up, Adagio",
+    imgNames: ["4-1.jpg", "4-2.jpg", "4-3.jpg", "4-4.jpg", "4-5.jpg", "4-6.jpg"],
+  },
+
+  endingitalltonight: {
+    coverImage: "endingitalltonight.jpg",
+    title: "ENDING IT ALL TONIGHT",
+    year: "2020",
+    category: "Album",
+    description:
+      "Ending It All Tonight is a ten-part electronic album for synthesizers, drum machines and vocals, inspired by the joys and horrors of 80s pop culture. The release includes covers of Bach, Schumann, and Windows 98 with original artwork by AV Craig Gafoor. Available on limited edition cassettes from our online store with unique cover design by Bjørn Erik Nyhuus.",
+    tracklist: [
+      { track: "98 Startup", number: "01.", length: "02:15" },
+      { track: "Night Striker", number: "02.", length: "04:48" },
+      { track: "Who Goes There?", number: "03.", length: "06:53" },
+      { track: "California 1986", number: "04.", length: "03:02" },
+      { track: "Dark Longing (Op.48)", number: "05.", length: "02:59" },
+      { track: "Tokyo 1994", number: "06.", length: "02:12" },
+      { track: "And Hank Mardukas", number: "07.", length: "05:31" },
+      { track: "Sydney 2002", number: "08.", length: "02:02" },
+      { track: "Preludium - Before the Storm (BWV 543)", number: "09.", length: "03:52" },
+      { track: "Consumer Confidence is Back", number: "10.", length: "05:50" },
+    ],
+    credits: ["Produced by The Holy Mountain", "Mastered by Frode Berg"],
+    someObject: [
+      { key: "spotify", url: "https://open.spotify.com/album/7GtTvKVuS2bz64tQ9qg0De" },
+      { key: "tidal", url: "https://tidal.com/browse/album/323623936" },
+      { key: "eth", url: "https://opensea.io/collection/endingitalltonight" },
+      { key: "applemusic", url: "https://music.apple.com/us/album/ending-it-all-tonight/1713207423" },
+      { key: "bandcamp", url: "https://theholymountain.bandcamp.com/album/ending-it-all-tonight" },
+    ],
+    videos: [
+      {
+        title: "Tokyo 1994 (2025 Remix) (Official Music Video)",
+        url: "https://www.youtube.com/embed/wAosHFd2l7Y?si=M9zOVXcwmPgFWUvp",
+      },
+      {
+        title: "And Hank Mardukas (2025 Remix) (Official Music Video)",
+        url: "https://www.youtube.com/embed/DMdIHFqXRBY?si=4PLnRVrH0F0ZmsC6",
+      },
+    ],
+    imgNames: ["3-5.jpg", "3-2.jpg", "3-4.jpg", "3:4- 1.jpg", "3-3.jpg", "3-1-10.jpg", "5-1.jpg"],
+    shopItems: SHOP_ITEMS.filter(({ key }) => key === "endingitalltonightcassette"),
+  },
+
+  toadoflight: {
+    coverImage: "toadoflight.jpg",
+    title: "TOAD OF LIGHT",
+    year: "2018",
+    category: "Album",
+    description:
+      "Toad of Light is our debut studio album, released on Shhpuma records in 2018 on LP and digital. The release is inspired by dystopian sci-fi visions and cult aesthetics, with cover design by the legendary comic book artist Philippe Druillet, and a unique music video by Norwegian filmmaker Marius Rolfsvåg. Available on 12-inch vinyl from our online store.",
+    tracklist: [
+      { track: "Adoration of the Moon", number: "01.", length: "10:54" },
+      { track: "They Live", number: "02.", length: "07:39" },
+      { track: "Celestial City", number: "03.", length: "07:24" },
+      { track: "Night Toad Palace", number: "04.", length: "13:20" },
+    ],
+    credits: [
+      "Produced by The Holy Mountain",
+      "Recorded and Mixed by Dag Erik Johansen at Athletic Sound Studios, Halden",
+      "Mastered by Alex Wharton at Abbey Road Studios, London",
+    ],
+    someObject: [
+      { key: "spotify", url: "https://open.spotify.com/album/37bf6gSuQLwPUveg4acX3A" },
+      { key: "tidal", url: "https://tidal.com/browse/album/323623936" },
+      { key: "applemusic", url: "https://music.apple.com/us/album/toad-of-light/1723828718" },
+      { key: "bandcamp", url: "https://theholymountain.bandcamp.com/album/toad-of-light" },
+    ],
+    videos: [
+      { title: "They Live", url: "https://www.youtube.com/embed/7qeJYBkaC6E" },
+      { title: "Celestial City", url: "https://www.youtube.com/embed/EcDxWOoWMzk" },
+    ],
+    imgNames: ["2-3.jpg", "2-4.jpg", "2-5.jpg", "2-6.JPG", "2-1.jpg", "2-7.jpg", "2-8.jpg", "2-9.jpg"],
+    shopItems: SHOP_ITEMS.filter(({ key }) => key === "toadoflightlp"),
+  },
+  finite: {
+    coverImage: "finite.jpg",
+    title: "FINITE",
+    year: "2016",
+    category: "Soundtrack",
+    description:
+      "FINITE is a short film by director Marius Rolfsvåg about loneliness in a post-apocalyptic, dystopian future. The movie won Best Sound at Amandus 2017 and was nominated for Best New Nordic Voice at the 2016 Nordisk Panorama Film Festival. The soundtrack features ten original compositions for accordion, synthesizers and electronics. Available on limited-edition cassettes from our online store.",
+    tracklist: [
+      { track: "I", number: "01.", length: "02:18" },
+      { track: "II", number: "02.", length: "02:12" },
+      { track: "III", number: "03.", length: "02:27" },
+      { track: "IV", number: "04.", length: "03:24" },
+      { track: "V", number: "05.", length: "02:23" },
+      { track: "VI (Ich ruf zu dir)", number: "06.", length: "04:07" },
+      { track: "VII", number: "07.", length: "03:18" },
+      { track: "VIII", number: "08.", length: "01:42" },
+      { track: "IX", number: "09.", length: "03:05" },
+      { track: "X", number: "10.", length: "03:12" },
+    ],
+    credits: ["Produced by The Holy Mountain"],
+    someObject: [{ key: "bandcamp", url: "https://theholymountain.bandcamp.com/album/finite" }],
+    videos: [
+      {
+        title: "FINITE",
+        url: "https://www.youtube.com/embed/2XQz9M5yqac?si=yByn-vu38l9P6kdI",
+      },
+    ],
+    shopItems: SHOP_ITEMS.filter(({ key }) => key === "finitecassette"),
+  },
+
+  theholymountain: {
+    coverImage: "theholymountain.jpg",
+    title: "THE HOLY MOUNTAIN (2024 MIX)",
+    year: "2015",
+    category: "EP",
+    description:
+      "The Holy Mountain is a journey through the underworld and towards the light. Our debut four-track EP features original artwork by Martin Marki and cover design by Bjørn Erik Nyhuus.",
+    tracklist: [
+      { track: "Eudaimonia (2024 Mix)", number: "01.", length: "03:28" },
+      { track: "Introduction To The Underworld (2024 Mix)", number: "02.", length: "08:57" },
+      { track: "Paradise Insomnia (2024 Mix)", number: "03.", length: "10:58" },
+      { track: "Aspects of Vishnu (2024 Mix)", number: "04.", length: "09:02" },
+    ],
+    credits: [
+      "Produced by The Holy Mountain",
+      "Recorded by Emil Kraugerud at IMV, Oslo",
+      "Mixed by Marcus Forsgren at Paradiso Studios, Oslo",
+      "Mastered by Espen Høydalsvik at Oslo Fuzz",
+    ],
+    someObject: [
+      { key: "spotify", url: "https://open.spotify.com/album/38GE9XYHrA01eg8SIj1boR?si=1ivcwVlGQ7qkxdAO2kr0AA" },
+      { key: "tidal", url: "https://listen.tidal.com/album/379634972" },
+      { key: "applemusic", url: "https://music.apple.com/no/album/the-holy-mountain-2024-mix/1761705680" },
+      { key: "bandcamp", url: "https://theholymountain.bandcamp.com/album/the-holy-mountain-2024-mix" },
+    ],
+    imgNames: ["1-2.jpg", "1-1.jpg", "1-3.jpg", "1-5.jpg", "1-6.jpg"],
+    shopItems: SHOP_ITEMS.filter(({ key }) => key === "theholymountaincd"),
+  },
+
+
+};
