@@ -4,6 +4,8 @@ import { RELEASE_ITEMS, SHOP_ITEMS } from "../config";
 import Grid from "../components/Grid";
 import ShopCard from "../components/ShopCard";
 import ReleaseCard from "../components/ReleaseCard";
+import GalleryGrid from "../components/GalleryGrid";
+import Link from "next/link";
 
 const someObject = [
   {
@@ -27,7 +29,11 @@ const someObject = [
 const Landing = () => (
   <div className="flex flex-col pt-0 md:pt-6 space-y-12 md:space-y-14">
     <div className="flex min-h-[calc(100svh-10rem)] flex-col gap-6 md:min-h-0 md:grid md:grid-cols-2 md:items-stretch md:gap-8">
-      <MyImage alt="Ending It All Tonight (Remix) cover" src="endingitalltonight-remix.jpg" layout="responsive" />
+      <Link href="/music/endingitalltonightremix">
+        <div className="cursor-pointer">
+          <MyImage alt="Ending It All Tonight (Remix) cover" src="endingitalltonight-remix.jpg" layout="responsive" />
+        </div>
+      </Link>
       <div className="flex flex-1 flex-col">
         <div className="grid flex-1 grid-rows-[1fr_auto] md:flex md:flex-col md:justify-center">
           <div className="flex flex-col justify-center space-y-6 md:items-center">
@@ -61,22 +67,14 @@ const Landing = () => (
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
     </div>
     <div className="space-y-4">
-      <h1 className="text-size-header md:text-size-header-big leading-none">DISCOGRAPHY</h1>
+      <h1 className="text-size-header md:text-size-header-big leading-none">THEY ARE ASLEEP MERCH</h1>
       <Grid smallScreenColumns={1} className="mt-2 gap-y-4">
-        {Object.entries(RELEASE_ITEMS).map(([releaseKey, release]) => (
-          <ReleaseCard key={releaseKey} releaseKey={releaseKey} release={release} />
-        ))}
-      </Grid>
-    </div>
-    <div className="space-y-4">
-      <h1 className="text-size-header md:text-size-header-big leading-none">MERCH</h1>
-      <Grid smallScreenColumns={2} className="mt-2 gap-y-4">
         {SHOP_ITEMS.filter(({ key }) => ["theytote", "theyshirt"].includes(key)).map((shopItem) => (
           <ShopCard key={shopItem.key} shopItem={shopItem} />
         ))}
       </Grid>
     </div>
-            <div>
+    <div>
       <iframe
         width="100%"
         alt={`Searing Light YouTube video`}
@@ -84,6 +82,14 @@ const Landing = () => (
         src={"https://www.youtube.com/embed/gAo2EbLAy7A?si=xfUBKsEpwb9tvUKN"}
         loading="lazy"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+    </div>
+    <div className="space-y-4">
+      <h1 className="text-size-header md:text-size-header-big leading-none">DISCOGRAPHY</h1>
+      <Grid smallScreenColumns={1} className="mt-2 gap-y-4">
+        {Object.entries(RELEASE_ITEMS).map(([releaseKey, release]) => (
+          <ReleaseCard key={releaseKey} releaseKey={releaseKey} release={release} />
+        ))}
+      </Grid>
     </div>
     {/* <div>
       <h1 className="text-size-header md:text-size-header-big leading-none">RELEASES</h1>
@@ -93,6 +99,11 @@ const Landing = () => (
         ))}
       </Grid>
     </div> */}
+    <div>
+      <h1 className="text-size-header md:text-size-header-big leading-none">GALLERY</h1>
+      <GalleryGrid imgNames={RELEASE_ITEMS.theyareasleep.imgNames} />
+      <p>Photos by Katinka Hustad</p>
+    </div>
   </div>
 );
 

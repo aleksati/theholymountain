@@ -7,7 +7,7 @@
 
 @layer components {
   .somebar-glow {
-    filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.55));
+    filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.3));
   }
 }
 

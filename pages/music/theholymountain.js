@@ -70,7 +70,7 @@ const Music = () => {
         <div>
           <h1 className="text-size-header md:text-size-header-big leading-none">GALLERY</h1>
           <GalleryGrid imgNames={imgNames} />
-          <p>Foto by Martin Marki and Christian Lycke</p>
+          <p>Photos by Martin Marki and Christian Lycke</p>
         </div>
       </div>
     </LayoutPage>

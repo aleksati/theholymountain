@@ -113,7 +113,7 @@ const Music = () => {
               isExpandable={true}
             />
           </Grid> */}
-          <p>Foto by Katinka Hustad</p>
+          <p>Photos by Katinka Hustad</p>
         </div>
       </div>
     </LayoutPage>

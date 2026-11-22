@@ -264,16 +264,7 @@ export const NAV_ITEMS = [
 ];
 
 export const SHOP_ITEMS = [
-  {
-    _id: "6612c87e47adc47104706944",
-    key: "theytote",
-    title: "They Are Asleep Totebag",
-    year: "2024",
-    price: "150",
-    shopQuantity: 50,
-    userQuantity: 0,
-  },
-  {
+    {
     _id: "6612870eb802ac20f7a959f9",
     key: "theyshirt",
     title: "They Are Asleep T-shirt",
@@ -283,6 +274,15 @@ export const SHOP_ITEMS = [
     shopSizes: ["SM", "MD", "LG"],
     userQuantity: 0,
     userSize: "",
+  },
+  {
+    _id: "6612c87e47adc47104706944",
+    key: "theytote",
+    title: "They Are Asleep Totebag",
+    year: "2024",
+    price: "150",
+    shopQuantity: 50,
+    userQuantity: 0,
   },
   {
     _id: "65931bbe9f4bd7582a7cea8a",

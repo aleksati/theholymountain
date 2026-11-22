@@ -79,7 +79,7 @@ const Music = () => {
         <div>
           <h1 className="text-size-header md:text-size-header-big leading-none">GALLERY</h1>
           <GalleryGrid imgNames={imgNames} />
-          <p>Foto by Katinka Hustad</p>
+          <p>Photos by Katinka Hustad</p>
         </div>
       </div>
     </LayoutPage>
