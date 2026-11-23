@@ -17,7 +17,7 @@ export default function ReleaseCard({ releaseKey, release }) {
               objectFit="contain"
             />
             <div className="flex flex-col items-center space-y-0 text-center">
-              <p className="text-size-title font-bold leading-tight uppercase">{release.title}</p>
+              <p className="text-size-regular md:text-size-title font-bold leading-tight uppercase">{release.title}</p>
               <p className="text-size-small md:text-size-regular">
                 {release.category} • {release.year}
               </p>

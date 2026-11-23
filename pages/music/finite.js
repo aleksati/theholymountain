@@ -17,13 +17,13 @@ const Music = () => {
         title: `The Holy Mountain | ${title}`,
       }}>
       <div className="flex flex-col space-y-12 md:space-y-14">
-        <div className="relative flex min-h-[calc(100svh-10rem)] flex-col gap-6 md:min-h-0 md:grid md:grid-cols-2 md:items-stretch">
+        <div className="relative flex flex-col gap-6 md:grid md:grid-cols-2 md:items-stretch">
           <div className="relative rounded-md border border-secondary-skin-dark md:static">
             <MusicReleaseArrows />
             <MyImage alt={`${title} cover`} src="finite.jpg" layout="responsive" />
           </div>
           <div className="flex flex-1 flex-col">
-            <div className="grid flex-1 grid-rows-[1fr_auto] md:flex md:flex-col md:justify-center">
+            <div className="md:flex md:flex-1 md:flex-col md:justify-center">
               <div className="flex flex-col justify-center space-y-4 md:items-center">
                 <h1 className="text-size-header md:text-size-header-big leading-none text-center">{title}</h1>
                 <h3 className="text-size-regular text-center">

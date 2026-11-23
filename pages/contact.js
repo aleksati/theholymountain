@@ -156,7 +156,7 @@ const Contact = () => {
               /* </Button> */
               <>
                 {!isLoading ? (
-                  <div className="flex w-full place-content-center">
+                  <div className="flex w-full justify-start">
                     <input
                       tabIndex="-1"
                       type="submit"
