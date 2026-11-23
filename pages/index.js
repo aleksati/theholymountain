@@ -4,7 +4,7 @@ import Landing from "../templates/Landing";
 //  containerSize="xl"
 
 const Home = () => (
-  <LayoutPage pageMeta={{ title: "The Holy Mountain" }} containerSize="xl">
+  <LayoutPage pageMeta={{ title: "The Holy Mountain" }}>
     <Landing />
   </LayoutPage>
 );
